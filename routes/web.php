@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BedController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +21,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+// Artikel
+Route::get('/artikel/{slug}', [PostController::class, 'showArtikel']);
 
 Route::middleware(['guest'])->group(function (){
     Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -29,11 +33,23 @@ Route::middleware(['guest'])->group(function (){
 Route::middleware(['auth'])->group(function (){
     Route::middleware('must-admin')->group(function (){
         Route::get('/dashboard', function () {
-            return view('admin.dashboard');
+            $post = Post::all();
+            $countPost = $post->count();
+            return view('admin.dashboard', ['countPost' => $countPost]);
         });
-
-        Route::get('/post', [PostController::class, 'index']);
-        Route::get('/add-post', [PostController::class, 'create']);
+        
+        //Postingan Route
+        Route::get('/post', [PostController::class, 'index'])->name('posts.index');
+        Route::get('/post-add', [PostController::class, 'create']);
+        Route::get('/post/{id}', [PostController::class, 'show']);
+        Route::post('/post', [PostController::class, 'store']);
+        Route::get('/post-edit/{id}', [PostController::class, 'edit']);
+        Route::put('/post/{id}', [PostController::class, 'update']);
+        Route::delete('/post/{id}', [PostController::class, 'destroy']);
+        
+        //Bed Route
+        Route::get('/bed', [BedController::class,'index'])->name('beds.index');
+        Route::patch('/bed/{id}', [BedController::class,'update']);
     });
 
     // Route::middleware('must-user')->group(function (){

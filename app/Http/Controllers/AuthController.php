@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 class AuthController extends Controller
 {
     public function login(){
+        session()->put('success','Item Successfully Created.');
         return view("login");
     }
 

@@ -1,27 +1,27 @@
 @extends('admin.layout.main')
-@section("title", "Buat Postingan")
+@section("title", "Edit Postingan | ".$post->id)
 
 @section('content')
+
   <div class="container">
-      <form>
+      <form action="/post/{{ $post->id }}" method="POST">
+          @csrf
+          @method("PUT")
           <div class="form-group">
             <label for="title">Judul Postingan</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="Masukkan Judul Postingan...">
+            <input type="text" class="form-control" name="title" id="title" value="{{ $post->title }}"> 
           </div>
           <div class="form-group">
             <label for="author">Author</label>
-            <input type="text" class="form-control" name="author" id="author" placeholder="Masukkan Pembuat Postingan">
+            <input type="text" class="form-control" name="author" id="author" value="{{ $post->author }}">
           </div>
 
           <label for="description">Konten</label>
-          <textarea name="description" id="description" cols="30" rows="10"></textarea>
+          <textarea name="description" id="description" cols="30" rows="10">{{ $post->description }}</textarea>
           
           <button type="submit" class="btn btn-success mt-1">Posting</button>
         </form>
   </div>
- 
- 
-  
 @endsection
 
 @section("script")
@@ -41,7 +41,8 @@
           ['para', ['ul', 'ol', 'paragraph']],
           ['height', ['height']],
           ['insert', ['link', 'picture', 'table']],
-        ],  
+          ['view', ['fullscreen']],
+        ],
       }
     );
  });
