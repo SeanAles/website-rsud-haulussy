@@ -17,7 +17,7 @@ class BedController extends Controller
                     $actionBtn = '
                     <div class="row">
                         <button type="button" class="mr-1 mt-1 update btn btn-success btn-sm" data-toggle="modal" data-target="#updateBedModal'.$bed->id.'">
-                            Update
+                            Edit
                         </button>
 
                         <!-- Modal -->
@@ -38,15 +38,15 @@ class BedController extends Controller
                                         <input type="hidden" name="_method" value="PUT" />
                                         <div class="form-group">
                                             <label for="man">Laki-Laki</label>
-                                            <input value='.$bed->man.' type="number" min="0" class="form-control" name="man" id="man">
+                                            <input value='.$bed->man.' type="number" min="0" class="form-control" name="man" id="man'.$bed->id.'">
                                         </div>
                                         <div class="form-group">
                                             <label for="woman">Perempuan</label>
-                                            <input value='.$bed->woman.' type="number" min="0" class="form-control" name="woman" id="woman">
+                                            <input value='.$bed->woman.' type="number" min="0" class="form-control" name="woman" id="woman'.$bed->id.'">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelUpdateBed">Batal</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelUpdateBed'.$bed->id.'">Batal</button>
                                         <button type="button" onclick="updateBed('.$bed->id.')" class="btn btn-success">Update</button>  
                                     </div>
                                 </form>
@@ -64,6 +64,16 @@ class BedController extends Controller
         return view("admin.bed.bed");
     }
 
+    public function store(Request $request){
+        Bed::create([
+            "room" => $request->room,
+            "man" => $request->man,
+            "woman" => $request->woman,
+        ]);
+
+        return response()->json(['status' => 'success', 'message' => 'Berhasil Menambahkan Data.']);
+    }
+
     public function update(Request $request, $id){
         $bed = Bed::findOrFail($id);
 
@@ -72,6 +82,7 @@ class BedController extends Controller
             'woman' => $request->woman,
         ]);
 
-        return response()->json(['status' => 'success', 'message' => 'Berhasil Update Data.']);
+        return response()->json(['status' => 'success', 'message' => 'Berhasil Mengedit Data.']);
     }
+
 }

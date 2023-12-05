@@ -49,6 +49,7 @@ Route::middleware(['auth'])->group(function (){
         
         //Bed Route
         Route::get('/bed', [BedController::class,'index'])->name('beds.index');
+        Route::post('/bed', [BedController::class,'store']);
         Route::patch('/bed/{id}', [BedController::class,'update']);
     });
 

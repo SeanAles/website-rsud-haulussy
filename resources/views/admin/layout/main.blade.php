@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="{{ asset("plugins/toastr/toastr.min.css") }}">
   @yield("link")
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -40,8 +41,8 @@
       </li>
     </ul>
 
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto mb-3">
+    
+    <ul class="navbar-nav mb-3">
       <!-- Navbar Search -->
       <li class="nav-item">
         <a class="nav-link" href="/logout" role="button">
