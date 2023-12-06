@@ -93,13 +93,20 @@ class PostController extends Controller
         $description = $dom->saveHTML();
         $slug = Str::random(30);
 
-        // $thumbnail = "/images/posts/thumbnail/" . time() . $request->file("thumbnail")->getClientOriginalExtension();
-        // file_put_contents(public_path() . $thumbnail, $request->file("thumbnail"));
-
+        
+        $thumbnail = "";
+        if($request->file("thumbnail")){
+            // $thumbnail = "/images/posts/thumbnail/" . time() . "." . $request->file("thumbnail")->extension();
+            // file_put_contents(public_path() . $thumbnail, $request->file("thumbnail"));
+            $file = $request->file('thumbnail');
+            $thumbnail  = time(). "." . $file->extension();
+            $file->storeAs('images/posts/thumbnails/', $thumbnail);
+        }
+        
         $post = Post::create([
             'title' => $request->title,
             'author' => $request->author,
-            // 'thumbnail' => $thumbnail,
+            'thumbnail' => $thumbnail,
             'description' => $description,
             'slug' => $slug,
             'user_id' => $request->user_id,
