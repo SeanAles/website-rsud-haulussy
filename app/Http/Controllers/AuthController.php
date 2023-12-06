@@ -18,6 +18,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
             $user = User::where('email', 'like', $request->email)->first();
             if($user->role_id == 1){
                 return response()->json(['redirect_url' => '/dashboard']);

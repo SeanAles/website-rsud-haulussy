@@ -81,7 +81,7 @@
                 } else {
                     $.ajax({
                         type: 'POST',
-                        url: '/login', // Ganti dengan URL endpoint login di backend Laravel
+                        url: '/login',
                         data: {
                             email: email,
                             password: password,
@@ -91,7 +91,7 @@
                             window.location.href = response.redirect_url;
                         },
                         error: function(xhr, status, error) {
-                          const errorMessage = xhr.responseJSON.message; // Misalnya, pesan error dari server
+                          const errorMessage = xhr.responseJSON.message;
                           toastr.error(errorMessage);
                         }
                     });

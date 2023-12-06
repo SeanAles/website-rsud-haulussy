@@ -29,6 +29,8 @@
   @yield("link")
 </head>
 
+@yield("style")
+
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -58,15 +60,15 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ asset("images/maluku.png") }}" class="brand-image" style="opacity: .8">
-      <span class="brand-text font-weight-light">| RSUD Dr. M Haulussy</span>
+      <span class="brand-text font-weight-light">| RSUD dr. M. Haulussy</span>
     </a>
-
+    
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ asset('dist/img/avatar5.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">{{ Auth::user()->name }}</a>
@@ -99,6 +101,14 @@
                   <i class="nav-icon fas fa-bed"></i>
                   <p>
                     Ketersediaan Bed
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-images"></i>
+                  <p>
+                    Galeri Kegiatan
                   </p>
                 </a>
               </li>
@@ -155,7 +165,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright 2023 RSUD Dr. M Haulussy.</strong>
+    <strong>Copyright 2023 RSUD dr. M. Haulussy Ambon.</strong>
   </footer>
 
   <!-- Control Sidebar -->

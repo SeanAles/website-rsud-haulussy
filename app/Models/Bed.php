@@ -11,7 +11,6 @@ class Bed extends Model
 
     protected $fillable = [
         "room",
-        "man",
-        "woman",
+        "availability",
     ];
 }

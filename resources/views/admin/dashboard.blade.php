@@ -24,16 +24,31 @@
       <!-- small box -->
       <div class="small-box bg-success">
         <div class="inner">
-          <h3>1</h3>
-          <p>Akun Admin</p>
+          <h3>{{ $countBed }}</h3>
+          <p>Ketersediaan Bed</p>
         </div>
         <div class="icon">
-          <i class="fas fa-lock"></i>
+          <i class="fas fa-bed"></i>
         </div>
-        <a href="/post" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="/bed" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
+    <div class="col-lg-3 col-6">
+      <!-- small box -->
+      <div class="small-box bg-danger">
+        <div class="inner">
+          <h3>0</h3>
+          <p>Galeri Kegiatan</p>
+        </div>
+        <div class="icon">
+          <i class="fas fa-images"></i>
+        </div>
+        <a href="#" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+    <!-- ./col -->
+
     <div class="col-lg-3 col-6">
       <!-- small box -->
       <div class="small-box bg-warning">
@@ -45,20 +60,6 @@
           <i class="ion ion-person-add"></i>
         </div>
         <a href="/post" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a> 
-      </div>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-6">
-      <!-- small box -->
-      <div class="small-box bg-danger">
-        <div class="inner">
-          <h3>0</h3>
-          <p>Vote</p>
-        </div>
-        <div class="icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <a href="/post" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->

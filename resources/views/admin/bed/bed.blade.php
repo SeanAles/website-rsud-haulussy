@@ -32,16 +32,12 @@
                         @csrf
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="man">Nama Ruangan</label>
+                                <label for="room">Nama Ruangan</label>
                                 <input type="text" class="form-control" name="room" id="room">
                             </div>
                             <div class="form-group">
-                                <label for="man">Laki-Laki</label>
-                                <input type="number" min="0" class="form-control" name="man" id="man">
-                            </div>
-                            <div class="form-group">
-                                <label for="woman">Perempuan</label>
-                                <input type="number" min="0" class="form-control" name="woman" id="woman">
+                                <label for="availability">Ketersediaan</label>
+                                <input type="number" min="0" class="form-control" name="availability" id="availability">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -60,8 +56,7 @@
                 <tr>
                     <th>#</th>
                     <th>Nama Ruangan</th>
-                    <th>Laki-Laki</th>
-                    <th>Perempuan</th>
+                    <th>Tersedia</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -112,12 +107,8 @@
                         name: 'room'
                     },
                     {
-                        data: 'man',
-                        name: 'man'
-                    },
-                    {
-                        data: 'woman',
-                        name: 'woman'
+                        data: 'availability',
+                        name: 'availability'
                     },
                     {
                         data: 'action',
@@ -130,13 +121,10 @@
         }
 
         function updateBed(id) {
-            const man = $('#man'+id).val();
-            const woman = $('#woman'+id).val();
+            const availability = $('#availability'+id).val();
 
-            if (man === '') {
+            if (availability === '') {
                 toastr.error("Ketersediaan Laki-laki harus diisi");
-            } else if (woman === '') {
-                toastr.error("Ketersediaan Perempuan harus diisi");
             } else {
                 $.ajax({
                     type: 'PATCH',
@@ -158,15 +146,12 @@
 
         function addBed() {
             const room = $('#room').val();
-            const man = $('#man').val();
-            const woman = $('#woman').val();
+            const availability = $('#availability').val();
 
             if (room === '') {
                 toastr.error("Nama ruangan harus diisi");
-            } else if (man === '') {
+            } else if (availability === '') {
                 toastr.error("Ketersediaan Laki-laki harus diisi");
-            } else if (woman === '') {
-                toastr.error("Ketersediaan Perempuan harus diisi");
             } else {
                 $.ajax({
                     type: 'POST',
@@ -177,8 +162,7 @@
                         $('.data-table').DataTable().ajax.reload();
                         toastr.success(response.message);
                         $('#room').val('');
-                        $('#man').val('');
-                        $('#woman').val('');
+                        $('#availability').val('');
                     },
                     error: function(error) {
                         $('#cancelAddBed').click();
@@ -187,7 +171,23 @@
                     }
                 });
             }
+        }
 
+        function deleteBed(id) {
+            $.ajax({
+                type: 'DELETE',
+                url: '/bed/' + id,
+                data: $('#formDeleteBed' + id).serialize(),
+                success: function(response) {
+                    $('#cancelDeleteBed' + id).click();
+                    $('.data-table').DataTable().ajax.reload();
+                    toastr.success(response.message);
+                },
+                error: function(error) {
+                    const errorMessage = xhr.responseJSON.message;
+                    toastr.error(errorMessage);
+                }
+            });
         }
     </script>
 @endsection
