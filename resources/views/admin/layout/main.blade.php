@@ -89,12 +89,31 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/post" class="nav-link">
-                  <i class="nav-icon fas fa-newspaper"></i>
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-folder"></i>
                   <p>
-                   Postingan
+                    Postingan
+                    <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
+                <ul class="nav nav-treeview pl-3">
+                  <li class="nav-item">
+                    <a href="/post" class="nav-link">
+                      <i class="nav-icon fas fa-book"></i>
+                      <p>
+                       Artikel
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/post" class="nav-link">
+                      <i class="nav-icon fas fa-newspaper"></i>
+                      <p>
+                       Berita
+                      </p>
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a href="/bed" class="nav-link">
