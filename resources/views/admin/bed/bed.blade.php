@@ -43,7 +43,7 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal"
                                 id="cancelAddBed">Batal</button>
-                            <button type="button" onclick="addBed()" class="btn btn-success">Tambahkan</button>
+                            <button type="button" onclick="addBed()" class="btn btn-success" id="addBedButton">Tambahkan</button>
                         </div>
                     </form>
                 </div>
@@ -126,6 +126,7 @@
             if (availability === '') {
                 toastr.error("Ketersediaan Laki-laki harus diisi");
             } else {
+                document.getElementById("updateBedButton").disabled = true;
                 $.ajax({
                     type: 'PATCH',
                     url: '/bed/' + id,
@@ -134,11 +135,13 @@
                         $('#cancelUpdateBed' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.success(response.message);
+                        document.getElementById("updateBedButton").disabled = false;
                     },
                     error: function(error) {
                         $('#cancelUpdateBed' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.error("Error");
+                        document.getElementById("updateBedButton").disabled = false;
                     }
                 });
             }
@@ -153,6 +156,7 @@
             } else if (availability === '') {
                 toastr.error("Ketersediaan Laki-laki harus diisi");
             } else {
+                document.getElementById("addBedButton").disabled = true;
                 $.ajax({
                     type: 'POST',
                     url: '/bed',
@@ -163,17 +167,21 @@
                         toastr.success(response.message);
                         $('#room').val('');
                         $('#availability').val('');
+                        document.getElementById("addBedButton").disabled = false;
                     },
                     error: function(error) {
                         $('#cancelAddBed').click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.error("Error");
+                        document.getElementById("addBedButton").disabled = false;
                     }
                 });
             }
         }
 
         function deleteBed(id) {
+            document.getElementById("deleteBedButton").disabled = true;
+            
             $.ajax({
                 type: 'DELETE',
                 url: '/bed/' + id,
@@ -182,10 +190,12 @@
                     $('#cancelDeleteBed' + id).click();
                     $('.data-table').DataTable().ajax.reload();
                     toastr.success(response.message);
+                    document.getElementById("deleteBedButton").disabled = false;
                 },
                 error: function(error) {
                     const errorMessage = xhr.responseJSON.message;
                     toastr.error(errorMessage);
+                    document.getElementById("deleteBedButton").disabled = false;
                 }
             });
         }

@@ -26,7 +26,8 @@
             <label for="description">Konten</label>
             <textarea name="description" id="description" cols="30" rows="10"></textarea>
 
-            <button type="button" onclick="addPostingan()" class="btn btn-success mt-1 mb-3">Posting</button>
+            <button type="button" onclick="addPostingan()" class="btn btn-success mt-1 mb-3"
+                id="addPostinganButton">Posting</button>
         </form>
     </div>
 @endsection
@@ -53,6 +54,7 @@
         });
 
         function addPostingan() {
+            
             const user_id = $('#user_id').val();
             const title = $('#title').val();
             const author = $('#author').val();
@@ -72,6 +74,8 @@
             } else if (description === '') {
                 toastr.error("Konten harus diisi");
             } else {
+                document.getElementById("addPostinganButton").disabled = true;
+                
                 let formData = new FormData();
                 formData.append('thumbnail', thumbnail);
                 formData.append("user_id", user_id);
@@ -95,6 +99,7 @@
                     error: function(error) {
                         const errorMessage = xhr.responseJSON.message;
                         toastr.error(errorMessage);
+                        document.getElementById("addPostinganButton").disabled = false;
                     }
                 });
             }

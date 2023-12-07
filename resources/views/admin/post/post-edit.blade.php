@@ -18,7 +18,7 @@
             <label for="description">Konten</label>
             <textarea name="description" id="description" cols="30" rows="10">{{ $post->description }}</textarea>
 
-            <button type="button" onclick="editPostingan({{ $post->id }})" class="btn btn-success mt-1">Simpan</button>
+            <button type="button" onclick="editPostingan({{ $post->id }})" class="btn btn-success mt-1" id="editPostinganButton">Simpan</button>
         </form>
     </div>
 @endsection
@@ -56,6 +56,7 @@
             } else if (description === '') {
                 toastr.error("Konten harus diisi");
             } else {
+                document.getElementById("editPostinganButton").disabled = true;
                 $.ajax({
                     type: 'PATCH',
                     url: '/post/' + id, 
@@ -66,6 +67,7 @@
                     error: function(error) {
                         const errorMessage = xhr.responseJSON.message;
                         toastr.error(errorMessage);
+                        document.getElementById("editPostinganButton").disabled = false;
                     }
                 });
             }

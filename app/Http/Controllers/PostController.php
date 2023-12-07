@@ -50,7 +50,7 @@ class PostController extends Controller
                                 <button type="button" id="cancelDeletePost'.$post->id.'" class="btn btn-primary" data-dismiss="modal">Batal</button>
                                 <form id="formDeletePost'.$post->id.'">
                                     <input type="hidden" name="_token" value="' . csrf_token() . '" /> 
-                                    <button type="button" onclick="deletePostingan('.$post->id.')" class="btn btn-danger">Hapus</button>
+                                    <button type="button" onclick="deletePostingan('.$post->id.')" class="btn btn-danger" id="deletePostinganButton">Hapus</button>
                                 </form>
                             </div>
                         </div>
@@ -96,11 +96,7 @@ class PostController extends Controller
         
         $thumbnail = "";
         if($request->file("thumbnail")){
-            // $thumbnail = "/images/posts/thumbnail/" . time() . "." . $request->file("thumbnail")->extension();
-            // file_put_contents(public_path() . $thumbnail, $request->file("thumbnail"));
-            $file = $request->file('thumbnail');
-            $thumbnail  = time(). "." . $file->extension();
-            $file->storeAs('images/posts/thumbnails/', $thumbnail);
+            $thumbnail  = time(). "." . $request->file("thumbnail")->extension();
         }
         
         $post = Post::create([
@@ -111,6 +107,9 @@ class PostController extends Controller
             'slug' => $slug,
             'user_id' => $request->user_id,
         ]);
+
+        $file = $request->file('thumbnail');
+        $file->storeAs('images/posts/thumbnails/', $thumbnail);
 
         if ($post) {
             return response()->json(['redirect_url' => '/post']);
@@ -180,6 +179,11 @@ class PostController extends Controller
             if (File::exists($path)) {
                 File::delete($path);
             }
+        }
+
+        $pathThumbnail = public_path()."/images/posts/thumbnails/".$post->thumbnail;
+        if (File::exists($pathThumbnail)) {
+            File::delete($pathThumbnail);
         }
 
         $deletePost = $post->delete();

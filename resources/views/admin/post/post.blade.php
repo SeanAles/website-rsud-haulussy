@@ -80,6 +80,7 @@
         });
 
         function deletePostingan(id) {
+            document.getElementById("deletePostinganButton").disabled = true;
             $.ajax({
                 type: 'DELETE',
                 url: '/post/' + id,
@@ -88,10 +89,12 @@
                     $('#cancelDeletePost' + id).click();
                     $('.data-table').DataTable().ajax.reload();
                     toastr.success(response.message);
+                    document.getElementById("deletePostinganButton").disabled = false;
                 },
                 error: function(error) {
                     const errorMessage = xhr.responseJSON.message;
                     toastr.error(errorMessage);
+                    document.getElementById("deletePostinganButton").disabled = false;
                 }
             });
         }
