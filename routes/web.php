@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BedController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\NewsController;
 use App\Models\Bed;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,8 @@ Route::get('/', function () {
 });
 
 // Artikel
-Route::get('/artikel/{slug}', [PostController::class, 'showArtikel']);
+Route::get('/baca-artikel/{slug}', [ArticleController::class, 'showArtikel']);
+Route::get('/baca-berita/{slug}', [NewsController::class, 'showNews']);
 
 Route::middleware(['guest'])->group(function (){
     Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -44,14 +46,23 @@ Route::middleware(['auth'])->group(function (){
             ]); 
         });
         
-        //Postingan Route
-        Route::get('/post', [PostController::class, 'index'])->name('posts.index');
-        Route::get('/post-add', [PostController::class, 'create']);
-        Route::get('/post/{id}', [PostController::class, 'show']);
-        Route::post('/post', [PostController::class, 'store']);
-        Route::get('/post-edit/{id}', [PostController::class, 'edit']);
-        Route::patch('/post/{id}', [PostController::class, 'update']);
-        Route::delete('/post/{id}', [PostController::class, 'destroy']);
+        //Article Route
+        Route::get('/article', [ArticleController::class, 'index'])->name('article.index');
+        Route::get('/article-add', [ArticleController::class, 'create']);
+        Route::post('/article', [ArticleController::class, 'store']);
+        Route::get('/article/{id}', [ArticleController::class, 'show']);
+        Route::get('/article-edit/{id}', [ArticleController::class, 'edit']);
+        Route::patch('/article/{id}', [ArticleController::class, 'update']);
+        Route::delete('/article/{id}', [ArticleController::class, 'destroy']);
+
+        //News Route
+        Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+        Route::get('/news-add', [NewsController::class, 'create']);
+        Route::post('/news', [NewsController::class, 'store']);
+        Route::get('/news/{id}', [NewsController::class, 'show']);
+        Route::get('/news-edit/{id}', [NewsController::class, 'edit']);
+        Route::patch('/news/{id}', [NewsController::class, 'update']);
+        Route::delete('/news/{id}', [NewsController::class, 'destroy']);
         
         //Bed Route
         Route::get('/bed', [BedController::class,'index'])->name('beds.index');
@@ -68,3 +79,4 @@ Route::middleware(['auth'])->group(function (){
    
     Route::get('/logout', [AuthController::class, 'logout']);
 });
+  

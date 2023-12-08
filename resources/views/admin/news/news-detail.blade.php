@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
 
-@section('title', 'Detail Postingan')
+@section('title', 'Detail Berita')
 
 @section('link')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -14,46 +14,46 @@
     <div class="container">
         <table class="table table-bordered">
             <tr>
-                <td>Judul</td>
-                <td><b>{{ $post->title }}</b></td>
+                <td>Judul Berita</td>
+                <td><b>{{ $news->title }}</b></td>
             </tr>
             <tr>
-                <td>Author</td>
-                <td><b>{{ $post->author }}</b></td>
+                <td>Pembuat Berita</td>
+                <td><b>{{ $news->author }}</b></td>
             </tr>
             <tr>
                 <td>Diposting Oleh</td>
-                <td><b>{{ $post->user->name }}</b></td>
+                <td><b>{{ $news->user->name }}</b></td>
             </tr>
             <tr>
                 <td>Tanggal Diposting</td>
-                <td><b>{{ $post->created_at->format('d F Y (H:i)') }}</b></td>
+                <td><b>{{ $news->created_at->format('d F Y (H:i)') }}</b></td>
             </tr>
             <tr>
-                <td>Slug</td>
-                <td><b>{{ $post->slug }}</b></td>
+                <td>Slug Berita</td>
+                <td><b>{{ $news->slug }}</b></td>
             </tr>
 
         </table>
 
         <table class="table table-bordered mt-2">
             <tr>
-                <td class="text-center"><b>Thumbnail</b></td>
+                <td class="text-center"><b>Thumbnail Berita</b></td>
             </tr>
             <tr>
                 <td>
-                   <img src="{{ asset("images/posts/thumbnails/$post->thumbnail") }}">
+                   <img src="{{ asset("images/news/thumbnails/$news->thumbnail") }}">
                 </td>
             </tr>
         </table>
 
         <table class="table table-bordered mt-2">
             <tr>
-                <td colspan="2" class="text-center"><b>Konten</b></td>
+                <td colspan="2" class="text-center"><b>Konten Berita</b></td>
             </tr>
             <tr>
                 <td>
-                    {!! $post->description !!}
+                    {!! $news->description !!}
                 </td>
             </tr>
         </table>

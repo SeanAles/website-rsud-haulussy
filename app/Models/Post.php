@@ -15,7 +15,8 @@ class Post extends Model
         "thumbnail",
         "author",
         "slug",
-        "user_id"
+        "user_id",
+        "category"
     ];
 
     /**

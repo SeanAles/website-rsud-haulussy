@@ -1,5 +1,5 @@
 @extends('admin.layout.main')
-@section('title', 'Buat Postingan')
+@section('title', 'Buat Artikel')
 
 @section('link')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -7,27 +7,28 @@
 
 @section('content')
     <div class="container">
-        <form id="formAddPost" enctype="multipart/form-data">
+        <form id="formAddArticle" enctype="multipart/form-data">
             <input type="hidden" id="user_id" name="user_id" value={{ Auth::user()->id }}>
             <div class="form-group">
-                <label for="title">Judul Postingan</label>
+                <label for="title">Judul Artikel</label>
                 <input type="text" class="form-control" name="title" id="title"
-                    placeholder="Masukkan Judul Postingan...">
+                    placeholder="Masukkan Judul Artikel...">
             </div>
             <div class="form-group">
-                <label for="author">Author</label>
+                <label for="author">Pembuat Artikel</label>
                 <input type="text" class="form-control" name="author" id="author"
-                    placeholder="Masukkan Pembuat Postingan">
+                    placeholder="Masukkan Pembuat Artikel">
             </div>
             <div class="form-group">
-                <label for="thumbnail">Thumbnail</label>
+                <label for="thumbnail">Thumbnail Artikel</label>
                 <input type="file" name="thumbnail" id="thumbnail" class="pb-5 pt-3 form-control">
             </div>
-            <label for="description">Konten</label>
+            <label for="description">Konten Artikel</label>
             <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <input type="hidden" id="category" name="category" value="article">
 
-            <button type="button" onclick="addPostingan()" class="btn btn-success mt-1 mb-3"
-                id="addPostinganButton">Posting</button>
+            <button type="button" onclick="addArticle()" class="btn btn-success mt-1 mb-3"
+                id="addArticleButton">Posting</button>
         </form>
     </div>
 @endsection
@@ -36,7 +37,7 @@
     <script>
         $(function() {
             $("#description").summernote({
-                placeholder: 'Silahkan Tulis Konten Postingan...',
+                placeholder: 'Silahkan Tulis Konten Artikel...',
                 tabsize: 2,
                 height: 300,
                 toolbar: [
@@ -53,9 +54,9 @@
             });
         });
 
-        function addPostingan() {
-            
+        function addArticle() {
             const user_id = $('#user_id').val();
+            const category = $('#category').val();
             const title = $('#title').val();
             const author = $('#author').val();
             const description = $('#description').val();
@@ -64,17 +65,17 @@
             const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
 
             if (title === '') {
-                toastr.error("Judul harus diisi");
+                toastr.error("Judul artikel harus diisi");
             } else if (author === '') {
-                toastr.error("Author harus diisi");
+                toastr.error("Author artikel harus diisi");
             } else if (!thumbnail) {
-                toastr.error("Thumbnail harus diisi");
+                toastr.error("Thumbnail artikel harus diisi");
             } else if (!allowedExtensions.exec(thumbnail.name)) {
-                toastr.error("Thumbnail harus memiliki ekstensi (JPG / JPEG/ PNG)");
+                toastr.error("Thumbnail artikel harus memiliki ekstensi (JPG / JPEG/ PNG)");
             } else if (description === '') {
-                toastr.error("Konten harus diisi");
+                toastr.error("Konten artikel harus diisi");
             } else {
-                document.getElementById("addPostinganButton").disabled = true;
+                document.getElementById("addArticleButton").disabled = true;
                 
                 let formData = new FormData();
                 formData.append('thumbnail', thumbnail);
@@ -82,11 +83,12 @@
                 formData.append("title", title);
                 formData.append("author", author);
                 formData.append("description", description);
+                formData.append("category", category);
 
                 const csrfToken = $('meta[name=csrf-token]').attr('content');
                 $.ajax({
                     type: 'POST',
-                    url: '/post',
+                    url: '/article',
                     data: formData,
                     contentType: false,
                     processData: false,
@@ -99,7 +101,7 @@
                     error: function(error) {
                         const errorMessage = xhr.responseJSON.message;
                         toastr.error(errorMessage);
-                        document.getElementById("addPostinganButton").disabled = false;
+                        document.getElementById("addArticleButton").disabled = false;
                     }
                 });
             }

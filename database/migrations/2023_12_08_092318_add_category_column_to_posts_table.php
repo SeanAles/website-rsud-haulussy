@@ -12,17 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->text('slug')->after('description');
+            $table->text('category')->after('user_id');
         });
     }
 
     /**
-     * ReveSrse the migrations.
+     * Reverse the migrations.
      */
     public function down(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn('slug');
+            $table->dropColumn('category');
         });
     }
 };

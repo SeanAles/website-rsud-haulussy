@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
 
-@section('title', 'Postingan')
+@section('title', 'Artikel')
 
 @section('link')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -9,10 +9,9 @@
     <link href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
 @endsection
 
-
 @section('content')
     <div class="container">
-        <a class="btn btn-success" href="/post-add">Buat Postingan</a>
+        <a class="btn btn-success" href="/article-add">Buat Artikel</a>
         <!-- Button trigger modal -->
 
         <hr>
@@ -55,7 +54,7 @@
             serverSide: true,
             responsive: true,
             autoWidth: false,
-            ajax: "{{ route('posts.index') }}",
+            ajax: "{{ route('article.index') }}",
             columns: [{
                     data: 'DT_RowIndex',
                     'orderable': false,
@@ -79,22 +78,22 @@
             ]
         });
 
-        function deletePostingan(id) {
-            document.getElementById("deletePostinganButton").disabled = true;
+        function deleteArticle(id) {
+            document.getElementById("deleteArticleButton").disabled = true;
             $.ajax({
                 type: 'DELETE',
-                url: '/post/' + id,
-                data: $('#formDeletePost' + id).serialize(),
+                url: '/article/' + id,
+                data: $('#formDeleteArticle' + id).serialize(),
                 success: function(response) {
-                    $('#cancelDeletePost' + id).click();
+                    $('#cancelDeleteArticle' + id).click();
                     $('.data-table').DataTable().ajax.reload();
                     toastr.success(response.message);
-                    document.getElementById("deletePostinganButton").disabled = false;
+                    document.getElementById("deleteArticleButton").disabled = false;
                 },
                 error: function(error) {
                     const errorMessage = xhr.responseJSON.message;
                     toastr.error(errorMessage);
-                    document.getElementById("deletePostinganButton").disabled = false;
+                    document.getElementById("deleteArticleButton").disabled = false;
                 }
             });
         }

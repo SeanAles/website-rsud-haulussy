@@ -1,24 +1,24 @@
 @extends('admin.layout.main')
-@section('title', 'Edit Postingan | ' . $post->id)
+@section('title', 'Edit Berita')
 
 @section('content')
 
     <div class="container">
-        <form id="formEditPost">
+        <form id="formEditNews">
             @csrf
             <div class="form-group">
-                <label for="title">Judul Postingan</label>
-                <input type="text" class="form-control" name="title" id="title" value="{{ $post->title }}">
+                <label for="title">Judul Berita</label>
+                <input type="text" class="form-control" name="title" id="title" value="{{ $news->title }}">
             </div>
             <div class="form-group">
-                <label for="author">Author</label>
-                <input type="text" class="form-control" name="author" id="author" value="{{ $post->author }}">
+                <label for="author">Pembuat Berita</label>
+                <input type="text" class="form-control" name="author" id="author" value="{{ $news->author }}">
             </div>
 
-            <label for="description">Konten</label>
-            <textarea name="description" id="description" cols="30" rows="10">{{ $post->description }}</textarea>
+            <label for="description">Konten Berita</label>
+            <textarea name="description" id="description" cols="30" rows="10">{{ $news->description }}</textarea>
 
-            <button type="button" onclick="editPostingan({{ $post->id }})" class="btn btn-success mt-1" id="editPostinganButton">Simpan</button>
+            <button type="button" onclick="editNews({{ $news->id }})" class="btn btn-success mt-1" id="editNewsButton">Simpan</button>
         </form>
     </div>
 @endsection
@@ -27,7 +27,7 @@
     <script>
         $(function() {
             $("#description").summernote({
-                placeholder: 'Silahkan Tulis Konten Postingan...',
+                placeholder: 'Silahkan Tulis Konten Berita...',
                 tabsize: 2,
                 height: 300,
                 toolbar: [
@@ -44,30 +44,30 @@
             });
         });
 
-        function editPostingan(id) {
+        function editNews(id) {
             const title = $('#title').val();
             const author = $('#author').val();
             const description = $('#description').val();
 
             if (title === '') {
-                toastr.error("Judul harus diisi");
+                toastr.error("Judul Berita harus diisi");
             } else if (author === '') {
-                toastr.error("Author harus diisi");
+                toastr.error("Pembuat Berita harus diisi");
             } else if (description === '') {
-                toastr.error("Konten harus diisi");
+                toastr.error("Konten Berita harus diisi");
             } else {
-                document.getElementById("editPostinganButton").disabled = true;
+                document.getElementById("editNewsButton").disabled = true;
                 $.ajax({
                     type: 'PATCH',
-                    url: '/post/' + id, 
-                    data: $('#formEditPost').serialize(),
+                    url: '/news/' + id, 
+                    data: $('#formEditNews').serialize(),
                     success: function(response) {
                         window.location.href = response.redirect_url;
                     },
                     error: function(error) {
                         const errorMessage = xhr.responseJSON.message;
                         toastr.error(errorMessage);
-                        document.getElementById("editPostinganButton").disabled = false;
+                        document.getElementById("editNewsButton").disabled = false;
                     }
                 });
             }

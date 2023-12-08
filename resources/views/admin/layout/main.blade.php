@@ -98,7 +98,7 @@
                 </a>
                 <ul class="nav nav-treeview pl-3">
                   <li class="nav-item">
-                    <a href="/post" class="nav-link">
+                    <a href="/article" class="nav-link">
                       <i class="nav-icon fas fa-book"></i>
                       <p>
                        Artikel
@@ -106,7 +106,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="/post" class="nav-link">
+                    <a href="/news" class="nav-link">
                       <i class="nav-icon fas fa-newspaper"></i>
                       <p>
                        Berita
