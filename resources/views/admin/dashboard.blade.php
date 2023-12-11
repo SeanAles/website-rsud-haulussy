@@ -10,27 +10,13 @@
       <!-- small box -->
       <div class="small-box bg-info">
         <div class="inner">
-          <h3> {{ $countPost }} </h3>
-          <p>Postingan</p>
+          <h3> {{ $articleCount }} </h3>
+          <p>Artikel</p>
         </div>
         <div class="icon">
-          <i class="fas fa-newspaper"></i>
+          <i class="fas fa-book"></i>
         </div>
-        <a href="/post" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a>
-      </div>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-6">
-      <!-- small box -->
-      <div class="small-box bg-success">
-        <div class="inner">
-          <h3>{{ $countBed }}</h3>
-          <p>Ketersediaan Bed</p>
-        </div>
-        <div class="icon">
-          <i class="fas fa-bed"></i>
-        </div>
-        <a href="/bed" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="/article" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -38,28 +24,41 @@
       <!-- small box -->
       <div class="small-box bg-danger">
         <div class="inner">
+          <h3>{{ $newsCount }}</h3>
+          <p>Berita</p>
+        </div>
+        <div class="icon">
+          <i class="fas fa-newspaper"></i>
+        </div>
+        <a href="/news" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-success">
+          <div class="inner">
+            <h3>{{ $bedCount }}</h3>
+            <p>Ketersediaan Bed</p>
+          </div>
+          <div class="icon">
+            <i class="fas fa-bed"></i>
+          </div>
+          <a href="/bed" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+      <!-- small box -->
+      <div class="small-box bg-warning">
+        <div class="inner">
           <h3>0</h3>
           <p>Galeri Kegiatan</p>
         </div>
         <div class="icon">
           <i class="fas fa-images"></i>
         </div>
-        <a href="#" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a>
-      </div>
-    </div>
-    <!-- ./col -->
-
-    <div class="col-lg-3 col-6">
-      <!-- small box -->
-      <div class="small-box bg-warning">
-        <div class="inner">
-          <h3>0</h3>
-          <p>Akun User</p>
-        </div>
-        <div class="icon">
-          <i class="ion ion-person-add"></i>
-        </div>
-        <a href="/post" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a> 
+        <a href="/galery" class="small-box-footer">Lebih Detail <i class="fas fa-arrow-circle-right"></i></a> 
       </div>
     </div>
     <!-- ./col -->

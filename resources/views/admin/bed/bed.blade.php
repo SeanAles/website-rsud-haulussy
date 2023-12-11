@@ -11,8 +11,8 @@
 
 @section('content')
     <div class="container">
-        <button type="button" class="update btn btn-success btn-sm" data-toggle="modal" data-target="#addBedModal">
-            Tambahkan
+        <button type="button" class="update btn btn-success" data-toggle="modal" data-target="#addBedModal">
+            Tambahkan Ruangan
         </button>
 
         {{-- Tambahkan Bed Modal --}}

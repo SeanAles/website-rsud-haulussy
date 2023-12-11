@@ -20,8 +20,17 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             $user = User::where('email', 'like', $request->email)->first();
-            if($user->role_id == 1){
+            if($user->role_id === 1 || $user->role_id === 2){
                 return response()->json(['redirect_url' => '/dashboard']);
+            }
+            if($user->role_id === 3){
+                return response()->json(['redirect_url' => '/bed']);
+            }
+            if($user->role_id === 4){
+                return response()->json(['redirect_url' => '/article']);
+            }
+            if($user->role_id === 5){
+                return response()->json(['redirect_url' => '/news']);
             }
         } 
         
