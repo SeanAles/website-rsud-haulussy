@@ -126,7 +126,7 @@
             if (availability === '') {
                 toastr.error("Ketersediaan Laki-laki harus diisi");
             } else {
-                document.getElementById("updateBedButton").disabled = true;
+                document.getElementById("updateBedButton"+id).disabled = true;
                 $.ajax({
                     type: 'PATCH',
                     url: '/bed/' + id,
@@ -135,13 +135,13 @@
                         $('#cancelUpdateBed' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.success(response.message);
-                        document.getElementById("updateBedButton").disabled = false;
+                        document.getElementById("updateBedButton"+id).disabled = false;
                     },
                     error: function(error) {
                         $('#cancelUpdateBed' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.error("Error");
-                        document.getElementById("updateBedButton").disabled = false;
+                        document.getElementById("updateBedButton"+id).disabled = false;
                     }
                 });
             }
@@ -180,7 +180,7 @@
         }
 
         function deleteBed(id) {
-            document.getElementById("deleteBedButton").disabled = true;
+            document.getElementById("deleteBedButton"+id).disabled = true;
             
             $.ajax({
                 type: 'DELETE',
@@ -190,12 +190,12 @@
                     $('#cancelDeleteBed' + id).click();
                     $('.data-table').DataTable().ajax.reload();
                     toastr.success(response.message);
-                    document.getElementById("deleteBedButton").disabled = false;
+                    document.getElementById("deleteBedButton"+id).disabled = false;
                 },
                 error: function(error) {
                     const errorMessage = xhr.responseJSON.message;
                     toastr.error(errorMessage);
-                    document.getElementById("deleteBedButton").disabled = false;
+                    document.getElementById("deleteBedButton"+id).disabled = false;
                 }
             });
         }

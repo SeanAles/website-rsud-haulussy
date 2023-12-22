@@ -46,7 +46,7 @@ class BedController extends Controller
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelUpdateBed' . $bed->id . '">Batal</button>
-                                        <button type="button" onclick="updateBed(' . $bed->id . ')" class="btn btn-success" id="updateBedButton">Update</button>  
+                                        <button type="button" onclick="updateBed(' . $bed->id . ')" class="btn btn-success" id="updateBedButton'.$bed->id.'">Update</button>  
                                     </div>
                                 </form>
                             </div>
@@ -73,7 +73,7 @@ class BedController extends Controller
                                 <button type="button" id="cancelDeleteBed'.$bed->id.'" class="btn btn-primary" data-dismiss="modal">Batal</button>
                                 <form id="formDeleteBed'.$bed->id.'">
                                     <input type="hidden" name="_token" value="' . csrf_token() . '" /> 
-                                    <button type="button" onclick="deleteBed('.$bed->id.')" class="btn btn-danger" id="deleteBedButton">Hapus</button>
+                                    <button type="button" onclick="deleteBed('.$bed->id.')" class="btn btn-danger" id="deleteBedButton'.$bed->id.'">Hapus</button>
                                 </form>
                             </div>
                         </div>

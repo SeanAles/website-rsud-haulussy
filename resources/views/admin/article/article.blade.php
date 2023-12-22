@@ -79,7 +79,7 @@
         });
 
         function deleteArticle(id) {
-            document.getElementById("deleteArticleButton").disabled = true;
+            document.getElementById("deleteArticleButton"+id).disabled = true;
             $.ajax({
                 type: 'DELETE',
                 url: '/article/' + id,
@@ -88,12 +88,12 @@
                     $('#cancelDeleteArticle' + id).click();
                     $('.data-table').DataTable().ajax.reload();
                     toastr.success(response.message);
-                    document.getElementById("deleteArticleButton").disabled = false;
+                    document.getElementById("deleteArticleButton"+id).disabled = false;
                 },
                 error: function(error) {
                     const errorMessage = xhr.responseJSON.message;
                     toastr.error(errorMessage);
-                    document.getElementById("deleteArticleButton").disabled = false;
+                    document.getElementById("deleteArticleButton"+id).disabled = false;
                 }
             });
         }

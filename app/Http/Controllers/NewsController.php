@@ -49,7 +49,7 @@ class NewsController extends Controller
                                 <button type="button" id="cancelDeleteNews'.$news->id.'" class="btn btn-primary" data-dismiss="modal">Batal</button>
                                 <form id="formDeleteNews'.$news->id.'">
                                     <input type="hidden" name="_token" value="' . csrf_token() . '" /> 
-                                    <button type="button" onclick="deleteNews('.$news->id.')" class="btn btn-danger" id="deleteNewsButton">Hapus</button>
+                                    <button type="button" onclick="deleteNews('.$news->id.')" class="btn btn-danger" id="deleteNewsButton'.$news->id.'">Hapus</button>
                                 </form>
                             </div>
                         </div>

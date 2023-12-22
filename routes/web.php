@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\ArticleController;
@@ -36,9 +37,9 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::middleware('super.admin')->group(function () {
         //Account Route
-        Route::get('/account', function () {
-            return view('admin.account.account');
-        });
+        Route::get('account', [AccountController::class, 'index'])->name('account.index');
+        Route::patch('/account/{id}', [AccountController::class, 'update']);
+        Route::patch('/account-password/{id}', [AccountController::class, 'updatePassword']);
     });
 
     Route::middleware('admin')->group(function () {

@@ -49,7 +49,7 @@ class ArticleController extends Controller
                                 <button type="button" id="cancelDeleteArticle'.$article->id.'" class="btn btn-primary" data-dismiss="modal">Batal</button>
                                 <form id="formDeleteArticle'.$article->id.'">
                                     <input type="hidden" name="_token" value="' . csrf_token() . '" /> 
-                                    <button type="button" onclick="deleteArticle('.$article->id.')" class="btn btn-danger" id="deleteArticleButton">Hapus</button>
+                                    <button type="button" onclick="deleteArticle('.$article->id.')" class="btn btn-danger" id="deleteArticleButton'.$article->id.'">Hapus</button>
                                 </form>
                             </div>
                         </div>

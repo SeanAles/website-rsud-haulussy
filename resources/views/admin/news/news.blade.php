@@ -80,7 +80,7 @@
         });
 
         function deleteNews(id) {
-            document.getElementById("deleteNewsButton").disabled = true;
+            document.getElementById("deleteNewsButton"+id).disabled = true;
             $.ajax({
                 type: 'DELETE',
                 url: '/news/' + id,
@@ -89,12 +89,12 @@
                     $('#cancelDeleteNews' + id).click();
                     $('.data-table').DataTable().ajax.reload();
                     toastr.success(response.message);
-                    document.getElementById("deleteNewsButton").disabled = false;
+                    document.getElementById("deleteNewsButton"+id).disabled = false;
                 },
                 error: function(error) {
                     const errorMessage = xhr.responseJSON.message;
                     toastr.error(errorMessage);
-                    document.getElementById("deleteNewsButton").disabled = false;
+                    document.getElementById("deleteNewsButton"+id).disabled = false;
                 }
             });
         }
