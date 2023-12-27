@@ -27,7 +27,6 @@
         <div class="card p-4">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Login untuk memulai sesi anda</p>
-
                 <form id="formLogin">
                     @csrf
                     <div class="input-group mb-3">

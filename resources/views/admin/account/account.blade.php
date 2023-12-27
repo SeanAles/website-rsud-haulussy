@@ -11,16 +11,79 @@
 
 @section('content')
     <div class="container">
-        <a class="btn btn-success" href="#">Tambahkan Akun</a>
-        <!-- Button trigger modal -->
-        
+        <!-- Button trigger modal Add Account -->
+        <button type="button" class="mr-1 mt-1 create btn btn-success btn-md" data-toggle="modal"
+            data-target="#addAccountModal">
+            Tambahkan Akun
+        </button>
+
+
+        <!-- Add Account -->
+        <div class="modal fade" id="addAccountModal" tabindex="-1" role="dialog" aria-labelledby="addAccountModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addAccountModalLabel">Tambahkan Akun
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="formAddAccount">
+                        <div class="modal-body">
+                            @csrf
+                            <div class="form-group">
+                                <label for="name">Nama</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Nama">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" name="email" id="email"
+                                    placeholder="Email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password"
+                                    placeholder="Password" autocomplete="new-password">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password_confirmation">Konfirmasi Password</label>
+                                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"
+                                    placeholder="Konfirmasi Password" autocomplete="off">
+                            </div>
+
+                            <div class="form group">
+                                <label for="role_id">Role</label>
+                                <select class="custom-select" id="role_id" name="role_id">
+                                    @foreach ($roles as $role)
+                                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                id="cancelAddAccount">Batal</button>
+                            <button type="button" onclick="addAccount()" class="btn btn-success"
+                                id="addAccountButton">Tambahkan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
         <hr>
         <table class="table table-bordered table-responsif data-table">
             <thead>
                 <tr>
                     <th>#</th>
                     <th>Nama</th>
-                    <th>Username</th>
+                    <th>Email</th>
                     <th>Role</th>
                     <th>Action</th>
                 </tr>
@@ -83,13 +146,38 @@
             ]
         });
 
+        function addAccount() {
+            document.getElementById("addAccountButton").disabled = true;
+            $.ajax({
+                type: 'POST',
+                url: '/account',
+                data: $('#formAddAccount').serialize(),
+                success: function(response) {
+                    if (response.status === 'error') {
+                        toastr.error(response.message);
+                    } else {
+                        $('#cancelAddAccount').click();
+                        $('.data-table').DataTable().ajax.reload();
+                        toastr.success(response.message);
+                    }
+                    document.getElementById("addAccountButton").disabled = false;
+                },
+                error: function(error) {
+                    $('#cancelAddAccount').click();
+                    $('.data-table').DataTable().ajax.reload();
+                    toastr.error("Error");
+                    document.getElementById("addAccountButton").disabled = false;
+                }
+            });
+        }
+
         function updateAccount(id) {
-            const name = $('#name'+id).val();
+            const name = $('#name' + id).val();
 
             if (name === '') {
-                toastr.error("Nama Akun harus diisi");
+                toastr.error("Nama harus diisi");
             } else {
-                document.getElementById("updateAccountButton"+id).disabled = true;
+                document.getElementById("updateAccountButton" + id).disabled = true;
                 $.ajax({
                     type: 'PATCH',
                     url: '/account/' + id,
@@ -98,31 +186,30 @@
                         $('#cancelUpdateAccount' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.success(response.message);
-                        document.getElementById("updateAccountButton"+id).disabled = false;
+                        document.getElementById("updateAccountButton" + id).disabled = false;
                     },
                     error: function(error) {
                         $('#cancelUpdateAccount' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.error("Error");
-                        document.getElementById("updateAccountButton"+id).disabled = false;
+                        document.getElementById("updateAccountButton" + id).disabled = false;
                     }
                 });
             }
         }
 
         function updateAccountPassword(id) {
-            const password = $('#password'+id).val();
-            const confirmPassword = $('#confirmPassword'+id).val();
+            const password = $('#password' + id).val();
+            const confirmPassword = $('#confirmPassword' + id).val();
 
             if (password === '') {
-                toastr.error("Password harus diisi");
-            } else if(confirmPassword === ""){
-                toastr.error("Konfirmasi Password harus diisi");
-            } else if(confirmPassword !== password){
-                toastr.error("Konfirmasi Password tidak sesuai");
-            }  
-            else {
-                document.getElementById("updateAccountPasswordButton"+id).disabled = true;
+                toastr.error("Password tidak boleh kosong.");
+            } else if (confirmPassword === "") {
+                toastr.error("Konfirmasi password tidak boleh kosong.");
+            } else if (confirmPassword !== password) {
+                toastr.error("Konfirmasi password tidak sesuai.");
+            } else {
+                document.getElementById("updateAccountPasswordButton" + id).disabled = true;
                 $.ajax({
                     type: 'PATCH',
                     url: '/account-password/' + id,
@@ -131,17 +218,16 @@
                         $('#cancelUpdateAccountPassword' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.success(response.message);
-                        document.getElementById("updateAccountPasswordButton"+id).disabled = false;
+                        document.getElementById("updateAccountPasswordButton" + id).disabled = false;
                     },
                     error: function(error) {
                         $('#cancelUpdateAccountPassword' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.error("Error");
-                        document.getElementById("updateAccountPasswordButton"+id).disabled = false;
+                        document.getElementById("updateAccountPasswordButton" + id).disabled = false;
                     }
                 });
             }
         }
-        
     </script>
 @endsection

@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware('super.admin')->group(function () {
         //Account Route
         Route::get('account', [AccountController::class, 'index'])->name('account.index');
+        Route::post('account', [AccountController::class, 'create']);
         Route::patch('/account/{id}', [AccountController::class, 'update']);
         Route::patch('/account-password/{id}', [AccountController::class, 'updatePassword']);
     });
