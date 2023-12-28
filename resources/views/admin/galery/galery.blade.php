@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
 
-@section('title', 'Akun')
+@section('title', 'Galeri Kegiatan')
 
 @section('link')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -11,64 +11,37 @@
 
 @section('content')
     <div class="container">
-        <!-- Button trigger modal Add Account -->
+        <!-- Button trigger modal Add Galery -->
         <button type="button" class="mr-1 mt-1 create btn btn-success btn-md" data-toggle="modal"
-            data-target="#addAccountModal">
-            Tambahkan Akun
+            data-target="#addGaleryModal">
+            Tambahkan Galeri
         </button>
 
-        <!-- Add Account -->
-        <div class="modal fade" id="addAccountModal" tabindex="-1" role="dialog" aria-labelledby="addAccountModalLabel"
+        <!-- Add Galery -->
+        <div class="modal fade" id="addGaleryModal" tabindex="-1" role="dialog" aria-labelledby="addGaleryModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addAccountModalLabel">Tambahkan Akun
+                        <h5 class="modal-title" id="addGaleryModalLabel">Tambahkan Galeri
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form id="formAddAccount">
+                    <form id="formAddGalery">
                         <div class="modal-body">
                             @csrf
                             <div class="form-group">
-                                <label for="name">Nama</label>
+                                <label for="name">Nama Kegiatan</label>
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Nama">
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" name="email" id="email"
-                                    placeholder="Email">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" name="password" id="password"
-                                    placeholder="Password" autocomplete="new-password">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password_confirmation">Konfirmasi Password</label>
-                                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"
-                                    placeholder="Konfirmasi Password" autocomplete="off">
-                            </div>
-
-                            <div class="form group">
-                                <label for="role_id">Role</label>
-                                <select class="custom-select" id="role_id" name="role_id">
-                                    @foreach ($roles as $role)
-                                        <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal"
-                                id="cancelAddAccount">Batal</button>
-                            <button type="button" onclick="addAccount()" class="btn btn-success"
-                                id="addAccountButton">Tambahkan</button>
+                                id="cancelAddGalery">Batal</button>
+                            <button type="button" onclick="addGalery()" class="btn btn-success"
+                                id="addGaleryButton">Tambahkan</button>
                         </div>
                     </form>
                 </div>
@@ -81,9 +54,7 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Role</th>
+                    <th>Nama Kegiatan</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -103,7 +74,7 @@
     <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
     <script src="//cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
-    <script>
+    {{-- <script>
         $('.data-table').DataTable({
             order: [
                 [1, "asc"]
@@ -229,5 +200,5 @@
                 });
             }
         }
-    </script>
+    </script> --}}
 @endsection

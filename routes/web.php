@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\NewsController;
 use App\Models\Bed;
 use App\Models\Post;
@@ -57,6 +58,8 @@ Route::middleware(['auth'])->group(function () {
                 'bedCount' => $bedCount
             ]);
         })->middleware('prevent.back.history');
+
+        Route::get('/galery', [GaleryController::class,'index'])->name('galery.index');
     });
 
     Route::middleware('admin.bed')->group(function () {

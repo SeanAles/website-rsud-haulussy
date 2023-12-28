@@ -41,8 +41,8 @@
                 <td class="text-center"><b>Thumbnail Artikel</b></td>
             </tr>
             <tr>
-                <td>
-                   <img src="{{ asset("images/article/thumbnails/$article->thumbnail") }}">
+                <td class="text-center">
+                   <img style="max-width: 100%;" src="{{ asset("images/article/thumbnails/$article->thumbnail") }}">
                 </td>
             </tr>
         </table>
