@@ -31,10 +31,13 @@
                     </div>
                     <form id="formAddGalery">
                         <div class="modal-body">
-                            @csrf
                             <div class="form-group">
                                 <label for="name">Nama Kegiatan</label>
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Nama">
+                            </div>
+                            <div class="form-group">
+                                <label for="pictures">Gambar Berita</label>
+                                <input type="file" name="pictures[]" id="pictures" class="pb-5 pt-3 form-control" multiple>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -74,131 +77,90 @@
     <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
     <script src="//cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
-    {{-- <script>
-        $('.data-table').DataTable({
-            order: [
-                [1, "asc"]
-            ],
-            columnDefs: [{
-                targets: [0],
-                orderable: false,
-                searchable: false
-            }],
-            processing: true,
-            serverSide: true,
-            responsive: true,
-            autoWidth: false,
-            ajax: "{{ route('account.index') }}",
-            columns: [{
-                    data: 'DT_RowIndex',
-                    'orderable': false,
-                    'searchable': false
-                },
-                {
-                    data: 'name',
-                    name: 'name'
-                },
-                {
-                    data: 'email',
-                    name: 'email'
-                },
-                {
-                    data: 'role.name',
-                    name: 'role.name'
-                },
-                {
-                    data: 'action',
-                    name: 'action',
-                    orderable: false,
-                    searchable: false
-                },
+    <script>
+        // $('.data-table').DataTable({
+        //     order: [
+        //         [1, "asc"]
+        //     ],
+        //     columnDefs: [{
+        //         targets: [0],
+        //         orderable: false,
+        //         searchable: false
+        //     }],
+        //     processing: true,
+        //     serverSide: true,
+        //     responsive: true,
+        //     autoWidth: false,
+        //     ajax: "{{ route('account.index') }}",
+        //     columns: [{
+        //             data: 'DT_RowIndex',
+        //             'orderable': false,
+        //             'searchable': false
+        //         },
+        //         {
+        //             data: 'name',
+        //             name: 'name'
+        //         },
+        //         {
+        //             data: 'email',
+        //             name: 'email'
+        //         },
+        //         {
+        //             data: 'role.name',
+        //             name: 'role.name'
+        //         },
+        //         {
+        //             data: 'action',
+        //             name: 'action',
+        //             orderable: false,
+        //             searchable: false
+        //         },
 
-            ]
-        });
+        //     ]
+        // });
 
-        function addAccount() {
-            document.getElementById("addAccountButton").disabled = true;
+        function addGalery() {
+            document.getElementById("addGaleryButton").disabled = true;
+            
+            const formData = new FormData($('#formAddGalery')[0]);
+            // formData.append('name', name);
+
+            // let totalFilesToBeUploaded = $('#pictures')[0].files.length;
+            // let pictures = $('#pictures')[0];
+            // for (let i = 0; i < totalFilesToBeUploaded; i++) {
+            //     formData.append('pictures' + i, pictures.files[i]);
+            // }
+            // formData.append('totalFilesToBeUploaded', totalFilesToBeUploaded);
+
+            const csrfToken = $('meta[name=csrf-token]').attr('content');
             $.ajax({
                 type: 'POST',
-                url: '/account',
-                data: $('#formAddAccount').serialize(),
+                url: '/galery',
+                data: formData,
+                contentType: false,
+                processData: false,
+                beforeSend: function(xhr) {
+                        xhr.setRequestHeader('X-CSRF-Token', csrfToken);
+                },
                 success: function(response) {
                     if (response.status === 'error') {
                         toastr.error(response.message);
                     } else {
-                        $('#formAddAccount')[0].reset();
-                        $('#cancelAddAccount').click();
-                        $('.data-table').DataTable().ajax.reload();
+                        $('#formAddGalery')[0].reset();
+                        $('#cancelAddGalery').click();
+                        // $('.data-table').DataTable().ajax.reload();
                         toastr.success(response.message);
                     }
-                    document.getElementById("addAccountButton").disabled = false;
+                    document.getElementById("addGaleryButton").disabled = false;
                 },
                 error: function(error) {
-                    $('#cancelAddAccount').click();
-                    $('.data-table').DataTable().ajax.reload();
+                    $('#cancelAddGalery').click();
+                    // $('.data-table').DataTable().ajax.reload();
                     toastr.error("Error");
-                    document.getElementById("addAccountButton").disabled = false;
+                    document.getElementById("addGaleryButton").disabled = false;
                 }
             });
         }
 
-        function updateAccount(id) {
-            const name = $('#name' + id).val();
-
-            if (name === '') {
-                toastr.error("Nama harus diisi");
-            } else {
-                document.getElementById("updateAccountButton" + id).disabled = true;
-                $.ajax({
-                    type: 'PATCH',
-                    url: '/account/' + id,
-                    data: $('#formUpdateAccount' + id).serialize(),
-                    success: function(response) {
-                        $('#cancelUpdateAccount' + id).click();
-                        $('.data-table').DataTable().ajax.reload();
-                        toastr.success(response.message);
-                        document.getElementById("updateAccountButton" + id).disabled = false;
-                    },
-                    error: function(error) {
-                        $('#cancelUpdateAccount' + id).click();
-                        $('.data-table').DataTable().ajax.reload();
-                        toastr.error("Error");
-                        document.getElementById("updateAccountButton" + id).disabled = false;
-                    }
-                });
-            }
-        }
-
-        function updateAccountPassword(id) {
-            const password = $('#password' + id).val();
-            const confirmPassword = $('#confirmPassword' + id).val();
-
-            if (password === '') {
-                toastr.error("Password tidak boleh kosong.");
-            } else if (confirmPassword === "") {
-                toastr.error("Konfirmasi password tidak boleh kosong.");
-            } else if (confirmPassword !== password) {
-                toastr.error("Konfirmasi password tidak sesuai.");
-            } else {
-                document.getElementById("updateAccountPasswordButton" + id).disabled = true;
-                $.ajax({
-                    type: 'PATCH',
-                    url: '/account-password/' + id,
-                    data: $('#formUpdateAccountPassword' + id).serialize(),
-                    success: function(response) {
-                        $('#cancelUpdateAccountPassword' + id).click();
-                        $('.data-table').DataTable().ajax.reload();
-                        toastr.success(response.message);
-                        document.getElementById("updateAccountPasswordButton" + id).disabled = false;
-                    },
-                    error: function(error) {
-                        $('#cancelUpdateAccountPassword' + id).click();
-                        $('.data-table').DataTable().ajax.reload();
-                        toastr.error("Error");
-                        document.getElementById("updateAccountPasswordButton" + id).disabled = false;
-                    }
-                });
-            }
-        }
-    </script> --}}
+    </script>
 @endsection

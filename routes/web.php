@@ -60,6 +60,7 @@ Route::middleware(['auth'])->group(function () {
         })->middleware('prevent.back.history');
 
         Route::get('/galery', [GaleryController::class,'index'])->name('galery.index');
+        Route::post('/galery', [GaleryController::class,'create']);
     });
 
     Route::middleware('admin.bed')->group(function () {
