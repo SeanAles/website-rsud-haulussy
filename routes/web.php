@@ -4,7 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\NewsController;
 use App\Models\Bed;
 use App\Models\Post;
@@ -59,8 +59,8 @@ Route::middleware(['auth'])->group(function () {
             ]);
         })->middleware('prevent.back.history');
 
-        Route::get('/galery', [GaleryController::class,'index'])->name('galery.index');
-        Route::post('/galery', [GaleryController::class,'create']);
+        Route::get('/event', [EventController::class,'index'])->name('event.index');
+        Route::post('/event', [EventController::class,'create']);
     });
 
     Route::middleware('admin.bed')->group(function () {

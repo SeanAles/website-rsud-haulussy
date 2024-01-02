@@ -157,7 +157,7 @@
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                             <li class="nav-item">
-                                <a href="/galery" class="nav-link">
+                                <a href="/event" class="nav-link">
                                     <i class="nav-icon fas fa-images"></i>
                                     <p>
                                         Galeri Kegiatan
