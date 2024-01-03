@@ -115,7 +115,7 @@
         function addEvent() {
             const pictures = document.getElementById('pictures').files;
             const name = $('#name').val();
-            const maxSizeInBytes = 1 * 1024 * 1024; // 1 MB
+            const maxSizeInBytes = 1 * 512 * 512; // 1 MB
             const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
             let statusPicturesSize = false;
             let statusPicturesMime = false;
@@ -139,7 +139,7 @@
             } else if (pictures.length <= 0) {
                 toastr.error("Gambar kegiatan tidak boleh kosong");
             } else if (statusPicturesSize) {
-                toastr.error("Ukuran gambar maksimal 1 MB")
+                toastr.error("Ukuran gambar maksimal 512 kb")
             } else if (statusPicturesMime){
                 toastr.error("Format gambar yang disupport adalah jpeg, png, jpg.")
             } else {
@@ -175,6 +175,26 @@
                     }
                 });
             }
+        }
+
+        function deleteEvent(id) {
+            document.getElementById("deleteEventButton"+id).disabled = true;
+            $.ajax({
+                type: 'DELETE',
+                url: '/event/' + id,
+                data: $('#formDeleteEvent' + id).serialize(),
+                success: function(response) {
+                    $('#cancelDeleteEvent' + id).click();
+                    $('.data-table').DataTable().ajax.reload();
+                    toastr.success(response.message);
+                    document.getElementById("deleteEventButton"+id).disabled = false;
+                },
+                error: function(error) {
+                    const errorMessage = xhr.responseJSON.message;
+                    toastr.error(errorMessage);
+                    document.getElementById("deleteEventButton"+id).disabled = false;
+                }
+            });
         }
     </script>
 @endsection

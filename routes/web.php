@@ -61,6 +61,7 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/event', [EventController::class,'index'])->name('event.index');
         Route::post('/event', [EventController::class,'create']);
+        Route::delete('/event/{id}', [EventController::class, 'destroy']);
     });
 
     Route::middleware('admin.bed')->group(function () {
