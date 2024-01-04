@@ -21,7 +21,7 @@ class EventController extends Controller
                 ->addColumn('action', function ($event) {
                     $actionBtn = '
                     <div class="row">
-                    <a href="#" class="mr-1 mt-1 detail btn btn-primary btn-sm">Detail</a> 
+                    <a href="/event/'.$event->id.'" class="mr-1 mt-1 detail btn btn-primary btn-sm">Detail</a> 
                     <a href="#" class="mr-1 mt-1 edit btn btn-success btn-sm">Edit</a>
                     <button type="button" class="mr-1 mt-1 delete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteEventModal' . $event->id . '">
                        Hapus
@@ -69,13 +69,13 @@ class EventController extends Controller
         $rules = [
             'name' => 'required',
             'pictures' => 'required',
-            'pictures.*' => 'mimes:jpeg,png,jpg|max:1024'
+            'pictures.*' => 'mimes:jpeg,png,jpg|max:512'
         ];
         $rulesMessages = [
             'name.required' => 'Nama tidak boleh kosong.',
             'pictures.required' => 'Gambar kegiatan tidak boleh kosong',
             'pictures.*.mimes' => 'Format gambar yang disupport adalah jpeg, png, jpg.',
-            'pictures.*.max' => 'Ukuran gambar maksimal 1 MB',
+            'pictures.*.max' => 'Ukuran gambar maksimal 512 kb', 
         ];
 
         $validator = Validator::make($request->all(), $rules, $rulesMessages);
@@ -105,6 +105,12 @@ class EventController extends Controller
         }
 
         return response()->json(['status' => 'error', 'message' => 'Gagal menambahkan galeri kegiatan']);
+    }
+
+    public function show($id)
+    {
+        $event = Event::with('eventPicture')->findOrFail($id);
+        return view('admin.event.event-detail', ['event' => $event]);
     }
 
     public function destroy($id)

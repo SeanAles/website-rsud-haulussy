@@ -115,7 +115,7 @@
         function addEvent() {
             const pictures = document.getElementById('pictures').files;
             const name = $('#name').val();
-            const maxSizeInBytes = 1 * 512 * 512; // 1 MB
+            const maxSizeInBytes = 512 * 1024; // 512 kb
             const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
             let statusPicturesSize = false;
             let statusPicturesMime = false;
