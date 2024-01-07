@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
     {{-- toastr --}}
     <link rel="stylesheet" href="{{ asset('plugins/toastr/toastr.min.css') }}">
-        
+
     @yield('link')
 </head>
 
@@ -256,7 +256,7 @@
     {{-- <script src="dist/js/pages/dashboard.js"></script> --}}
 
 
-   
+
 
     @yield('script')
 </body>

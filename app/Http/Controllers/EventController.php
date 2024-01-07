@@ -23,7 +23,6 @@ class EventController extends Controller
                     $actionBtn = '
                     <div class="row">
                     <a href="/event/'.$event->id.'" class="mr-1 mt-1 detail btn btn-primary btn-sm">Detail</a> 
-                    <a href="#" class="mr-1 mt-1 edit btn btn-success btn-sm">Edit</a>
                     <button type="button" class="mr-1 mt-1 delete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteEventPictureModal' . $event->id . '">
                        Hapus
                     </button>

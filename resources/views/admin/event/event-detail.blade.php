@@ -3,7 +3,7 @@
 @section('title', 'Detail Galeri Kegiatan')
 
 @section('link')
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet"> --}}
     <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
