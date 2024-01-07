@@ -36,7 +36,7 @@ class BedController extends Controller
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 </div>
-                                <form id="formUpdateBed' . $bed->id . '">
+                                <form id="formUpdateBed' . $bed->id . '" onsubmit="return false;">
                                     <div class="modal-body"> 
                                         <input type="hidden" name="_token" value="' . csrf_token() . '" /> 
                                         <div class="form-group">

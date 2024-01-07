@@ -9,6 +9,7 @@ use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class EventController extends Controller
 {
@@ -23,16 +24,16 @@ class EventController extends Controller
                     <div class="row">
                     <a href="/event/'.$event->id.'" class="mr-1 mt-1 detail btn btn-primary btn-sm">Detail</a> 
                     <a href="#" class="mr-1 mt-1 edit btn btn-success btn-sm">Edit</a>
-                    <button type="button" class="mr-1 mt-1 delete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteEventModal' . $event->id . '">
+                    <button type="button" class="mr-1 mt-1 delete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteEventPictureModal' . $event->id . '">
                        Hapus
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="deleteEventModal' . $event->id . '" tabindex="-1" role="dialog" aria-labelledby="deleteEventModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="deleteEventPictureModal' . $event->id . '" tabindex="-1" role="dialog" aria-labelledby="deleteEventPictureModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h5 class="modal-title" id="deleteEventModalLabel">Hapus Kegiatan</h5>
+                            <h5 class="modal-title" id="deleteEventPictureModalLabel">Hapus Kegiatan</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -84,8 +85,11 @@ class EventController extends Controller
             return response()->json(['status' => 'error', 'message' => $validator->errors()->first()]);
         }
 
+        $slug = Str::random(30);
+
         $event = Event::create([
-            "name" => $request->name
+            "name" => $request->name,
+            'slug' => $slug,
         ]);
 
         if ($event) {
@@ -107,10 +111,56 @@ class EventController extends Controller
         return response()->json(['status' => 'error', 'message' => 'Gagal menambahkan galeri kegiatan']);
     }
 
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $event = Event::with('eventPicture')->findOrFail($id);
-        return view('admin.event.event-detail', ['event' => $event]);
+       
+        if ($request->ajax()) {
+            $data = $event->eventPicture;
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function ($eventPicture) {
+                    $path = asset('images/event/'.$eventPicture->path.'');
+                    $actionBtn = '
+                    <div class="row">
+                        <button type="button" class="mr-1 mt-1 delete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteEventPictureModal' . $eventPicture->id . '">
+                        Hapus
+                        </button>
+                    </div>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteEventPictureModal' . $eventPicture->id . '" tabindex="-1" role="dialog" aria-labelledby="deleteEventPictureModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="deleteEventPictureModalLabel">Hapus Gambar Kegiatan</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body mb-3">
+                                Apakah anda ingin menghapus gambar kegiatan dibawah ini?
+                                <img src="' .$path . '" alt=' . $eventPicture->path .' class="img-fluid" width="100%">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="cancelDeleteEventPicture' . $eventPicture->id . '" class="btn btn-primary" data-dismiss="modal">Batal</button>
+                                <form id="formDeleteEventPicture' . $eventPicture->id . '">
+                                    <input type="hidden" name="_token" value="' . csrf_token() . '" /> 
+                                    <button type="button" onclick="deleteEventPicture(' . $eventPicture->id . ')" class="btn btn-danger" id="deleteEventPictureButton' . $eventPicture->id . '">Hapus</button>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    ';
+
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+
+        return view("admin.event.event-detail", ['event' => $event]);
     }
 
     public function destroy($id)
@@ -120,7 +170,7 @@ class EventController extends Controller
         if ($event) {
             $eventPicture = EventPicture::where('event_id', '=', $id)->get();
 
-            foreach ($eventPicture as $key => $picture) {
+            foreach ($eventPicture as $picture) {
                 $path = public_path() . "/images/event/" . $picture->path;
                 if (File::exists($path)) {
                     File::delete($path);

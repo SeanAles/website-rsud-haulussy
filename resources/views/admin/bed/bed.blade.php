@@ -37,13 +37,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="availability">Ketersediaan</label>
-                                <input type="number" min="0" class="form-control" name="availability" id="availability">
+                                <input type="number" min="0" class="form-control" name="availability"
+                                    id="availability">
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal"
                                 id="cancelAddBed">Batal</button>
-                            <button type="button" onclick="addBed()" class="btn btn-success" id="addBedButton">Tambahkan</button>
+                            <button type="button" onclick="addBed()" class="btn btn-success"
+                                id="addBedButton">Tambahkan</button>
                         </div>
                     </form>
                 </div>
@@ -121,12 +123,12 @@
         }
 
         function updateBed(id) {
-            const availability = $('#availability'+id).val();
+            const availability = $('#availability' + id).val();
 
             if (availability === '') {
                 toastr.error("Ketersediaan Laki-laki harus diisi");
             } else {
-                document.getElementById("updateBedButton"+id).disabled = true;
+                document.getElementById("updateBedButton" + id).disabled = true;
                 $.ajax({
                     type: 'PATCH',
                     url: '/bed/' + id,
@@ -135,13 +137,13 @@
                         $('#cancelUpdateBed' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.success(response.message);
-                        document.getElementById("updateBedButton"+id).disabled = false;
+                        document.getElementById("updateBedButton" + id).disabled = false;
                     },
                     error: function(error) {
                         $('#cancelUpdateBed' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.error("Error");
-                        document.getElementById("updateBedButton"+id).disabled = false;
+                        document.getElementById("updateBedButton" + id).disabled = false;
                     }
                 });
             }
@@ -180,8 +182,8 @@
         }
 
         function deleteBed(id) {
-            document.getElementById("deleteBedButton"+id).disabled = true;
-            
+            document.getElementById("deleteBedButton" + id).disabled = true;
+
             $.ajax({
                 type: 'DELETE',
                 url: '/bed/' + id,
@@ -190,12 +192,12 @@
                     $('#cancelDeleteBed' + id).click();
                     $('.data-table').DataTable().ajax.reload();
                     toastr.success(response.message);
-                    document.getElementById("deleteBedButton"+id).disabled = false;
+                    document.getElementById("deleteBedButton" + id).disabled = false;
                 },
                 error: function(error) {
                     const errorMessage = xhr.responseJSON.message;
                     toastr.error(errorMessage);
-                    document.getElementById("deleteBedButton"+id).disabled = false;
+                    document.getElementById("deleteBedButton" + id).disabled = false;
                 }
             });
         }

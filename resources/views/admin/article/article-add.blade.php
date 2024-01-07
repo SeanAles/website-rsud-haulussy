@@ -76,7 +76,7 @@
                 toastr.error("Konten artikel harus diisi");
             } else {
                 document.getElementById("addArticleButton").disabled = true;
-                
+
                 let formData = new FormData();
                 formData.append('thumbnail', thumbnail);
                 formData.append("user_id", user_id);

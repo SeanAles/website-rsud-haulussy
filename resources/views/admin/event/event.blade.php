@@ -29,7 +29,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form id="formAddEvent">
+                    <form id="formAddEvent" onsubmit="return false;">
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="name">Nama Kegiatan</label>
@@ -113,6 +113,7 @@
         });
 
         function addEvent() {
+            event.preventDefault();
             const pictures = document.getElementById('pictures').files;
             const name = $('#name').val();
             const maxSizeInBytes = 512 * 1024; // 512 kb
@@ -140,7 +141,7 @@
                 toastr.error("Gambar kegiatan tidak boleh kosong");
             } else if (statusPicturesSize) {
                 toastr.error("Ukuran gambar maksimal 512 kb")
-            } else if (statusPicturesMime){
+            } else if (statusPicturesMime) {
                 toastr.error("Format gambar yang disupport adalah jpeg, png, jpg.")
             } else {
                 document.getElementById("addEventButton").disabled = true;
@@ -178,7 +179,7 @@
         }
 
         function deleteEvent(id) {
-            document.getElementById("deleteEventButton"+id).disabled = true;
+            document.getElementById("deleteEventButton" + id).disabled = true;
             $.ajax({
                 type: 'DELETE',
                 url: '/event/' + id,
@@ -187,12 +188,12 @@
                     $('#cancelDeleteEvent' + id).click();
                     $('.data-table').DataTable().ajax.reload();
                     toastr.success(response.message);
-                    document.getElementById("deleteEventButton"+id).disabled = false;
+                    document.getElementById("deleteEventButton" + id).disabled = false;
                 },
                 error: function(error) {
                     const errorMessage = xhr.responseJSON.message;
                     toastr.error(errorMessage);
-                    document.getElementById("deleteEventButton"+id).disabled = false;
+                    document.getElementById("deleteEventButton" + id).disabled = false;
                 }
             });
         }

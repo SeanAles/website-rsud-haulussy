@@ -5,8 +5,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventPictureController;
 use App\Http\Controllers\NewsController;
 use App\Models\Bed;
+use App\Models\Event;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -52,17 +54,25 @@ Route::middleware(['auth'])->group(function () {
             $newsCount = $news->count();
             $bed = Bed::all();
             $bedCount = $bed->count();
-            return view('admin.dashboard', [
+            $events = Event::all();
+            $eventCount = $events->count();
+            return view('admin.dashboard.dashboard', [
                 'articleCount' => $articleCount,
                 'newsCount' => $newsCount,
-                'bedCount' => $bedCount
+                'bedCount' => $bedCount,
+                'eventCount' => $eventCount
             ]);
         })->middleware('prevent.back.history');
 
+        //Event Route
         Route::get('/event', [EventController::class,'index'])->name('event.index');
         Route::post('/event', [EventController::class,'create']);
         Route::delete('/event/{id}', [EventController::class, 'destroy']);
-        Route::get('/event/{id}', [EventController::class, 'show']);
+        Route::get('/event/{id}', [EventController::class, 'show'])->name('event.detail');
+        
+        //Event Picture Route
+        Route::post('/event-picture/{id}', [EventPictureController::class, 'store']);
+        Route::delete('/event-picture/{id}', [EventPictureController::class, 'destroy']);
     });
 
     Route::middleware('admin.bed')->group(function () {
