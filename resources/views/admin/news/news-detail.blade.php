@@ -11,7 +11,7 @@
 
 
 @section('content')
-    <div class="container">
+    <div>
         <table class="table table-bordered">
             <tr>
                 <td>Judul Berita</td>
@@ -42,7 +42,7 @@
             </tr>
             <tr>
                 <td class="text-center">
-                   <img style="max-width: 100%;" src="{{ asset("images/news/thumbnails/$news->thumbnail") }}">
+                   <img style="max-width: 400px;" src="{{ asset("images/news/thumbnails/$news->thumbnail") }}">
                 </td>
             </tr>
         </table>

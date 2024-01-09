@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div>
         <a class="btn btn-success" href="/article-add">Buat Artikel</a>
         <!-- Button trigger modal -->
 
@@ -42,6 +42,18 @@
 
     <script>
         $('.data-table').DataTable({
+            language: {
+                'info': 'Menampilkan _START_ hingga _END_ dari _TOTAL_ data',
+                'infoEmpty': 'Menampilkan _TOTAL_ data',
+                "infoFiltered": " <span class='quickApproveTable_info_filtered_span'>(Disaring dari total _MAX_ data)</span>",
+                "processing": "Memproses...",
+                "emptyTable": "Tidak ada data yang ditemukan",
+                "zeroRecords": "Tidak dapat menemukan data yang sesuai",
+                'paginate': {
+                    'previous': '<span class="prev-icon">Sebelum</span>',
+                    'next': '<span class="next-icon">Selanjutnya</span>'
+                }
+            },
             order: [
                 [1, "asc"]
             ],

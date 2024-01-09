@@ -10,11 +10,11 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div>
         <button type="button" class="update btn btn-success" data-toggle="modal" data-target="#addBedModal">
             Tambahkan Ruangan
         </button>
-
+        
         {{-- Tambahkan Bed Modal --}}
         <div class="modal fade" id="addBedModal" tabindex="-1" role="dialog" aria-labelledby="addBedModalLabel"
             aria-hidden="true">
@@ -85,6 +85,15 @@
 
         function readBed() {
             return $('.data-table').DataTable({
+                language: {
+                    'info': 'Menampilkan _TOTAL_ data',
+                    'infoEmpty': 'Menampilkan _TOTAL_ data',
+                    "infoFiltered": " <span class='quickApproveTable_info_filtered_span'>(Disaring dari total _MAX_ data)</span>",
+                    "processing": "Memproses...",
+                    "emptyTable": "Tidak ada data yang ditemukan",
+                    "zeroRecords": "Tidak dapat menemukan data yang sesuai",
+                },
+                bPaginate: false,
                 order: [
                     [1, "asc"]
                 ],

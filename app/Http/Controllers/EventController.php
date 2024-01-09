@@ -121,10 +121,12 @@ class EventController extends Controller
                 ->addColumn('action', function ($eventPicture) {
                     $path = asset('images/event/'.$eventPicture->path.'');
                     $actionBtn = '
-                    <div class="row">
+                    <div class="pr-3 pl-1">
+                        <div class="row">
                         <button type="button" class="mr-1 mt-1 delete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteEventPictureModal' . $eventPicture->id . '">
-                        Hapus
+                            Hapus
                         </button>
+                        </div>
                     </div>
                     
                     <!-- Modal -->
@@ -138,8 +140,9 @@ class EventController extends Controller
                             </button>
                             </div>
                             <div class="modal-body mb-3">
-                                Apakah anda ingin menghapus gambar kegiatan dibawah ini?
-                                <img src="' .$path . '" alt=' . $eventPicture->path .' class="img-fluid" width="100%">
+                                <p>Apakah anda ingin menghapus gambar kegiatan dibawah ini?</p>
+                                <hr>
+                                <img src="' .$path . '" alt=' . $eventPicture->path .' class="img-fluid mt-2" style="max-height:300px">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="cancelDeleteEventPicture' . $eventPicture->id . '" class="btn btn-primary" data-dismiss="modal">Batal</button>

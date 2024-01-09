@@ -38,7 +38,7 @@
         </tr>
     </table>
 
-    <div class="p-5">
+    <div class="p-0">
         <hr>
         <h5><b>Daftar Gambar Kegiatan</b></h5>
         <hr>
@@ -50,7 +50,6 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Nama File</th>
                     <th>Gambar</th>
                     <th>Action</th>
                 </tr>
@@ -113,9 +112,17 @@
         })
 
         $('.data-table').DataTable({
-            order: [
-                [1, "asc"]
-            ],
+            language: {
+                'info': 'Menampilkan _START_ hingga _END_ dari _TOTAL_ data',
+                "emptyTable": "Tidak ada data yang ditemukan",
+                "zeroRecords": "Tidak dapat menemukan data yang sesuai",
+                'paginate': {
+                    'previous': '<span class="prev-icon">Sebelum</span>',
+                    'next': '<span class="next-icon">Selanjutnya</span>'
+                }
+            },
+            bFilter: false,
+            order: [],
             columnDefs: [{
                 targets: [0],
                 orderable: false,
@@ -134,19 +141,16 @@
                 {
                     data: 'path',
                     name: 'path',
-                },
-                {
-                    data: 'path',
-                    name: 'path',
+                    orderable: false,
+                    searchable: false,
                     render: function(data, type, full, meta) {
                         var imagePath = "{{ asset('images/event') }}/" + data;
                         return '<a href="' + imagePath +
                             '" data-lightbox="gallery-item"><img src="' +
                             imagePath + '" alt=' + data +
-                            ' class="img-fluid" width="100%"></a>';
+                            ' class="img-fluid" style="max-height:300px"></a>';
                     },
-                    orderable: false,
-                    searchable: false
+
                 },
                 {
                     data: 'action',

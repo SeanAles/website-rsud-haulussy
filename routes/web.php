@@ -23,12 +23,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+// Beranda Route
 Route::get('/', function () {
     return view('visitor.beranda.beranda');
 });
 
-// Artikel
+// Tentang Kami Route
+Route::get('/sejarah', function () {return view('visitor.tentang-kami.sejarah');});
+Route::get('/mantan-direktur', function () {return view('visitor.tentang-kami.mantan-direktur');});
+Route::get('/visi-misi', function () {return view('visitor.tentang-kami.visi-misi');});
+Route::get('/struktur-organisasi', function () {return view('visitor.tentang-kami.struktur-organisasi');});
+Route::get('/direksi-manajemen', function () {return view('visitor.tentang-kami.direksi-manajemen');});
+Route::get('/gambaran-umum', function () {return view('visitor.tentang-kami.gambaran-umum');});
+
+// Informasi Route
 Route::get('/baca-artikel/{slug}', [ArticleController::class, 'showArtikel']);
 Route::get('/baca-berita/{slug}', [NewsController::class, 'showNews']);
 

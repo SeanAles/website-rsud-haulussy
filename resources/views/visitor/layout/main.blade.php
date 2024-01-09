@@ -52,7 +52,7 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
             data-navbar-on-scroll="data-navbar-on-scroll">
             <div class="container">
-                <a class="navbar-brand" href="index">
+                <a class="navbar-brand" href="/">
                     <img src="{{ asset('visitor/assets/img/gallery/rs.png') }}" alt="logo" height="100" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -62,43 +62,80 @@
                 </button>
                 <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
-                        <li class="nav-item px-2">
-                            <a class="nav-link" aria-current="page" href="sejarah">Sejarah</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tentang Kami
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/sejarah">Sejarah</a>
+                                <a class="dropdown-item" href="/mantan-direktur">Mantan Direktur</a>
+                                <a class="dropdown-item" href="/visi-misi">Visi & Misi</a>
+                                <a class="dropdown-item" href="/struktur-organisasi">Struktur Organisasi</a>
+                                <a class="dropdown-item" href="/direksi-manajemen">Direksi & Manajemen</a>
+                                <a class="dropdown-item" href="/gambaran-umum">Gambaran Umum</a>
+                            </div>
                         </li>
-                        <li class="nav-item px-2">
-                            <a class="nav-link" href="promkes">Promosi Kesehatan</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Fasilitas Pelayanan
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="rawat">Rawat Jalan</a>
+                                <a class="dropdown-item" href="#">Jadwal Poliklinik</a>
+                                <a class="dropdown-item" href="#">Rawat Inap</a>
+                                <a class="dropdown-item" href="#">Alur Pelayanan</a>
+                                <a class="dropdown-item" href="#">Pelayanan Penunjang</a>
+                                <a class="dropdown-item" href="#">Medical Check Up</a>
+                                <a class="dropdown-item" href="#">Ketersediaan tempat tidur</a>
+                                <a class="dropdown-item" href="#">Tarif Pelayanan</a>
+                                <a class="dropdown-item" href="promkes">Promosi Kesehatan</a>
+                                <a class="dropdown-item" href="#">Tata Tertib</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="spesialis">Dokter Spesialis</a>
+                                <a class="dropdown-item" href="#">Dokter Umum</a>
+                            </div>
                         </li>
-                        <li class="nav-item px-2">
-                            <a class="nav-link" href="struktur">Struktur</a>
+
+                        <li class="nav-item px-2"><a class="nav-link" href="#">Manajer Ruangan & Instalasi</a>
                         </li>
-                        <li class="nav-item px-2">
-                            <a class="nav-link" href="spesialis">Dokter Spesialis </a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Informasi
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="sejarah">Berita</a>
+                                <a class="dropdown-item" href="direktur">Artikel Kesehatan</a>
+                                <a class="dropdown-item" href="visi">Galeri Foto</a>
+                            </div>
                         </li>
-                        <li class="nav-item px-2">
-                            <a class="nav-link" href="kontak">Kontak</a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a class="nav-link" href="direktur">Direktur</a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a class="nav-link" href="visi">Visi & Misi</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Kontak kami
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="kontak">Kontak</a>
+                                <a class="dropdown-item" href="#">Survei Kepuasan Pengguna Layanan</a>
+                                <a class="dropdown-item" href="#">Kritik & Saran</a>
+                            </div>
                         </li>
                     </ul>
-                    <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="#!">Log
-                        In</a>
+                    {{-- <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4"
+                        href="#!">Log In</a> --}}
                 </div>
             </div>
         </nav>
         <section class="py-xxl-10 pb-0" id="home">
             <div class="bg-holder bg-size"
-                style="
-            background-image: url(visitor/assets/img/gallery/hero-bg.png);
-            background-position: top center;
-            background-size: cover;
-          ">
+                style="background-image: url(visitor/assets/img/gallery/hero-bg.png);background-position: top center;background-size: cover;">
             </div>
             <!--/.bg-holder-->
-
             <div class="container">
                 <div class="row min-vh-xl-100 min-vh-xxl-25">
                     <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end">
@@ -126,15 +163,9 @@
 
         <section class="py-0 bg-secondary">
             <div class="bg-holder opacity-25"
-                style="
-            background-image: url(visitor/assets/img/gallery/dot-bg.png);
-            background-position: top left;
-            margin-top: -3.125rem;
-            background-size: auto;
-          ">
+                style="background-image: url(visitor/assets/img/gallery/dot-bg.png); background-position: top left; margin-top: -3.125rem; background-size: auto;">
             </div>
             <!--/.bg-holder-->
-
             <div class="container">
                 <div class="row py-8">
                     <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0">
@@ -214,8 +245,7 @@
                                     </path>
                                 </svg>&nbsp;by&nbsp;
                                 <a class="fw-bold text-info" href="https://www.instagram.com/kemi_patty/"
-                                    target="_blank">RSUD dr. M. Haulussy Ambon
-                                </a>
+                                    target="_blank">RSUD dr. M. Haulussy Ambon</a>
                             </p>
                         </div>
                     </div>

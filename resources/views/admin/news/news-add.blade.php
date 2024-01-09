@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div>
         <form id="formAddNews" enctype="multipart/form-data">
             <input type="hidden" id="user_id" name="user_id" value={{ Auth::user()->id }}>
             <div class="form-group">
