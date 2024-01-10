@@ -39,10 +39,10 @@ Route::get('/gambaran-umum', function () {return view('visitor.tentang-kami.gamb
 // Informasi Route
 // Informasi Artikel Route
 Route::get('/artikel', [ArticleController::class, 'indexArtikel']);
+Route::get('/artikel/{slug}', [ArticleController::class, 'showArtikel']);
 
-// Informasi Route
-Route::get('/baca-artikel/{slug}', [ArticleController::class, 'showArtikel']);
-Route::get('/baca-berita/{slug}', [NewsController::class, 'showNews']);
+// Informasi Berita Route
+Route::get('/berita/{slug}', [NewsController::class, 'showNews']);
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('prevent.back.history');

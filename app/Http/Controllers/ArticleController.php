@@ -203,11 +203,12 @@ class ArticleController extends Controller
     
     public function showArtikel($slug)
     {
-        setlocale(LC_ALL, 'IND');
-        $article = Post::with('user')->where('slug', '=', $slug)->get();
-        if (count($article) == 0) {
+        $article = Post::with('user')->where('slug', '=', $slug)->first();
+        
+        if(!$article){
             return abort(404);
         }
-        return view('artikel', ['article' => $article]);
+
+        return view('visitor.informasi.baca-artikel', ['article' => $article]);
     }
 }
