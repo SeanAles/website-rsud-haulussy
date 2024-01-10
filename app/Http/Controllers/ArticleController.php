@@ -194,9 +194,16 @@ class ArticleController extends Controller
         return response()->json(['message' => 'Gagal Menghapus Data'], 401);
     }
 
-    // Artikel (User Section)
+    // Artikel (VisitorSection)
+    public function indexArtikel(){
+        $articles = Post::where('category', '=', 'article')->get();
+        
+        return view('visitor.informasi.daftar-artikel', ['articles' => $articles ]);
+    }
+    
     public function showArtikel($slug)
     {
+        setlocale(LC_ALL, 'IND');
         $article = Post::with('user')->where('slug', '=', $slug)->get();
         if (count($article) == 0) {
             return abort(404);

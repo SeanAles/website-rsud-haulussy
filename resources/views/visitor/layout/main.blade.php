@@ -31,6 +31,8 @@
     <link href="{{ asset('visitor/assets/css/theme.css') }}" rel="stylesheet" />
 </head>
 
+@yield('style')
+
 <body>
     <!-- Modal -->
     <div class="modal" id="myModal">
