@@ -29,6 +29,7 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="{{ asset('visitor/assets/css/theme.css') }}" rel="stylesheet" />
+    @yield('link')
 </head>
 
 @yield('style')
@@ -91,7 +92,8 @@
                                 <a class="dropdown-item" href="#">Alur Pelayanan</a>
                                 <a class="dropdown-item" href="#">Pelayanan Penunjang</a>
                                 <a class="dropdown-item" href="#">Medical Check Up</a>
-                                <a class="dropdown-item" href="/ketersediaan-tempat-tidur.">Ketersediaan tempat tidur</a>
+                                <a class="dropdown-item" href="/ketersediaan-tempat-tidur.">Ketersediaan tempat
+                                    tidur</a>
                                 <a class="dropdown-item" href="#">Tarif Pelayanan</a>
                                 <a class="dropdown-item" href="promkes">Promosi Kesehatan</a>
                                 <a class="dropdown-item" href="#">Tata Tertib</a>
@@ -278,6 +280,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    @yield('script')
 
     <!-- Script JavaScript untuk menampilkan modal saat halaman dimuat -->
     <!-- <script>
