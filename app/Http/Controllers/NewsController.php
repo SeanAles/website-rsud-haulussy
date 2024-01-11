@@ -194,12 +194,21 @@ class NewsController extends Controller
     }
 
     // News (User Section)
+    public function indexBerita(){
+        $news = Post::where('category', '=', 'news')->orderByDesc('created_at')->paginate(4);
+        
+        return view('visitor.informasi.daftar-berita', ['news' => $news ]);
+    }
+    
     public function showBerita($slug)
     {
-        $news = Post::with('user')->where('slug', '=', $slug)->get();
-        if (count($news) == 0) {
+        $new = Post::with('user')->where('slug', '=', $slug)->first();
+        $news = Post::where([['slug', '!=', $slug], ['category', '=', 'news']])->orderByDesc('created_at')->get();
+        
+        if(!$new){
             return abort(404);
         }
-        return view('news', ['news' => $news]);
+
+        return view('visitor.informasi.baca-berita', ['news' => $news, 'new' => $new]);
     }
 }

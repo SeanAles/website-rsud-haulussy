@@ -129,4 +129,10 @@ class BedController extends Controller
 
         return response()->json(['message' => 'Gagal Menghapus Ruangan'], 401);
     }
+
+    public function indexBed(){
+        $beds = Bed::all();
+
+        return view('visitor.fasilitas.ketersediaan-tempat-tidur', ['beds' => $beds]);
+    }
 }

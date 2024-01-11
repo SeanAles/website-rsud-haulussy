@@ -91,7 +91,7 @@
                                 <a class="dropdown-item" href="#">Alur Pelayanan</a>
                                 <a class="dropdown-item" href="#">Pelayanan Penunjang</a>
                                 <a class="dropdown-item" href="#">Medical Check Up</a>
-                                <a class="dropdown-item" href="#">Ketersediaan tempat tidur</a>
+                                <a class="dropdown-item" href="/ketersediaan-tempat-tidur.">Ketersediaan tempat tidur</a>
                                 <a class="dropdown-item" href="#">Tarif Pelayanan</a>
                                 <a class="dropdown-item" href="promkes">Promosi Kesehatan</a>
                                 <a class="dropdown-item" href="#">Tata Tertib</a>
@@ -110,9 +110,9 @@
                                 Informasi
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="sejarah">Berita</a>
-                                <a class="dropdown-item" href="direktur">Artikel Kesehatan</a>
-                                <a class="dropdown-item" href="visi">Galeri Foto</a>
+                                <a class="dropdown-item" href="/berita">Berita</a>
+                                <a class="dropdown-item" href="/artikel">Artikel Kesehatan</a>
+                                <a class="dropdown-item" href="/galeri">Galeri Foto</a>
                             </div>
                         </li>
 
@@ -122,9 +122,9 @@
                                 Kontak kami
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="kontak">Kontak</a>
+                                <a class="dropdown-item" href="/kontak">Kontak</a>
                                 <a class="dropdown-item" href="#">Survei Kepuasan Pengguna Layanan</a>
-                                <a class="dropdown-item" href="#">Kritik & Saran</a>
+                                <a class="dropdown-item" href="/kritik-saran">Kritik & Saran</a>
                             </div>
                         </li>
                     </ul>
@@ -135,16 +135,16 @@
         </nav>
         <section class="py-xxl-10 pb-0" id="home">
             <div class="bg-holder bg-size"
-                style="background-image: url(visitor/assets/img/gallery/hero-bg.png);background-position: top center;background-size: cover;">
+                style="background-image: url(/visitor/assets/img/gallery/hero-bg.png);background-position: top center;background-size: cover;">
             </div>
             <!--/.bg-holder-->
-            <div class="container">
+            <div class="container mt-5 text-center">
                 <div class="row min-vh-xl-100 min-vh-xxl-25">
-                    <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end">
+                    <div class="col-md-8 col-xl-6 col-xxl-7 order-0 order-md-1 text-end">
                         <img class="pt-7 pt-md-0 w-100" src="{{ asset('visitor/assets/img/gallery/hero.png') }}"
                             alt="hero-header" />
                     </div>
-                    <div class="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-6">
+                    <div class="col-md-4 col-xl-6 col-xxl-5 text-md-start text-center py-6">
                         <b>
                             <h1 class="fw-light fs-6 fs-xxl-7">
                                 RSUD dr. M. Haulussy Ambon
@@ -165,7 +165,7 @@
 
         <section class="py-0 bg-secondary">
             <div class="bg-holder opacity-25"
-                style="background-image: url(visitor/assets/img/gallery/dot-bg.png); background-position: top left; margin-top: -3.125rem; background-size: auto;">
+                style="background-image: url(/visitor/assets/img/gallery/dot-bg.png); background-position: top left; margin-top: -3.125rem; background-size: auto;">
             </div>
             <!--/.bg-holder-->
             <div class="container">

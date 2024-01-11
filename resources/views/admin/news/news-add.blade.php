@@ -64,6 +64,7 @@
             const fileInput = document.getElementById('thumbnail');
             const thumbnail = fileInput.files[0];
             const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+            const maxSizeInBytes = 1 * 1024 * 1024; // 1024 kb
 
             if (title === '') {
                 toastr.error("Judul berita harus diisi");
@@ -73,6 +74,8 @@
                 toastr.error("Thumbnail berita harus diisi");
             } else if (!allowedExtensions.exec(thumbnail.name)) {
                 toastr.error("Thumbnail berita harus memiliki ekstensi (JPG / JPEG/ PNG)");
+            } else if(thumbnail.size > maxSizeInBytes){
+                toastr.error("Ukuran gambar thumbnail maksimal 1024 kb")
             } else if (description === '') {
                 toastr.error("Konten berita harus diisi");
             } else {

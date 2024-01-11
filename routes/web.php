@@ -36,13 +36,23 @@ Route::get('/struktur-organisasi', function () {return view('visitor.tentang-kam
 Route::get('/direksi-manajemen', function () {return view('visitor.tentang-kami.direksi-manajemen');});
 Route::get('/gambaran-umum', function () {return view('visitor.tentang-kami.gambaran-umum');});
 
+//Fasilitas dan Pelayanan Route
+Route::get('/ketersediaan-tempat-tidur', [BedController::class, 'indexBed']);
+
 // Informasi Route
 // Informasi Artikel Route
 Route::get('/artikel', [ArticleController::class, 'indexArtikel']);
 Route::get('/artikel/{slug}', [ArticleController::class, 'showArtikel']);
-
 // Informasi Berita Route
-Route::get('/berita/{slug}', [NewsController::class, 'showNews']);
+Route::get('/berita', [NewsController::class, 'indexBerita']);
+Route::get('/berita/{slug}', [NewsController::class, 'showBerita']);
+// Informasi Galeri Kegiatan Route
+Route::get('/galeri', [EventController::class, 'indexGaleri']);
+Route::get('/galeri/{slug}', [EventController::class, 'showGaleri']);
+
+// Kontak Kami Route
+Route::get('/kontak', function(){ return view('visitor.kontak.kontak');});
+Route::get('/kritik-saran', function(){ return view('visitor.kontak.kritik-saran');});
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('prevent.back.history');

@@ -190,4 +190,20 @@ class EventController extends Controller
         
         return response()->json(['status' => 'error', 'message' => 'Data tidak ditemukan.']);
     }
+
+    public function indexGaleri(){
+        $events = Event::with('eventPicture')->orderByDesc('created_at')->paginate(5);
+
+        return view('visitor.informasi.daftar-galeri', ['events' => $events]);
+    }
+
+    public function showGaleri($slug){
+        $event = Event::with('eventPicture')->where('slug', '=', $slug)->first();
+        
+        if(!$event){
+            return abort(404);
+        }
+
+        return view('visitor.informasi.lihat-galeri', ['event' => $event]);
+    }
 }

@@ -63,6 +63,7 @@
             const fileInput = document.getElementById('thumbnail');
             const thumbnail = fileInput.files[0];
             const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+            const maxSizeInBytes = 1 * 1024 * 1024; // 1024 kb
 
             if (title === '') {
                 toastr.error("Judul artikel harus diisi");
@@ -72,7 +73,9 @@
                 toastr.error("Thumbnail artikel harus diisi");
             } else if (!allowedExtensions.exec(thumbnail.name)) {
                 toastr.error("Thumbnail artikel harus memiliki ekstensi (JPG / JPEG/ PNG)");
-            } else if (description === '') {
+            } else if(thumbnail.size > maxSizeInBytes){
+                toastr.error("Ukuran gambar thumbnail maksimal 1024 kb")
+            }else if (description === '') {
                 toastr.error("Konten artikel harus diisi");
             } else {
                 document.getElementById("addArticleButton").disabled = true;

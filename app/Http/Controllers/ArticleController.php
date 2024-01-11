@@ -196,7 +196,7 @@ class ArticleController extends Controller
 
     // Artikel (VisitorSection)
     public function indexArtikel(){
-        $articles = Post::where('category', '=', 'article')->get();
+        $articles = Post::where('category', '=', 'article')->orderByDesc('created_at')->paginate(4);
         
         return view('visitor.informasi.daftar-artikel', ['articles' => $articles ]);
     }
@@ -204,11 +204,12 @@ class ArticleController extends Controller
     public function showArtikel($slug)
     {
         $article = Post::with('user')->where('slug', '=', $slug)->first();
+        $articles = Post::where([['slug', '!=', $slug], ['category', '=', 'article']])->orderByDesc('created_at')->get();
         
         if(!$article){
             return abort(404);
         }
 
-        return view('visitor.informasi.baca-artikel', ['article' => $article]);
+        return view('visitor.informasi.baca-artikel', ['articles' => $articles, 'article' => $article]);
     }
 }
