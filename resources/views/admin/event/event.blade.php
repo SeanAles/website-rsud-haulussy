@@ -12,8 +12,7 @@
 @section('content')
     <div>
         <!-- Button trigger modal Add Event -->
-        <button type="button" class="mr-1 mt-1 create btn btn-success btn-md" data-toggle="modal"
-            data-target="#addEventModal">
+        <button type="button" class="mr-1 mt-1 create btn btn-success btn-md" data-toggle="modal" data-target="#addEventModal">
             Tambahkan Galeri
         </button>
 
@@ -36,7 +35,7 @@
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Nama">
                             </div>
                             <div class="form-group">
-                                <label for="pictures">Gambar Kegiatan</label>
+                                <label for="pictures">Gambar Kegiatan (maks: 512kb, 5 Gambar Maksimal)</label>
                                 <input type="file" name="pictures[]" id="pictures" class="pb-5 pt-3 form-control"
                                     multiple>
                             </div>
@@ -132,6 +131,7 @@
             const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
             let statusPicturesSize = false;
             let statusPicturesMime = false;
+            let statusPicturesTotal = false;
 
             for (let index = 0; index < pictures.length; index++) {
                 const file = pictures[index];
@@ -145,12 +145,19 @@
                     statusPicturesMime = true;
                     break;
                 }
+
+                if (index > 4) {
+                    statusPicturesTotal = true;
+                    break;
+                }
             }
 
             if (name === '') {
                 toastr.error("Nama kegiatan tidak boleh kosong");
             } else if (pictures.length <= 0) {
                 toastr.error("Gambar kegiatan tidak boleh kosong");
+            } else if (statusPicturesTotal) {
+                toastr.error("Jumlah gambar maksimal 5")
             } else if (statusPicturesSize) {
                 toastr.error("Ukuran gambar maksimal 512 kb")
             } else if (statusPicturesMime) {

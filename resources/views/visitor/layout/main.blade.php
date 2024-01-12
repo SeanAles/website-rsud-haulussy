@@ -23,6 +23,11 @@
     <link rel="manifest" href="{{ asset('visitor/assets/img/favicons/manifest.json') }}" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <meta name="msapplication-TileImage" content="{{ asset('visitor/assets/img/favicons/mstile-150x150.png') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fjalla+One&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&amp;display=swap"
+        rel="stylesheet" />
     <meta name="theme-color" content="#ffffff" />
 
     <!-- ===============================================-->
@@ -33,6 +38,37 @@
 </head>
 
 @yield('style')
+<style>
+    a#navbarDropdown {
+        color: inherit, text-decoration:none;
+        color: #1B71A1;
+        font-weight: 500;
+    }
+
+    a#navbarDropdown:hover {
+        text-decoration: none;
+        color: #283779;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .nav-item {
+            margin-bottom: 20px;
+            margin-right: 0px;
+        }
+    }
+
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        .box {
+            padding: 10px;
+        }
+    }
+
+    .nav-item {
+        margin-right: 30px;
+    }
+</style>
 
 <body>
     <!-- Modal -->
@@ -63,10 +99,11 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"> </span>
                 </button>
-                <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0 mr-5"
+                    id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <a class=" dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Tentang Kami
                             </a>
@@ -81,33 +118,35 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <a class=" dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Fasilitas Pelayanan
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="rawat">Rawat Jalan</a>
-                                <a class="dropdown-item" href="#">Jadwal Poliklinik</a>
-                                <a class="dropdown-item" href="#">Rawat Inap</a>
-                                <a class="dropdown-item" href="#">Alur Pelayanan</a>
-                                <a class="dropdown-item" href="#">Pelayanan Penunjang</a>
-                                <a class="dropdown-item" href="#">Medical Check Up</a>
-                                <a class="dropdown-item" href="/ketersediaan-tempat-tidur.">Ketersediaan tempat
+                                <a class="dropdown-item" href="/rawat-jalan">Rawat Jalan</a>
+                                <a class="dropdown-item" href="/jadwal-poliklinik">Jadwal Poliklinik</a>
+                                <a class="dropdown-item" href="/rawat-inap">Rawat Inap</a>
+                                <a class="dropdown-item" href="/alur-pelayanan">Alur Pelayanan</a>
+                                <a class="dropdown-item" href="/pelayanan-penunjang">Pelayanan Penunjang</a>
+                                <a class="dropdown-item" href="/medical-check-up">Medical Check Up</a>
+                                <a class="dropdown-item" href="/ketersediaan-tempat-tidur">Ketersediaan tempat
                                     tidur</a>
-                                <a class="dropdown-item" href="#">Tarif Pelayanan</a>
-                                <a class="dropdown-item" href="promkes">Promosi Kesehatan</a>
-                                <a class="dropdown-item" href="#">Tata Tertib</a>
+                                <a class="dropdown-item" href="/tarif-pelayanan">Tarif Pelayanan</a>
+                                <a class="dropdown-item" href="/promosi-kesehatan">Promosi Kesehatan</a>
+                                <a class="dropdown-item" href="/tata-tertib">Tata Tertib</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="spesialis">Dokter Spesialis</a>
-                                <a class="dropdown-item" href="#">Dokter Umum</a>
+                                <a class="dropdown-item" href="/dokter-spesialis">Dokter Spesialis</a>
+                                <a class="dropdown-item" href="/dokter-umum">Dokter Umum</a>
                             </div>
                         </li>
 
-                        <li class="nav-item px-2"><a class="nav-link" href="#">Manajer Ruangan & Instalasi</a>
+                        <li class="nav-item"><a id="navbarDropdown" href="/manajer-ruangan-instalasi">Manajer Ruangan
+                                &
+                                Instalasi</a>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Informasi
                             </a>
@@ -118,18 +157,20 @@
                             </div>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Kontak kami
                             </a>
+
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/kontak">Kontak</a>
-                                <a class="dropdown-item" href="#">Survei Kepuasan Pengguna Layanan</a>
+                                <a class="dropdown-item" href="/survey-kepuasaan">Survei Kepuasan Pengguna</a>
                                 <a class="dropdown-item" href="/kritik-saran">Kritik & Saran</a>
                             </div>
                         </li>
                     </ul>
+
                     {{-- <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4"
                         href="#!">Log In</a> --}}
                 </div>
@@ -167,9 +208,10 @@
 
         <section class="py-0 bg-secondary">
             <div class="bg-holder opacity-25"
-                style="background-image: url(/visitor/assets/img/gallery/dot-bg.png); background-position: top left; margin-top: -3.125rem; background-size: auto;">
+                style="background-image: url(/visitor/assets/img/gallery/dot-bg.png); background-position: top left; margin-top: -3.125rem; background-size: auto">
             </div>
             <!--/.bg-holder-->
+
             <div class="container">
                 <div class="row py-8">
                     <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0">
@@ -179,51 +221,47 @@
                         <p class="text-light my-4">RSUD dr. M. Haulussy Ambon</p>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1">
-                        <h5 class="lh-lg fw-bold mb-4 text-light font-sans-serif">
-                            Departments
-                        </h5>
+                        <h5 class="lh-lg fw-bold mb-4 text-light font-sans-serif">Listing Link Website</h5>
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
-                            <li class="lh-lg">
-                                <a class="footer-link" href="#!">Eye care</a>
-                            </li>
-                            <li class="lh-lg">
-                                <a class="footer-link" href="#!">Cardiac are</a>
-                            </li>
-                            <li class="lh-lg">
-                                <a class="footer-link" href="#!">Heart care</a>
+                            <li class="lh-lg"><a class="footer-link" href="https://malukuprov.go.id">Pemerintah
+                                    Provinsi
+                                    Maluku</a></li>
+                            <li class="lh-lg"><a class="footer-link" href="https://dinkes.malukuprov.go.id">Dinas
+                                    Kesehatan Provinsi Maluku</a></li>
+                            <li class="lh-lg"><a class="footer-link" href="https://dinkes.ambon.go.id">Dinas
+                                    Kesehatan
+                                    Kota Ambon </a></li>
+                            <li class="lh-lg"><a class="footer-link" href="https://fk.unpatti.ac.id">Falkutas
+                                    Kedokteran
+                                    Unpatti</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
+                        <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif">Listing Link Website</h5>
+                        <ul class="list-unstyled mb-md-4 mb-lg-0">
+                            <li class="lh-lg"><a class="footer-link" href="https://ambon.go.id">Pemerintah Kota
+                                    Ambon</a></li>
+                            <li class="lh-lg"><a class="footer-link" href="https://ambon.go.id/dinas-sosial">Dinas
+                                    Sosial Kota Ambon</a></li>
+                            <li class="lh-lg"><a class="footer-link" href="https://rskd-maluku.com">RSKD Provinsi
+                                    Maluku</a></li>
+                            <li class="lh-lg"><a class="footer-link" href="https://rstambon.co.id">RST Kota
+                                    Ambon</a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
-                        <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif">
-                            Membership
-                        </h5>
+                        <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif">Listing Link Website</h5>
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
-                            <li class="lh-lg">
-                                <a class="footer-link" href="#!">Free trial</a>
-                            </li>
-                            <li class="lh-lg">
-                                <a class="footer-link" href="#!">Silver</a>
-                            </li>
-                            <li class="lh-lg">
-                                <a class="footer-link" href="#!">Premium</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
-                        <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif">
-                            Customer Care
-                        </h5>
-                        <ul class="list-unstyled mb-md-4 mb-lg-0">
-                            <li class="lh-lg">
-                                <a class="footer-link" href="#!">About Us</a>
-                            </li>
-                            <li class="lh-lg">
-                                <a class="footer-link" href="#!">Contact US</a>
-                            </li>
-                            <li class="lh-lg">
-                                <a class="footer-link" href="#!">Get Update</a>
-                            </li>
+                            <li class="lh-lg"><a class="footer-link" href="https://rsupleimena.co.id">RSUP dr. J.
+                                    Leimena</a></li>
+                            <li class="lh-lg"><a class="footer-link" href="https://siloamhospitals.com">Rumah Sakit
+                                    Siloam</a></li>
+                            <li class="lh-lg"><a class="footer-link" href="https://rsbhayangkaraambon.com">RS
+                                    Bhayangkara Ambon</a></li>
+                            <li class="lh-lg"><a class="footer-link" href="https://rsusumberhidup.or.id">RS Sumber
+                                    Hidup
+                                    GPM</a></li>
                         </ul>
                     </div>
                 </div>
@@ -236,19 +274,19 @@
                     <div class="row justify-content-md-between justify-content-evenly py-4">
                         <div class="col-12 col-sm-8 col-md-6 col-lg-auto text-center text-md-start">
                             <p class="fs--1 my-2 fw-bold text-200">
-                                All rights Reserved &copy; RSUD dr. M. Haulussy Ambon, 2023
+                                All rights Reserved &copy; RSUD dr. M. Haulussy Ambon, 2024
                             </p>
                         </div>
                         <div class="col-12 col-sm-8 col-md-6">
                             <p class="fs--1 my-2 text-center text-md-end text-200">
                                 Made with&nbsp;
-                                <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="12"
-                                    height="12" fill="#F95C19" viewBox="0 0 16 16">
+                                <svg class="bi bi-suit-heart-fill" xmlns="http://https://w3.org/2000/svg"
+                                    width="12" height="12" fill="#F95C19" viewBox="0 0 16 16">
                                     <path
                                         d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z">
                                     </path>
                                 </svg>&nbsp;by&nbsp;
-                                <a class="fw-bold text-info" href="https://www.instagram.com/kemi_patty/"
+                                <a class="fw-bold text-info" href="https://https://instagram.com/kemi_patty/"
                                     target="_blank">RSUD dr. M. Haulussy Ambon</a>
                             </p>
                         </div>
@@ -289,11 +327,7 @@
         });
     </script> -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fjalla+One&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&amp;display=swap"
-        rel="stylesheet" />
+
 </body>
 
 </html>

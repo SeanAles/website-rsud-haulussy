@@ -11,7 +11,15 @@
 @endsection
 
 @section('style')
-
+    <style>
+        @media (max-width: 767.98px) {
+            .row {
+                margin-left: 40px;
+                margin-right: 40px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -41,7 +49,7 @@
     <script src="{{ asset('plugins/lightbox/js/lightbox.min.js') }}"></script>
     <script>
         lightbox.option({
-            resizeDuration: 200,
+            resizeDuration: 500,
             wrapAround: false,
             albumLabel: "Gambar ke %1 dari %2"
         })

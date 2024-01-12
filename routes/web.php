@@ -33,11 +33,45 @@ Route::get('/sejarah', function () {return view('visitor.tentang-kami.sejarah');
 Route::get('/mantan-direktur', function () {return view('visitor.tentang-kami.mantan-direktur');});
 Route::get('/visi-misi', function () {return view('visitor.tentang-kami.visi-misi');});
 Route::get('/struktur-organisasi', function () {return view('visitor.tentang-kami.struktur-organisasi');});
-Route::get('/direksi-manajemen', function () {return view('visitor.tentang-kami.direksi-manajemen');});
-Route::get('/gambaran-umum', function () {return view('visitor.tentang-kami.gambaran-umum');});
+Route::get('/direksi-manajemen', function () {
+    // return view('visitor.tentang-kami.direksi-manajemen');
+    return view('visitor.maintenance.under-construction');
+});
+Route::get('/gambaran-umum', function () {
+    // return view('visitor.tentang-kami.gambaran-umum');
+    return view('visitor.maintenance.under-construction');
+});
 
 //Fasilitas dan Pelayanan Route
+Route::get('/rawat-jalan', function(){ return view('visitor.fasilitas.rawat-jalan'); });
+Route::get('/jadwal-poliklinik', function(){return view('visitor.fasilitas.jadwal-poliklinik');});
+Route::get('/rawat-inap', function(){
+    return view('visitor.maintenance.under-construction');
+}); 
+Route::get('/alur-pelayanan', function(){
+    return view('visitor.maintenance.under-construction');
+});
+Route::get('/pelayanan-penunjang', function(){
+    return view('visitor.maintenance.under-construction');
+});
+Route::get('/medical-check-up', function(){
+    return view('visitor.maintenance.under-construction');
+});
 Route::get('/ketersediaan-tempat-tidur', [BedController::class, 'indexBed']);
+Route::get('/tarif-pelayanan', function(){
+    return view('visitor.maintenance.under-construction');
+});
+Route::get('/promosi-kesehatan', function(){return view('visitor.fasilitas.promosi-kesehatan');});
+Route::get('/tata-tertib', function(){
+    return view('visitor.maintenance.under-construction');
+});
+Route::get('/dokter-spesialis', function(){ return view('visitor.fasilitas.dokter-spesialis'); });
+Route::get('/dokter-umum', function(){
+    return view('visitor.maintenance.under-construction');
+});
+
+// Manajer Ruangan dan Instalasi Route
+Route::get('/manajer-ruangan-instalasi', function(){ return 0; });
 
 // Informasi Route
 // Informasi Artikel Route
@@ -52,6 +86,9 @@ Route::get('/galeri/{slug}', [EventController::class, 'showGaleri']);
 
 // Kontak Kami Route
 Route::get('/kontak', function(){ return view('visitor.kontak.kontak');});
+Route::get('/survey-kepuasaan', function(){ 
+    return view('visitor.maintenance.under-construction');
+});
 Route::get('/kritik-saran', function(){ return view('visitor.kontak.kritik-saran');});
 
 Route::middleware(['guest'])->group(function () {

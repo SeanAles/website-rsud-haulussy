@@ -12,10 +12,10 @@
             <h1>Ketersediaan Tempat Tidur</h1>
         </div>
         <div class="text-center container">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-striped">
                 <tr>
                     <th>No.</th>
-                    <th>Nama Ruangan</th>
+                    <th>Nama Ruangan</th>   
                     <th>Ketersediaan</th>
                 </tr>
                 @foreach ($beds as $bed)

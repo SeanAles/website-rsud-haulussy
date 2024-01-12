@@ -20,7 +20,7 @@
                     placeholder="Masukkan Pembuat Berita... ">
             </div>
             <div class="form-group">
-                <label for="thumbnail">Thumbnail Berita</label>
+                <label for="thumbnail">Thumbnail Berita (maks: 1024kb)</label>
                 <input type="file" name="thumbnail" id="thumbnail" class="pb-5 pt-3 form-control">
             </div>
             <label for="description">Konten Berita</label>

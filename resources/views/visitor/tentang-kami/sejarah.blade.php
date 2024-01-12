@@ -30,7 +30,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (13).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -45,7 +45,7 @@
                             </svg><span class="fs--1 text-900">Maret 3, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Saat istri inspektur kesehatan Provinsi Maluku.</h5>
                             <a class="stretched-link" role="button" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">see more</a>
+                                data-bs-target="#exampleModal">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
-                    <div class="modal-dialog modal-lg ">
+                    <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="exampleModalLabel">RSU Tempo Doloe</h1>
@@ -62,14 +62,14 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (13).jpg')}}" width="100%" height="700">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (13).jpg')}}" width="100%" height="100%" class="img-fluid" style="max-height: 700px; max-width: 350;">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (1).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -83,12 +83,10 @@
                                 </path>
                             </svg><span class="fs--1 text-900">Maret 11, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Menteri kesehatan RI kembali ke Ambon.</h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#example">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#example">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
-
 
                 <!-- Modal -->
                 <div class="modal fade" id="example" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -102,17 +100,14 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (1).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (1).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-
-
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (2).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -127,8 +122,7 @@
                             </svg><span class="fs--1 text-900">Maret 11, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Menteri kesehatan RI yang berdiri di tengah sedang
                                 meneliti.</h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#exa">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#exa">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -146,7 +140,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (2).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (2).jpg')}}" class="img-fluid" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -155,7 +149,7 @@
 
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (3).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -170,8 +164,7 @@
                             </svg><span class="fs--1 text-900">Maret 3, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Direktur RSU Ambon, dr. L. Huiselan menyampaikan
                                 pidato.</h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#ex">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#ex">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -188,7 +181,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (3).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (3).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -196,7 +189,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (4).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -211,8 +204,7 @@
                             </svg><span class="fs--1 text-900">Maret 3, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Jalan utama dalam bangunan RSU Ambon di tahun 1954.
                             </h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#e">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#e">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -229,7 +221,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (4).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (4).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -237,7 +229,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (5).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -252,8 +244,7 @@
                             </svg><span class="fs--1 text-900">Maret 7, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Dokter paramedis dan pegawai RSU Ambon di tahun
                                 1954.</h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -270,7 +261,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (5).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (5).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -278,7 +269,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (6).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -293,8 +284,7 @@
                             </svg><span class="fs--1 text-900">Maret 11, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Pada tanggal 11 maret, para dokter perintis
                                 berdirinya RSU.</h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes1">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes1">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -311,7 +301,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (6).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (6).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -319,7 +309,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (7).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -334,8 +324,7 @@
                             </svg><span class="fs--1 text-900">April 23, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Pada tanggal 23 april, para dokter sedang berpose
                                 untuk berfoto. </h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes2">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes2">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -352,7 +341,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (7).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (7).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -360,7 +349,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (8).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -374,8 +363,7 @@
                                 </path>
                             </svg><span class="fs--1 text-900">April 23, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Kunjungan Wakil Presiden RI Drs. H. M. Hatta.</h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes3">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes3">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -392,7 +380,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (8).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (8).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -400,7 +388,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (9).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -414,8 +402,7 @@
                                 </path>
                             </svg><span class="fs--1 text-900">April 23, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Kunjungan wakil Presiden RI Drs. H. M. Hatta.</h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes4">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes4">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -432,7 +419,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (9).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (9).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -440,7 +427,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (10).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -455,8 +442,7 @@
                             </svg><span class="fs--1 text-900">Juli 26, 1955</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Saat bangunan ruangan induk RSU Ambon belum selesai.
                             </h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes5">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes5">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -473,7 +459,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (10).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (10).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -481,7 +467,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (11).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -496,8 +482,7 @@
                             </svg><span class="fs--1 text-900">Juli 26, 1955</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Saat bangunan ruangan induk RSU Ambon belum selesai.
                             </h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes6">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes6">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -514,7 +499,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (11).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (11).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -522,7 +507,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (12).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -537,8 +522,7 @@
                             </svg><span class="fs--1 text-900">Maret 3, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Gubernur Provinsi Maluku, Mr. J. J Latuharhary.
                             </h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes7">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes7">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -555,7 +539,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (12).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (12).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -563,7 +547,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (14).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -577,8 +561,7 @@
                                 </path>
                             </svg><span class="fs--1 text-900">Maret 3, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Pembukaan acara peresmian RSU Ambon pada. </h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes8">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes8">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -595,7 +578,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (14).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (14).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -603,7 +586,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (15).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -618,8 +601,7 @@
                             </svg><span class="fs--1 text-900">Maret 3, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Inspektur kesehatan Provinsi Maluku, dr. D. P.
                                 Tahitu.</h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes9">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes9">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -636,7 +618,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (15).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (15).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>
@@ -644,7 +626,7 @@
                 </div>
 
 
-                <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3  mb-4">
                     <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                             src="{{ asset('visitor/assets/img/sejarah/sejarah (16).jpg')}}" alt="news" />
                         <div class="card-body"><span class="fs--1 text-primary me-3">Tempo Doloe</span>
@@ -658,8 +640,7 @@
                                 </path>
                             </svg><span class="fs--1 text-900">Maret 3, 1954</span><span class="fs--1"></span>
                             <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Kepala jabatan kesehatan tentara Res. Inf.25.</h5>
-                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes10">see
-                                more</a>
+                            <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes10">Lihat lebih lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -676,7 +657,7 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (16).jpg')}}" width="100%" height="500">
+                                    <img src="{{ asset('visitor/assets/img/sejarah/sejarah (16).jpg')}}" width="100%" height="100%" style="max-width: 600px; max-height: 400px">
                                 </div>
                             </div>
                         </div>

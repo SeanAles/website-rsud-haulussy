@@ -27,27 +27,26 @@
     <section class="py-8">
         <div class="container">
             <div class="row">
-                <div class="bg-holder bg-size"
-                    style="background-image: url(/visitor/assets/img/gallery/dot-bg.png); background-position: bottom right; background-size: auto">
+                <div class="bg-holder bg-size" style="background-image: url(/visitor/assets/img/gallery/dot-bg.png); background-position: bottom right; background-size: auto">
                 </div>
                 <!--/.bg-holder-->
 
-                <div class="col-lg-6 z-index-2 mb-5"><img class="w-100" src="{{ asset("visitor/assets/img/gallery/info.jpg") }}" alt="..." />
+                <div class="col-lg-6 z-index-2 mb-5"><img class="w-100 rounded" src="{{ asset("visitor/assets/img/gallery/info.jpg") }}" alt="..." />
                 </div>
                 <div class="col-lg-6 z-index-2">
                     <form class="row g-3">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label class="visually-hidden" for="inputName">Nama</label>
                             <input class="form-control form-livedoc-control" id="inputName" type="text"
                                 placeholder="Nama" />
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label class="form-label visually-hidden" for="inputEmail">Email</label>
                             <input class="form-control form-livedoc-control" id="inputEmail" type="email"
                                 placeholder="Email" />
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label class="form-label visually-hidden" for="inputNomorHP">No Handphone</label>
                             <input class="form-control form-livedoc-control" id="inputNomorHP" type="number"
                                 placeholder="No Handphone" />
