@@ -60,13 +60,18 @@
 
 
     @media (min-width: 768px) and (max-width: 991px) {
-        .box {
-            padding: 10px;
+        .nav-item {
+            margin-bottom: 20px;
+            margin-right: 0px;
         }
     }
 
     .nav-item {
         margin-right: 30px;
+    }
+
+    .right-space {
+        margin-right: 100px;
     }
 </style>
 
@@ -88,92 +93,92 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-            data-navbar-on-scroll="data-navbar-on-scroll">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img src="{{ asset('visitor/assets/img/gallery/rs.png') }}" alt="logo" height="100" />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"> </span>
-                </button>
-                <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0 mr-5"
-                    id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
-                        <li class="nav-item dropdown">
-                            <a class=" dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Tentang Kami
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/sejarah">Sejarah</a>
-                                <a class="dropdown-item" href="/mantan-direktur">Mantan Direktur</a>
-                                <a class="dropdown-item" href="/visi-misi">Visi & Misi</a>
-                                <a class="dropdown-item" href="/struktur-organisasi">Struktur Organisasi</a>
-                                <a class="dropdown-item" href="/direksi-manajemen">Direksi & Manajemen</a>
-                                <a class="dropdown-item" href="/gambaran-umum">Gambaran Umum</a>
-                            </div>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class=" dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Fasilitas Pelayanan
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/rawat-jalan">Rawat Jalan</a>
-                                <a class="dropdown-item" href="/jadwal-poliklinik">Jadwal Poliklinik</a>
-                                <a class="dropdown-item" href="/rawat-inap">Rawat Inap</a>
-                                <a class="dropdown-item" href="/alur-pelayanan">Alur Pelayanan</a>
-                                <a class="dropdown-item" href="/pelayanan-penunjang">Pelayanan Penunjang</a>
-                                <a class="dropdown-item" href="/medical-check-up">Medical Check Up</a>
-                                <a class="dropdown-item" href="/ketersediaan-tempat-tidur">Ketersediaan tempat
-                                    tidur</a>
-                                <a class="dropdown-item" href="/tarif-pelayanan">Tarif Pelayanan</a>
-                                <a class="dropdown-item" href="/promosi-kesehatan">Promosi Kesehatan</a>
-                                <a class="dropdown-item" href="/tata-tertib">Tata Tertib</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/dokter-spesialis">Dokter Spesialis</a>
-                                <a class="dropdown-item" href="/dokter-umum">Dokter Umum</a>
-                            </div>
-                        </li>
-
-                        <li class="nav-item"><a id="navbarDropdown" href="/manajer-ruangan-instalasi">Manajer Ruangan
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+            <a class="navbar-brand" href="/">
+                <img src="{{ asset('visitor/assets/img/gallery/rs.png') }}" alt="logo" style="max-height: 85px" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"> </span>
+            </button>
+            <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base right-space">
+                    <li class="nav-item dropdown">
+                        <a class=" dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tentang Kami
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/sejarah">Sejarah</a>
+                            <a class="dropdown-item" href="/mantan-direktur">Mantan Direktur</a>
+                            <a class="dropdown-item" href="/visi-misi">Visi & Misi</a>
+                            <a class="dropdown-item" href="/struktur-organisasi">Struktur Organisasi</a>
+                            <a class="dropdown-item" href="/direksi-manajemen">Direksi & Manajemen</a>
+                            <a class="dropdown-item" href="/direksi-manajemen">Manajer Ruangan
                                 &
                                 Instalasi</a>
-                        </li>
+                            <a class="dropdown-item" href="/gambaran-umum">Gambaran Umum</a>
+                        </div>
+                    </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Informasi
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/berita">Berita</a>
-                                <a class="dropdown-item" href="/artikel">Artikel Kesehatan</a>
-                                <a class="dropdown-item" href="/galeri">Galeri Foto</a>
-                            </div>
-                        </li>
+                    <li class="nav-item dropdown">
+                        <a class=" dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Fasilitas Pelayanan
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/rawat-jalan">Rawat Jalan</a>
+                            <a class="dropdown-item" href="/jadwal-poliklinik">Jadwal Poliklinik</a>
+                            <a class="dropdown-item" href="/rawat-inap">Rawat Inap</a>
+                            <a class="dropdown-item" href="/alur-pelayanan">Alur Pelayanan</a>
+                            <a class="dropdown-item" href="/pelayanan-penunjang">Pelayanan Penunjang</a>
+                            <a class="dropdown-item" href="/medical-check-up">Medical Check Up</a>
+                            <a class="dropdown-item" href="/ketersediaan-tempat-tidur">Ketersediaan tempat
+                                tidur</a>
+                            <a class="dropdown-item" href="/tarif-pelayanan">Tarif Pelayanan</a>
+                            <a class="dropdown-item" href="/promosi-kesehatan">Promosi Kesehatan</a>
+                            <a class="dropdown-item" href="/tata-tertib">Tata Tertib</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/dokter-spesialis">Dokter Spesialis</a>
+                            <a class="dropdown-item" href="/dokter-umum">Dokter Umum</a>
+                        </div>
+                    </li>
 
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Kontak kami
-                            </a>
+                    {{-- <li class="nav-item"><a id="navbarDropdown" href="/manajer-ruangan-instalasi">Manajer Ruangan
+                            &
+                            Instalasi</a>
+                    </li> --}}
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/kontak">Kontak</a>
-                                <a class="dropdown-item" href="/survey-kepuasaan">Survei Kepuasan Pengguna</a>
-                                <a class="dropdown-item" href="/kritik-saran">Kritik & Saran</a>
-                            </div>
-                        </li>
-                    </ul>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Informasi
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/berita">Berita</a>
+                            <a class="dropdown-item" href="/artikel">Artikel Kesehatan</a>
+                            <a class="dropdown-item" href="/galeri">Galeri Foto</a>
+                        </div>
+                    </li>
 
-                    {{-- <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4"
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kontak kami
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/kontak">Kontak</a>
+                            <a class="dropdown-item" href="/survey-kepuasaan">Survei Kepuasan Pengguna</a>
+                            <a class="dropdown-item" href="/kritik-saran">Kritik & Saran</a>
+                        </div>
+                    </li>
+                </ul>
+
+                {{-- <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4"
                         href="#!">Log In</a> --}}
-                </div>
+            </div>
             </div>
         </nav>
         <section class="py-xxl-10 pb-0" id="home">
@@ -182,12 +187,12 @@
             </div>
             <!--/.bg-holder-->
             <div class="container mt-5 text-center">
-                <div class="row min-vh-xl-100 min-vh-xxl-25">
-                    <div class="col-md-8 col-xl-6 col-xxl-7 order-0 order-md-1 text-end">
-                        <img class="pt-7 pt-md-0 w-100" src="{{ asset('visitor/assets/img/gallery/hero.png') }}"
+                <div class="row min-vh-xl-100 min-vh-xxl-25 mt-5">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 order-0 order-lg-1">
+                        <img class="pt-7 pt-md-0 img-fluid" src="{{ asset('visitor/assets/img/gallery/hero.png') }}"
                             alt="hero-header" />
                     </div>
-                    <div class="col-md-4 col-xl-6 col-xxl-5 text-md-start text-center py-6">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 py-6 text-lg-start">
                         <b>
                             <h1 class="fw-light fs-6 fs-xxl-7">
                                 RSUD dr. M. Haulussy Ambon
@@ -221,7 +226,7 @@
                         <p class="text-light my-4">RSUD dr. M. Haulussy Ambon</p>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1">
-                        <h5 class="lh-lg fw-bold mb-4 text-light font-sans-serif">Listing Link Website</h5>
+
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
                             <li class="lh-lg"><a class="footer-link" href="https://malukuprov.go.id">Pemerintah
                                     Provinsi
@@ -237,7 +242,6 @@
                         </ul>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
-                        <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif">Listing Link Website</h5>
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
                             <li class="lh-lg"><a class="footer-link" href="https://ambon.go.id">Pemerintah Kota
                                     Ambon</a></li>
@@ -251,7 +255,6 @@
                         </ul>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
-                        <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif">Listing Link Website</h5>
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
                             <li class="lh-lg"><a class="footer-link" href="https://rsupleimena.co.id">RSUP dr. J.
                                     Leimena</a></li>
