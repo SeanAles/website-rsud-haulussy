@@ -189,7 +189,7 @@
             <div class="container mt-5 text-center">
                 <div class="row min-vh-xl-100 min-vh-xxl-25 mt-5">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 order-0 order-lg-1">
-                        <img class="pt-7 pt-md-0 img-fluid" src="{{ asset('visitor/assets/img/gallery/hero.png') }}"
+                        <img class="pt-7 pt-md-0" width="85%" src="{{ asset('visitor/assets/img/gallery/bgd.png') }}"
                             alt="hero-header" />
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 py-6 text-lg-start">
