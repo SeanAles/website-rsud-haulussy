@@ -200,7 +200,7 @@
                         </b>
                         <!-- <p class="fs-1 mb-5">about us</p> -->
                         <a class="btn btn-lg btn-primary rounded-pill"
-                            href="https://wa.me/6285311564884?text=Halo,%20saya%20mau%20mendaftar%20online."
+                            href="https://wa.me/6281392582755?text=Halo,%20saya%20mau%20mendaftar%20online."
                             target="_blank" role="button">Buat Janji Pendaftaran</a>
                     </div>
                 </div>
