@@ -113,6 +113,8 @@
 
         $('.data-table').DataTable({
             language: {
+                "lengthMenu": "Tampilkan _MENU_ data",
+                "search": " Cari",
                 'info': 'Menampilkan _START_ hingga _END_ dari _TOTAL_ data',
                 "emptyTable": "Tidak ada data yang ditemukan",
                 "zeroRecords": "Tidak dapat menemukan data yang sesuai",

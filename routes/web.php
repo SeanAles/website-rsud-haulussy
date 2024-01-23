@@ -7,6 +7,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventPictureController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SuggestionController;
 use App\Models\Bed;
 use App\Models\Event;
 use App\Models\Post;
@@ -89,7 +90,9 @@ Route::get('/kontak', function(){ return view('visitor.kontak.kontak');});
 Route::get('/survey-kepuasaan', function(){ 
     return view('visitor.maintenance.under-construction');
 });
+// Kritik dan Saran Route
 Route::get('/kritik-saran', function(){ return view('visitor.kontak.kritik-saran');});
+Route::post('/kritik-saran', [SuggestionController::class, 'create']);
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('prevent.back.history');
@@ -106,6 +109,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::middleware('admin')->group(function () {
+        // Dashboard
         Route::get('/dashboard', function () {
             $article = Post::where('category', '=', 'article')->get();
             $articleCount = $article->count();
@@ -132,6 +136,9 @@ Route::middleware(['auth'])->group(function () {
         //Event Picture Route
         Route::post('/event-picture/{id}', [EventPictureController::class, 'store']);
         Route::delete('/event-picture/{id}', [EventPictureController::class, 'destroy']);
+
+        // Suggestion Route
+        Route::get('/suggestion', [SuggestionController::class, 'index'])->name('suggestion.index');
     });
 
     Route::middleware('admin.bed')->group(function () {

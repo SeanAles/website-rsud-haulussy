@@ -43,6 +43,8 @@
     <script>
         $('.data-table').DataTable({
             language: {
+                "lengthMenu": "Tampilkan _MENU_ data",
+                "search": " Cari",
                 'info': 'Menampilkan _START_ hingga _END_ dari _TOTAL_ data',
                 'infoEmpty': 'Menampilkan _TOTAL_ data',
                 "infoFiltered": " <span class='quickApproveTable_info_filtered_span'>(Disaring dari total _MAX_ data)</span>",
