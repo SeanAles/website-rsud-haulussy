@@ -73,9 +73,20 @@
     .right-space {
         margin-right: 100px;
     }
+
+    #preloader{
+        background: #fff url(/visitor/assets/img/gif/loader.gif) no-repeat center center;
+        background-size: 20%;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: 9999;
+    }
 </style>
 
 <body>
+    <div id="preloader"></div>
+
     <!-- Modal -->
     <div class="modal" id="myModal">
         <div class="modal-dialog">
@@ -321,6 +332,14 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+       var loader = document.querySelector("#preloader");
+
+       window.addEventListener("load", function(){
+        loader.style.display = 'none';
+       });
+        
+    </script>
     @yield('script')
 
     <!-- Script JavaScript untuk menampilkan modal saat halaman dimuat -->
