@@ -74,7 +74,7 @@
         margin-right: 100px;
     }
 
-    #preloader{
+    #preloader {
         background: #fff url(/visitor/assets/img/gif/loader.gif) no-repeat center center;
         background-size: 20%;
         height: 100vh;
@@ -200,8 +200,8 @@
             <div class="container mt-5 text-center">
                 <div class="row min-vh-xl-100 min-vh-xxl-25 mt-5">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 order-0 order-lg-1">
-                        <img class="pt-7 pt-md-0" width="85%" src="{{ asset('visitor/assets/img/gallery/bgd.png') }}"
-                            alt="hero-header" />
+                        <img class="pt-7 pt-md-0" width="85%"
+                            src="{{ asset('visitor/assets/img/gallery/bgd.png') }}" alt="hero-header" />
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 py-6 text-lg-start">
                         <b>
@@ -333,12 +333,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-       var loader = document.querySelector("#preloader");
+        var loader = document.querySelector("#preloader");
 
-       window.addEventListener("load", function(){
-        loader.style.display = 'none';
-       });
-        
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                loader.style.display = 'none';
+            }, 1000);
+        });
+
+        setTimeout(function() {
+            console.log("Executed after 1 second");
+        }, 1000);
     </script>
     @yield('script')
 
