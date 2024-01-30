@@ -56,13 +56,31 @@
             margin-bottom: 20px;
             margin-right: 0px;
         }
+
+        #preloader {
+            background: #fff url(/visitor/assets/img/gif/loader.gif) no-repeat center center;
+            background-size: 70%;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 9999;
+        }
     }
 
 
-    @media (min-width: 768px) and (max-width: 991px) {
+    @media (min-width: 991px) {
         .nav-item {
             margin-bottom: 20px;
             margin-right: 0px;
+        }
+
+        #preloader {
+            background: #fff url(/visitor/assets/img/gif/loader.gif) no-repeat center center;
+            background-size: 15%;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 9999;
         }
     }
 
@@ -72,15 +90,6 @@
 
     .right-space {
         margin-right: 100px;
-    }
-
-    #preloader {
-        background: #fff url(/visitor/assets/img/gif/loader.gif) no-repeat center center;
-        background-size: 20%;
-        height: 100vh;
-        width: 100%;
-        position: fixed;
-        z-index: 9999;
     }
 </style>
 
