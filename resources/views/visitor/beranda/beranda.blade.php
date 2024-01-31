@@ -283,7 +283,7 @@
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#anak" style="font-size: 30px"><i
                                     class="fa-solid fa-person-breastfeeding"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Anak dan ASI</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Anak dan Imunisasi</p>
                             </a>
                         </div>
                     </div>
