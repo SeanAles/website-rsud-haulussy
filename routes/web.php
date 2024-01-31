@@ -7,6 +7,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventPictureController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\SuggestionController;
 use App\Models\Bed;
 use App\Models\Event;
@@ -139,6 +140,7 @@ Route::middleware(['auth'])->group(function () {
 
         // Suggestion Route
         Route::get('/suggestion', [SuggestionController::class, 'index'])->name('suggestion.index');
+
     });
 
     Route::middleware('admin.bed')->group(function () {
@@ -147,6 +149,9 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/bed', [BedController::class, 'store']);
         Route::patch('/bed/{id}', [BedController::class, 'update']);
         Route::delete('/bed/{id}', [BedController::class, 'destroy']);
+
+        //Note Route
+        Route::patch('/note', [NoteController::class, 'update']);
     });
 
     Route::middleware('admin.article')->group(function () {

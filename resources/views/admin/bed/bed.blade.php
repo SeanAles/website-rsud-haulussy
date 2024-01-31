@@ -11,9 +11,48 @@
 
 @section('content')
     <div>
-        <button type="button" class="update btn btn-success" data-toggle="modal" data-target="#addBedModal">
+        <button type="button" class="update btn btn-success mb-2" data-toggle="modal" data-target="#addBedModal">
             Tambahkan Ruangan
         </button>
+        
+        <div>
+            <button type="button" class="update btn btn-warning" data-toggle="modal" data-target="#editNoteModal">
+                Edit Keterangan
+            </button>
+        </div>
+
+        {{-- Tambahkan Bed Modal --}}
+        <div class="modal fade" id="editNoteModal" tabindex="-1" role="dialog" aria-labelledby="editNoteModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editNoteModalLabel">
+                            Edit Keterangan
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="formEditNote">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="content">Keterangan</label>
+                                <input type="text" value="{{ $note->content }}" class="form-control" name="content" id="content">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                id="cancelEditNote">Batal</button>
+                            <button type="button" onclick="editNote()" class="btn btn-success"
+                                id="editNoteButton">Edit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         
         {{-- Tambahkan Bed Modal --}}
         <div class="modal fade" id="addBedModal" tabindex="-1" role="dialog" aria-labelledby="addBedModalLabel"
@@ -53,6 +92,9 @@
         </div>
 
         <hr>
+        <div class="text-danger font-weight-bold">
+            <i><p id="note">*{{ $note->content }}</p></i>
+        </div>
         <table class="table table-bordered table-responsif data-table">
             <thead>
                 <tr>
@@ -210,5 +252,33 @@
                 }
             });
         }
+
+        function editNote(){
+            const content = $('#content').val();
+
+            if (content === '') {
+                toastr.error("Keterangan harus diisi");
+            } else {
+                document.getElementById("editNoteButton").disabled = true;
+                $.ajax({
+                    type: 'PATCH',
+                    url: '/note',
+                    data: $('#formEditNote').serialize(),
+                    success: function(response) {
+                        $('#cancelEditNote').click();
+                        toastr.success(response.message);
+                        $('#content').val(response.data.content);
+                        $('#note').html(response.data.content);
+                        document.getElementById("editNoteButton").disabled = false;
+                    },
+                    error: function(error) {
+                        $('#cancelEditNote').click();
+                        toastr.error("Error");
+                        document.getElementById("editNoteButton").disabled = false;
+                    }
+                });
+            }
+        }
+        
     </script>
 @endsection

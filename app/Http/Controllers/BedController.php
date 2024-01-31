@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bed;
+use App\Models\Note;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Http\Request;
 
@@ -88,7 +89,9 @@ class BedController extends Controller
                 ->make(true);
         }
 
-        return view("admin.bed.bed");
+        $note = Note::where('name', '=', 'Bed')->first();
+
+        return view("admin.bed.bed", ["note" => $note]);
     }
 
     public function store(Request $request)
@@ -132,7 +135,8 @@ class BedController extends Controller
 
     public function indexBed(){
         $beds = Bed::all();
+        $noteKetersediaanBed = Note::where('name', '=', 'Bed')->first();
 
-        return view('visitor.fasilitas.ketersediaan-tempat-tidur', ['beds' => $beds]);
+        return view('visitor.fasilitas.ketersediaan-tempat-tidur', ['beds' => $beds, 'note' => $noteKetersediaanBed]);
     }
 }
