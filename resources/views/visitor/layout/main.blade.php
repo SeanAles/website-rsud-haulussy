@@ -154,8 +154,8 @@
                             <a class="dropdown-item" href="/alur-pelayanan">Alur Pelayanan</a>
                             <a class="dropdown-item" href="/pelayanan-penunjang">Pelayanan Penunjang</a>
                             <a class="dropdown-item" href="/medical-check-up">Medical Check Up</a>
-                            <a class="dropdown-item" href="/ketersediaan-tempat-tidur">Ketersediaan tempat
-                                tidur</a>
+                            <a class="dropdown-item" href="/ketersediaan-tempat-tidur">Ketersediaan Tempat
+                                Tidur</a>
                             <a class="dropdown-item" href="/tarif-pelayanan">Tarif Pelayanan</a>
                             <a class="dropdown-item" href="/promosi-kesehatan">Promosi Kesehatan</a>
                             <a class="dropdown-item" href="/tata-tertib">Tata Tertib</a>
