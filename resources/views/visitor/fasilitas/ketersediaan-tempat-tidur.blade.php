@@ -26,6 +26,13 @@
                     </tr>
                 @endforeach
             </table>
+
+
         </div>
+        <div class="container mt-2 text-danger">
+            <p><i><strong>*31 Januari 2024 (09:00 WIT)</strong></i></p>
+        </div>
+
+       
     </section>
 @endsection
