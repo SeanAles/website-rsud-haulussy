@@ -68,7 +68,7 @@
                             Jean Que, Sp.S, M.Kes.
                         </button>
                         <div class="panel" id="DokterFF">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter FF" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter FF" id="doctor-image" />
                         </div>
 
 
@@ -84,7 +84,7 @@
                             Sp.PD, FINASIM
                         </button>
                         <div class="panel" id="DokterL">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter L" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter L" id="doctor-image" />
                         </div>
 
 
@@ -257,7 +257,7 @@
                             Ramadhani Polanunu, Sp.A
                         </button>
                         <div class="panel" id="DokterU">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter U" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter U" id="doctor-image" />
                         </div>
 
 
