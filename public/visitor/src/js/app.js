@@ -15,7 +15,7 @@
   {
     "particles": {
       "number": {
-        "value": 30,
+        "value": 10,
         "density": {
           "enable": true,
           "value_area": 962.0472365193136

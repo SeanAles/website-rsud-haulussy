@@ -94,16 +94,16 @@
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
-                                data-bs-target="#bedahDigestive" style="font-size: 30px"><i
+                                data-bs-target="#bedahVascular" style="font-size: 30px"><i
                                     class="fa-solid fa-head-side-mask"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Bedah Digestive (Saluran Cerna)</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Bedah Vascular</p>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Modal -->
-                <div class="modal fade" id="bedahDigestive" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="bedahVascular" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
                         <div class="modal-content">
@@ -114,8 +114,8 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ 'visitor/assets/img/poli/bedahDigestive.jpg' }}" width="100%"
-                                        height="100%" alt="Bedah Digestive">
+                                    <img src="{{ 'visitor/assets/img/poli/bedahVascular.jpg' }}" width="100%"
+                                        height="100%" alt="Bedah Vascular">
                                 </div>
                             </div>
                         </div>
@@ -407,16 +407,16 @@
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
-                                data-bs-target="#bedahVascular" style="font-size: 30px"><i
+                                data-bs-target="#bedahDigestive" style="font-size: 30px"><i
                                     class="fa-solid fa-head-side-mask"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Bedah Vascular</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Bedah Digestive (Saluran Cerna)</p>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Modal -->
-                <div class="modal fade" id="bedahVascular" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="bedahDigestive" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
                         <div class="modal-content">
@@ -427,13 +427,15 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ 'visitor/assets/img/poli/bedahVascular.jpg' }}" width="100%"
-                                        height="100%" alt="Bedah Vascular">
+                                    <img src="{{ 'visitor/assets/img/poli/bedahDigestive.jpg' }}" width="100%"
+                                        height="100%" alt="Bedah Digestive">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+               
 
                 <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
