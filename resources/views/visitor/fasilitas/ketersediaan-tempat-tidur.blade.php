@@ -3,7 +3,13 @@
 @section('title', 'Ketersediaan Tempat Tidur')
 
 @section('style')
-
+    <style>
+        #table {
+            z-index: 1;
+            background-color: white;
+            padding: 0;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -11,16 +17,16 @@
         <div class="text-center mb-5">
             <h1>Ketersediaan Tempat Tidur</h1>
         </div>
-        <div class="text-center container">
+        <div class="text-center container" id="table">
             <table class="table table-bordered table-striped">
                 <tr>
                     <th>No.</th>
-                    <th>Nama Ruangan</th>   
+                    <th>Nama Ruangan</th>
                     <th>Ketersediaan</th>
                 </tr>
                 @foreach ($beds as $bed)
                     <tr>
-                        <td>{{ $loop->iteration}}</td>
+                        <td>{{ $loop->iteration }}</td>
                         <td>{{ $bed->room }}</td>
                         <td>{{ $bed->availability }}</td>
                     </tr>

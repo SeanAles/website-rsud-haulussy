@@ -21,7 +21,7 @@
         <div class="container">
             <h2 class="pb-3">Lantai 1</h2>
             <div class="row pb-5">
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -51,6 +51,72 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="icon-box text-center">
+                            <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
+                                data-bs-target="#bedahUmum" style="font-size: 30px"><i
+                                    class="fa-solid fa-head-side-mask"></i>
+                                <p class="fs-1 fs-xxl-2 text-center">Bedah Umum</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="bedahUmum" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="text-center">
+                                <div class="modal-body">
+                                    <img src="{{ 'visitor/assets/img/poli/bedah.jpg' }}" width="100%" height="100%"
+                                        alt="Bedah Umum">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="icon-box text-center">
+                            <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
+                                data-bs-target="#bedahDigestive" style="font-size: 30px"><i
+                                    class="fa-solid fa-head-side-mask"></i>
+                                <p class="fs-1 fs-xxl-2 text-center">Bedah Digestive (Saluran Cerna)</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="bedahDigestive" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="text-center">
+                                <div class="modal-body">
+                                    <img src="{{ 'visitor/assets/img/poli/bedahDigestive.jpg' }}" width="100%"
+                                        height="100%" alt="Bedah Digestive">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
 
                 <div class="col-4 col-md-4 col-lg-2 text-lg-start">
                     <div class="d-flex flex-column align-items-center">
@@ -82,7 +148,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -112,7 +178,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -142,7 +208,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -173,7 +239,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -207,7 +273,7 @@
 
 
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -236,11 +302,45 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="icon-box text-center">
+                            <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
+                                data-bs-target="#hemodialisis" style="font-size: 30px"><i class="fa-solid fa-droplet"></i>
+                                <p class="fs-1 fs-xxl-2 text-center">Hemodialisis</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Modal -->
+                <div class="modal fade" id="hemodialisis" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="text-center">
+                                <div class="modal-body">
+                                    <img src="{{ 'visitor/assets/img/poli/hemodialisis.jpg' }}" width="100%" height="100%"
+                                        alt="Hemodialisis">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+           
+
             <h2 class="pb-3">Lantai 2</h2>
             <div class="row pb-5">
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -272,7 +372,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -303,20 +403,20 @@
                     </div>
                 </div>
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
-                                data-bs-target="#bedahDigestive" style="font-size: 30px"><i
+                                data-bs-target="#bedahVascular" style="font-size: 30px"><i
                                     class="fa-solid fa-head-side-mask"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Bedah Digestive (Saluran Cerna)</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Bedah Vascular</p>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Modal -->
-                <div class="modal fade" id="bedahDigestive" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="bedahVascular" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
                         <div class="modal-content">
@@ -327,15 +427,15 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ 'visitor/assets/img/poli/bedahDisgetive.jpg' }}" width="100%"
-                                        height="100%" alt="Bedah Disgetive">
+                                    <img src="{{ 'visitor/assets/img/poli/bedahVascular.jpg' }}" width="100%"
+                                        height="100%" alt="Bedah Vascular">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -365,7 +465,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -402,37 +502,37 @@
 
 
 
-                {{-- <div class="col-4 col-md-4 col-lg-2 text-xl-start">
-                <div class="d-flex flex-column align-items-center">
-                    <div class="icon-box text-center">
-                        <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
-                            data-bs-target="#gizi" style="font-size: 30px"><i class="fa-brands fa-nutritionix"></i>
-                            <p class="fs-1 fs-xxl-2 text-center">Gizi</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="gizi" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog ">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="text-center">
-                            <div class="modal-body">
-                                <img src="{{ 'visitor/assets/img/poli/gizi.jpg' }}" width="100%" height="100%">
+                {{-- <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="icon-box text-center">
+                                <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
+                                    data-bs-target="#gizi" style="font-size: 30px"><i class="fa-brands fa-nutritionix"></i>
+                                    <p class="fs-1 fs-xxl-2 text-center">Gizi</p>
+                                </a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> --}}
+    
+                    <!-- Modal -->
+                    <div class="modal fade" id="gizi" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="text-center">
+                                    <div class="modal-body">
+                                        <img src="{{ 'visitor/assets/img/poli/gizi.jpg' }}" width="100%" height="100%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -465,7 +565,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 col-md-4 col-lg-2 text-xl-start">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -495,7 +595,11 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+        </div>
+
+
         </div>
 
     </section>

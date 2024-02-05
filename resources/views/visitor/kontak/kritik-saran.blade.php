@@ -21,23 +21,6 @@
 @endsection
 
 @section('content')
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 py-3">
-                    <!--/.bg-holder-->
-
-                    <h1 class="text-center">Kritik & Saran</h1>
-                </div>
-            </div>
-        </div>
-        <!-- end of .container-->
-    </section>
-    <!-- <section> close ============================-->
-    <!-- ============================================-->
-
     <section class="py-5">
         <h1 class="text-center mt-8 mb-6">Kritik & Saran</h1>
 

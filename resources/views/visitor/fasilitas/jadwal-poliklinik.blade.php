@@ -2,13 +2,24 @@
 
 @section('title', 'Jadwal Poliklinik')
 
+@section('style')
+    <style>
+        #table {
+            z-index: 1;
+            background-color: white;
+            padding: 0;
+        }
+    </style>
+@endsection
+
+
 @section('content')
     <section>
         <div class="text-center mb-5">
             <h1>Jadwal Poliklinik</h1>
         </div>
 
-        <div class="container">
+        <div class="container" id="table">
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>

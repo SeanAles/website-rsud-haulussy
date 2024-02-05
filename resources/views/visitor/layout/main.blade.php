@@ -91,6 +91,13 @@
     .right-space {
         margin-right: 100px;
     }
+
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 </style>
 
 <body>
@@ -201,6 +208,7 @@
             </div>
             </div>
         </nav>
+        <div id="particles-js"></div>
         <section class="py-xxl-10 pb-0" id="home">
             <div class="bg-holder bg-size"
                 style="background-image: url(/visitor/assets/img/gallery/hero-bg.png);background-position: top center;background-size: cover;">
@@ -248,41 +256,41 @@
                     <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1">
 
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
-                            <li class="lh-lg"><a class="footer-link" href="https://malukuprov.go.id">Pemerintah
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://malukuprov.go.id">Pemerintah
                                     Provinsi
                                     Maluku</a></li>
-                            <li class="lh-lg"><a class="footer-link" href="https://dinkes.malukuprov.go.id">Dinas
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://dinkes.malukuprov.go.id">Dinas
                                     Kesehatan Provinsi Maluku</a></li>
-                            <li class="lh-lg"><a class="footer-link" href="https://dinkes.ambon.go.id">Dinas
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://dinkes.ambon.go.id">Dinas
                                     Kesehatan
                                     Kota Ambon </a></li>
-                            <li class="lh-lg"><a class="footer-link" href="https://fk.unpatti.ac.id">Falkutas
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://fk.unpatti.ac.id">Falkutas
                                     Kedokteran
                                     Unpatti</a></li>
                         </ul>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
-                            <li class="lh-lg"><a class="footer-link" href="https://ambon.go.id">Pemerintah Kota
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://ambon.go.id">Pemerintah Kota
                                     Ambon</a></li>
-                            <li class="lh-lg"><a class="footer-link" href="https://ambon.go.id/dinas-sosial">Dinas
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://ambon.go.id/dinas-sosial">Dinas
                                     Sosial Kota Ambon</a></li>
-                            <li class="lh-lg"><a class="footer-link" href="https://rskd-maluku.com">RSKD Provinsi
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://rskd-maluku.com">RSKD Provinsi
                                     Maluku</a></li>
-                            <li class="lh-lg"><a class="footer-link" href="https://rstambon.co.id">RST Kota
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://rstambon.co.id">RST Kota
                                     Ambon</a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
-                            <li class="lh-lg"><a class="footer-link" href="https://rsupleimena.co.id">RSUP dr. J.
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://rsupleimena.co.id">RSUP dr. J.
                                     Leimena</a></li>
-                            <li class="lh-lg"><a class="footer-link" href="https://siloamhospitals.com">Rumah Sakit
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://siloamhospitals.com">Rumah Sakit
                                     Siloam</a></li>
-                            <li class="lh-lg"><a class="footer-link" href="https://rsbhayangkaraambon.com">RS
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://rsbhayangkaraambon.com">RS
                                     Bhayangkara Ambon</a></li>
-                            <li class="lh-lg"><a class="footer-link" href="https://rsusumberhidup.or.id">RS Sumber
+                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://rsusumberhidup.or.id">RS Sumber
                                     Hidup
                                     GPM</a></li>
                         </ul>
@@ -341,6 +349,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ asset('visitor/vendors/particles/particles.js') }}"></script>
+    <script src="{{ asset('visitor/src/js/app.js') }}"></script>
     <script>
         var loader = document.querySelector("#preloader");
 
