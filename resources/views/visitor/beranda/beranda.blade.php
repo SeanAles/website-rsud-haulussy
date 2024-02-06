@@ -218,7 +218,7 @@
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#asma" style="font-size: 30px"><i
                                     class="fa-solid fa-head-side-cough"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Asma</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Asma & DOTS</p>
                             </a>
                         </div>
                     </div>
@@ -249,7 +249,7 @@
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#bidan" style="font-size: 30px"><i
                                     class="fa-solid fa-person-pregnant"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Kebidanan-Kandungan dan KIA-KB</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Kebidanan-Kandungan & KIA-KB</p>
                             </a>
                         </div>
                     </div>
@@ -378,7 +378,7 @@
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#anak" style="font-size: 30px"><i
                                     class="fa-solid fa-person-breastfeeding"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Anak dan Imunisasi</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Anak & Imunisasi</p>
                             </a>
                         </div>
                     </div>
