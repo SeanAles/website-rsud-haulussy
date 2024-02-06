@@ -69,14 +69,14 @@
                     <tr>
                         <th scope="row"></th>
                         <td></td>
-                        <td>dr. Enseline Nikijuluw, Sp. S</td>
+                        <td>dr. Enseline Nikijuluw, Sp. N</td>
                         <td>Selasa</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
                         <th scope="row"></th>
                         <td></td>
-                        <td>dr. Enseline Nikijuluw, Sp. S</td>
+                        <td>dr. Enseline Nikijuluw, Sp. N</td>
                         <td>Rabu</td>
                         <td>08.00 - selesai</td>
                     </tr>
@@ -110,14 +110,14 @@
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
+                        <th scope="row">4</th>
                         <td>Klinik Bedah Vaskular</td>
                         <td>dr. Ninoy Mailoa, Sp. B, Sub Sp. BE (K)</td>
                         <td>Rabu</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">4</th>
+                        <th scope="row">5</th>
                         <td>Klinik Gigi & Mulut</td>
                         <td>drg. Lina Mardiana, M.KG</td>
                         <td>Senin - Jumat</td>
@@ -138,9 +138,9 @@
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">5</th>
+                        <th scope="row">6</th>
                         <td>Klinik Asma</td>
-                        <td>dr. Mariska Afifudin, Sp. P</td>
+                        <td>dr. Marisa Afifudin, Sp. P</td>
                         <td>Senin, Rabu, Jumat</td>
                         <td>08.00 - selesai</td>
                     </tr>
@@ -152,9 +152,9 @@
                         <td>08.00 - selesai</td>
                     </tr> --}}
                     <tr>
-                        <th scope="row">6</th>
+                        <th scope="row">7</th>
                         <td>Klinik Kebidanan-Kandungan & KIA-KB</td>
-                        <td>dr. Jenne Pattiasina, Sp. OG</td>
+                        <td>dr. Jeane Pattiasina, Sp. OG</td>
                         <td>Senin</td>
                         <td>08.00 - selesai</td>
                     </tr>
@@ -168,7 +168,7 @@
                     <tr>
                         <th scope="row"></th>
                         <td></td>
-                        <td>dr. Iren Leha, Sp. OG</td>
+                        <td>dr. Irene Leha, Sp. OG</td>
                         <td>Rabu</td>
                         <td>08.00 - selesai</td>
                     </tr>
@@ -180,14 +180,14 @@
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">7</th>
+                        <th scope="row">8</th>
                         <td>Klinik Mata</td>
                         <td>dr. Elna Anakotta, Sp. M, SH</td>
                         <td>Senin & Rabu</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">8</th>
+                        <th scope="row">9</th>
                         <td>Klinik Kulit & Kelamin</td>
                         <td>dr. Hanny Tanasal, Sp. KK</td>
                         <td>Senin, Rabu, Jumat</td>
@@ -196,7 +196,7 @@
                     <tr>
                         <th scope="row"></th>
                         <td></td>
-                        <td>dr. Fitri Bandjar, Sp. KK., M.Kes</td>
+                        <td>Dr. dr. Fitri Bandjar, Sp. KK., M.Kes</td>
                         <td>Senin, Kamis, Jumat</td>
                         <td>08.00 - selesai</td>
                     </tr>
@@ -208,7 +208,7 @@
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">9</th>
+                        <th scope="row">10</th>
                         <td>Klinik Anak & Imunisasi</td>
                         <td>dr. Sriwahyuni Djoko, Sp. A</td>
                         <td>Senin</td>
@@ -236,28 +236,28 @@
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">10</th>
+                        <th scope="row">11</th>
                         <td>Klinik Bedah Digestive</td>
                         <td>dr. Helfi Nikijuluw, Sp. B-KBD</td>
                         <td>Selasa, Rabu, Jumat</td>
                         <td>08:00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">11</th>
+                        <th scope="row">12</th>
                         <td>Klinik THT</td>
                         <td>dr. Julu Manalu, Sp. THT-KL</td>
                         <td>Senin, rabu, Jumat</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">12</th>
+                        <th scope="row">13</th>
                         <td>Klinik Paru</td>
-                        <td>dr. Mariska Afifudin, Sp. P</td>
+                        <td>dr. Marisa Afifudin, Sp. P</td>
                         <td>Senin, Rabu Jumat</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">13</th>
+                        <th scope="row">14</th>
                         <td>Klinik Rehabilitasi Medik (Fisioterapi)</td>
                         <td>dr. Mauren Palijama, Sp. RM</td>
                         <td>Senin, Rabu Jumat</td>
