@@ -14,7 +14,7 @@
         <button type="button" class="update btn btn-success mb-2" data-toggle="modal" data-target="#addBedModal">
             Tambahkan Ruangan
         </button>
-        
+
         <div>
             <button type="button" class="update btn btn-warning" data-toggle="modal" data-target="#editNoteModal">
                 Edit Keterangan
@@ -39,7 +39,8 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="content">Keterangan</label>
-                                <input type="text" value="{{ $note->content }}" class="form-control" name="content" id="content">
+                                <input type="text" value="{{ $note->content }}" class="form-control" name="content"
+                                    id="content">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -53,7 +54,7 @@
             </div>
         </div>
 
-        
+
         {{-- Tambahkan Bed Modal --}}
         <div class="modal fade" id="addBedModal" tabindex="-1" role="dialog" aria-labelledby="addBedModalLabel"
             aria-hidden="true">
@@ -93,7 +94,9 @@
 
         <hr>
         <div class="text-danger font-weight-bold">
-            <i><p id="note">*{{ $note->content }}</p></i>
+            <i>
+                <p id="note">*{{ $note->content }}</p>
+            </i>
         </div>
         <table class="table table-bordered table-responsif data-table">
             <thead>
@@ -156,6 +159,12 @@
                         'searchable': false
                     },
                     {
+                        data: 'created_at',
+                        name: 'created_at',
+                        orderable: true,
+                        visible: false,
+                    },
+                    {
                         data: 'room',
                         name: 'room'
                     },
@@ -169,6 +178,7 @@
                         orderable: false,
                         searchable: false
                     },
+
                 ],
             });
         }
@@ -253,7 +263,7 @@
             });
         }
 
-        function editNote(){
+        function editNote() {
             const content = $('#content').val();
 
             if (content === '') {
@@ -279,6 +289,5 @@
                 });
             }
         }
-        
     </script>
 @endsection
