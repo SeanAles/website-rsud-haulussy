@@ -69,14 +69,14 @@
                     <tr>
                         <th scope="row"></th>
                         <td></td>
-                        <td>dr. Enseline Nikijuluw, Sp. N</td>
+                        <td>dr. Enseline Nikijuluw, Sp. Nhgi</td>
                         <td>Selasa</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
                         <th scope="row"></th>
                         <td></td>
-                        <td>dr. Enseline Nikijuluw, Sp. N</td>
+                        <td>dr. Enseline Nikijuluw, Sp. Nhgi</td>
                         <td>Rabu</td>
                         <td>08.00 - selesai</td>
                     </tr>
@@ -139,7 +139,7 @@
                     </tr>
                     <tr>
                         <th scope="row">6</th>
-                        <td>Klinik Asma</td>
+                        <td>Klinik Asma, DOTS</td>
                         <td>dr. Marisa Afifudin, Sp. P</td>
                         <td>Senin, Rabu, Jumat</td>
                         <td>08.00 - selesai</td>
