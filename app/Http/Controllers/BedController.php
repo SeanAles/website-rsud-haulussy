@@ -134,7 +134,7 @@ class BedController extends Controller
     }
 
     public function indexBed(){
-        $beds = Bed::all();
+        $beds = Bed::orderBy('created_at', 'DESC')->get();
         $noteKetersediaanBed = Note::where('name', '=', 'Bed')->first();
 
         return view('visitor.fasilitas.ketersediaan-tempat-tidur', ['beds' => $beds, 'note' => $noteKetersediaanBed]);
