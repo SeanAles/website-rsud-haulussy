@@ -102,6 +102,7 @@
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>Tanggal Dibuat</th>
                     <th>Nama Ruangan</th>
                     <th>Tersedia</th>
                     <th>Action</th>
@@ -162,7 +163,7 @@
                         data: 'created_at',
                         name: 'created_at',
                         orderable: true,
-                        visible: false,
+                        visible: false
                     },
                     {
                         data: 'room',
