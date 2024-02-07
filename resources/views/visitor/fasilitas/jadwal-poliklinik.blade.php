@@ -265,6 +265,13 @@
                         <td>Senin, Rabu Jumat</td>
                         <td>08.00 - selesai</td>
                     </tr>
+                    <tr>
+                        <th scope="row">14</th>
+                        <td>Klinik Hemodialisis</td>
+                        <td></td>
+                        <td>Senin - Sabtu</td>
+                        <td>08.00 - selesai</td>
+                    </tr>
                 </tbody>
             </table>
             <p class="text-danger"><i>*1 Februari 2024</i></p>
