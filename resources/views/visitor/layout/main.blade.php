@@ -256,43 +256,61 @@
                     <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1">
 
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://malukuprov.go.id">Pemerintah
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://malukuprov.go.id">Pemerintah
                                     Provinsi
                                     Maluku</a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://dinkes.malukuprov.go.id">Dinas
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://dinkes.malukuprov.go.id">Dinas
                                     Kesehatan Provinsi Maluku</a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://dinkes.ambon.go.id">Dinas
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://diskominfo.malukuprov.go.id/">
+                                    Dinas Infokom Maluku</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://dinkes.ambon.go.id">Dinas
                                     Kesehatan
                                     Kota Ambon </a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://fk.unpatti.ac.id">Falkutas
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://fk.unpatti.ac.id">Falkutas
                                     Kedokteran
                                     Unpatti</a></li>
                         </ul>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://ambon.go.id">Pemerintah Kota
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://ambon.go.id">Pemerintah Kota
                                     Ambon</a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://ambon.go.id/dinas-sosial">Dinas
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://ambon.go.id/dinas-sosial">Dinas
                                     Sosial Kota Ambon</a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://rskd-maluku.com">RSKD Provinsi
+
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://rskd-maluku.com">RSKD Provinsi
                                     Maluku</a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://rstambon.co.id">RST Kota
-                                    Ambon</a>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://rstambon.co.id">RS Tk.II Prof. dr. J. A. Latumeten</a>
                             </li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                href="https://www.bnpb.go.id/">BNPB</a></li>
                         </ul>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://rsupleimena.co.id">RSUP dr. J.
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://rsupleimena.co.id">RSUP dr. J.
                                     Leimena</a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://siloamhospitals.com">Rumah Sakit
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://siloamhospitals.com">Rumah Sakit
                                     Siloam</a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://rsbhayangkaraambon.com">RS
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://rsbhayangkaraambon.com">RS
                                     Bhayangkara Ambon</a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank" href="https://rsusumberhidup.or.id">RS Sumber
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://rsusumberhidup.or.id">RS Sumber
                                     Hidup
                                     GPM</a></li>
+                          
                         </ul>
                     </div>
                 </div>

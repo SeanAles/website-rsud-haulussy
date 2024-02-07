@@ -238,6 +238,13 @@
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td>Jumat (Imunisasi)</td>
+                        <td>08.00 - selesai</td>
+                    </tr>
+                    <tr>
                         <th scope="row">11</th>
                         <td>Klinik Bedah Digestive</td>
                         <td>dr. Helfi Nikijuluw, Sp. B-KBD</td>
@@ -262,15 +269,36 @@
                         <th scope="row">14</th>
                         <td>Klinik Rehabilitasi Medik (Fisioterapi)</td>
                         <td>dr. Mauren Palijama, Sp. RM</td>
-                        <td>Senin, Rabu Jumat</td>
+                        <td>Senin, Rabu, Jumat</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">14</th>
+                        <th scope="row">15</th>
                         <td>Klinik Hemodialisis</td>
-                        <td></td>
+                        <td>dr. Siti Hadjar, Sp.PD</td>
                         <td>Senin - Sabtu</td>
                         <td>08.00 - selesai</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">16</th>
+                        <td>Klinik Endoskopi</td>
+                        <td>dr. Denny Jolanda, Sp. PD, FINASIM</td>
+                        <td>Senin - Jumat</td>
+                        <td>08.00 - selesai</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td>dr. Helfi Nikijuluw, Sp. B-KBD</td>
+                        <td>Senin - Jumat</td>
+                        <td>08.00 - selesai</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">17</th>
+                        <td>Klinik HIV (Pulau Pombo)</td>
+                        <td>dr. Shela D.Ch. Manuputty</td>
+                        <td>Senin & Kamis</td>
+                        <td>08:00 - Selesai</td>
                     </tr>
                 </tbody>
             </table>
