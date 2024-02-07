@@ -201,7 +201,7 @@
                         </div>
 
 
-                        <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterN')">dr. Janne
+                        <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterN')">dr. Jeane
                             Pattiasina, Sp.OG
                         </button>
                         <div class="panel" id="DokterN">

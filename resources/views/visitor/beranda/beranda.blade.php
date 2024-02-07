@@ -157,7 +157,7 @@
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#gigi" style="font-size: 30px"><i class="fa-solid fa-tooth"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Gigi</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Gigi & Mulut</p>
                             </a>
                         </div>
                     </div>
@@ -347,7 +347,7 @@
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#kulit" style="font-size: 30px"><i
                                     class="fa-solid fa-face-smile-beam"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Kulit</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Kulit & Kelamin</p>
                             </a>
                         </div>
                     </div>

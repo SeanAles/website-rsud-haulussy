@@ -61,6 +61,35 @@
                     </tr>
                     <tr>
                         <th scope="row">2</th>
+                        <td>Klinik Bedah</td>
+                        <td>dr. Jeky Tuamely, Sp. B (K)., Trauma FICS, FINACS</td>
+                        <td>Senin & Selasa</td>
+                        <td>08.00 - selesai</td>
+                    </tr>
+                  
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td>dr. Ahmad Tuahuns, Sp. B, FINACS</td>
+                        <td>Kamis</td>
+                        <td>08.00 - selesai</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td>dr. Ninoy Mailoa, Sp. B, Sub Sp. BE (K)</td>
+                        <td>Jumat</td>
+                        <td>08.00 - selesai</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Klinik Bedah Vaskular</td>
+                        <td>dr. Ninoy Mailoa, Sp. B, Sub Sp. BE (K)</td>
+                        <td>Rabu</td>
+                        <td>08.00 - selesai</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
                         <td>Klinik Saraf</td>
                         <td>dr. Laura Huwae, Sp. S, M.Kes</td>
                         <td>Senin</td>
@@ -87,35 +116,8 @@
                         <td>Kamis</td>
                         <td>08.00 - selesai</td>
                     </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Klinik Bedah</td>
-                        <td>dr. Jeky Tuamely, Sp. B (K)., Trauma FICS, FINACS</td>
-                        <td>Senin & Selasa</td>
-                        <td>08.00 - selesai</td>
-                    </tr>
-                  
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td>dr. Ahmad Tuahuns, Sp. B, FINACS</td>
-                        <td>Kamis</td>
-                        <td>08.00 - selesai</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td>dr. Ninoy Mailoa, Sp. B, Sub Sp. BE (K)</td>
-                        <td>Jumat</td>
-                        <td>08.00 - selesai</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Klinik Bedah Vaskular</td>
-                        <td>dr. Ninoy Mailoa, Sp. B, Sub Sp. BE (K)</td>
-                        <td>Rabu</td>
-                        <td>08.00 - selesai</td>
-                    </tr>
+                   
+                   
                     <tr>
                         <th scope="row">5</th>
                         <td>Klinik Gigi & Mulut</td>
