@@ -66,7 +66,7 @@
                         <td>Senin & Selasa</td>
                         <td>08.00 - selesai</td>
                     </tr>
-                  
+
                     <tr>
                         <th scope="row"></th>
                         <td></td>
@@ -98,14 +98,14 @@
                     <tr>
                         <th scope="row"></th>
                         <td></td>
-                        <td>dr. Enseline Nikijuluw, Sp. Nhgi</td>
+                        <td>dr. Enseline Nikijuluw, Sp. N</td>
                         <td>Selasa</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
                         <th scope="row"></th>
                         <td></td>
-                        <td>dr. Enseline Nikijuluw, Sp. Nhgi</td>
+                        <td>dr. Enseline Nikijuluw, Sp. N</td>
                         <td>Rabu</td>
                         <td>08.00 - selesai</td>
                     </tr>
@@ -116,8 +116,8 @@
                         <td>Kamis</td>
                         <td>08.00 - selesai</td>
                     </tr>
-                   
-                   
+
+
                     <tr>
                         <th scope="row">5</th>
                         <td>Klinik Gigi & Mulut</td>
@@ -306,5 +306,3 @@
         </div>
     </section>
 @endsection
-
-
