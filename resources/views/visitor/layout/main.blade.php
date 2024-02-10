@@ -245,15 +245,14 @@
             </div>
             <!--/.bg-holder-->
 
-            <div class="">
-                <div class="row p-5">
+            <div class="container">
+                <div class="row p-3">
                     <div class="col-12 col-sm-12 col-lg-3 mb-4 order-0 order-sm-0">
                         <a class="text-decoration-none" href="#"><img
                                 src="{{ asset('visitor/assets/img/gallery/maluku.png') }}" height="51"
                                 alt="" /></a>
                         <p class="text-light my-4">RSUD dr. M. Haulussy Ambon</p>
                     </div>
-                    {{-- Rumah Sakit --}}
                     <div class="col-12 col-sm-12 col-lg-3 mb-3 order-2 order-sm-1">
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
                             <li class="lh-lg"><a class="footer-link" target="_blank"
@@ -293,7 +292,7 @@
                                     href="https://www.bnpb.go.id/">BNPB</a></li>
                         </ul>
                     </div>
-                    <div class="col-12 col-sm-12 col-lg-3 mb-3 order-3 order-sm-2">
+                    <div class="col-12 col-sm-12 col-lg-3 mb-3 order-3 order-sm-3">
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
                             <li class="lh-lg"><a class="footer-link" target="_blank"
                                     href="https://ambon.go.id">Pemerintah Kota
