@@ -245,16 +245,39 @@
             </div>
             <!--/.bg-holder-->
 
-            <div class="container">
-                <div class="row py-8">
-                    <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0">
+            <div class="">
+                <div class="row p-5">
+                    <div class="col-12 col-sm-12 col-lg-3 mb-4 order-0 order-sm-0">
                         <a class="text-decoration-none" href="#"><img
                                 src="{{ asset('visitor/assets/img/gallery/maluku.png') }}" height="51"
                                 alt="" /></a>
                         <p class="text-light my-4">RSUD dr. M. Haulussy Ambon</p>
                     </div>
-                    <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1">
-
+                    {{-- Rumah Sakit --}}
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 mb-3 order-2 order-sm-1">
+                        <ul class="list-unstyled mb-md-4 mb-lg-0">
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://rsupleimena.co.id">RSUP dr. J.
+                                    Leimena</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://siloamhospitals.com">RS
+                                    Siloam</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://rsbhayangkaraambon.com">RS
+                                    Bhayangkara Ambon</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://rsusumberhidup.or.id">RS Sumber
+                                    Hidup
+                                    GPM</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://rskd-maluku.com">RSKD Provinsi
+                                    Maluku</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://rstambon.co.id">RS Tk.II Prof. dr. J. A. Latumeten</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 mb-3 order-3 order-sm-2">
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
                             <li class="lh-lg"><a class="footer-link" target="_blank"
                                     href="https://malukuprov.go.id">Pemerintah
@@ -267,16 +290,10 @@
                                     href="https://diskominfo.malukuprov.go.id/">
                                     Dinas Infokom Maluku</a></li>
                             <li class="lh-lg"><a class="footer-link" target="_blank"
-                                    href="https://dinkes.ambon.go.id">Dinas
-                                    Kesehatan
-                                    Kota Ambon </a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank"
-                                    href="https://fk.unpatti.ac.id">Falkutas
-                                    Kedokteran
-                                    Unpatti</a></li>
+                                    href="https://www.bnpb.go.id/">BNPB</a></li>
                         </ul>
                     </div>
-                    <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 mb-3 order-3 order-sm-2">
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
                             <li class="lh-lg"><a class="footer-link" target="_blank"
                                     href="https://ambon.go.id">Pemerintah Kota
@@ -284,33 +301,14 @@
                             <li class="lh-lg"><a class="footer-link" target="_blank"
                                     href="https://ambon.go.id/dinas-sosial">Dinas
                                     Sosial Kota Ambon</a></li>
-
                             <li class="lh-lg"><a class="footer-link" target="_blank"
-                                    href="https://rskd-maluku.com">RSKD Provinsi
-                                    Maluku</a></li>
+                                    href="https://dinkes.ambon.go.id">Dinas
+                                    Kesehatan
+                                    Kota Ambon </a></li>
                             <li class="lh-lg"><a class="footer-link" target="_blank"
-                                    href="https://rstambon.co.id">RS Tk.II Prof. dr. J. A. Latumeten</a>
-                            </li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank"
-                                href="https://www.bnpb.go.id/">BNPB</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
-                        <ul class="list-unstyled mb-md-4 mb-lg-0">
-                            <li class="lh-lg"><a class="footer-link" target="_blank"
-                                    href="https://rsupleimena.co.id">RSUP dr. J.
-                                    Leimena</a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank"
-                                    href="https://siloamhospitals.com">Rumah Sakit
-                                    Siloam</a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank"
-                                    href="https://rsbhayangkaraambon.com">RS
-                                    Bhayangkara Ambon</a></li>
-                            <li class="lh-lg"><a class="footer-link" target="_blank"
-                                    href="https://rsusumberhidup.or.id">RS Sumber
-                                    Hidup
-                                    GPM</a></li>
-                          
+                                    href="https://fk.unpatti.ac.id">Falkutas
+                                    Kedokteran
+                                    Unpatti</a></li>
                         </ul>
                     </div>
                 </div>
