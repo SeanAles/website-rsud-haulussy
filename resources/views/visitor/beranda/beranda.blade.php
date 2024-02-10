@@ -82,8 +82,8 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ 'visitor/assets/img/poli/bedah.jpg' }}" width="100%"
-                                        height="100%" alt="Bedah Umum">
+                                    <img src="{{ 'visitor/assets/img/poli/bedah.jpg' }}" width="100%" height="100%"
+                                        alt="Bedah Umum">
                                 </div>
                             </div>
                         </div>
@@ -275,7 +275,7 @@
                     </div>
                 </div>
 
-                
+
 
                 <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
@@ -311,13 +311,14 @@
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
-                                data-bs-target="#hemodialisis" style="font-size: 30px"><i class="fa-solid fa-droplet"></i>
+                                data-bs-target="#hemodialisis" style="font-size: 30px"><i
+                                    class="fa-solid fa-droplet"></i>
                                 <p class="fs-1 fs-xxl-2 text-center">Hemodialisis</p>
                             </a>
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Modal -->
                 <div class="modal fade" id="hemodialisis" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -330,8 +331,8 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ 'visitor/assets/img/poli/hemodialisis.jpg' }}" width="100%" height="100%"
-                                        alt="Hemodialisis">
+                                    <img src="{{ 'visitor/assets/img/poli/hemodialisis.jpg' }}" width="100%"
+                                        height="100%" alt="Hemodialisis">
                                 </div>
                             </div>
                         </div>
@@ -365,7 +366,8 @@
                             </div>
                             <div class="text-center">
                                 <div class="modal-body">
-                                    <img src="{{ 'visitor/assets/img/poli/kulit.jpg' }}" width="100%" height="100%" alt="Kulits">
+                                    <img src="{{ 'visitor/assets/img/poli/kulit.jpg' }}" width="100%" height="100%"
+                                        alt="Kulits">
                                 </div>
                             </div>
                         </div>
@@ -435,7 +437,7 @@
                     </div>
                 </div>
 
-               
+
 
                 <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
@@ -499,11 +501,11 @@
                 </div>
 
 
-               
 
-                
 
-              
+
+
+
                 {{-- <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
@@ -618,7 +620,7 @@
                         src="{{ asset('visitor/assets/img/gallery/direk.png') }}" alt="..." />
                     <div class="text-center">
                         <h4>DIREKTUR</h4>
-                        <h5>dr. Nazarudin, M.Sc</h5>
+                        <h5>dr. Adonia</h5>
                         <!-- <P>NIP 196807222001121001</P> -->
                     </div>
                 </div>
@@ -666,7 +668,7 @@
                                                 <h5 class="mt-3">Martha M. E. T. Pentury, S.Kep</h5>
                                                 <p class="mb-0 fs-xxl-1">Manajer IGD</p>
                                                 <!-- <p class="text-600 mb-0">Florida, United States</p>
-                                                                                                                                                                                                                                                                                                    <p class="text-600 mb-4">10 years experience</p> -->
+                                                                                                                                                                                                                                                                                                            <p class="text-600 mb-4">10 years experience</p> -->
                                             </div>
                                         </div>
                                     </div>
