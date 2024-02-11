@@ -637,7 +637,7 @@
         </div>
     </section>
 
-    <section class="pb-0">
+    {{-- <section class="pb-0">
         <div class="col-12 py-3">
             <h1 class="text-center">Kepala Ruangan</h1>
         </div>
@@ -865,7 +865,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="py-5">
         <h1 class="text-center mt-8 mb-6">Kritik & Saran</h1>
