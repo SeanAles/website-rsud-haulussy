@@ -39,10 +39,14 @@ Route::get('/direksi-manajemen', function () {
     // return view('visitor.tentang-kami.direksi-manajemen');
     return view('visitor.maintenance.under-construction');
 });
+Route::get('/manajer-ruangan-instalasi', function(){ 
+    return view('visitor.tentang-kami.manajer-ruangan-instalasi');
+});
 Route::get('/gambaran-umum', function () {
     // return view('visitor.tentang-kami.gambaran-umum');
     return view('visitor.maintenance.under-construction');
 });
+
 
 //Fasilitas dan Pelayanan Route
 Route::get('/rawat-jalan', function(){ return view('visitor.fasilitas.rawat-jalan'); });
@@ -71,9 +75,6 @@ Route::get('/dokter-spesialis', function(){ return view('visitor.fasilitas.dokte
 Route::get('/dokter-umum', function(){
     return view('visitor.maintenance.under-construction');
 });
-
-// Manajer Ruangan dan Instalasi Route
-Route::get('/manajer-ruangan-instalasi', function(){ return 0; });
 
 // Informasi Route
 // Informasi Artikel Route

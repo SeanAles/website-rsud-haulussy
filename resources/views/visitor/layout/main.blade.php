@@ -142,7 +142,7 @@
                             <a class="dropdown-item" href="/visi-misi">Visi & Misi</a>
                             <a class="dropdown-item" href="/struktur-organisasi">Struktur Organisasi</a>
                             <a class="dropdown-item" href="/direksi-manajemen">Direksi & Manajemen</a>
-                            <a class="dropdown-item" href="/direksi-manajemen">Manajer Ruangan
+                            <a class="dropdown-item" href="/manajer-ruangan-instalasi">Manajer Ruangan
                                 &
                                 Instalasi</a>
                             <a class="dropdown-item" href="/gambaran-umum">Gambaran Umum</a>
@@ -246,7 +246,7 @@
             <!--/.bg-holder-->
 
             <div class="container">
-                <div class="row p-3">
+                <div class="row pt-5 pb-4">
                     <div class="col-12 col-sm-12 col-lg-3 mb-4 order-0 order-sm-0">
                         <a class="text-decoration-none" href="#"><img
                                 src="{{ asset('visitor/assets/img/gallery/maluku.png') }}" height="51"

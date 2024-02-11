@@ -3,5 +3,5 @@
 @section('title', 'Direksi & Manajemen')
 
 @section('content')
-    
+
 @endsection
