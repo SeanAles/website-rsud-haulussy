@@ -89,8 +89,8 @@ Route::get('/galeri/{slug}', [EventController::class, 'showGaleri']);
 
 // Kontak Kami Route
 Route::get('/kontak', function(){ return view('visitor.kontak.kontak');});
-Route::get('/survey-kepuasaan', function(){ 
-    return view('visitor.maintenance.under-construction');
+Route::get('/survey-kepuasaan-pengguna', function(){ 
+    return view('visitor.kontak.survey-kepuasan-pengguna');
 });
 // Kritik dan Saran Route
 Route::get('/kritik-saran', function(){ return view('visitor.kontak.kritik-saran');});

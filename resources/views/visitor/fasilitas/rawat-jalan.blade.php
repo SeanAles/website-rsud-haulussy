@@ -311,6 +311,71 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="icon-box text-center">
+                            <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
+                                data-bs-target="#endoskopi" style="font-size: 30px"><i
+                                    class="fa-solid fa-microscope"></i>
+                                <p class="fs-1 fs-xxl-2 text-center">Endoskopi</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+   
+                <!-- Modal -->
+                <div class="modal fade" id="endoskopi" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="text-center">
+                                <div class="modal-body">
+                                    <img src="{{ 'visitor/assets/img/poli/endoskopi.jpg' }}" width="100%"
+                                        height="100%" alt="Endoskopi">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+   
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
+                   <div class="d-flex flex-column align-items-center">
+                       <div class="icon-box text-center">
+                           <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
+                               data-bs-target="#mcu" style="font-size: 30px">
+                               <i class="fa-solid fa-file-waveform"></i>
+                               <p class="fs-1 fs-xxl-2 text-center">Medical Check Up (MCU)</p>
+                           </a>
+                       </div>
+                   </div>
+               </div>
+   
+               <!-- Modal -->
+               <div class="modal fade" id="mcu" tabindex="-1" aria-labelledby="exampleModalLabel"
+                   aria-hidden="true">
+                   <div class="modal-dialog ">
+                       <div class="modal-content">
+                           <div class="modal-header">
+                               <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
+                               <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                   aria-label="Close"></button>
+                           </div>
+                           <div class="text-center">
+                               <div class="modal-body">
+                                   <img src="{{ 'visitor/assets/img/poli/mcu.jpg' }}" width="100%"
+                                       height="100%" alt="Medical Check Up">
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+   
     
                 <!-- Modal -->
                 <div class="modal fade" id="hemodialisis" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -536,7 +601,7 @@
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#fisioterapi" style="font-size: 30px"><i
                                     class="fa-solid fa-wheelchair-move"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Rehabilitasi Medik (Fisioterapi)</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Rehabilitasi Medik (Fisioterapi dan Terapi Wicara)</p>
                             </a>
 
                         </div>

@@ -156,7 +156,7 @@
                             Nikijuluw, Sp.B KBD
                         </button>
                         <div class="panel" id="DokterA">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter A" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter A" id="doctor-image" />
                         </div>
 
 
@@ -193,8 +193,7 @@
 
 
 
-                        <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterGGG')">dr. Jacky
-                            Tuamelly, Sp.B
+                        <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterGGG')">dr. Jacky Tuamelly, Sp.B (K) Trauma, FICS, FINACS, FIHFAA
                         </button>
                         <div class="panel" id="DokterGGG">
                             <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter G" id="doctor-image" />
@@ -273,7 +272,7 @@
                             Mailoa, Sp.B Subspe.BVE(K)
                         </button>
                         <div class="panel" id="DokterEE">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter EE" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter EE" id="doctor-image" />
                         </div>
 
 
@@ -394,7 +393,7 @@
                             Franeldo Uneputty, Sp.B
                         </button>
                         <div class="panel" id="DokterY">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter Y" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter Y" id="doctor-image" />
                         </div>
 
 

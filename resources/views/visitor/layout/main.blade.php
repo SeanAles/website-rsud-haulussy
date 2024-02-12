@@ -138,14 +138,13 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/sejarah">Sejarah</a>
-                            <a class="dropdown-item" href="/mantan-direktur">Mantan Direktur</a>
+                           
                             <a class="dropdown-item" href="/visi-misi">Visi & Misi</a>
                             <a class="dropdown-item" href="/struktur-organisasi">Struktur Organisasi</a>
                             <a class="dropdown-item" href="/direksi-manajemen">Direksi & Manajemen</a>
-                            <a class="dropdown-item" href="/manajer-ruangan-instalasi">Manajer Ruangan
-                                &
-                                Instalasi</a>
+                            <a class="dropdown-item" href="/manajer-ruangan-instalasi">Manajer Ruangan & Instalasi</a>
                             <a class="dropdown-item" href="/gambaran-umum">Gambaran Umum</a>
+                            <a class="dropdown-item" href="/mantan-direktur">Mantan Direktur</a>
                         </div>
                     </li>
 
@@ -197,7 +196,7 @@
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/kontak">Kontak</a>
-                            <a class="dropdown-item" href="/survey-kepuasaan">Survei Kepuasan Pengguna</a>
+                            <a class="dropdown-item" href="/survey-kepuasaan-pengguna">Survei Kepuasan Pengguna</a>
                             <a class="dropdown-item" href="/kritik-saran">Kritik & Saran</a>
                         </div>
                     </li>

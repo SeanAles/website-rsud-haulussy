@@ -62,7 +62,7 @@
                     <tr>
                         <th scope="row">2</th>
                         <td>Klinik Bedah</td>
-                        <td>dr. Jeky Tuamely, Sp. B (K)., Trauma FICS, FINACS</td>
+                        <td>dr. Jacky Tuamelly, Sp.B (K) Trauma, FICS, FINACS, FIHFAA</td>
                         <td>Senin & Selasa</td>
                         <td>08.00 - selesai</td>
                     </tr>
