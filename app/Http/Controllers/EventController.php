@@ -192,7 +192,7 @@ class EventController extends Controller
     }
 
     public function indexGaleri(){
-        $events = Event::with('eventPicture')->orderByDesc('created_at')->paginate(5);
+        $events = Event::with('eventPicture')->orderByDesc('created_at')->paginate(4);
 
         return view('visitor.informasi.daftar-galeri', ['events' => $events]);
     }
