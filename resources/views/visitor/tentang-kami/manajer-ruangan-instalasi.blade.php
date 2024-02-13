@@ -258,7 +258,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top" alt="Instalasi Bedah Sentral">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Bedah Sentral</h5>
-                            <p class="card-text">dr. Jacky Tuamelly, Sp.B</p>
+                            <p class="card-text">dr. Jacky Tuamelly, Sp.B (K) Trauma, FICS, FINACS, FIHFAA</p>
                         </div>
                     </div>
                 </div>
