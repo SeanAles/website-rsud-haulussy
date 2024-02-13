@@ -9,6 +9,11 @@
             background-color: white;
             padding: 0;
         }
+
+        .tb-header{
+            background-color: #283779;
+            color: white;
+        }
     </style>
 @endsection
 
@@ -22,7 +27,7 @@
         <div class="container" id="table">
             <table class="table table-striped table-bordered">
                 <thead>
-                    <tr>
+                    <tr class="tb-header">
                         <th scope="col">No</th>
                         <th scope="col">Nama Klinik</th>
                         <th scope="col">Nama Dokter</th>
@@ -141,20 +146,27 @@
                     </tr>
                     <tr>
                         <th scope="row">6</th>
-                        <td>Klinik Asma, DOTS</td>
+                        <td>Klinik Asma</td>
                         <td>dr. Marisa Afifudin, Sp. P</td>
                         <td>Senin, Rabu, Jumat</td>
                         <td>08.00 - selesai</td>
                     </tr>
-                    {{-- <tr>
-                        <th scope="row">6</th>
+                    <tr>
+                        <th scope="row">7</th>
                         <td>Klinik Jantung</td>
                         <td>dr. Iman Haryana, Sp. JP., FIHA</td>
                         <td>Selasa, Kamis, Jumat</td>
                         <td>08.00 - selesai</td>
-                    </tr> --}}
+                    </tr>
                     <tr>
-                        <th scope="row">7</th>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td>dr. Grace Lilihata, Sp. JP</td>
+                        <td>Senin & Rabu</td>
+                        <td>08.00 - selesai</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
                         <td>Klinik Kebidanan-Kandungan & KIA-KB</td>
                         <td>dr. Jeane Pattiasina, Sp. OG</td>
                         <td>Senin</td>
@@ -182,14 +194,14 @@
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">8</th>
+                        <th scope="row">9</th>
                         <td>Klinik Mata</td>
                         <td>dr. Elna Anakotta, Sp. M, SH</td>
                         <td>Senin & Rabu</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">9</th>
+                        <th scope="row">10</th>
                         <td>Klinik Kulit & Kelamin</td>
                         <td>dr. Hanny Tanasal, Sp. KK</td>
                         <td>Senin, Rabu, Jumat</td>
@@ -210,7 +222,7 @@
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">10</th>
+                        <th scope="row">11</th>
                         <td>Klinik Anak & Imunisasi</td>
                         <td>dr. Sriwahyuni Djoko, Sp. A</td>
                         <td>Senin</td>
@@ -245,42 +257,42 @@
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">11</th>
+                        <th scope="row">12</th>
                         <td>Klinik Bedah Digestive</td>
                         <td>dr. Helfi Nikijuluw, Sp. B-KBD</td>
                         <td>Selasa, Rabu, Jumat</td>
                         <td>08:00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">12</th>
+                        <th scope="row">13</th>
                         <td>Klinik THT</td>
                         <td>dr. Julu Manalu, Sp. THT-KL</td>
                         <td>Senin, rabu, Jumat</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">13</th>
-                        <td>Klinik Paru</td>
+                        <th scope="row">14</th>
+                        <td>Klinik Paru & TBC</td>
                         <td>dr. Marisa Afifudin, Sp. P</td>
                         <td>Senin, Rabu Jumat</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">14</th>
+                        <th scope="row">15</th>
                         <td>Klinik Rehabilitasi Medik (Fisioterapi)</td>
                         <td>dr. Mauren Palijama, Sp. RM</td>
                         <td>Senin, Rabu, Jumat</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">15</th>
+                        <th scope="row">16</th>
                         <td>Klinik Hemodialisis</td>
                         <td>dr. Siti Hadjar, Sp.PD</td>
                         <td>Senin - Sabtu</td>
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">16</th>
+                        <th scope="row">17</th>
                         <td>Klinik Endoskopi</td>
                         <td>dr. Denny Jolanda, Sp. PD, FINASIM</td>
                         <td>Senin - Jumat</td>
@@ -294,7 +306,7 @@
                         <td>08.00 - selesai</td>
                     </tr>
                     <tr>
-                        <th scope="row">17</th>
+                        <th scope="row">18</th>
                         <td>Klinik HIV (Pulau Pombo)</td>
                         <td>dr. Shela D.Ch. Manuputty</td>
                         <td>Senin & Kamis</td>

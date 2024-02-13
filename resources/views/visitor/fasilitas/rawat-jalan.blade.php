@@ -176,7 +176,7 @@
                     </div>
                 </div>
 
-                {{-- <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
@@ -204,7 +204,7 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
 
                 <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
@@ -212,7 +212,7 @@
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#asma" style="font-size: 30px"><i
                                     class="fa-solid fa-head-side-cough"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Asma & DOTS</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Asma</p>
                             </a>
                         </div>
                     </div>
@@ -533,7 +533,7 @@
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#paru" style="font-size: 30px"><i class="fa-solid fa-lungs"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Paru</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Paru & TBC</p>
                             </a>
                         </div>
                     </div>

@@ -17,7 +17,7 @@
         <div class="text-center mb-5">
             <h1>Ketersediaan Tempat Tidur</h1>
         </div>
-        <div class="text-center container" id="table">
+        <div class="container col-10 col-sm-10 col-md-8 col-lg-6" id="table">
             <table class="table table-bordered table-striped">
                 <tr>
                     <th>No.</th>
@@ -33,11 +33,11 @@
                 @endforeach
             </table>
 
-
+            <div class="mt-2 text-danger font-weight-bold">
+                <p><i>*{{ $note->content }}</i></p>
+            </div>
         </div>
-        <div class="container mt-2 text-danger font-weight-bold">
-            <p><i>*{{ $note->content }}</i></p>
-        </div>
+        
 
     </section>
 @endsection
