@@ -16,5 +16,4 @@
     <div class="container">
         <img src="{{ asset('visitor/assets/img/diagram/struktur organisasi.png') }}" alt="" style="width:100%;">
     </div>
-
 @endsection

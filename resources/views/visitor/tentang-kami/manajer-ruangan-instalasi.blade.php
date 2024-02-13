@@ -158,7 +158,7 @@
                             class="card-img-top" alt="Kamar Bersalin">
                         <div class="card-body">
                             <h5 class="card-title">Kamar Bersalin</h5>
-                            <p class="card-text">Antonia_Anaktototy, S.ST.</p>
+                            <p class="card-text">Antonia Anaktototy, S.ST.</p>
                         </div>
                     </div>
                 </div>
