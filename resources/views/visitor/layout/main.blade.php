@@ -65,6 +65,10 @@
             position: fixed;
             z-index: 9999;
         }
+
+        .small-margin {
+            margin-top: 50px;
+        }
     }
 
 
@@ -81,6 +85,10 @@
             width: 100%;
             position: fixed;
             z-index: 9999;
+        }
+
+        .text-main {
+            margin-top: 120px;
         }
     }
 
@@ -213,13 +221,13 @@
                 style="background-image: url(/visitor/assets/img/gallery/hero-bg.png);background-position: top center;background-size: cover;">
             </div>
             <!--/.bg-holder-->
-            <div class="container mt-5 text-center">
-                <div class="row min-vh-xl-100 min-vh-xxl-25 mt-5">
+            <div class="container text-center small-margin">
+                <div class="row min-vh-xl-100 min-vh-xxl-25">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 order-0 order-lg-1">
-                        <img class="pt-7 pt-md-0" width="85%"
-                            src="{{ asset('visitor/assets/img/gallery/bgd.png') }}" alt="hero-header" />
+                        <img class="p-0" width="85%"
+                            src="{{ asset('visitor/assets/img/gallery/main.png') }}" alt="hero-header" />
                     </div>
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 py-6 text-lg-start">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-lg-start text-main">
                         <b>
                             <h1 class="fw-light fs-6 fs-xxl-7">
                                 RSUD dr. M. Haulussy Ambon
@@ -314,7 +322,7 @@
 
             <!-- ============================================-->
             <!-- <section> begin ============================-->
-            <section class="py-0 bg-primary">
+            <section class="bg-primary py-0">
                 <div class="container">
                     <div class="row justify-content-md-between justify-content-evenly py-4">
                         <div class="col-12 col-sm-8 col-md-6 col-lg-auto text-center text-md-start">

@@ -308,7 +308,7 @@
                     <tr>
                         <th scope="row">18</th>
                         <td>Klinik HIV (Pulau Pombo)</td>
-                        <td>dr. Shela D.Ch. Manuputty</td>
+                        <td>dr. Sheila Dewanty Christin Maunuputty</td>
                         <td>Senin & Kamis</td>
                         <td>08:00 - Selesai</td>
                     </tr>
