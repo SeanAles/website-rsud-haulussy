@@ -59,7 +59,7 @@
                             dr. Fitrah Hanafi
                         </button>
                         <div class="panel" id="drFitrahHanafi">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Fitrah Hanafi"
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="dr. Fitrah Hanafi"
                                 id="doctor-image" />
                         </div>
 
@@ -156,7 +156,7 @@
                             dr. Sahran Feggy A. Pattinama    
                         </button>
                         <div class="panel" id="drSahranFeggyAPattinama">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Sahran Feggy A. Pattinama" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="dr. Sahran Feggy A. Pattinama" id="doctor-image" />
                         </div>
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drSekarIndahSetyarini')">

@@ -312,6 +312,13 @@
                         <td>Senin & Kamis</td>
                         <td>08:00 - Selesai</td>
                     </tr>
+                    <tr>
+                        <th scope="row">19</th>
+                        <td>MCU (Medical Check Up)</td>
+                        <td>dr. Wenny Fonda Liklikwatil</td>
+                        <td>Senin - Jumat</td>
+                        <td>08:00 - Selesai</td>
+                    </tr>
                 </tbody>
             </table>
             <p class="text-danger"><i>*1 Februari 2024</i></p>

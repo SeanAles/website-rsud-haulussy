@@ -90,8 +90,11 @@
         .text-main {
             margin-top: 120px;
         }
-    }
 
+        .large-top-margin {
+            padding-top: 75px;
+        }
+    }
     .nav-item {
         margin-right: 30px;
     }
@@ -216,18 +219,18 @@
             </div>
         </nav>
         <div id="particles-js"></div>
-        <section class="py-xxl-10 pb-0" id="home">
+        <section class="pb-0" id="home">
             <div class="bg-holder bg-size"
                 style="background-image: url(/visitor/assets/img/gallery/hero-bg.png);background-position: top center;background-size: cover;">
             </div>
             <!--/.bg-holder-->
-            <div class="container text-center small-margin">
+            <div class="container text-center pt-3">
                 <div class="row min-vh-xl-100 min-vh-xxl-25">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 order-0 order-lg-1">
-                        <img class="p-0" width="85%"
+                        <img class="p-0 img-fluid" width="90%"
                             src="{{ asset('visitor/assets/img/gallery/main.png') }}" alt="hero-header" />
                     </div>
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-lg-start text-main">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-lg-start text-main large-top-margin">
                         <b>
                             <h1 class="fw-light fs-6 fs-xxl-7">
                                 RSUD dr. M. Haulussy Ambon
