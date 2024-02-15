@@ -52,7 +52,8 @@
                             Sp.B
                         </button>
                         <div class="panel" id="DokterOO">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter OO" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter OO"
+                                id="doctor-image" />
                         </div>
 
 
@@ -60,7 +61,8 @@
                             Sangadji, Sp.Rad
                         </button>
                         <div class="panel" id="DokterBB">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter BB" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter BB"
+                                id="doctor-image" />
                         </div>
 
 
@@ -68,7 +70,8 @@
                             Jean Que, Sp.S, M.Kes.
                         </button>
                         <div class="panel" id="DokterFF">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter FF" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter FF"
+                                id="doctor-image" />
                         </div>
 
 
@@ -76,7 +79,8 @@
                             William Sialana, Sp.F, M.Kes
                         </button>
                         <div class="panel" id="DokterH">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter H" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter H"
+                                id="doctor-image" />
                         </div>
 
 
@@ -84,7 +88,8 @@
                             Sp.PD, FINASIM
                         </button>
                         <div class="panel" id="DokterL">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter L" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter L"
+                                id="doctor-image" />
                         </div>
 
 
@@ -92,7 +97,8 @@
                             Anakotta, Sp.M
                         </button>
                         <div class="panel" id="DokterG">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter G" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter G"
+                                id="doctor-image" />
                         </div>
 
 
@@ -100,7 +106,8 @@
                             Nikijuluw, Sp.N
                         </button>
                         <div class="panel" id="DokterX">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter X" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter X"
+                                id="doctor-image" />
                         </div>
 
 
@@ -108,7 +115,8 @@
                             Maruapey, Sp.An
                         </button>
                         <div class="panel" id="DokterMM">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter MM" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter MM"
+                                id="doctor-image" />
                         </div>
 
 
@@ -116,7 +124,8 @@
                             Pattiasina, Sp.PK
                         </button>
                         <div class="panel" id="DokterZ">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter Z" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter Z"
+                                id="doctor-image" />
                         </div>
 
 
@@ -124,7 +133,17 @@
                             Bandjar, Sp.KK
                         </button>
                         <div class="panel" id="DokterKK">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter KK" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter KK"
+                                id="doctor-image" />
+                        </div>
+
+
+                        <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterSSSS')">
+                            dr. Gracia Lilihata, Sp.JP
+                        </button>
+                        <div class="panel" id="DokterSSSS">
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter KK"
+                                id="doctor-image" />
                         </div>
 
 
@@ -132,7 +151,8 @@
                             Rahawarin, M.Kes., Sp.PA
                         </button>
                         <div class="panel" id="DokterHH">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter HH" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter HH"
+                                id="doctor-image" />
                         </div>
 
 
@@ -140,7 +160,8 @@
                             Sp.KK
                         </button>
                         <div class="panel" id="DokterK">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter K" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter K"
+                                id="doctor-image" />
                         </div>
 
 
@@ -148,7 +169,8 @@
                             Husain, Sp.PM
                         </button>
                         <div class="panel" id="DokterPP">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter PP" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter PP"
+                                id="doctor-image" />
                         </div>
 
 
@@ -156,7 +178,8 @@
                             Nikijuluw, Sp.B KBD
                         </button>
                         <div class="panel" id="DokterA">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter A" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter A"
+                                id="doctor-image" />
                         </div>
 
 
@@ -164,7 +187,8 @@
                             Haryana, Sp.JP
                         </button>
                         <div class="panel" id="DokterDD">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter DD" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter DD"
+                                id="doctor-image" />
                         </div>
 
 
@@ -172,7 +196,8 @@
                             Angeline Hutagalung, Sp.PK, M.Kes
                         </button>
                         <div class="panel" id="DokterF">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter F" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter F"
+                                id="doctor-image" />
                         </div>
 
 
@@ -180,7 +205,8 @@
                             Sp.OG
                         </button>
                         <div class="panel" id="DokterW">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter W" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter W"
+                                id="doctor-image" />
                         </div>
 
 
@@ -188,15 +214,18 @@
                             Huliselan, Sp.FK
                         </button>
                         <div class="panel" id="DokterJ">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter J" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter J"
+                                id="doctor-image" />
                         </div>
 
 
 
-                        <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterGGG')">dr. Jacky Tuamelly, Sp.B (K) Trauma, FICS, FINACS, FIHFAA
+                        <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterGGG')">dr. Jacky
+                            Tuamelly, Sp.B (K) Trauma, FICS, FINACS, FIHFAA
                         </button>
                         <div class="panel" id="DokterGGG">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter G" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter G"
+                                id="doctor-image" />
                         </div>
 
 
@@ -204,7 +233,8 @@
                             Pattiasina, Sp.OG
                         </button>
                         <div class="panel" id="DokterN">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter N" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter N"
+                                id="doctor-image" />
                         </div>
 
 
@@ -212,7 +242,8 @@
                             Godrace Lilihata, Sp.An
                         </button>
                         <div class="panel" id="DokterCC">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter CC" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter CC"
+                                id="doctor-image" />
                         </div>
 
 
@@ -220,17 +251,19 @@
                             Sp.THT
                         </button>
                         <div class="panel" id="DokterNN">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter NN" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter NN"
+                                id="doctor-image" />
                         </div>
                     </div>
 
                     <!-- kanan -->
-                    <div class="col-12 col-sm-12 col-md-6" >
+                    <div class="col-12 col-sm-12 col-md-6">
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterJJ')">dr. Laura B. S.
                             Huwae, Sp.S, M.Kes
                         </button>
                         <div class="panel" id="DokterJJ">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter JJ" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter JJ"
+                                id="doctor-image" />
                         </div>
 
 
@@ -239,7 +272,8 @@
                             Mardiana
                         </button>
                         <div class="panel" id="DokterZZZ">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter F" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter F"
+                                id="doctor-image" />
                         </div>
 
 
@@ -248,7 +282,8 @@
                             Afifudin, Sp.P
                         </button>
                         <div class="panel" id="DokterR">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter R" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter R"
+                                id="doctor-image" />
                         </div>
 
 
@@ -256,7 +291,8 @@
                             Ramadhani Polanunu, Sp.A
                         </button>
                         <div class="panel" id="DokterU">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter U" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter U"
+                                id="doctor-image" />
                         </div>
 
 
@@ -264,7 +300,8 @@
                             Paliyama, Sp.KFR
                         </button>
                         <div class="panel" id="DokterE">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter E" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter E"
+                                id="doctor-image" />
                         </div>
 
 
@@ -272,7 +309,8 @@
                             Mailoa, Sp.B Subspe.BVE(K)
                         </button>
                         <div class="panel" id="DokterEE">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter EE" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter EE"
+                                id="doctor-image" />
                         </div>
 
 
@@ -280,7 +318,8 @@
                             Sp.OG
                         </button>
                         <div class="panel" id="DokterT">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter T" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter T"
+                                id="doctor-image" />
                         </div>
 
 
@@ -288,7 +327,8 @@
                             Wibriyono Angkejaya, Sp.An., M.Kes.
                         </button>
                         <div class="panel" id="DokterGG">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter GG" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter GG"
+                                id="doctor-image" />
                         </div>
 
 
@@ -296,7 +336,8 @@
                             Yosi Silalahi, Sp.S.
                         </button>
                         <div class="panel" id="DokterII">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter II" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter II"
+                                id="doctor-image" />
                         </div>
 
 
@@ -304,7 +345,8 @@
                             Tanamal, Sp.KK
                         </button>
                         <div class="panel" id="DokterS">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter S" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter S"
+                                id="doctor-image" />
                         </div>
 
 
@@ -312,7 +354,8 @@
                             Sp.A
                         </button>
                         <div class="panel" id="DokterC">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter C" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter C"
+                                id="doctor-image" />
                         </div>
 
 
@@ -321,7 +364,8 @@
                             Alexander Wagiu, Sp.S
                         </button>
                         <div class="panel" id="DokterQ">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter Q" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter Q"
+                                id="doctor-image" />
                         </div>
 
 
@@ -329,7 +373,8 @@
                             Sp.PD
                         </button>
                         <div class="panel" id="DokterV">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter V" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter V"
+                                id="doctor-image" />
                         </div>
 
 
@@ -337,7 +382,8 @@
                             Sp.A
                         </button>
                         <div class="panel" id="DokterLL">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter LL" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter LL"
+                                id="doctor-image" />
                         </div>
 
 
@@ -345,7 +391,8 @@
                             Timisela, Sp.PD
                         </button>
                         <div class="panel" id="DokterO">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter O" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter O"
+                                id="doctor-image" />
                         </div>
 
 
@@ -353,7 +400,8 @@
                             Leuhery, Sp.KG
                         </button>
                         <div class="panel" id="DokterI">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter I" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter I"
+                                id="doctor-image" />
                         </div>
 
 
@@ -361,7 +409,8 @@
                             Hartiono, Sp.A
                         </button>
                         <div class="panel" id="DokterD">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter D" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter D"
+                                id="doctor-image" />
                         </div>
 
 
@@ -369,7 +418,8 @@
                             Leiwakabessy, Sp.PA, M.Kes.
                         </button>
                         <div class="panel" id="DokterM">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter M" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter M"
+                                id="doctor-image" />
                         </div>
 
 
@@ -377,7 +427,8 @@
                             Novalina Ursula, Sp.P
                         </button>
                         <div class="panel" id="DokterAA">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter AA" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter AA"
+                                id="doctor-image" />
                         </div>
 
 
@@ -385,7 +436,8 @@
                             Huningkor, Sp.PD
                         </button>
                         <div class="panel" id="DokterB">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter B" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter B"
+                                id="doctor-image" />
                         </div>
 
 
@@ -393,7 +445,8 @@
                             Franeldo Uneputty, Sp.B
                         </button>
                         <div class="panel" id="DokterY">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter Y" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter Y"
+                                id="doctor-image" />
                         </div>
 
 
@@ -401,7 +454,8 @@
                             Maricar Sahib
                         </button>
                         <div class="panel" id="DokterP">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter P" id="doctor-image" />
+                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter P"
+                                id="doctor-image" />
                         </div>
                     </div>
                 </div>
