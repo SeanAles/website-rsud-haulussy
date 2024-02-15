@@ -72,9 +72,7 @@ Route::get('/tata-tertib', function(){
     return view('visitor.maintenance.under-construction');
 });
 Route::get('/dokter-spesialis', function(){ return view('visitor.fasilitas.dokter-spesialis'); });
-Route::get('/dokter-umum', function(){
-    return view('visitor.maintenance.under-construction');
-});
+Route::get('/dokter-umum', function(){return view('visitor.fasilitas.dokter-umum');});
 
 // Informasi Route
 // Informasi Artikel Route

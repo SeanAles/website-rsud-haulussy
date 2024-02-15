@@ -404,7 +404,6 @@
                             <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter P" id="doctor-image" />
                         </div>
                     </div>
-
                 </div>
             </div>
             </div>
