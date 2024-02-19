@@ -326,7 +326,7 @@
                         <td>MCU (Medical Check Up)</td>
                         <td>dr. Wenny Fonda Liklikwatil</td>
                         <td>Senin - Jumat</td>
-                        <td>08:00 - Selesai</td>
+                        <td>09:00 - Selesai</td>
                     </tr>
                 </tbody>
             </table>
