@@ -319,7 +319,7 @@
                         <td>Klinik HIV (Pulau Pombo)</td>
                         <td>dr. Sheila Dewanty Christin Maunuputty</td>
                         <td>Senin & Kamis</td>
-                        <td>08:00 - Selesai</td>
+                        <td>09:00 - Selesai</td>
                     </tr>
                     <tr>
                         <th scope="row">19</th>
