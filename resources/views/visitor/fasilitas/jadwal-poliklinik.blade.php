@@ -33,7 +33,7 @@
         </div>
 
         <div class="container" id="table">
-            <p class="text-right note">*Pelayanan keperawatan dimulai sejak 08:00.</p>
+            <p class="note">*Pelayanan keperawatan dimulai sejak 08:00.</p>
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr class="tb-header">
