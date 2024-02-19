@@ -38,7 +38,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="ICCU">
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang ICCU.png') }}" class="card-img-top" alt="ICCU">
                         <div class="card-body">
                             <h5 class="card-title">ICCU</h5>
                             <p class="card-text">Salianty Riupassa, S.ST.</p>
@@ -81,7 +81,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="Bedah Gabung">
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Bedah Gabung.png') }}" class="card-img-top" alt="Bedah Gabung">
                         <div class="card-body">
                             <h5 class="card-title">Bedah Gabung</h5>
                             <p class="card-text">Ns. Josina Lekatompessy, S.Kep.</p>
@@ -185,7 +185,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="Paru">
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Paru (RPP).png') }}" class="card-img-top" alt="Paru">
                         <div class="card-body">
                             <h5 class="card-title">Paru</h5>
                             <p class="card-text">Ns. Liensya F. Lekatompessy, S.Kep.</p>
