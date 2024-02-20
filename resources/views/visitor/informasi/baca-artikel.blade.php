@@ -36,8 +36,15 @@
             <!-- Bagian Kiri (60%) -->
             <div class="col-md-8 col-lg-7 left-panel">
                 <h2>{{ $article->title }}</h2>
-                <p class="card-text text-muted">/ {{ $article->author }} / {{ $article->created_at->format('d - m - Y') }} </p>
-                <img src="{{ asset('images/article/thumbnails/' . $article->thumbnail) }}" class="img-fluid">
+                <div class="row justify-content-between align-items-center mb-3">
+                    <div class="col-auto text-black">
+                        <span class="card-text text-muted text-left">/ {{ $article->author }} / {{ $article->created_at->format('d - m - Y') }} </span>
+                    </div>
+                    <div class="col-auto">
+                       <img id="whatsappImage" src="{{ asset('visitor/assets/icon/whatsapp.png') }}" width="40px"  alt="whatsapp" class="text-right">
+                    </div>
+                  </div>
+                <img src="{{ asset('images/article/thumbnails/' . $article->thumbnail) }}" width="100%" class="img-fluid">
                 {!! $article->description !!}
             </div>
             <!-- Bagian Kanan (40%) -->
@@ -53,4 +60,18 @@
     
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        document.getElementById('whatsappImage').addEventListener('click', function() {
+            // URL of the page you want to share
+            const pageUrl = window.location.href;
+            // WhatsApp share link
+            const whatsappLink = 'whatsapp://send?text=' + encodeURIComponent(pageUrl);
+            
+            // Open WhatsApp with the share link
+            window.location.href = whatsappLink;
+        });
+    </script>
 @endsection
