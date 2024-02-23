@@ -2,6 +2,18 @@
 <html lang="en-US" dir="ltr">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYFBJ69P0C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZYFBJ69P0C');
+    </script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,7 +48,18 @@
     <link href="{{ asset('visitor/assets/css/theme.css') }}" rel="stylesheet" />
     @yield('link')
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYFBJ69P0C"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
 
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZYFBJ69P0C');
+</script>
 @yield('style')
 <style>
     a#navbarDropdown {
@@ -95,6 +118,7 @@
             padding-top: 75px;
         }
     }
+
     .nav-item {
         margin-right: 30px;
     }
@@ -149,7 +173,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/sejarah">Sejarah</a>
-                           
+
                             <a class="dropdown-item" href="/visi-misi">Visi & Misi</a>
                             <a class="dropdown-item" href="/struktur-organisasi">Struktur Organisasi</a>
                             <a class="dropdown-item" href="/direksi-manajemen">Direksi & Manajemen</a>

@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYFBJ69P0C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZYFBJ69P0C');
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
@@ -29,7 +41,6 @@
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
     {{-- toastr --}}
     <link rel="stylesheet" href="{{ asset('plugins/toastr/toastr.min.css') }}">
-
     @yield('link')
 </head>
 
@@ -172,7 +183,7 @@
                                 <a href="/suggestion" class="nav-link">
                                     <i class="nav-icon fas  fa-lightbulb"></i>
                                     <p>
-                                       Kritik dan Saran
+                                        Kritik dan Saran
                                     </p>
                                 </a>
                             </li>
