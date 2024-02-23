@@ -17,10 +17,49 @@
             font-size: 15px;
             display: none;
         }
+
+        /* Centang Background */
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.5) !important;
+        }
+
+        /* Style Tambahan */
+        .modal-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Gaya Tombol Close */
+        .close-btn {
+            position: absolute;
+            top: -18px;
+            right: -7 px;
+            z-index: 1050;
+            /* Menyimpan di atas modal */
+            font-size: 3em;
+            /* Memperbesar font-size */
+        }
     </style>
 @endsection
 
 @section('content')
+    <!-- Modal -->
+    {{-- <div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="gambarModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <!-- Tombol Close -->
+                <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-body">
+                    <img src="{{ asset('visitor/assets/img/promkes/Kanker Anak Sedunia 1.png') }}" class="img-fluid"
+                        alt="Gambar Modal">
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+
     <section class="w-100">
         <h1 class="text-center pb-5">Poliklinik</h1>
 
@@ -288,7 +327,7 @@
                     </div>
                 </div>
 
-               
+
                 <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
@@ -321,88 +360,88 @@
                     </div>
                 </div>
 
-                 <!-- Modal -->
-                 <div class="modal fade" id="mata" tabindex="-1" aria-labelledby="exampleModalLabel"
-                 aria-hidden="true">
-                 <div class="modal-dialog ">
-                     <div class="modal-content">
-                         <div class="modal-header">
-                             <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
-                             <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                 aria-label="Close"></button>
-                         </div>
-                         <div class="text-center">
-                             <div class="modal-body">
-                                 <img src="{{ 'visitor/assets/img/poli/mata.jpg' }}" width="100%" height="100%">
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-
-             <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
-                 <div class="d-flex flex-column align-items-center">
-                     <div class="icon-box text-center">
-                         <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
-                             data-bs-target="#endoskopi" style="font-size: 30px"><i
-                                 class="fa-solid fa-microscope"></i>
-                             <p class="fs-1 fs-xxl-2 text-center">Endoskopi</p>
-                         </a>
-                     </div>
-                 </div>
-             </div>
-
-             <!-- Modal -->
-             <div class="modal fade" id="endoskopi" tabindex="-1" aria-labelledby="exampleModalLabel"
-                 aria-hidden="true">
-                 <div class="modal-dialog ">
-                     <div class="modal-content">
-                         <div class="modal-header">
-                             <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
-                             <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                 aria-label="Close"></button>
-                         </div>
-                         <div class="text-center">
-                             <div class="modal-body">
-                                 <img src="{{ 'visitor/assets/img/poli/endoskopi.jpg' }}" width="100%"
-                                     height="100%" alt="Endoskopi">
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-
-             <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
-                <div class="d-flex flex-column align-items-center">
-                    <div class="icon-box text-center">
-                        <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
-                            data-bs-target="#mcu" style="font-size: 30px">
-                            <i class="fa-solid fa-file-waveform"></i>
-                            <p class="fs-1 fs-xxl-2 text-center">Medical Check Up (MCU)</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="mcu" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog ">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="text-center">
-                            <div class="modal-body">
-                                <img src="{{ 'visitor/assets/img/poli/mcu.jpg' }}" width="100%"
-                                    height="100%" alt="Medical Check Up">
+                <!-- Modal -->
+                <div class="modal fade" id="mata" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="text-center">
+                                <div class="modal-body">
+                                    <img src="{{ 'visitor/assets/img/poli/mata.jpg' }}" width="100%" height="100%">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="icon-box text-center">
+                            <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
+                                data-bs-target="#endoskopi" style="font-size: 30px"><i
+                                    class="fa-solid fa-microscope"></i>
+                                <p class="fs-1 fs-xxl-2 text-center">Endoskopi</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="endoskopi" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="text-center">
+                                <div class="modal-body">
+                                    <img src="{{ 'visitor/assets/img/poli/endoskopi.jpg' }}" width="100%"
+                                        height="100%" alt="Endoskopi">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="icon-box text-center">
+                            <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
+                                data-bs-target="#mcu" style="font-size: 30px">
+                                <i class="fa-solid fa-file-waveform"></i>
+                                <p class="fs-1 fs-xxl-2 text-center">Medical Check Up (MCU)</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="mcu" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="text-center">
+                                <div class="modal-body">
+                                    <img src="{{ 'visitor/assets/img/poli/mcu.jpg' }}" width="100%" height="100%"
+                                        alt="Medical Check Up">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <h2 class="pb-3">Lantai 2</h2>
             <div class="row pb-5">
@@ -607,7 +646,8 @@
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#fisioterapi" style="font-size: 30px"><i
                                     class="fa-solid fa-wheelchair-move"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Rehabilitasi Medik (Fisioterapi dan Terapi Wicara)</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Rehabilitasi Medik (Fisioterapi dan Terapi Wicara)
+                                </p>
                             </a>
 
                         </div>
@@ -693,7 +733,8 @@
                     <h2 class="fw-bold mb-4">Kami Ada Untuk Melayani</h2>
                     <p class="text-justify">
                         RSUD dr. M Haulussy Ambon sebagai rumah sakit kelas B Pendidikan merupakan rumah sakit rujukan
-                        Provinsi Maluku yang merupakan daerah kepulauan yang terdiri dari 632 pulau besar dan kecil. Luas
+                        Provinsi Maluku yang merupakan daerah kepulauan yang terdiri dari 632 pulau besar dan kecil.
+                        Luas
                         daratan Provinsi Maluku yang hanya 7,6 % dari luas Wilayah 712.479,69 km2 dihuni oleh 1.200.000
                         jiwa.
                     </p>
@@ -994,6 +1035,16 @@
 @section('script')
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script>
+        // $(document).ready(function() {
+        //     $('#gambarModal').modal('show');
+
+        //     // Event handler untuk tombol close
+        //     $('.close-btn').click(function() {
+        //         // Menutup modal
+        //         $('#gambarModal').modal('hide');
+        //     });
+        // });
+
         function validateEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (emailRegex.test(email)) {
