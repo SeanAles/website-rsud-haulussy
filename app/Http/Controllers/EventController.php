@@ -84,7 +84,7 @@ class EventController extends Controller
             return response()->json(['status' => 'error', 'message' => $validator->errors()->first()]);
         }
 
-        $slug = Str::random(30);
+        $slug = Str::random(10);
 
         $event = Event::create([
             "name" => $request->name,

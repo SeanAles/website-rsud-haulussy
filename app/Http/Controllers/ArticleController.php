@@ -90,7 +90,7 @@ class ArticleController extends Controller
         }
 
         $description = $dom->saveHTML();
-        $slug = Str::random(30);
+        $slug = Str::random(10);
 
         
         $thumbnail = "";
