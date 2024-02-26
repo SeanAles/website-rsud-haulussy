@@ -31,7 +31,7 @@
         .copy-btn {
             background-color: green;
             color: white;
-            padding: 10px 20px;
+            padding: 4px 8px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -59,7 +59,7 @@
                             {{ $article->created_at->format('d - m - Y') }} </span>
                     </div>
                     <div class="col-auto">
-                        <button id="copyButton" class="copy-btn" onclick="copyUrl()">Copy URL</button>
+                        <button id="copyButton" class="copy-btn mr-1" onclick="copyUrl()">Copy URL</button>
                         <img id="whatsappImage" src="{{ asset('visitor/assets/icon/whatsapp.png') }}" width="40px"
                             alt="whatsapp" class="text-right">
                     </div>
@@ -87,25 +87,21 @@
 @section('script')
     <script>
         document.getElementById('whatsappImage').addEventListener('click', function() {
-            // URL of the page you want to share
             const pageUrl = window.location.href;
-            // WhatsApp share link
             const whatsappLink = 'whatsapp://send?text=' + encodeURIComponent(pageUrl);
-
-            // Open WhatsApp with the share link
             window.location.href = whatsappLink;
         });
 
         function copyUrl() {
-            var url = window.location.href;
-            var copyText = document.createElement('textarea');
+            const url = window.location.href;
+            const copyText = document.createElement('textarea');
             document.body.appendChild(copyText);
             copyText.value = url;
             copyText.select();
             document.execCommand('copy');
             document.body.removeChild(copyText);
 
-            var button = document.getElementById('copyButton');
+            const button = document.getElementById('copyButton');
             button.innerHTML = 'Copied';
             button.classList.remove('copy-btn');
             button.classList.add('copied');
