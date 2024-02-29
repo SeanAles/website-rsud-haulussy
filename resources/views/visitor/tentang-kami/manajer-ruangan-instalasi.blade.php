@@ -38,7 +38,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang ICCU.png') }}" class="card-img-top" alt="ICCU">
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang ICCU.png') }}"
+                            class="card-img-top" alt="ICCU">
                         <div class="card-body">
                             <h5 class="card-title">ICCU</h5>
                             <p class="card-text">Salianty Riupassa, S.ST.</p>
@@ -81,7 +82,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Bedah Gabung.png') }}" class="card-img-top" alt="Bedah Gabung">
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Bedah Gabung.png') }}"
+                            class="card-img-top" alt="Bedah Gabung">
                         <div class="card-body">
                             <h5 class="card-title">Bedah Gabung</h5>
                             <p class="card-text">Ns. Josina Lekatompessy, S.Kep.</p>
@@ -91,7 +93,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="Cendrawasih">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
+                            alt="Cendrawasih">
                         <div class="card-body">
                             <h5 class="card-title">Cendrawasih</h5>
                             <p class="card-text">Ns. Anat R. Talubun, S.Kep.</p>
@@ -134,7 +137,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="TBC-MDR">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
+                            alt="TBC-MDR">
                         <div class="card-body">
                             <h5 class="card-title">TBC-MDR</h5>
                             <p class="card-text">Ns. Liensya F. Lekatompessy, S.Kep.</p>
@@ -144,7 +148,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="Nifas">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
+                            alt="Nifas">
                         <div class="card-body">
                             <h5 class="card-title">Nifas</h5>
                             <p class="card-text">Yohana W. Lakusa, S.ST.</p>
@@ -165,7 +170,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="Ginekologi">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="Ginekologi">
                         <div class="card-body">
                             <h5 class="card-title">Ginekologi</h5>
                             <p class="card-text">Christa Metekohy, S.ST.</p>
@@ -175,7 +181,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="NICU">
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang NICU.png') }}"
+                            class="card-img-top" alt="NICU">
                         <div class="card-body">
                             <h5 class="card-title">NICU</h5>
                             <p class="card-text">Ns. Sherli T. Latuminase, S.Kep.</p>
@@ -185,7 +192,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Paru (RPP).png') }}" class="card-img-top" alt="Paru">
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Paru (RPP).png') }}"
+                            class="card-img-top" alt="Paru">
                         <div class="card-body">
                             <h5 class="card-title">Paru</h5>
                             <p class="card-text">Ns. Liensya F. Lekatompessy, S.Kep.</p>
@@ -235,7 +243,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top" alt="Instalasi Gawat Darurat">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
+                            class="card-img-top" alt="Instalasi Gawat Darurat">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Gawat Darurat</h5>
                             <p class="card-text">dr. Ony Wibriyono Angkejaya, Sp.An., M.Kes.</p>
@@ -245,7 +254,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="Instalasi Rawat Jalan">
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Rawat Jalan.png') }}"
+                            class="card-img-top" alt="Instalasi Rawat Jalan">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Rawat Jalan</h5>
                             <p class="card-text">dr. Enseline Nikijuluw, Sp.N</p>
@@ -255,7 +265,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top" alt="Instalasi Bedah Sentral">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
+                            class="card-img-top" alt="Instalasi Bedah Sentral">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Bedah Sentral</h5>
                             <p class="card-text">dr. Jacky Tuamelly, Sp.B (K) Trauma, FICS, FINACS, FIHFAA</p>
@@ -276,7 +287,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="Instalasi Radiologi">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="Instalasi Radiologi">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Radiologi</h5>
                             <p class="card-text">dr. Astri Sangadji, Sp.Rad.</p>
@@ -308,7 +320,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="Instalasi Farmasi">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="Instalasi Farmasi">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Farmasi</h5>
                             <p class="card-text">Jumiati Bugis, S.Farm., Apt.</p>
@@ -318,7 +331,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top" alt="Instalasi Pemulasaran Jenazah">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
+                            class="card-img-top" alt="Instalasi Pemulasaran Jenazah">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Pemulasaran Jenazah</h5>
                             <p class="card-text">dr. Costantius William Sialana, Sp.F, M.Kes.</p>
@@ -328,7 +342,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="Instalasi Rehabilitasi Medik">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="Instalasi Rehabilitasi Medik">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Rehabilitasi Medik</h5>
                             <p class="card-text">dr. Maureen J. Paliyama, Sp.KFR</p>
@@ -338,7 +353,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top" alt="Instalasi Laundry">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="Instalasi Laundry">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Laundry</h5>
                             <p class="card-text">Margaritha Sipasulta, Amd.Kep.</p>
@@ -368,14 +384,15 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top" alt="IPSRS">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
+                            class="card-img-top" alt="IPSRS">
                         <div class="card-body">
                             <h5 class="card-title">IPSRS</h5>
                             <p class="card-text">Markus Samalelaway</p>
                         </div>
                     </div>
                 </div>
-               
+
 
                 {{-- <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">

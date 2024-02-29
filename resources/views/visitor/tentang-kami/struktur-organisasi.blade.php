@@ -14,6 +14,6 @@
         </div>
     </section>
     <div class="container">
-        <img src="{{ asset('visitor/assets/img/diagram/Struktur Organisasi.png') }}" alt="" style="width:100%;">
+        <img src="{{ asset('visitor/assets/img/diagram/Struktur Organisasi Fix.png') }}" alt="" style="width:100%;">
     </div>
 @endsection
