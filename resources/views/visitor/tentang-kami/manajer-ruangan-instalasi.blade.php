@@ -137,8 +137,8 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="TBC-MDR">
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Paru & TBC MDR.png') }}"
+                            class="card-img-top" alt="TBC-MDR">
                         <div class="card-body">
                             <h5 class="card-title">TBC-MDR</h5>
                             <p class="card-text">Ns. Liensya F. Lekatompessy, S.Kep.</p>
@@ -192,7 +192,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Paru (RPP).png') }}"
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Paru & TBC MDR.png') }}"
                             class="card-img-top" alt="Paru">
                         <div class="card-body">
                             <h5 class="card-title">Paru</h5>
@@ -254,7 +254,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Rawat Jalan.png') }}"
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Rawat Jalan Updated.png') }}"
                             class="card-img-top" alt="Instalasi Rawat Jalan">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Rawat Jalan</h5>
@@ -320,7 +320,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Farmasi.png') }}"
                             class="card-img-top" alt="Instalasi Farmasi">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Farmasi</h5>
@@ -353,7 +353,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Laundry.png') }}"
                             class="card-img-top" alt="Instalasi Laundry">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Laundry</h5>
