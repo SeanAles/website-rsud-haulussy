@@ -724,7 +724,7 @@
                     <img class="img-fluid rounded-circle" width="80%"
                         src="{{ asset('visitor/assets/img/gallery/direk.png') }}" alt="..." />
                     <div class="text-center">
-                        <h4>DIREKTUR</h4>
+                        <h4>Plt DIREKTUR</h4>
                         <h5>dr. Adonia</h5>
                         <!-- <P>NIP 196807222001121001</P> -->
                     </div>
