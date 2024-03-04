@@ -362,15 +362,6 @@
                     </div>
                 </div>
 
-                {{-- <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card custom-card">
-                        <img src="" class="card-img-top" alt="Instalasi Sanitasi">
-                        <div class="card-body">
-                            <h5 class="card-title">Instalasi Sanitasi</h5>
-                            <p class="card-text">?</p>
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Promkes Fix.png') }}"
@@ -393,6 +384,15 @@
                     </div>
                 </div>
 
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card custom-card">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top mt-3" alt="Instalasi Sanitasi">
+                        <div class="card-body">
+                            <h5 class="card-title">Instalasi Sanitasi</h5>
+                            <p class="card-text">Tresye Limba, A.Md.KL</p>
+                        </div>
+                    </div>
+                </div>
 
                 {{-- <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
