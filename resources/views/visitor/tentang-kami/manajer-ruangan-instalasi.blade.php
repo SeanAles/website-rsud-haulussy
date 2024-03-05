@@ -243,7 +243,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Gawat Darurat Fix.png') }}"
                             class="card-img-top" alt="Instalasi Gawat Darurat">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Gawat Darurat</h5>
@@ -265,7 +265,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Bedah Sentral Fix.png') }}"
                             class="card-img-top" alt="Instalasi Bedah Sentral">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Bedah Sentral</h5>
@@ -331,7 +331,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Kamar Jenazah Fix.png') }}"
                             class="card-img-top" alt="Instalasi Pemulasaran Jenazah">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Pemulasaran Jenazah</h5>
@@ -342,7 +342,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Rehab Medik Fix.png') }}"
                             class="card-img-top" alt="Instalasi Rehabilitasi Medik">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Rehabilitasi Medik</h5>
