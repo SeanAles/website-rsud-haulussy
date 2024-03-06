@@ -15,6 +15,7 @@
             </div>
             <div class="text-center col-12 col-sm-12 col-md-8 col-lg-4 m-0 p-0">
                 <img src="{{ asset("visitor/assets/img/gallery/qr_code.png") }}" width="80%" alt="Promkes QR"><br>
+                <p class="mt-2"><b>https://tiny.one/Edukasi-Haulussy</b></p>
                 <a href="https://tiny.one/Edukasi-Haulussy" target="_blank" class="btn btn-info mb-3">Tekan Saya</a>
             </div>
             <div class="text-center col-12 col-sm-12 col-md-8 col-lg-4 mt-3">

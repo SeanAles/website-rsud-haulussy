@@ -79,7 +79,7 @@
                             William Sialana, Sp.F, M.Kes
                         </button>
                         <div class="panel" id="DokterH">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter H"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Costantius William Sialana, Sp.F, M.Kes.png') }}" alt="Foto Dokter H"
                                 id="doctor-image" />
                         </div>
 
