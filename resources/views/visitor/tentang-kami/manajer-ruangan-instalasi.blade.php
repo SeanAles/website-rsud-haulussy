@@ -93,7 +93,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Cendrawasih.png') }}" class="card-img-top"
                             alt="Cendrawasih">
                         <div class="card-body">
                             <h5 class="card-title">Cendrawasih</h5>

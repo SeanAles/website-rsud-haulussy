@@ -178,7 +178,7 @@
                             Nikijuluw, Sp.B KBD
                         </button>
                         <div class="panel" id="DokterA">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter A"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Helfy Nikijuluw, Sp.B KBD.png') }}" alt="Foto Dokter A"
                                 id="doctor-image" />
                         </div>
 
@@ -187,7 +187,7 @@
                             Haryana, Sp.JP
                         </button>
                         <div class="panel" id="DokterDD">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter DD"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Iman Haryana, Sp.JP.png') }}" alt="Foto Dokter DD"
                                 id="doctor-image" />
                         </div>
 
@@ -309,7 +309,7 @@
                             Mailoa, Sp.B Subspe.BVE(K)
                         </button>
                         <div class="panel" id="DokterEE">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter EE"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Ninoy Mailoa, Sp.b Subspe.BVE(K).png') }}" alt="Foto Dokter EE"
                                 id="doctor-image" />
                         </div>
 
@@ -354,11 +354,9 @@
                             Sp.A
                         </button>
                         <div class="panel" id="DokterC">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter C"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Robby Kalew, Sp.A.png') }}" alt="Foto Dokter C"
                                 id="doctor-image" />
                         </div>
-
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterQ')">dr. Semuel
                             Alexander Wagiu, Sp.S
