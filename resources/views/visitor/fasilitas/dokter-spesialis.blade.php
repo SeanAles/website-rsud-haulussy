@@ -106,7 +106,7 @@
                             Nikijuluw, Sp.N
                         </button>
                         <div class="panel" id="DokterX">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter X"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Enseline Nikijuluw, Sp.N.png') }}" alt="Foto Dokter X"
                                 id="doctor-image" />
                         </div>
 
@@ -196,7 +196,7 @@
                             Angeline Hutagalung, Sp.PK, M.Kes
                         </button>
                         <div class="panel" id="DokterF">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter F"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Ingrid Angeline Hutagalung, Sp.PK, M.Kes.png') }}" alt="Foto Dokter F"
                                 id="doctor-image" />
                         </div>
 
@@ -218,16 +218,13 @@
                                 id="doctor-image" />
                         </div>
 
-
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterGGG')">dr. Jacky
                             Tuamelly, Sp.B (K) Trauma, FICS, FINACS, FIHFAA
                         </button>
                         <div class="panel" id="DokterGGG">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter G"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Jacky Tuamelly, Sp.B (K) Trauma, FICS, FINACS, FIHFAA.png') }}" alt="Foto Dokter G"
                                 id="doctor-image" />
                         </div>
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterN')">dr. Janne
                             Pattiasina, Sp.OG
@@ -237,7 +234,6 @@
                                 id="doctor-image" />
                         </div>
 
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterCC')">dr. Jilientasia
                             Godrace Lilihata, Sp.An
                         </button>
@@ -245,7 +241,6 @@
                             <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter CC"
                                 id="doctor-image" />
                         </div>
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterNN')">dr. Julu Manalu,
                             Sp.THT
@@ -266,8 +261,6 @@
                                 id="doctor-image" />
                         </div>
 
-
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterZZZ')">drg. Lina
                             Mardiana
                         </button>
@@ -275,8 +268,6 @@
                             <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter F"
                                 id="doctor-image" />
                         </div>
-
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterR')">dr. Marisa
                             Afifudin, Sp.P
@@ -286,7 +277,6 @@
                                 id="doctor-image" />
                         </div>
 
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterU')">dr. Masayu
                             Ramadhani Polanunu, Sp.A
                         </button>
@@ -295,15 +285,13 @@
                                 id="doctor-image" />
                         </div>
 
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterE')">dr. Maureen J.
                             Paliyama, Sp.KFR
                         </button>
                         <div class="panel" id="DokterE">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter E"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Maureen J. Paliyama, Sp.KFR.png') }}" alt="Foto Dokter E"
                                 id="doctor-image" />
                         </div>
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterEE')">dr. Ninoy
                             Mailoa, Sp.B Subspe.BVE(K)
@@ -313,7 +301,6 @@
                                 id="doctor-image" />
                         </div>
 
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterT')">dr. Novy Riyanti,
                             Sp.OG
                         </button>
@@ -322,15 +309,13 @@
                                 id="doctor-image" />
                         </div>
 
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterGG')">dr. Ony
                             Wibriyono Angkejaya, Sp.An., M.Kes.
                         </button>
                         <div class="panel" id="DokterGG">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter GG"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Ony Wibriyono Angkejaya, Sp.An., M.Kes..png') }}" alt="Foto Dokter GG"
                                 id="doctor-image" />
                         </div>
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterII')">dr. Parningotan
                             Yosi Silalahi, Sp.S.
@@ -340,7 +325,6 @@
                                 id="doctor-image" />
                         </div>
 
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterS')">dr. Rita Sugiono
                             Tanamal, Sp.KK
                         </button>
@@ -348,7 +332,6 @@
                             <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter S"
                                 id="doctor-image" />
                         </div>
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterC')">dr. Robby Kalew,
                             Sp.A
@@ -366,7 +349,6 @@
                                 id="doctor-image" />
                         </div>
 
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterV')">dr. Siti Hadjar,
                             Sp.PD
                         </button>
@@ -374,7 +356,6 @@
                             <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter V"
                                 id="doctor-image" />
                         </div>
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterLL')">dr. Sri Wahyuni,
                             Sp.A
@@ -384,7 +365,6 @@
                                 id="doctor-image" />
                         </div>
 
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterO')">dr. Susan
                             Timisela, Sp.PD
                         </button>
@@ -392,7 +372,6 @@
                             <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter O"
                                 id="doctor-image" />
                         </div>
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterI')">drg. Suzanna
                             Leuhery, Sp.KG
@@ -402,7 +381,6 @@
                                 id="doctor-image" />
                         </div>
 
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterD')">dr. Vivianty
                             Hartiono, Sp.A
                         </button>
@@ -410,7 +388,6 @@
                             <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter D"
                                 id="doctor-image" />
                         </div>
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterM')">dr. Winny Natacia
                             Leiwakabessy, Sp.PA, M.Kes.
@@ -420,7 +397,6 @@
                                 id="doctor-image" />
                         </div>
 
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterAA')">dr. Yanita
                             Novalina Ursula, Sp.P
                         </button>
@@ -428,7 +404,6 @@
                             <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter AA"
                                 id="doctor-image" />
                         </div>
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterB')">Dr. dr. Yusuf
                             Huningkor, Sp.PD
@@ -438,7 +413,6 @@
                                 id="doctor-image" />
                         </div>
 
-
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterY')">dr. Yulandri
                             Franeldo Uneputty, Sp.B
                         </button>
@@ -446,7 +420,6 @@
                             <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter Y"
                                 id="doctor-image" />
                         </div>
-
 
                         <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterP')">dr. Zulaiha
                             Maricar Sahib
