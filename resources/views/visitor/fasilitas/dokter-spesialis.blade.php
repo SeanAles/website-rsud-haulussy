@@ -124,7 +124,7 @@
                             Pattiasina, Sp.PK
                         </button>
                         <div class="panel" id="DokterZ">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter Z"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Firensca Pattiasina, Sp.PK.png') }}" alt="Foto Dokter Z"
                                 id="doctor-image" />
                         </div>
 
@@ -169,7 +169,7 @@
                             Husain, Sp.PM
                         </button>
                         <div class="panel" id="DokterPP">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter PP"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/drg. Hasrul Husain, Sp.PM.png') }}" alt="Foto Dokter PP"
                                 id="doctor-image" />
                         </div>
 
@@ -373,11 +373,10 @@
                                 id="doctor-image" />
                         </div>
 
-                        <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterI')">drg. Suzanna
-                            Leuhery, Sp.KG
+                        <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterI')">drg. Suzanna Leuhery, Sp.KG
                         </button>
                         <div class="panel" id="DokterI">
-                            <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter I"
+                            <img src="{{ asset('visitor/assets/img/dokter/spesialis/drg. Suzanna Leuhery, Sp.KG.png') }}" alt="Foto Dokter I"
                                 id="doctor-image" />
                         </div>
 
