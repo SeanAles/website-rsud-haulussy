@@ -85,6 +85,9 @@ Route::get('/berita/{slug}', [NewsController::class, 'showBerita']);
 // Informasi Galeri Kegiatan Route
 Route::get('/galeri', [EventController::class, 'indexGaleri']);
 Route::get('/galeri/{slug}', [EventController::class, 'showGaleri']);
+// Informasi Download Route
+Route::get('/unduh', [DownloadController::class, 'indexDownload']);
+
 
 // Kontak Kami Route
 Route::get('/kontak', function(){ return view('visitor.kontak.kontak');});

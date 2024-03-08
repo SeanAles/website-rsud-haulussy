@@ -9,6 +9,14 @@
     <link href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
 @endsection
 
+@section('style')
+<style>
+  .download-button{
+    margin-left : 7px;
+  }
+</style>
+@endsection
+
 @section('content')
     <div>
         <button type="button" class="update btn btn-success mb-2" data-toggle="modal" data-target="#addDownloadModal">

@@ -53,8 +53,14 @@ class DownloadController extends Controller
                                         <div class="form-group">
                                             <label for="url' . $download->id . '">URL File</label>
                                             <input value="' . $download->url . '" type="text" class="form-control" id="url' . $download->id . '" disabled>
+                                            <div class="row">
+                                                <div classs="col-6">
+                                                    <a target="_blank" href="'.$download->url.'" class="download-button">Download</a>
+                                                </div>
+                                            </div>    
                                         </div>
                                     </div>
+                                   
                                 </div>
                             </div>
                         </div> 
@@ -169,6 +175,12 @@ class DownloadController extends Controller
         }
 
         return response()->json(['message' => 'Gagal Menghapus File'], 401);
+    }
+
+    public function indexDownload(){
+        $downloads = Download::all();
+
+        return view('visitor.informasi.unduh', ['downloads' => $downloads,]);
     }
 
 }
