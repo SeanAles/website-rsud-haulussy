@@ -180,6 +180,17 @@
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                             <li class="nav-item">
+                                <a href="/download" class="nav-link">
+                                    <i class="nav-icon fas fa-download"></i>
+                                    <p>
+                                        Download
+                                    </p>
+                                </a>
+                            </li>
+                        @endif
+
+                        @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
+                            <li class="nav-item">
                                 <a href="/suggestion" class="nav-link">
                                     <i class="nav-icon fas  fa-lightbulb"></i>
                                     <p>

@@ -9,6 +9,7 @@ use App\Http\Controllers\EventPictureController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\SuggestionController;
+use App\Http\Controllers\DownloadController;
 use App\Models\Bed;
 use App\Models\Event;
 use App\Models\Post;
@@ -127,15 +128,22 @@ Route::middleware(['auth'])->group(function () {
             ]);
         })->middleware('prevent.back.history');
 
-        //Event Route
+        // Event Route
         Route::get('/event', [EventController::class,'index'])->name('event.index');
         Route::post('/event', [EventController::class,'create']);
         Route::delete('/event/{id}', [EventController::class, 'destroy']);
         Route::get('/event/{id}', [EventController::class, 'show'])->name('event.detail');
         
-        //Event Picture Route
+        // Event Picture Route
         Route::post('/event-picture/{id}', [EventPictureController::class, 'store']);
         Route::delete('/event-picture/{id}', [EventPictureController::class, 'destroy']);
+
+        // Download Route
+        Route::get('/download', [DownloadController::class,'index'])->name('download.index');
+        Route::post('/download', [DownloadController::class,'store']);
+        Route::patch('/download/{id}', [DownloadController::class, 'update']);
+        Route::delete('/download/{id}', [DownloadController::class, 'destroy']);
+        
 
         // Suggestion Route
         Route::get('/suggestion', [SuggestionController::class, 'index'])->name('suggestion.index');

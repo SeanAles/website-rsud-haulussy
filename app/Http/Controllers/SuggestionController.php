@@ -24,7 +24,7 @@ class SuggestionController extends Controller
                             Detail
                         </button>
 
-                        <!-- Modal Update -->
+                        <!-- Modal Detail -->
                         <div class="modal fade" id="detailSuggestionModal' . $suggestion->id . '" tabindex="-1" role="dialog" aria-labelledby="detailSuggestionModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                             <div class="modal-body">
