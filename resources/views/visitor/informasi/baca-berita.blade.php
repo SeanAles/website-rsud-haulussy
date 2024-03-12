@@ -23,10 +23,10 @@
         }
 
         /* .recommended-title {
-              white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            } */
+                              white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            } */
     </style>
 @endsection
 

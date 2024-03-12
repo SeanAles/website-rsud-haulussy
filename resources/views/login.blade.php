@@ -90,11 +90,11 @@
                             window.location.href = response.redirect_url;
                         },
                         error: function(xhr, status, error) {
-                          const errorMessage = xhr.responseJSON.message;
-                          toastr.error(errorMessage);
+                            const errorMessage = xhr.responseJSON.message;
+                            toastr.error(errorMessage);
                         }
                     });
-                  }
+                }
             });
         });
     </script>

@@ -15,38 +15,33 @@
 @endsection
 
 @section('content')
-    <section id="content">
-        <div class="text-center mb-5">
-            <h1>Artikel</h1>
-        </div>
+    <div class="text-center mb-5">
+        <h1>Galeri Foto</h1>
+    </div>
 
-        <div class="container mt-4">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-                @foreach ($articles as $article)
-                    <div class="col">
-                        <div class="card mb-4">
+    <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            @foreach ($articles as $article)
+                <div class="col">
+                    <div class="card mb-4">
+                        <a href="/artikel/{{ $article->slug }}">
+                            <img src="{{ asset("images/article/thumbnails/$article->thumbnail") }}" width="300px"
+                                height="200px" class="card-img-top" alt="Gambar Berita">
+                        </a>
+                        <div class="card-body">
                             <a href="/artikel/{{ $article->slug }}">
-                                <img src="{{ asset("images/article/thumbnails/$article->thumbnail") }}" width="300px"
-                                    height="200px" class="card-img-top" alt="Gambar Berita">
+                                <h5 class="card-title">{{ $article->title }}</h5>
                             </a>
-                            <div class="card-body">
-                                <a href="/artikel/{{ $article->slug }}">
-                                    <h5 class="card-title">{{ $article->title }}</h5>
-                                </a>
-                                <p class="card-text">{{ $article->author }}</p>
-                                <p class="card-text"><small class="text-muted">Tanggal Diposting:
-                                        {{ $article->created_at->format('d - m - Y') }} </small></p>
-                            </div>
+                            <p class="card-text">{{ $article->author }}</p>
+                            <p class="card-text"><small class="text-muted">Tanggal Diposting:
+                                    {{ $article->created_at->format('d - m - Y') }} </small></p>
                         </div>
                     </div>
-                @endforeach
-            </div>
-            <div class="pagination">
-                {{ $articles->links() }}
-            </div>
+                </div>
+            @endforeach
         </div>
-        
-    </section>
-
-
+        <div class="pagination">
+            {{ $articles->links() }}
+        </div>
+    </div>
 @endsection
