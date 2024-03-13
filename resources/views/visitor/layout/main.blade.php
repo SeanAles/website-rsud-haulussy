@@ -232,7 +232,7 @@
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/kontak">Kontak</a>
-                            <a class="dropdown-item" href="/survey-kepuasaan-pengguna">Survei Kepuasan Pengguna</a>
+                            <a class="dropdown-item" href="/survei-kepuasaan-pengguna">Survei Kepuasan Pengguna</a>
                             <a class="dropdown-item" href="/kritik-saran">Kritik & Saran</a>
                         </div>
                     </li>

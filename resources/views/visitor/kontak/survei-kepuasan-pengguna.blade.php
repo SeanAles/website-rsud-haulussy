@@ -1,6 +1,6 @@
 @extends('visitor.layout.main')
 
-@section('title', 'Survey Kepuasan Pengguna')
+@section('title', 'Survei Kepuasan Pengguna')
 
 @section('style')
 
@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="text-center mb-5">
-        <h1>Survey Kepuasan Pengguna</h1>
+        <h1>Survei Kepuasan Pengguna</h1>
     </div>
 
     <div class="text-center">

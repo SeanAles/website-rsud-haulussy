@@ -91,8 +91,8 @@ Route::get('/unduh', [DownloadController::class, 'indexDownload']);
 
 // Kontak Kami Route
 Route::get('/kontak', function(){ return view('visitor.kontak.kontak');});
-Route::get('/survey-kepuasaan-pengguna', function(){ 
-    return view('visitor.kontak.survey-kepuasan-pengguna');
+Route::get('/survei-kepuasaan-pengguna', function(){ 
+    return view('visitor.kontak.survei-kepuasan-pengguna');
 });
 // Kritik dan Saran Route
 Route::get('/kritik-saran', function(){ return view('visitor.kontak.kritik-saran');});
