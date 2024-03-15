@@ -31,7 +31,7 @@ class AccountController extends Controller
                             $roleDropdown .= '<option value="' . $role[$i]->id . '">' . $role[$i]->name . '</option>';
                         }
                     };
-
+                    
                     $actionBtn = '
                     <div class="row">
                         <button type="button" class="mr-1 mt-1 update btn btn-success btn-sm" data-toggle="modal" data-target="#updateAccountModal' . $account->id . '">

@@ -180,13 +180,33 @@
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                             <li class="nav-item">
-                                <a href="/download" class="nav-link">
-                                    <i class="nav-icon fas fa-download"></i>
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-folder"></i>
                                     <p>
                                         Download
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview pl-3">
+                                    <li class="nav-item">
+                                        <a href="/download" class="nav-link">
+                                            <i class="nav-icon fas fa-file"></i>
+                                            <p>
+                                                File
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/download-category" class="nav-link">
+                                            <i class="nav-icon fas fa-list"></i>
+                                            <p>
+                                                Kategori Download
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
+                           
                         @endif
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)

@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
 
-@section('title', 'File')
+@section('title', 'Kategori Download')
 
 @section('link')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -19,80 +19,36 @@
 
 @section('content')
     <div>
-        <button type="button" class="update btn btn-success mb-2" data-toggle="modal" data-target="#addDownloadModal">
-            Tambahkan File
+        <button type="button" class="update btn btn-success mb-2" data-toggle="modal" data-target="#addDownloadCategoryModal">
+            Tambahkan Kategori
         </button>
-        {{-- Edit Note Modal --}}
-        {{-- <div class="modal fade" id="editNoteModal" tabindex="-1" role="dialog" aria-labelledby="editNoteModalLabel"
+     
+        {{-- Tambahkan DownloadCategory Modal --}}
+        <div class="modal fade" id="addDownloadCategoryModal" tabindex="-1" role="dialog" aria-labelledby="addDownloadCategoryModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editNoteModalLabel">
-                            Edit Keterangan
+                        <h5 class="modal-title" id="addDownloadCategoryModalLabel">
+                            Tambahkan Kategori
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form id="formEditNote">
+                    <form id="formAddDownloadCategory" onsubmit="return false;">
                         @csrf
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="content">Keterangan</label>
-                                <input type="text" value="{{ $note->content }}" class="form-control" name="content"
-                                    id="content">
+                                <label for="name">Nama Kategori</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan nama kategori...">
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal"
-                                id="cancelEditNote">Batal</button>
-                            <button type="button" onclick="editNote()" class="btn btn-success"
-                                id="editNoteButton">Edit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div> --}}
-
-        {{-- Tambahkan Download Modal --}}
-        <div class="modal fade" id="addDownloadModal" tabindex="-1" role="dialog" aria-labelledby="addDownloadModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addDownloadModalLabel">
-                            Tambahkan File
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form id="formAddDownload">
-                        @csrf
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="name">Nama File</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan nama file...">
-                            </div>
-                            <div class="form-group">
-                                <label for="url">Url File</label>
-                                <input type="text" class="form-control" name="url" id="url" placeholder="Masukkan URL file...">
-                            </div>
-                            <div class="form group">
-                                <label for="download_category_id">Kategori File</label>
-                                <select class="custom-select" id="download_category_id" name="download_category_id">
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"
-                                id="cancelAddDownload">Batal</button>
-                            <button type="button" onclick="addDownload()" class="btn btn-success"
-                                id="addDownloadButton">Tambahkan</button>
+                                id="cancelAddDownloadCategory">Batal</button>
+                            <button type="button" onclick="addDownloadCategory()" class="btn btn-success"
+                                id="addDownloadCategoryButton">Tambahkan</button>
                         </div>
                     </form>
                 </div>
@@ -104,9 +60,7 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Nama File</th>
-                    <th>Url File</th>
-                    <th>Kategori File</th>
+                    <th>Nama Kategori</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -128,10 +82,10 @@
 
     <script>
         $(document).ready(function() {
-            readDownload();
+            readDownloadCategory();
         });
 
-        function readDownload() {
+        function readDownloadCategory() {
             return $('.data-table').DataTable({
                 language: {
                     "lengthMenu": "Tampilkan _MENU_ data",
@@ -148,10 +102,10 @@
                     }
                 },
                 order: [
-                    [1, "asc"],
+                    [1, "asc"]
                 ],
                 columnDefs: [{
-                    targets: [0, 2],
+                    targets: [0],
                     orderable: false,
                     searchable: false
                 }],
@@ -159,7 +113,7 @@
                 serverSide: true,
                 responsive: true,
                 autoWidth: false,
-                ajax: "{{ route('download.index') }}",
+                ajax: "{{ route('download-category.index') }}",
                 columns: [
                     {
                         data: 'DT_RowIndex',
@@ -171,102 +125,89 @@
                         name: 'name'
                     },
                     {
-                        data: 'url',
-                        name: 'url'
-                    },
-                    {
-                        data: 'download_category.name', 
-                        name: 'download_category.name'
-                    },
-                    {
                         data: 'action',
                         name: 'action',
                         orderable: false,
                         searchable: false
                     },
+
                 ]
             });
         }
 
-        function updateDownload(id) {
+        function updateDownloadCategory(id) {
             const name = $('#name-update' + id).val();
-            const url = $('#url-update' + id).val();
-            
+           
             if (name === '') {
-                toastr.error("Nama file harus diisi");
-            } else if(url === ''){
-                toastr.error("URL file harus diisi");
+                toastr.error("Nama kategori download harus diisi");
             } else {
-                document.getElementById("updateDownloadButton" + id).disabled = true;
+                document.getElementById("updateDownloadCategoryButton" + id).disabled = true;
                 $.ajax({
                     type: 'PATCH',
-                    url: '/download/' + id,
-                    data: $('#formUpdateDownload' + id).serialize(),
+                    url: '/download-category/' + id,
+                    data: $('#formUpdateDownloadCategory' + id).serialize(),
                     success: function(response) {
-                        $('#cancelUpdateDownload' + id).click();
+                        $('#cancelUpdateDownloadCategory' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.success(response.message);
-                        document.getElementById("updateDownloadButton" + id).disabled = false;
+                        document.getElementById("updateDownloadCategoryButton" + id).disabled = false;
                     },
                     error: function(error) {
-                        $('#cancelUpdateDownload' + id).click();
+                        $('#cancelUpdateDownloadCategory' + id).click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.error("Error");
-                        document.getElementById("updateDownloadButton" + id).disabled = false;
+                        document.getElementById("updateDownloadCategoryButton" + id).disabled = false;
                     }
                 });
             }
         }
 
-        function addDownload() {
+        function addDownloadCategory() {
             const name = $('#name').val();
-            const url = $('#url').val();
 
             if (name === '') {
-                toastr.error("Nama file harus diisi");
-            } else if (url === '') {
-                toastr.error("URL File harus diisi");
+                toastr.error("Nama kategori download harus diisi");
             } else {
-                document.getElementById("addDownloadButton").disabled = true;
+                document.getElementById("addDownloadCategoryButton").disabled = true;
                 $.ajax({
                     type: 'POST',
-                    url: '/download',
-                    data: $('#formAddDownload').serialize(),
+                    url: '/download-category',
+                    data: $('#formAddDownloadCategory').serialize(),
                     success: function(response) {
-                        $('#cancelAddDownload').click();
+                        $('#cancelAddDownloadCategory').click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.success(response.message);
                         $('#name').val('');
                         $('#url').val('');
-                        document.getElementById("addDownloadButton").disabled = false;
+                        document.getElementById("addDownloadCategoryButton").disabled = false;
                     },
                     error: function(error) {
-                        $('#cancelAddDownload').click();
+                        $('#cancelAddDownloadCategory').click();
                         $('.data-table').DataTable().ajax.reload();
                         toastr.error("Error");
-                        document.getElementById("addDownloadButton").disabled = false;
+                        document.getElementById("addDownloadCategoryButton").disabled = false;
                     }
                 });
             }
         }
 
-        function deleteDownload(id) {
-            document.getElementById("deleteDownloadButton" + id).disabled = true;
+        function deleteDownloadCategory(id) {
+            document.getElementById("deleteDownloadCategoryButton" + id).disabled = true;
 
             $.ajax({
                 type: 'DELETE',
-                url: '/download/' + id,
-                data: $('#formDeleteDownload' + id).serialize(),
+                url: '/download-category/' + id,
+                data: $('#formDeleteDownloadCategory' + id).serialize(),
                 success: function(response) {
-                    $('#cancelDeleteDownload' + id).click();
+                    $('#cancelDeleteDownloadCategory' + id).click();
                     $('.data-table').DataTable().ajax.reload();
                     toastr.success(response.message);
-                    document.getElementById("deleteDownloadButton" + id).disabled = false;
+                    document.getElementById("deleteDownloadCategoryButton" + id).disabled = false;
                 },
                 error: function(error) {
                     const errorMessage = xhr.responseJSON.message;
                     toastr.error(errorMessage);
-                    document.getElementById("deleteDownloadButton" + id).disabled = false;
+                    document.getElementById("deleteDownloadCategoryButton" + id).disabled = false;
                 }
             });
         }

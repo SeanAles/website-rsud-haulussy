@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\DownloadCategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventPictureController;
 use App\Http\Controllers\NewsController;
@@ -87,6 +88,7 @@ Route::get('/galeri', [EventController::class, 'indexGaleri']);
 Route::get('/galeri/{slug}', [EventController::class, 'showGaleri']);
 // Informasi Download Route
 Route::get('/unduh', [DownloadController::class, 'indexDownload']);
+Route::get('/unduh/{id}', [DownloadController::class, 'showDownload']);
 
 
 // Kontak Kami Route
@@ -136,17 +138,21 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/event', [EventController::class,'create']);
         Route::delete('/event/{id}', [EventController::class, 'destroy']);
         Route::get('/event/{id}', [EventController::class, 'show'])->name('event.detail');
-        
         // Event Picture Route
         Route::post('/event-picture/{id}', [EventPictureController::class, 'store']);
         Route::delete('/event-picture/{id}', [EventPictureController::class, 'destroy']);
 
         // Download Route
+        // File Route
         Route::get('/download', [DownloadController::class,'index'])->name('download.index');
         Route::post('/download', [DownloadController::class,'store']);
         Route::patch('/download/{id}', [DownloadController::class, 'update']);
         Route::delete('/download/{id}', [DownloadController::class, 'destroy']);
-        
+        // Download Category Route
+        Route::get('/download-category', [DownloadCategoryController::class,'index'])->name('download-category.index');
+        Route::post('/download-category', [DownloadCategoryController::class,'store']);
+        Route::patch('/download-category/{id}', [DownloadCategoryController::class, 'update']);
+        Route::delete('/download-category/{id}', [DownloadCategoryController::class, 'destroy']);
 
         // Suggestion Route
         Route::get('/suggestion', [SuggestionController::class, 'index'])->name('suggestion.index');

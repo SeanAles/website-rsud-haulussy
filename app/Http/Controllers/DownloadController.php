@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Download;
+use App\Models\DownloadCategory;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -12,11 +13,20 @@ class DownloadController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Download::all();
+            $data = Download::with(['downloadCategory'])->get();
 
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($download) {
+                    $downloadCategory = DownloadCategory::all();
+                    $downloadCategoryDropdown = '';
+                    for ($i = 0; $i < count($downloadCategory); $i++) {
+                        if ($download->download_category_id === $downloadCategory[$i]->id) {
+                            $downloadCategoryDropdown .= '<option value="' . $downloadCategory[$i]->id . '" selected>' . $downloadCategory[$i]->name . '</option>';
+                        } else {
+                            $downloadCategoryDropdown .= '<option value="' . $downloadCategory[$i]->id . '">' . $downloadCategory[$i]->name . '</option>';
+                        }
+                    };
                     $actionBtn = '
                     <div class="row">
                         <button type="button" class="mr-1 mt-1 detail btn btn-success btn-sm" data-toggle="modal" data-target="#detailDownloadModal' . $download->id . '">
@@ -49,6 +59,10 @@ class DownloadController extends Controller
                                         <div class="form-group">
                                             <label for="name' . $download->id . '">Nama File</label>
                                             <input value="' . $download->name . '" type="text" class="form-control" id="name' . $download->id . '" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="category' . $download->id . '">Kategori File</label>
+                                            <input value="' . $download->downloadCategory->name . '" type="text" class="form-control" id="category' . $download->id . '" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label for="url' . $download->id . '">URL File</label>
@@ -88,6 +102,12 @@ class DownloadController extends Controller
                                         <div class="form-group">
                                             <label for="url' . $download->id . '">URL File</label>
                                             <input value="' . $download->url . '" type="text" class="form-control" name="url" id="url-update' . $download->id . '">
+                                        </div>
+                                        <div class="form group">
+                                            <label for="download_category_id' . $download->id . '">Kategori File</label>
+                                            <select class="custom-select" id="download_category_id' . $download->id . '" name="download_category_id">
+                                                ' . $downloadCategoryDropdown . '
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -133,7 +153,9 @@ class DownloadController extends Controller
                 ->make(true);
         }
 
-        return view('admin.download.download');
+        $downloadCategories = DownloadCategory::all();
+    
+        return view('admin.download.download', ['categories' => $downloadCategories]);
     }
 
     public function store(Request $request)
@@ -141,6 +163,7 @@ class DownloadController extends Controller
         $download = Download::create([
             "name" => $request->name,
             "url" => $request->url,
+            "download_category_id" => $request->download_category_id,
         ]);
 
         if ($download) {
@@ -157,6 +180,7 @@ class DownloadController extends Controller
         $updateAccount = $download->update([
             "name" => $request->name,
             "url" => $request->url,
+            "download_category_id" => $request->download_category_id,
         ]);
 
         if ($updateAccount) {
@@ -167,7 +191,7 @@ class DownloadController extends Controller
     }
 
     public function destroy($id){
-        $download = download::findOrFail($id);
+        $download = Download::findOrFail($id);
         $deleteDownload = $download->delete();
 
         if($deleteDownload){
@@ -178,9 +202,15 @@ class DownloadController extends Controller
     }
 
     public function indexDownload(){
-        $downloads = Download::all();
+        $downloadCategories = DownloadCategory::all();
 
-        return view('visitor.informasi.unduh', ['downloads' => $downloads,]);
+        return view('visitor.informasi.unduh', ['downloadCategories' => $downloadCategories,]);
+    }
+
+    public function showDownload($id){
+        $downloads = Download::with(['downloadCategory'])->where('download_category_id', '=', $id)->get();
+
+        return view('visitor.informasi.lihat-unduh', ['downloads' => $downloads]);
     }
 
 }
