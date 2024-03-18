@@ -494,7 +494,7 @@
                             </path>
                             <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z">
                             </path>
-                        </svg><span class="fs--1 text-900">2008</span><span class="fs--1"></span>
+                        </svg><span class="fs--1 text-900">2008 - 2012</span><span class="fs--1"></span>
                         <h5 class="font-base fs-lg-0 fs-xl-1 my-3">dr. F. Koedoeboen, M.Kes.</h5>
                         <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes7">Lihat Lebih Lanjut</a>
                     </div>
