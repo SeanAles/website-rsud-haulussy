@@ -50,7 +50,6 @@
                 </div>
             </div>
 
-
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                 <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                         src="{{ asset('visitor/assets/img/direk/dr. Nn. TAMAELA.png') }}" alt="news" />
@@ -69,7 +68,6 @@
                 </div>
             </div>
 
-
             <!-- Modal -->
             <div class="modal fade" id="example" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog ">
@@ -87,10 +85,7 @@
                     </div>
                 </div>
             </div>
-
-
-
-
+            
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                 <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                         src="{{ asset('visitor/assets/img/direk/Direktur.png') }}" alt="news" />
@@ -103,7 +98,7 @@
                             <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z">
                             </path>
                         </svg><span class="fs--1 text-900">Maret 11, 1954</span><span class="fs--1"></span>
-                        <h5 class="font-base fs-lg-0 fs-xl-1 my-3">Direktur</h5>
+                        <h5 class="font-base fs-lg-0 fs-xl-1 my-3">dr. H. Moehammad Moestafa</h5>
                         <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#exa">Lihat Lebih Lanjut</a>
                     </div>
                 </div>
