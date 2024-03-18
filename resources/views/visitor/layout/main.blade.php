@@ -348,6 +348,41 @@
                 </div>
             </div>
 
+            <div class="container mb-4">
+                <div class="row align-items-center">
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
+                        <a target="_blank" href="https://bpjs-kesehatan.go.id/">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/BPJS Kesehatan.png') }}"
+                                alt="BPJS Kesehatan" width="100%">
+                        </a>
+                    </div>
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
+                        <a target="_blank" href="https://www.bpjsketenagakerjaan.go.id/">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/BPJS Ketenagakerjaan.png') }}"
+                                alt="BPJS Ketenagakerjaan" width="100%">
+                        </a>
+                    </div>
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
+                        <a target="_blank" href="https://www.inhealth.co.id/">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/Mandiri Inhealth.png') }}"
+                                alt="Mandiri Inhealth.png" width="80%">
+                        </a>
+                    </div>
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
+                        <a target="_blank" href="https://www.taspen.co.id/">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/Taspen.png') }}" alt="Taspen.png"
+                                width="80%">
+                        </a>
+                    </div>
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
+                        <a target="_blank" href="https://www.jasaraharja.co.id/">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/Jasa Raharja.png') }}"
+                                alt="Jasa Raharja.png" width="100%">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- ============================================-->
             <!-- <section> begin ============================-->
             <section class="bg-primary py-0">
