@@ -495,7 +495,7 @@
                             <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z">
                             </path>
                         </svg><span class="fs--1 text-900">2008</span><span class="fs--1"></span>
-                        <h5 class="font-base fs-lg-0 fs-xl-1 my-3">dr. F. Koedoeboen, M.Kes</h5>
+                        <h5 class="font-base fs-lg-0 fs-xl-1 my-3">dr. F. Koedoeboen, M.Kes.</h5>
                         <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes7">Lihat Lebih Lanjut</a>
                     </div>
                 </div>
@@ -572,7 +572,7 @@
                             <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z">
                             </path>
                         </svg><span class="fs--1 text-900">2014 - 2022</span><span class="fs--1"></span>
-                        <h5 class="font-base fs-lg-0 fs-xl-1 my-3">dr. Justini Pawa, M.Kes</h5>
+                        <h5 class="font-base fs-lg-0 fs-xl-1 my-3">dr. Justini Pawa, M.Kes.</h5>
                         <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes9">Lihat Lebih Lanjut</a>
                     </div>
                 </div>
@@ -648,7 +648,7 @@
                             <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z">
                             </path>
                         </svg><span class="fs--1 text-900">2020 - 2021</span><span class="fs--1"></span>
-                        <h5 class="font-base fs-lg-0 fs-xl-1 my-3">dr. Rodridgo Limmon, Sp.THT. MARS</h5>
+                        <h5 class="font-base fs-lg-0 fs-xl-1 my-3">dr. Rodridgo Limmon, Sp.THT, MARS</h5>
                         <a class="stretched-link" role="button" data-bs-toggle="modal" data-bs-target="#tes002">Lihat Lebih Lanjut</a>
                     </div>
                 </div>
@@ -666,7 +666,7 @@
                         </div>
                         <div class="text-center">
                             <div class="modal-body">
-                                <img src="{{ asset('visitor/assets/img/direk/dr. Rodridgo Limmon, Sp.THT. MARS.png') }}"
+                                <img src="{{ asset('visitor/assets/img/direk/dr. Rodridgo Limmon, Sp.THT. MARS (Fix).png') }}"
                                     style="max-height: 500px; max-width: 300px;">
                             </div>
                         </div>

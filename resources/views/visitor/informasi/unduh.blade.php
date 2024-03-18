@@ -28,7 +28,7 @@
                 <div class="card mt-3">
                     <img src="{{ asset('visitor/assets/icon/file.svg') }}" class="card-img-top w-100 pl-5 pr-5" alt="...">
                     <div class="card-body">
-                      <h5 class="card-text text-center">{{ $downloadCategory->name }}</h5>
+                      <p class="card-text text-center text-black">{{ $downloadCategory->name }}</p>
                     </div>
                   </div>
             </a>
