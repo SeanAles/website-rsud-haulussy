@@ -13,6 +13,11 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        .custom-margin {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
     </style>
 @endsection
 
@@ -23,19 +28,21 @@
 
     <div class="container mt-5">
         <div class="row">
-        @foreach ($downloadCategories as $downloadCategory)
-            <a class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 text-decoration-none" href="/unduh/{{ $downloadCategory->id }}">
-                <div class="card mt-3">
-                    <img src="{{ asset('visitor/assets/icon/file.svg') }}" class="card-img-top w-100 pl-5 pr-5" alt="...">
-                    <div class="card-body">
-                      <p class="card-text text-center text-black">{{ $downloadCategory->name }}</p>
+            @foreach ($downloadCategories as $downloadCategory)
+                <a class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-decoration-none custom-margin"
+                    href="/unduh/{{ $downloadCategory->id }}">
+                    <div class="card mt-3">
+                        <img src="{{ asset('visitor/assets/icon/file.svg') }}" class="card-img-top w-100 pl-5 pr-5"
+                            alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center text-black">{{ $downloadCategory->name }}</p>
+                        </div>
                     </div>
-                  </div>
-            </a>
-        @endforeach
+                </a>
+            @endforeach
         </div>
     </div>
-   
+
     {{-- {{ $downloadCategories }} --}}
 
     {{-- <img src="{{ asset('visitor/assets/icon/file.svg') }}" alt="SVG Image"> --}}
