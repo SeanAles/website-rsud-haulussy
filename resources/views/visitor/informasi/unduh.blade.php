@@ -24,7 +24,7 @@
     <div class="container mt-5">
         <div class="row">
         @foreach ($downloadCategories as $downloadCategory)
-            <a class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-decoration-none" href="/unduh/{{ $downloadCategory->id }}">
+            <a class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 text-decoration-none" href="/unduh/{{ $downloadCategory->id }}">
                 <div class="card mt-3">
                     <img src="{{ asset('visitor/assets/icon/file.svg') }}" class="card-img-top w-100 pl-5 pr-5" alt="...">
                     <div class="card-body">
