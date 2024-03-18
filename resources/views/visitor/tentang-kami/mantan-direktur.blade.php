@@ -638,7 +638,7 @@
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                 <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
-                        src="{{ asset('visitor/assets/img/direk/dr. Rodridgo Limmon, Sp.THT. MARS.png') }}" alt="news" />
+                        src="{{ asset('visitor/assets/img/direk/dr. Rodridgo Limmon, Sp.THT. MARS (Fix).png') }}" alt="news" />
                     <div class="card-body"><span class="fs--1 text-primary me-3">Direktur</span>
                         <svg class="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12"
                             height="12" fill="currentColor" viewBox="0 0 16 16">
