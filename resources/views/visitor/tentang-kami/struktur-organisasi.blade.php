@@ -8,5 +8,8 @@
     </div>
     <div class="container">
         <img src="{{ asset('visitor/assets/img/diagram/Struktur Organisasi Fix.png') }}" alt="" style="width:100%;">
+        <p class="text-danger">
+            <i>*Diperbarui Februari 2024</i>
+        </p>
     </div>
 @endsection

@@ -113,7 +113,7 @@
                             </path>
                             <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z">
                             </path>
-                        </svg><span class="fs--1 text-900">Maret 11, 1954</span><span class="fs--1"></span>
+                        </svg><span class="fs--1 text-900">1954 - 1963</span><span class="fs--1"></span>
                         <h6 class="font-base fs-lg-0 fs-xl-1 my-3">dr. H. Moehammad Moestafa</h6>
                         <a class="custom-link" data-bs-toggle="modal" data-bs-target="#exa">Lihat Lebih Lanjut</a>
                     </div>
@@ -714,8 +714,7 @@
                             </path>
                         </svg><span class="fs--1 text-900">2021</span><span class="fs--1"></span>
                         <h6 class="font-base fs-lg-0 fs-xl-1 my-3">dr. Justini Pawa, M.Kes.</h6>
-                        <a class="custom-link" data-bs-toggle="modal" data-bs-target="#tes99">Lihat
-                            Lebih Lanjut</a>
+                        <a class="custom-link" data-bs-toggle="modal" data-bs-target="#tes99">Lihat Lebih Lanjut</a>
                     </div>
                 </div>
             </div>
@@ -732,8 +731,7 @@
                         </div>
                         <div class="text-center">
                             <div class="modal-body">
-                                <img src="{{ asset('visitor/assets/img/direk/dr. JUSTINI PAWA, M. Kes (2021).png') }}"
-                                    style="max-height: 500px; max-width: 300px;">
+                                <img src="{{ asset('visitor/assets/img/direk/dr. JUSTINI PAWA, M. Kes (2021).png') }}" style="max-height: 500px; max-width: 300px;">
                             </div>
                         </div>
                     </div>
@@ -742,7 +740,7 @@
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                 <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
-                        src="{{ asset('visitor/assets/img/direk/Plt dr. ZULKARNAINI MS, Sp.JP,FIHA.png  ') }}"
+                        src="{{ asset('visitor/assets/img/direk/dr. Zulkarnaini MS, Sp.JP, FIHA.png  ') }}"
                         alt="news" />
                     <div class="card-body"><span class="fs--1 text-primary me-3">Plt Direktur</span>
                         <svg class="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12"
@@ -754,8 +752,7 @@
                             </path>
                         </svg><span class="fs--1 text-900">2021 - 2022</span><span class="fs--1"></span>
                         <h6 class="font-base fs-lg-0 fs-xl-1 my-3">dr. Zulkarnaini MS, Sp.JP, FIHA</h6>
-                        <a class="custom-link" data-bs-toggle="modal" data-bs-target="#tes003">Lihat
-                            Lebih Lanjut</a>
+                        <a class="custom-link" data-bs-toggle="modal" data-bs-target="#tes003">Lihat Lebih Lanjut</a>
                     </div>
                 </div>
             </div>
@@ -772,8 +769,7 @@
                         </div>
                         <div class="text-center">
                             <div class="modal-body">
-                                <img src="{{ asset('visitor/assets/img/direk/Plt dr. ZULKARNAINI MS, Sp.JP,FIHA.png') }}"
-                                    style="max-height: 500px; max-width: 300px;">
+                                <img src="{{ asset('visitor/assets/img/direk/dr. Zulkarnaini MS, Sp.JP, FIHA.png') }}" style="max-height: 500px; max-width: 300px;">
                             </div>
                         </div>
                     </div>
@@ -782,7 +778,7 @@
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                 <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
-                        src="{{ asset('visitor/assets/img/direk/dr. Nazaruddin, M.Sc. (Fix).png') }}" alt="news" />
+                        src="{{ asset('visitor/assets/img/direk/dr. Nazaruddin, M.Sc..png') }}" alt="news" />
                     <div class="card-body"><span class="fs--1 text-primary me-3">Direktur</span>
                         <svg class="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12"
                             height="12" fill="currentColor" viewBox="0 0 16 16">
@@ -793,8 +789,7 @@
                             </path>
                         </svg><span class="fs--1 text-900">2022 - 2023</span><span class="fs--1"></span>
                         <h6 class="font-base fs-lg-0 fs-xl-1 my-3">dr. Nazaruddin, M.Sc.</h6>
-                        <a class="custom-link" data-bs-toggle="modal" data-bs-target="#tes004">Lihat
-                            Lebih Lanjut</a>
+                        <a class="custom-link" data-bs-toggle="modal" data-bs-target="#tes004">Lihat Lebih Lanjut</a>
                     </div>
                 </div>
             </div>
@@ -811,7 +806,7 @@
                         </div>
                         <div class="text-center">
                             <div class="modal-body">
-                                <img src="{{ asset('visitor/assets/img/direk/dr. Nazaruddin, M.Sc. (Fix).png') }}"
+                                <img src="{{ asset('visitor/assets/img/direk/dr. Nazaruddin, M.Sc..png') }}"
                                     style="max-height: 500px; max-width: 300px;">
                             </div>
                         </div>
