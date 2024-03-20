@@ -113,7 +113,7 @@
                             </path>
                             <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z">
                             </path>
-                        </svg><span class="fs--1 text-900">1954 - 1963</span><span class="fs--1"></span>
+                        </svg><span class="fs--1 text-900">1963</span><span class="fs--1"></span>
                         <h6 class="font-base fs-lg-0 fs-xl-1 my-3">dr. H. Moehammad Moestafa</h6>
                         <a class="custom-link" data-bs-toggle="modal" data-bs-target="#exa">Lihat Lebih Lanjut</a>
                     </div>
