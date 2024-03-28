@@ -57,7 +57,7 @@ Route::get('/rawat-inap', function(){
     return view('visitor.maintenance.under-construction');
 }); 
 Route::get('/alur-pelayanan', function(){
-    return view('visitor.maintenance.under-construction');
+    return view('visitor.fasilitas.alur-pelayanan');
 });
 Route::get('/pelayanan-penunjang', function(){
     return view('visitor.maintenance.under-construction');
