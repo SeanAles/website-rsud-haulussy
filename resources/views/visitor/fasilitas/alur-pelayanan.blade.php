@@ -29,6 +29,10 @@
                 alt="Alur Pelayanan Rawat Jalan">
         </div>
         <div class="mb-5 square-image">
+            <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan Rawat Inap.png') }}"
+                alt="Alur Pelayanan Rawat Inap">
+        </div>
+        <div class="mb-5 square-image">
             <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan Hemodialisis.png') }}"
                 alt="Alur Pelayanan Hemodialisis">
         </div>
