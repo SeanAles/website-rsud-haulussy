@@ -20,21 +20,35 @@
     </div>
 
     <div class="container text-center">
-        <div class="mb-5 square-image">
-            <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan IGD.png') }}"
-                alt="Alur Peyananan IGD">
-        </div>
-        <div class="mb-5 square-image">
-            <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan Rawat Jalan.png') }}"
-                alt="Alur Pelayanan Rawat Jalan">
-        </div>
-        <div class="mb-5 square-image">
-            <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur pelayanan Rawat Inap Fix.png') }}"
-                alt="Alur Pelayanan Rawat Inap">
-        </div>
-        <div class="mb-5 square-image">
-            <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan Hemodialisis.png') }}"
-                alt="Alur Pelayanan Hemodialisis">
+        <div class="row">
+
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="mb-5 square-image">
+                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan IGD (Update).png') }}"
+                        alt="Alur Peyananan IGD">
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="mb-5 square-image">
+                    <img width="100%"
+                        src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan Hemodialisis (Update).png') }}"
+                        alt="Alur Pelayanan Hemodialisis">
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="mb-5 square-image">
+                    <img width="100%"
+                        src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan Rawat Jalan (Update).png') }}"
+                        alt="Alur Pelayanan Rawat Jalan">
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="mb-5 square-image">
+                    <img width="100%"
+                        src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan Rawat Inap (Update).png') }}"
+                        alt="Alur Pelayanan Rawat Inap">
+                </div>
+            </div>
         </div>
     </div>
 @endsection
