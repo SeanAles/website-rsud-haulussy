@@ -28,7 +28,7 @@
     <!-- ===============================================-->
 
     <link rel="stylesheet" href="{{ asset('visitor/fontawesome/css/all.css') }}" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('visitor/assets/img/favicons/maluku.png') }}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('visitor/assets/img/favicons/maluku.png') }}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('visitor/assets/img/favicons/maluku.png') }}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('visitor/assets/img/favicons/maluku.png') }}" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('visitor/assets/img/favicons/maluku.png') }}" />
