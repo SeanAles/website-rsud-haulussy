@@ -71,7 +71,7 @@ Route::get('/tarif-pelayanan', function(){
 });
 Route::get('/promosi-kesehatan', function(){return view('visitor.fasilitas.promosi-kesehatan');});
 Route::get('/tata-tertib', function(){
-    return view('visitor.maintenance.under-construction');
+    return view('visitor.fasilitas.tata-tertib');
 });
 Route::get('/dokter-spesialis', function(){ return view('visitor.fasilitas.dokter-spesialis'); });
 Route::get('/dokter-umum', function(){return view('visitor.fasilitas.dokter-umum');});
