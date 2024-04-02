@@ -28,10 +28,10 @@
     <!-- ===============================================-->
 
     <link rel="stylesheet" href="{{ asset('visitor/fontawesome/css/all.css') }}" />
-    <link rel="apple-touch-icon" sizes="40x40" href="{{ asset('visitor/assets/img/favicons/maluku.png') }}" />
+    <link rel="apple-touch-icon" sizes="150x150" href="{{ asset('visitor/assets/img/favicons/maluku.png') }}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('visitor/assets/img/favicons/maluku.png') }}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('visitor/assets/img/favicons/maluku.png') }}" />
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('visitor/assets/img/favicons/maluku.png') }}" />
+    <link rel="shortcut icon" type="image/x-icon" sizes="40x40" href="{{ asset('visitor/assets/img/favicons/maluku.png') }}" />
     <link rel="manifest" href="{{ asset('visitor/assets/img/favicons/manifest.json') }}" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <meta name="msapplication-TileImage" content="{{ asset('visitor/assets/img/favicons/mstile-150x150.png') }}" />
