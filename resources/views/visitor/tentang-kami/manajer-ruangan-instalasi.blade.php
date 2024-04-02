@@ -264,6 +264,17 @@
 
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card custom-card">
+                    <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Rawat Inap.png') }}"
+                        class="card-img-top" alt="Instalasi Rawat Inap">
+                    <div class="card-body">
+                        <h5 class="card-title">Instalasi Rawat Inap</h5>
+                        <p class="card-text">dr. Novita Elevia Nikijuluw</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card custom-card">
                     <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Bedah Sentral Fix.png') }}"
                         class="card-img-top" alt="Instalasi Bedah Sentral">
                     <div class="card-body">
@@ -394,19 +405,16 @@
                 </div>
             </div>
 
-            {{-- <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi SIMRS & IT.png')"
-                            class="card-img-top" alt="Instalasi SIMRS & IT">
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi SIMRS.png') }}"
+                            class="card-img-top" alt="Instalasi SIMRS">
                         <div class="card-body">
-                            <h5 class="card-title">Instalasi SIMRS & IT</h5>
-                            <p class="card-text">dr. Semuel A. Wagiu, Sp.S</p>
+                            <h5 class="card-title">Instalasi SIMRS</h5>
+                            <p class="card-text">dr. Semuel A. Wagiu, Sp.N</p>
                         </div>
                     </div>
-                </div> --}}
-
-
-
+                </div>
         </div>
     </div>
 @endsection
