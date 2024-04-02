@@ -58,6 +58,9 @@
                         alt="Alur Pengaduan Pasien">
                 </div>
             </div>
+            <p class="text-danger">
+                <b>*Diperbarui 01 April 2024</b>
+            </p>
         </div>
     </div>
 @endsection
