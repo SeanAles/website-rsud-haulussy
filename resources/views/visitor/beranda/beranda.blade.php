@@ -32,11 +32,11 @@
         /* Gaya Tombol Close */
         .close-btn {
             position: absolute;
-            top: -18px;
-            right: -7 px;
+            top: -15px;
+            right: -4px;
             z-index: 1050;
             /* Menyimpan di atas modal */
-            font-size: 3em;
+            font-size: 2.5em;
             /* Memperbesar font-size */
         }
     </style>
@@ -44,7 +44,7 @@
 
 @section('content')
     <!-- Modal -->
-    {{-- <div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="gambarModalLabel" aria-hidden="true">
+    <div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="gambarModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <!-- Tombol Close -->
@@ -52,12 +52,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="modal-body">
-                    <img src="{{ asset('visitor/assets/img/promkes/Kanker Anak Sedunia 1.png') }}" class="img-fluid"
+                    <img src="{{ asset('visitor/assets/img/iklan/Pelaksana Gurbenur 1.png') }}" class="img-fluid"
                         alt="Gambar Modal">
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
     <section class="w-100">
         <h1 class="text-center pb-5">Poliklinik</h1>
 
@@ -1033,15 +1033,15 @@
 @section('script')
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script>
-        // $(document).ready(function() {
-        //     $('#gambarModal').modal('show');
+        $(document).ready(function() {
+            $('#gambarModal').modal('show');
 
-        //     // Event handler untuk tombol close
-        //     $('.close-btn').click(function() {
-        //         // Menutup modal
-        //         $('#gambarModal').modal('hide');
-        //     });
-        // });
+            // Event handler untuk tombol close
+            $('.close-btn').click(function() {
+                // Menutup modal
+                $('#gambarModal').modal('hide');
+            });
+        });
 
         function validateEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
