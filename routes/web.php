@@ -39,7 +39,7 @@ Route::get('/visi-misi', function () {return view('visitor.tentang-kami.visi-mis
 Route::get('/struktur-organisasi', function () {return view('visitor.tentang-kami.struktur-organisasi');});
 Route::get('/direksi-manajemen', function () {
     // return view('visitor.tentang-kami.direksi-manajemen');
-    return view('visitor.maintenance.under-construction');
+    return view('visitor.tentang-kami.direksi-manajemen');
 });
 Route::get('/manajer-ruangan-instalasi', function(){ 
     return view('visitor.tentang-kami.manajer-ruangan-instalasi');
