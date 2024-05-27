@@ -247,10 +247,7 @@
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter NN"
                         id="doctor-image" />
                 </div>
-            </div>
 
-            <!-- kanan -->
-            <div class="col-12 col-sm-12 col-md-6">
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterJJ')">dr. Laura B. S.
                     Huwae, Sp.S, M.Kes
                 </button>
@@ -258,7 +255,10 @@
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter JJ"
                         id="doctor-image" />
                 </div>
+            </div>
 
+            <!-- kanan -->
+            <div class="col-12 col-sm-12 col-md-6">
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterZZZ')">drg. Lina
                     Mardiana
                 </button>
@@ -322,6 +322,22 @@
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter II"
                         id="doctor-image" />
                 </div>
+                
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterAAA')">
+                    dr. Pelpina Bormassa, Sp.MK
+                </button>
+                <div class="panel" id="DokterAAA">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter II"
+                        id="doctor-image" />
+                </div>
+
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterBBB')">
+                    dr. Prajayanti, Palulun, SpMK
+                </button>
+                <div class="panel" id="DokterBBB">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter II"
+                        id="doctor-image" />
+                </div>
 
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterS')">dr. Rita Sugiono
                     Tanamal, Sp.KK
@@ -344,6 +360,14 @@
                 </button>
                 <div class="panel" id="DokterQ">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter Q"
+                        id="doctor-image" />
+                </div>
+
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterCCC')">
+                    dr. Serlly Wattimury, Sp.Rad.
+                </button>
+                <div class="panel" id="DokterCCC">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter Q"
                         id="doctor-image" />
                 </div>
 
@@ -392,14 +416,6 @@
                 </button>
                 <div class="panel" id="DokterM">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter M"
-                        id="doctor-image" />
-                </div>
-
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterAA')">dr. Yanita
-                    Novalina Ursula, Sp.P
-                </button>
-                <div class="panel" id="DokterAA">
-                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter AA"
                         id="doctor-image" />
                 </div>
 
