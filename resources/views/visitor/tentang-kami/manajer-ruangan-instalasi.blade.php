@@ -341,11 +341,11 @@
 
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card custom-card">
-                    <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Kamar Jenazah Fix.png') }}"
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
                         class="card-img-top" alt="Instalasi Pemulasaran Jenazah">
                     <div class="card-body">
                         <h5 class="card-title">Instalasi Pemulasaran Jenazah</h5>
-                        <p class="card-text">dr. Costantius William Sialana, Sp.F, M.Kes.</p>
+                        <p class="card-text">-</p>
                     </div>
                 </div>
             </div>
