@@ -330,11 +330,11 @@
 
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card custom-card">
-                    <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Farmasi Fix.png') }}"
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                         class="card-img-top" alt="Instalasi Farmasi">
                     <div class="card-body">
                         <h5 class="card-title">Instalasi Farmasi</h5>
-                        <p class="card-text">Jumiati Bugis, S.Farm., Apt.</p>
+                        <p class="card-text">Pia Bataif Batmomolin M. Biomed., Apt.</p>
                     </div>
                 </div>
             </div>
