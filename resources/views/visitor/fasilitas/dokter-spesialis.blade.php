@@ -42,7 +42,9 @@
     </div>
 
     <div class="container">
-
+        <p class="text-danger">
+            <b>*Diperbarui 28 Mei 2024</b>
+        </p>
         <div class="row justify-content-center">
             <!-- Daftar dokter dengan Bootstrap grid -->
             <div class="col-md-6 col-sm-12 col-12">
@@ -73,13 +75,13 @@
                 </div>
 
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterH')">dr. Costantius
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterH')">dr. Costantius
                     William Sialana, Sp.F, M.Kes
                 </button>
                 <div class="panel" id="DokterH">
                     <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Costantius William Sialana, Sp.F, M.Kes.png') }}"
                         alt="Foto Dokter H" id="doctor-image" />
-                </div>
+                </div> --}}
 
 
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterL')">dr. Denny Jolanda,
@@ -356,7 +358,7 @@
                 </div>
 
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterQ')">dr. Semuel
-                    Alexander Wagiu, Sp.S
+                    Alexander Wagiu, Sp.N
                 </button>
                 <div class="panel" id="DokterQ">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter Q"
