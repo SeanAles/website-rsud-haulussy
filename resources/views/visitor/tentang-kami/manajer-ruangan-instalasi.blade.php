@@ -385,11 +385,11 @@
 
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card custom-card">
-                    <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/IPSRS Fix.png') }}"
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                         class="card-img-top" alt="IPSRS">
                     <div class="card-body">
                         <h5 class="card-title">IPSRS</h5>
-                        <p class="card-text">Markus Samalelaway</p>
+                        <p class="card-text">Sintya P. N. Saliama, SKM</p>
                     </div>
                 </div>
             </div>

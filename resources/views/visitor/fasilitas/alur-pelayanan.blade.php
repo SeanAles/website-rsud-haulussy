@@ -26,7 +26,7 @@
             <div class="col-12 col-sm-12 col-md-11 col-lg-9 col-xl-7">
                 <div class="mb-5 square-image">
                     <img width="100%"
-                        src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan IGD (Update 1).png') }}"
+                        src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan IGD (Update 2).png') }}"
                         alt="Alur Peyananan IGD">
                 </div>
             </div>
@@ -59,7 +59,7 @@
                 </div>
             </div>
             <p class="text-danger">
-                <b>*Diperbarui 01 April 2024</b>
+                <b>*Diperbarui 28 April 2024</b>
             </p>
         </div>
     </div>
