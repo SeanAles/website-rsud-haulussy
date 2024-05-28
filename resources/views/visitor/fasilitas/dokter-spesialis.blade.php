@@ -43,7 +43,7 @@
 
     <div class="container">
         <p class="text-danger">
-            <b>*Diperbarui 28 Mei 2024</b>
+            <b>*Diperbarui 28git Mei 2024</b>
         </p>
         <div class="row justify-content-center">
             <!-- Daftar dokter dengan Bootstrap grid -->
@@ -250,17 +250,6 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterJJ')">dr. Laura B. S.
-                    Huwae, Sp.S, M.Kes
-                </button>
-                <div class="panel" id="DokterJJ">
-                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter JJ"
-                        id="doctor-image" />
-                </div>
-            </div>
-
-            <!-- kanan -->
-            <div class="col-12 col-sm-12 col-md-6">
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterZZZ')">drg. Lina
                     Mardiana
                 </button>
@@ -268,7 +257,10 @@
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter F"
                         id="doctor-image" />
                 </div>
+            </div>
 
+            <!-- kanan -->
+            <div class="col-12 col-sm-12 col-md-6">
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterR')">dr. Marisa
                     Afifudin, Sp.P
                 </button>
