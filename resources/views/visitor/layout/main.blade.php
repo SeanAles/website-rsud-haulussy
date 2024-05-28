@@ -206,11 +206,6 @@
                         </div>
                     </li>
 
-                    {{-- <li class="nav-item"><a id="navbarDropdown" href="/manajer-ruangan-instalasi">Manajer Ruangan
-                            &
-                            Instalasi</a>
-                    </li> --}}
-
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

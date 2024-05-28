@@ -67,8 +67,9 @@ Route::get('/medical-check-up', function(){
 });
 Route::get('/ketersediaan-tempat-tidur', [BedController::class, 'indexBed']);
 Route::get('/tarif-pelayanan', function(){
-    return view('visitor.maintenance.under-construction');
+    return view('visitor.fasilitas.tarif-pelayanan');
 });
+
 Route::get('/promosi-kesehatan', function(){return view('visitor.fasilitas.promosi-kesehatan');});
 Route::get('/tata-tertib', function(){
     return view('visitor.fasilitas.tata-tertib');
