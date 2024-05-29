@@ -37,12 +37,17 @@
         <h1>Dokter Umum</h1>
     </div>
 
+
+
     <div class="bg-holder bg-size"
         style="background-image:url(/visitor/assets/img/gallery/about-bg.png);background-position:top center;background-size:contain;">
     </div>
     <!--/.bg-holder-->
     <!-- kiri -->
     <div class="container">
+        <p class="text-danger text-right">
+            <b>*Diperbarui 1 Mei 2024</b>
+        </p>
         <div class="row justify-content-center">
             <!-- Daftar dokter dengan Bootstrap grid -->
             <div class="col-md-6 col-sm-12 col-12">

@@ -4,14 +4,11 @@
 
 @section('style')
     <style>
-    a.custom-link {
-        cursor: pointer;
-        text-decoration: none;
-        
-    }
-
-       
-    </style> 
+        a.custom-link {
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -122,8 +119,7 @@
 
 
             <!-- Modal -->
-            <div class="modal fade" id="exa" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+            <div class="modal fade" id="exa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog ">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -585,7 +581,8 @@
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                 <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
-                        src="{{ asset('visitor/assets/img/direk/dr. JUSTINI PAWA, M. Kes (2014-2019).png') }}" alt="news" />
+                        src="{{ asset('visitor/assets/img/direk/dr. JUSTINI PAWA, M. Kes (2014-2019).png') }}"
+                        alt="news" />
                     <div class="card-body"><span class="fs--1 text-primary me-3">Direktur</span>
                         <svg class="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12"
                             height="12" fill="currentColor" viewBox="0 0 16 16">
@@ -703,7 +700,8 @@
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                 <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
-                        src="{{ asset('visitor/assets/img/direk/dr. JUSTINI PAWA, M. Kes (2021).png') }}" alt="news" />
+                        src="{{ asset('visitor/assets/img/direk/dr. JUSTINI PAWA, M. Kes (2021).png') }}"
+                        alt="news" />
                     <div class="card-body"><span class="fs--1 text-primary me-3">Plt Direktur</span>
                         <svg class="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12"
                             height="12" fill="currentColor" viewBox="0 0 16 16">
@@ -731,7 +729,8 @@
                         </div>
                         <div class="text-center">
                             <div class="modal-body">
-                                <img src="{{ asset('visitor/assets/img/direk/dr. JUSTINI PAWA, M. Kes (2021).png') }}" style="max-height: 500px; max-width: 300px;">
+                                <img src="{{ asset('visitor/assets/img/direk/dr. JUSTINI PAWA, M. Kes (2021).png') }}"
+                                    style="max-height: 500px; max-width: 300px;">
                             </div>
                         </div>
                     </div>
@@ -769,7 +768,8 @@
                         </div>
                         <div class="text-center">
                             <div class="modal-body">
-                                <img src="{{ asset('visitor/assets/img/direk/dr. Zulkarnaini MS, Sp.JP, FIHA.png') }}" style="max-height: 500px; max-width: 300px;">
+                                <img src="{{ asset('visitor/assets/img/direk/dr. Zulkarnaini MS, Sp.JP, FIHA.png') }}"
+                                    style="max-height: 500px; max-width: 300px;">
                             </div>
                         </div>
                     </div>
@@ -817,7 +817,7 @@
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                 <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
                         src="{{ asset('visitor/assets/img/direk/dr. Adonia.png') }}" alt="news" />
-                    <div class="card-body"><span class="fs--1 text-primary me-3">Direktur</span>
+                    <div class="card-body"><span class="fs--1 text-primary me-3">Plt Direktur</span>
                         <svg class="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12"
                             height="12" fill="currentColor" viewBox="0 0 16 16">
                             <path
@@ -825,7 +825,7 @@
                             </path>
                             <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z">
                             </path>
-                        </svg><span class="fs--1 text-900">2024</span><span class="fs--1"></span>
+                        </svg><span class="fs--1 text-900"> Januari 2024 - April 2024</span><span class="fs--1"></span>
                         <h6 class="font-base fs-lg-0 fs-xl-1 my-3">dr. Adonia</h6>
                         <a class="custom-link" data-bs-toggle="modal" data-bs-target="#tes0001">Lihat Lebih Lanjut</a>
                     </div>

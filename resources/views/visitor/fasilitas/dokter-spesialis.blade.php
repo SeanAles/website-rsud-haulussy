@@ -43,7 +43,7 @@
 
     <div class="container">
         <p class="text-danger">
-            <b>*Diperbarui 28git Mei 2024</b>
+            <b>*Diperbarui 28 Mei 2024</b>
         </p>
         <div class="row justify-content-center">
             <!-- Daftar dokter dengan Bootstrap grid -->
@@ -316,7 +316,7 @@
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter II"
                         id="doctor-image" />
                 </div>
-                
+
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterAAA')">
                     dr. Pelpina Bormassa, Sp.MK
                 </button>
