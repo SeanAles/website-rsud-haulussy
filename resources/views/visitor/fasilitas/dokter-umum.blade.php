@@ -54,6 +54,22 @@
                         id="doctor-image" />
                 </div>
 
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drEbramNainggolan')">
+                    dr. Ebram Nainggolan
+                </button>
+                <div class="panel" id="drEbramNainggolan">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="dr. Ebram Nainggolan"
+                        id="doctor-image" />
+                </div>
+
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drFelmiDelima')">
+                    dr. Felmi Delima
+                </button>
+                <div class="panel" id="drFelmiDelima">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Felmi Delima"
+                        id="doctor-image" />
+                </div>
+
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drFitrahHanafi')">
                     dr. Fitrah Hanafi
                 </button>
@@ -110,6 +126,30 @@
                         id="doctor-image" />
                 </div>
 
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drMeigyNitalessy')">
+                    dr. Meigy Nitalessy
+                </button>
+                <div class="panel" id="drMeigyNitalessy">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Meigy Nitalessy"
+                        id="doctor-image" />
+                </div>
+
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drNadyaNovitaManalu')">
+                    dr. Nadya Novita Manalu
+                </button>
+                <div class="panel" id="drNadyaNovitaManalu">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Nadya Novita Manalu"
+                        id="doctor-image" />
+                </div>
+
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drNazaruddinMSc')">
+                    dr. Nazaruddin, M.Sc
+                </button>
+                <div class="panel" id="drNazaruddinMSc">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Nazaruddin, M.Sc"
+                        id="doctor-image" />
+                </div>
+
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drNurulHidayah')">
                     dr. Nurul Hidayah
 
@@ -118,19 +158,19 @@
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Nurul Hidayah"
                         id="doctor-image" />
                 </div>
-
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drPratamiFririaRieuwpassa')">
-                    dr. Pratami Friria Rieuwpassa
-
-                </button>
-                <div class="panel" id="drPratamiFririaRieuwpassa">
-                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Pratami Friria Rieuwpassa"
-                        id="doctor-image" />
-                </div>
             </div>
 
             <!-- kanan -->
             <div class="col-12 col-sm-12 col-md-6">
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drPratamiFririaRieupassa')">
+                    dr. Pratami Friria Rieupassa
+
+                </button>
+                <div class="panel" id="drPratamiFririaRieupassa">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}"
+                        alt="dr. Pratami Friria Rieupassa" id="doctor-image" />
+                </div>
+
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drPrillyTheodorus')">
                     dr. Prilly Theodorus
 
@@ -172,11 +212,27 @@
                         id="doctor-image" />
                 </div>
 
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drSetiawanWinarso')">
+                    dr. Setiawan Winarso
+                </button>
+                <div class="panel" id="drSetiawanWinarso">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Setiawan Winarso"
+                        id="doctor-image" />
+                </div>
+
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drSheilaDCManuputty')">
                     dr. Sheila D. C. Manuputty
                 </button>
                 <div class="panel" id="drSheilaDCManuputty">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Sheila D. C. Manuputty"
+                        id="doctor-image" />
+                </div>
+
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drSusiSaptawarni')">
+                    dr. Susi Saptawarni
+                </button>
+                <div class="panel" id="drSusiSaptawarni">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Susi Saptawarni"
                         id="doctor-image" />
                 </div>
 
@@ -188,11 +244,11 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drVitaNikijuluw')">
-                    dr. Vita Nikijuluw
+                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drNovitaEleviaNikijuluw')">
+                    dr. Novita Elevia Nikijuluw
                 </button>
-                <div class="panel" id="drVitaNikijuluw">
-                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Vita Nikijuluw"
+                <div class="panel" id="drNovitaEleviaNikijuluw">
+                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Novita Elevia Nikijuluw"
                         id="doctor-image" />
                 </div>
 
