@@ -172,13 +172,13 @@
                             Tentang Kami
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/profil">Profil</a>
                             <a class="dropdown-item" href="/sejarah">Sejarah</a>
-
                             <a class="dropdown-item" href="/visi-misi">Visi & Misi</a>
                             <a class="dropdown-item" href="/struktur-organisasi">Struktur Organisasi</a>
                             <a class="dropdown-item" href="/direksi-manajemen">Direksi & Manajemen</a>
                             <a class="dropdown-item" href="/manajer-ruangan-instalasi">Manajer Ruangan & Instalasi</a>
-                            <a class="dropdown-item" href="/gambaran-umum">Gambaran Umum</a>
+                            {{-- <a class="dropdown-item" href="/gambaran-umum">Gambaran Umum</a> --}}
                             <a class="dropdown-item" href="/mantan-direktur">Mantan Direktur</a>
                         </div>
                     </li>
@@ -191,10 +191,10 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/rawat-jalan">Rawat Jalan</a>
                             <a class="dropdown-item" href="/jadwal-poliklinik">Jadwal Poliklinik</a>
-                            <a class="dropdown-item" href="/rawat-inap">Rawat Inap</a>
+                            {{-- <a class="dropdown-item" href="/rawat-inap">Rawat Inap</a> --}}
                             <a class="dropdown-item" href="/alur-pelayanan">Alur Pelayanan</a>
-                            <a class="dropdown-item" href="/pelayanan-penunjang">Pelayanan Penunjang</a>
-                            <a class="dropdown-item" href="/medical-check-up">Medical Check Up</a>
+                            {{-- <a class="dropdown-item" href="/pelayanan-penunjang">Pelayanan Penunjang</a>
+                            <a class="dropdown-item" href="/medical-check-up">Medical Check Up</a> --}}
                             <a class="dropdown-item" href="/ketersediaan-tempat-tidur">Ketersediaan Tempat
                                 Tidur</a>
                             <a class="dropdown-item" href="/tarif-pelayanan">Tarif Pelayanan</a>

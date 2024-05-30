@@ -16,7 +16,7 @@
 
 @section('content')
     <div class="text-center mb-5">
-        <h1>Galeri Foto</h1>
+        <h1>Artikel</h1>
     </div>
 
     <div class="container mt-4">
