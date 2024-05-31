@@ -33,7 +33,7 @@ Route::get('/', function () {
 });
 
 // Tentang Kami Route
-Route::get('/profil', function () {return view('visitor.tentang-kami.profil');});
+// Route::get('/profil', function () {return view('visitor.tentang-kami.profil');});
 Route::get('/sejarah', function () {return view('visitor.tentang-kami.sejarah');});
 Route::get('/mantan-direktur', function () {return view('visitor.tentang-kami.mantan-direktur');});
 Route::get('/visi-misi', function () {return view('visitor.tentang-kami.visi-misi');});
