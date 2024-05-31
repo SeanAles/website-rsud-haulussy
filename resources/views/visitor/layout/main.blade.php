@@ -173,7 +173,7 @@
                             Tentang Kami
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {{-- <a class="dropdown-item" href="/profil">Profil</a> --}}
+                            <a class="dropdown-item" href="/profil">Profil</a>
                             <a class="dropdown-item" href="/sejarah">Sejarah</a>
                             <a class="dropdown-item" href="/visi-misi">Visi & Misi</a>
                             <a class="dropdown-item" href="/struktur-organisasi">Struktur Organisasi</a>
