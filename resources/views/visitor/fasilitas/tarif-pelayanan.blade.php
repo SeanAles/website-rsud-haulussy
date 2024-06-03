@@ -86,7 +86,7 @@
             <option value="{{ asset('visitor/assets/img/tarif/Jantung.png') }}">Jantung</option>
             <option value="{{ asset('visitor/assets/img/tarif/Imunoserologi.png') }}">Imunoserologi</option>
             <option value="{{ asset('visitor/assets/img/tarif/Imunologi Otomatik.png') }}">Imunologi Otomatik</option>
-            <option value="{{ asset('visitor/assets/img/tarif/PT.png') }}">PT</option>
+            <option value="{{ asset('visitor/assets/img/tarif/PT (Penanda Tumor).png') }}">PT (Penanda Tumor)</option>
             <option value="{{ asset('visitor/assets/img/tarif/Mikrobiologi.png') }}">Mikrobiologi</option>
             <option value="{{ asset('visitor/assets/img/tarif/Mikrobiologi Mikroskopik.png') }}">Mikrobiologi Mikroskopik</option>
             <option value="{{ asset('visitor/assets/img/tarif/Narkoba.png') }}">Narkoba</option>
@@ -118,6 +118,7 @@
             <option value="{{ asset('visitor/assets/img/tarif/Klinik Kulit Kelamin.png') }}">Klinik Kulit Kelamin</option>
             <option value="{{ asset('visitor/assets/img/tarif/Tindakan Neurologi.png') }}">Tindakan Neurologi</option>
             <option value="{{ asset('visitor/assets/img/tarif/CT Scan.png') }}">CT Scan</option>
+            <option value="{{ asset('visitor/assets/img/tarif/Ambulans.png') }}">Ambulans</option>
            
         </select>
         <br><br>

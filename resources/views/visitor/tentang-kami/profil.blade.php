@@ -12,8 +12,6 @@
     </div>
     <div class="container">
         <div class="row align-items-center">
-
-
             <video controls autoplay controlsList="nodownload">
                 <!-- Replace "video.mp4" with the actual path to your video file -->
                 <source src="{{ asset('visitor/assets/video/Video Profil Rumah Sakit.mp4') }}" type="video/mp4">
@@ -24,5 +22,4 @@
             </video>
         </div>
     </div>
-
 @endsection
