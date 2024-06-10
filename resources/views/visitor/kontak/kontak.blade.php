@@ -34,14 +34,17 @@
                     </h4>
                 </div>
 
-                <a class="m-3" href="https://wa.me/6281392582755?text=Halo,%20saya%20mau%20mendaftar%20online."
+                <div class="mt-5">
+                    <a class="m-3" href="https://wa.me/6281392582755?text=Halo,%20saya%20mau%20mendaftar%20online."
                     target="_blank" style="font-size: 50px;"><i class="fa-brands fa-whatsapp"></i></a>
-                <a class="m-3" href="mailto:simrs.rs.haulussy@gmail.com?subject=PELAPORAN%20LAYANAN" target="_blank"
-                    style="font-size: 50px;"><i class="fa-regular fa-envelope"></i></a>
                 <a class="m-3" href="https://www.instagram.com/rsud.dr.m.haulussy.official/" target="_blank"
                     style="font-size: 50px;"><i class="fa-brands fa-instagram"></i></a>
-                <a class="m-3" href="https://www.facebook.com/profile.php?id=100063609202665" target="_blank"
+                <a class="m-3" href="https://www.facebook.com/rsud.dr.m.haulussy.official" target="_blank"
                     style="font-size: 50px;"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-2 mb-5">
+                <h4>Email : rs.haulussy.ambon@gmail.com</h4>
             </div>
 
             <video controls autoplay>

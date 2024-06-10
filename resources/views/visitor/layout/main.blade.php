@@ -134,6 +134,15 @@
         height: 100%;
         z-index: -1;
     }
+
+    .text-center-horizontal {
+        text-align: center;
+    }
+
+    .whatsapp-button {
+        display: inline-flex;
+        align-items: center;
+    }
 </style>
 
 <body>
@@ -258,9 +267,14 @@
                             </h1>
                         </b>
                         <!-- <p class="fs-1 mb-5">about us</p> -->
-                        <a class="btn btn-lg btn-primary rounded-pill"
-                            href="https://wa.me/6281392582755?text=Halo,%20saya%20mau%20mendaftar%20online."
-                            target="_blank" role="button">Buat Janji Pendaftaran</a>
+                        <a href="https://wa.me/6281392582755?text=Halo,%20saya%20mau%20mendaftar%20online.">
+                            <div class="d-flex-center mt-3">
+                                <button class="btn btn-primary rounded-pill whatsapp-button">
+                                    <i class="fab fa-whatsapp fa-3x"></i>
+                                    <span class="button-text ml-2">Buat Janji Pendaftaran</span>
+                                </button>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

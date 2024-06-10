@@ -75,6 +75,10 @@
                     <span id="suggestionError" class="error"></span>
                     <span id="suggestionSuccess" class="success"></span>
                 </form>
+
+                <div class="mt-4">
+                    <h4 class="text-danger"><b>Unit Pengaduan </b><br><span class="text-black">081247886931</span></h4>          
+                </div>
             </div>
         </div>
     </div>

@@ -119,7 +119,6 @@
             <option value="{{ asset('visitor/assets/img/tarif/Tindakan Neurologi.png') }}">Tindakan Neurologi</option>
             <option value="{{ asset('visitor/assets/img/tarif/CT Scan.png') }}">CT Scan</option>
             <option value="{{ asset('visitor/assets/img/tarif/Ambulans.png') }}">Ambulans</option>
-           
         </select>
         <br><br>
         <img id="displayedImage" src="{{ asset('visitor/assets/img/tarif/IGD.png') }}" alt="Medical Service Image">
