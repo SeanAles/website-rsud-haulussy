@@ -17,6 +17,11 @@
             font-size: 15px;
             display: none;
         }
+
+        .text-stretch {
+            letter-spacing: 0.15em;
+            /* adjust the value to stretch text more or less */
+        }
     </style>
 @endsection
 
@@ -77,7 +82,8 @@
                 </form>
 
                 <div class="mt-4">
-                    <h4 class="text-danger"><b>Unit Pengaduan </b><br><span class="text-black">081247886931</span></h4>          
+                    <h4 class="text-danger mb-2"><b class="">Unit Pengaduan </b></h4>
+                    <h4 class="text-black text-stretch">0812 4788 6931</h4>
                 </div>
             </div>
         </div>
