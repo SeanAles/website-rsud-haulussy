@@ -82,8 +82,8 @@
         }
 
         #preloader {
-            background: #fff url(/visitor/assets/img/gif/loader.gif) no-repeat center center;
-            background-size: 70%;
+            background: #fff url(/visitor/assets/img/gif/hourglass.gif) no-repeat center center;
+            background-size: 15%;
             height: 100vh;
             width: 100%;
             position: fixed;
@@ -103,8 +103,8 @@
         }
 
         #preloader {
-            background: #fff url(/visitor/assets/img/gif/loader.gif) no-repeat center center;
-            background-size: 15%;
+            background: #fff url(/visitor/assets/img/gif/hourglass.gif) no-repeat center center;
+            background-size: 5%;
             height: 100vh;
             width: 100%;
             position: fixed;

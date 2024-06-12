@@ -52,9 +52,14 @@
                 </tr>
             @endforeach
         </table>
+        <div class="mt-2 mb-4 text-black font-weight-bold">
+            Total Rawat Inap : 240
+        </div>
 
         <div class="mt-2 text-danger font-weight-bold">
             <p><i>*{{ $note->content }}</i></p>
         </div>
+
+
     </div>
 @endsection
