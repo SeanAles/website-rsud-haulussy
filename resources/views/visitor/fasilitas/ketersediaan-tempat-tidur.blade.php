@@ -53,7 +53,7 @@
             @endforeach
         </table>
         <div class="mt-2 mb-4 text-black font-weight-bold">
-            Total Rawat Inap : 240
+            Total Rawat Inap : 240 Tempat Tidur
         </div>
 
         <div class="mt-2 text-danger font-weight-bold">
