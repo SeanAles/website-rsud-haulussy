@@ -16,9 +16,20 @@
         }
 
         /* .tb-header{
-                    background-color: #283779;
-                    color: white;
-                } */
+                        background-color: #283779;
+                        color: white;
+                    } */
+
+
+        .table.table-bordered {
+            border: 1px solid #63645E;
+        }
+
+        .table.table-bordered th,
+        .table.table-bordered td {
+            border: 1px solid #63645E;
+        }
+
     </style>
 @endsection
 
@@ -27,8 +38,8 @@
         <h1>Ketersediaan Tempat Tidur</h1>
     </div>
     <div class="container col-10 col-sm-10 col-md-8 col-lg-6" id="table">
-        <table class="table table-bordered table-striped">
-            <tr style="color: white; background-color: #283779">
+        <table class="table table-bordered table-striped table-line">
+            <tr style="color: white; background-color: #283779; ">
                 <th>No.</th>
                 <th>Nama Ruangan</th>
                 <th class="text-end witdh-fit">Ketersediaan</th>
