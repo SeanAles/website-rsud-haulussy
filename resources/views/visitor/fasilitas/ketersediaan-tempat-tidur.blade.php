@@ -16,9 +16,9 @@
         }
 
         /* .tb-header{
-                        background-color: #283779;
-                        color: white;
-                    } */
+                                background-color: #283779;
+                                color: white;
+                            } */
 
 
         .table.table-bordered {
@@ -29,7 +29,6 @@
         .table.table-bordered td {
             border: 1px solid #63645E;
         }
-
     </style>
 @endsection
 
@@ -53,7 +52,7 @@
             @endforeach
         </table>
         <div class="mt-2 mb-4 text-black font-weight-bold">
-            Total Rawat Inap : 240 Tempat Tidur
+            Total Rawat Inap : 233 Tempat Tidur
         </div>
 
         <div class="mt-2 text-danger font-weight-bold">
