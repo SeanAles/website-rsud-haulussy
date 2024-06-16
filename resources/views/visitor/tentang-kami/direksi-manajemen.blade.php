@@ -25,7 +25,7 @@
             <div class="row justify-content-center">
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3 class="card-title text-center pt-3">Direktur</h3>
+                        <h3 class="card-title text-center pt-3">Plt Direktur</h3>
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">

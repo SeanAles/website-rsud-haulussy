@@ -724,10 +724,10 @@
         <div class="p-3">
             <div class="row align-items-center">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-lg-1 mb-5 mb-lg-0 text-center">
-                    <img class="img-fluid rounded-circle" width="70%"
-                        src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" alt="..." />
+                    <img class="img-fluid rounded-circle" width="60%"
+                        src="{{ asset('visitor/assets/img/gallery/direktur_dr_Vita.png') }}" alt="..." />
                     <div class="text-center">
-                        <h4>DIREKTUR</h4>
+                        <h4>Plt DIREKTUR</h4>
                         <h5>dr. Novita Elevia Nikijuluw</h5>
                         <!-- <P>NIP 196807222001121001</P> -->
                     </div>
