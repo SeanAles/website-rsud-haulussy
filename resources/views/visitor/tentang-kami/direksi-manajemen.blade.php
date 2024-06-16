@@ -26,10 +26,10 @@
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
                         <h3 class="card-title text-center pt-3">Direktur</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">-</h5>
+                            <h5 class="card-text text-secondary text-center">dr. Novita Elevia Nikijuluw</h5>
                         </div>
                     </div>
                 </div>
@@ -56,13 +56,13 @@
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Zakaria N. Elwuar, S.Pd., MH.Kes.</h5>
                         </div>
-                    </div>  
+                    </div>
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
                         <h3 class="card-title text-center pt-3">Subkoordinator <span><br>Kepegawaian</span> </h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
-                            class="card-img-top" alt="IGD">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
+                            alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Janiba Marasabessy, SKM</h5>
                         </div>
@@ -73,7 +73,8 @@
             <div class="row justify-content-center mt-5">
                 <div class="col-10 col-sm-10 col-md-7 col-lg-4">
                     <div class="card custom-card">
-                        <h3 class="card-title text-center pt-3">Wakil Direktur <span><br> Pelayanan & Keperawatan</span> </h3>
+                        <h3 class="card-title text-center pt-3">Wakil Direktur <span><br> Pelayanan & Keperawatan</span>
+                        </h3>
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
@@ -107,8 +108,8 @@
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
                         <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Pelayanan </h3>
-                        <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Enseline Nikijuluw, Sp.N.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Enseline Nikijuluw, Sp.N.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">dr. Enselin Nikijuluw, Sp. N</h5>
                         </div>
@@ -126,9 +127,10 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Pendidikan, Penelitian dan Akreditasi </h3>
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi SIMRS.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Pendidikan,
+                            Penelitian dan Akreditasi </h3>
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi SIMRS.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">dr. Semuel A. Wagiu, Sp. N (Plt)</h5>
                         </div>
@@ -136,7 +138,8 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Penunjang Diagnostik dan Logistik </h3>
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Penunjang
+                            Diagnostik dan Logistik </h3>
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
@@ -147,8 +150,8 @@
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
                         <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Program </h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Fatmawaty Tatuhey, Apt. S.Si.</h5>
                         </div>
@@ -157,22 +160,23 @@
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
                         <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Keuangan </h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Rio Talama, S.E., Ak. M.Si. CA.</h5>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <hr>
             <div class="row justify-content-center mt-5">
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3 style="height: 120px" class="card-title text-center pt-3 ">Subkoordinator <br> Pelayanan Medis </h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3 ">Subkoordinator <br> Pelayanan Medis
+                        </h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">dr. Inggrid Sihasale</h5>
                         </div>
@@ -180,9 +184,10 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3  style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Pengendalian Mutu Pelayanan</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Pengendalian Mutu
+                            Pelayanan</h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Selvi Jaga, S.Kep., Ns.</h5>
                         </div>
@@ -190,9 +195,10 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3  style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Bimbingan Asuhan dan Pelayanan Keperawatan</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Bimbingan Asuhan
+                            dan Pelayanan Keperawatan</h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Fera Y. Pattikawa, S.Kep., Ns., M.Kep.</h5>
                         </div>
@@ -200,9 +206,10 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3  style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Bimbingan Mutu dan Etika Keperawatan</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Bimbingan Mutu
+                            dan Etika Keperawatan</h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Suci Diliyanti, S.Kep., Ns.</h5>
                         </div>
@@ -210,9 +217,10 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3  style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Pendidikan dan Penelitian</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Pendidikan dan
+                            Penelitian</h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Dan Tandi, S.Kep., Ns., M.Kep.</h5>
                         </div>
@@ -220,9 +228,9 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3  style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Akreditasi</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Akreditasi</h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Daniel Dady, S.Kep., Ns., M.Kep.</h5>
                         </div>
@@ -230,9 +238,10 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3  style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Penunjang Diagnostik</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Penunjang
+                            Diagnostik</h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Israelly S. Tetelepta, S.ST.</h5>
                         </div>
@@ -240,9 +249,10 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3  style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Penunjang Logistik</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Penunjang
+                            Logistik</h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Rosalinda Latuputty, AMG</h5>
                         </div>
@@ -250,9 +260,10 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3  style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Penyusunan Program</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Penyusunan
+                            Program</h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Jeany C. Wattimena, SKM, M.Epid., Ph.D</h5>
                         </div>
@@ -260,9 +271,10 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3  style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Monitoring, Evaluasi dan Pelaporan</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Monitoring,
+                            Evaluasi dan Pelaporan</h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Debbye Ch. Huliselan, SE, M.Si.</h5>
                         </div>
@@ -270,9 +282,10 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3  style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Perbendaharaan dan Mobilisasi Dana</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Perbendaharaan
+                            dan Mobilisasi Dana</h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Dewi Wati Rakib, S.Sos., M.Si.</h5>
                         </div>
@@ -280,9 +293,10 @@
                 </div>
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
-                        <h3  style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Verifikasi dan Akutansi</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Verifikasi dan
+                            Akutansi</h3>
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                            class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Marya Mustamu, SE, M.Si.</h5>
                         </div>
