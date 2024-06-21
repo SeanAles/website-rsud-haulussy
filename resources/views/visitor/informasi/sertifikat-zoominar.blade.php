@@ -1,6 +1,6 @@
 @extends('visitor.layout.main')
 
-@section('title', 'Sertifikat Zoominar Pendidikan Internal')
+@section('title', 'Sertifikat Pendidikan Internal')
 
 @section('style')
     <style>
@@ -18,7 +18,7 @@
 
 @section('content')
     <div class="text-center mb-5">
-        <h1>Sertifikat Zoominar Pendidikan Internal</h1>
+        <h1>Sertifikat Pendidikan Internal</h1>
     </div>
 
     <div class="container col-10 col-sm-10 col-md-8 col-lg-6" id="table">
