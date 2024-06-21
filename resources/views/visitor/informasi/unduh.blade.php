@@ -13,12 +13,26 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        .zoominar-button{
+            font-size: 20px;
+            color: black;
+        }
+
+        .zoominar-text{
+            color: #283779;
+            font-weight: 500;
+        }
     </style>
 @endsection
 
 @section('content')
     <div class="text-center mb-5">
         <h1>Unduh</h1>
+    </div>
+
+    <div class="container">
+        <p class="zoominar-button">Sertifikat Zoominar Pendidikan Internal? <span><a href="/sertifikat-zoominar" class="zoominar-text">Klik Disini</a></span></p>
     </div>
 
     <div class="container mt-5">

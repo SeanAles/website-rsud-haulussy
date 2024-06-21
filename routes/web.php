@@ -92,6 +92,9 @@ Route::get('/galeri/{slug}', [EventController::class, 'showGaleri']);
 Route::get('/unduh', [DownloadController::class, 'indexDownload']);
 Route::get('/unduh/{id}', [DownloadController::class, 'showDownload']);
 
+Route::get('/sertifikat-zoominar', function(){ 
+    return view('visitor.informasi.sertifikat-zoominar');
+});
 
 // Kontak Kami Route
 Route::get('/kontak', function(){ return view('visitor.kontak.kontak');});
