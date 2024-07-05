@@ -438,7 +438,6 @@
     <script src="{{ asset('visitor/vendors/fontawesome/all.min.js') }}"></script>
     <script src="{{ asset('visitor/assets/js/theme.js') }}"></script>
     <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
 
     <!-- Sertakan Bootstrap JS, Popper.js, dan jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
