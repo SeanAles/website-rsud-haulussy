@@ -18,17 +18,17 @@
                 <a href="https://tiny.one/Edukasi-Haulussy" target="_blank" class="btn btn-info mb-3">Tekan Saya</a>
             </div>
             <div class="text-center col-12 col-sm-12 col-md-8 col-lg-4 mt-3 mb-3">
-                <img src="{{ asset('visitor/assets/img/promkes/Senam Pagi Promkes.jpg') }}" width="100%" alt="Promkes 1"><br>
-            </div>  
-            {{-- <div class="text-center col-12 col-sm-12 col-md-8 col-lg-4 mt-3">
-                <img src="{{ asset('visitor/assets/img/promkes/Promkes 2.png') }}" width="100%" alt="Promkes 2"><br>
-            </div>
-            <div class="text-center col-12 col-sm-12 col-md-8 col-lg-4 mt-3 mb-3">
-                <img src="{{ asset('visitor/assets/img/promkes/Promkes 3.png') }}" width="100%" alt="Promkes 3"><br>
+                <img src="{{ asset('visitor/assets/img/promkes/Senam Pagi Promkes.jpg') }}" width="100%"
+                    alt="Promkes 1"><br>
             </div>
             <div class="text-center col-12 col-sm-12 col-md-8 col-lg-4 mt-3">
-                <img src="{{ asset('visitor/assets/img/promkes/Promkes 4.png') }}" width="100%" alt="Promkes 4"><br>
-            </div> --}}
+                <img src="{{ asset('visitor/assets/img/promkes/Promkes Long Banner.jpg') }}" width="100%"
+                    alt="Promkes 2"><br>
+            </div>
+
+            <div class="text-center col-12 col-sm-12 col-md-8 col-lg-4 mt-3">
+                <img src="{{ asset('visitor/assets/img/iklan/Promkes Iklan.jpg') }}" width="100%" alt="Promkes 4"><br>
+            </div>
         </div>
     </div>
 @endsection
