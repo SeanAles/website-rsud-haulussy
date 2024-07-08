@@ -66,8 +66,15 @@
                     <div class="col-md-12">
                         <label class="form-label visually-hidden" for="message">Pesan</label>
                         <textarea class="form-control form-livedoc-control" id="message" name="message" style="font-style:italic"
-                            maxlength="100" placeholder="Pesan Maksimum 100 karakter" style="height: 250px"></textarea>
+                            maxlength="100" placeholder="Pesan (Maksimum 100 karakter)" style="height: 250px"></textarea>
                         <span id="messageError" class="error"></span>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="form-label visually-hidden" for="hope">Pesan</label>
+                        <textarea class="form-control form-livedoc-control" id="hope" name="hope" style="font-style:italic"
+                            maxlength="100" placeholder="Harapan (Maksimum 100 karakter)" style="height: 250px"></textarea>
+                        <span id="hopeError" class="error"></span>
                     </div>
 
                     <div class="col-12">
@@ -156,6 +163,7 @@
                         email: $("#email").val(),
                         phone_number: $("#phone_number").val(),
                         message: $("#message").val(),
+                        hope: $("#hope").val(),
                         _token: '{{ csrf_token() }}'
                     },
                     success: function(response) {

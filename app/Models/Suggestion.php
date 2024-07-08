@@ -14,5 +14,6 @@ class Suggestion extends Model
         "email",
         "phone_number",
         "message",
+        "hope",
     ];
 }

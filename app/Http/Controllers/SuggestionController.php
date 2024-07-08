@@ -56,6 +56,11 @@ class SuggestionController extends Controller
                                             <textarea rows="4" type="text" class="form-control" id="message-' . $suggestion->id . '" disabled>'.$suggestion->message.'
                                             </textarea>
                                         </div>
+                                         <div class="form-group">
+                                            <label for="message-' . $suggestion->id . '">Pesan</label>
+                                            <textarea rows="4" type="text" class="form-control" id="message-' . $suggestion->id . '" disabled>'.$suggestion->hope.'
+                                            </textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -83,6 +88,7 @@ class SuggestionController extends Controller
             "email" => $request->email,
             "phone_number" => $request->phone_number,
             "message" => $request->message,
+            "hope" => $request->hope,
         ]);
 
         if ($suggestion) {
