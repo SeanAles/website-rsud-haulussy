@@ -124,6 +124,7 @@
             $("#emailError").hide();
             $("#phoneNumberError").hide();
             $("#messageError").hide();
+            $("#hopeError").hide();
             $("#suggestionError").hide();
             $("#suggestionSuccess").hide();
 
@@ -149,6 +150,9 @@
             } else if ($("#message").val() === "") {
                 $("#messageError").show();
                 $("#messageError").text("Pesan tidak boleh kosong");
+            } else if ($("#hope").val() === "") {
+                $("#hopeError").show();
+                $("#hopeError").text("Harapan tidak boleh kosong");
             } else {
                 $("#name").prop("disabled", true);
                 $("#email").prop("disabled", true);
