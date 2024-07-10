@@ -33,6 +33,10 @@
             font-size: 20px;
             color: black;
         }
+
+        .button-w {
+            width: 225px;
+        }
     </style>
 @endsection
 
@@ -72,14 +76,14 @@
         <p class="text-spo m-0">SPO Penanganan Pengaduan</p>
 
 
-        <a target="_blank" href="https://drive.google.com/file/d/19C4LvaZCRcZQAM1hVa-jwXxjCnvEoP2J/view?usp=drive_link">
-            <button class="btn btn-success">
+        <a target="_blank" href="https://drive.google.com/file/d/19C4LvaZCRcZQAM1hVa-jwXxjCnvEoP2J/view?usp=drive_link"> 
+            <button class="btn btn-success mt-2 button-w">
                Saat Jam Kerja
             </button>
         </a>
 
         <a target="_blank" href="https://drive.google.com/file/d/1e5D3Y0lcqRXlKIcQfc3Pm1gVECvLRVi1/view?usp=drive_link">
-            <button class="btn btn-warning">
+            <button class="btn btn-warning mt-2 button-w">
                Diluar Jam Kerja
             </button>
         </a>
