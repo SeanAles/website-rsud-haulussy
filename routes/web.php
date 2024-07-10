@@ -98,8 +98,8 @@ Route::get('/sertifikat-zoominar', function(){
 
 // Kontak Kami Route
 Route::get('/kontak', function(){ return view('visitor.kontak.kontak');});
-Route::get('/survei-kepuasaan-pengguna', function(){ 
-    return view('visitor.kontak.survei-kepuasan-pengguna');
+Route::get('/survei-kepuasaan-masyarakat', function(){ 
+    return view('visitor.kontak.survei-kepuasan-masyarakat');
 });
 Route::get('/unit-layanan-pengaduan', function(){ 
     return view('visitor.kontak.unit-layanan-pengaduan');

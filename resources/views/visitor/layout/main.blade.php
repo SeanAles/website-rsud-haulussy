@@ -237,7 +237,7 @@
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/kontak">Kontak</a>
-                            <a class="dropdown-item" href="/survei-kepuasaan-pengguna">Survei Kepuasan Pengguna</a>
+                            <a class="dropdown-item" href="/survei-kepuasaan-masyarakat">Survei Kepuasan Masyarakat</a>
                             <a class="dropdown-item" href="/unit-layanan-pengaduan">Unit Layanan Pengaduan</a>
                             <a class="dropdown-item" href="/kritik-saran">Kritik & Saran</a>
                         </div>
