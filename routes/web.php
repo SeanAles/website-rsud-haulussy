@@ -101,6 +101,9 @@ Route::get('/kontak', function(){ return view('visitor.kontak.kontak');});
 Route::get('/survei-kepuasaan-pengguna', function(){ 
     return view('visitor.kontak.survei-kepuasan-pengguna');
 });
+Route::get('/unit-layanan-pengaduan', function(){ 
+    return view('visitor.kontak.unit-layanan-pengaduan');
+});
 // Kritik dan Saran Route
 Route::get('/kritik-saran', function(){ return view('visitor.kontak.kritik-saran');});
 Route::post('/kritik-saran', [SuggestionController::class, 'create']);
