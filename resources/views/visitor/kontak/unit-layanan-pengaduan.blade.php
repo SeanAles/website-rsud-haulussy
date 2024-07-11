@@ -84,7 +84,7 @@
 
         <a target="_blank" href="https://drive.google.com/file/d/1e5D3Y0lcqRXlKIcQfc3Pm1gVECvLRVi1/view?usp=drive_link">
             <button class="btn btn-warning mt-2 button-w">
-               Diluar Jam Kerja
+               Di Luar Jam Kerja
             </button>
         </a>
 
