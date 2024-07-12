@@ -90,7 +90,7 @@
 
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <div class="mt-4 text-center">
             <h3 class="text-danger mb-2"><b>Nomor Telepon Unit Layanan Pengaduan </b></h3>
             <h3 class="text-black text-stretch">0812 4788 6931</h3>
@@ -99,6 +99,23 @@
 
     <div class="text-center mt-5 mb-5">
         <h1>Hasil Laporan Pengaduan</h1>
-    </div>
 
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <img width="100%" class="img-responsive" src="{{ asset('visitor/assets/img/grafik/Laporan Pengaduan Pelayanan 2022.jpg') }}" alt="">
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <img width="100%" class="img-responsive" src="{{ asset('visitor/assets/img/grafik/Laporan Pengaduan Pelayanan 2023.jpg') }}" alt="">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <img width="100%" class="img-responsive" src="{{ asset('visitor/assets/img/grafik/Laporan Pengaduan Pelayanan 2024.jpg') }}" alt="">
+            </div>
+        </div>   
+    </div>
 @endsection

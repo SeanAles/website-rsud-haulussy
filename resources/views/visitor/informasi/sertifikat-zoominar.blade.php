@@ -29,42 +29,40 @@
                 <th>Aksi</th>
             </tr>
             <tr>
-                <td>1</td>
-                <td>Komunikasi Efektif</td>
+                <td class="text-black">1</td>
+                <td class="text-black">Komunikasi Efektif</td>
                 <td>
                     <a target="_blank" class="download-button" href="https://drive.google.com/drive/folders/1U0napLcYm-cWx7z9RJxnvU_3epDC5-SG?usp=sharing">Lihat Sertifikat</a>
                 </td>
             </tr>
             <tr>
-                <td>2</td>
-                <td>Pencegahan dan Pengendalian Infeksi (PPI)</td>
+                <td class="text-black">2</td>
+                <td class="text-black">Pencegahan dan Pengendalian Infeksi (PPI)</td>
                 <td>
                     <a target="_blank" class="download-button" href="https://drive.google.com/drive/folders/1XrTLwreBmVI14UdQKQYTFc8riYc1Yy6o?usp=sharing">Lihat Sertifikat</a>
                 </td>
             </tr>
             <tr>
-                <td>3</td>
-                <td>Stunting</td>
+                <td class="text-black">3</td>
+                <td class="text-black">Stunting</td>
                 <td>
                     <a target="_blank" class="download-button" href="https://drive.google.com/drive/folders/1IwViMUQpKGz7qLIM7cdf6XhRE3j3uMN4?usp=sharing">Lihat Sertifikat</a>
                 </td>
             </tr>
             <tr>
-                <td>4</td>
-                <td>Google Form & SDM IT</td>
+                <td class="text-black">4</td>
+                <td class="text-black">Google Form & SDM IT</td>
                 <td>
                     <a target="_blank" class="download-button" href="https://drive.google.com/drive/folders/1pCsWuVxAlXLpX7lO9K4XqkbdQq0gPp5l?usp=sharing">Lihat Sertifikat</a>
                 </td>
             </tr>
             <tr>
-                <td>5</td>
-                <td>Intervensi Vaskular</td>
+                <td class="text-black">5</td>
+                <td class="text-black">Intervensi Vaskular</td>
                 <td>
                     <a target="_blank" class="download-button" href="https://drive.google.com/drive/folders/1LH9fURkzPiWY65thxuVuyWPMe5g5AUHE?usp=sharing">Lihat Sertifikat</a>
                 </td>
             </tr>
-               
-           
         </table>
     </div>
 @endsection
