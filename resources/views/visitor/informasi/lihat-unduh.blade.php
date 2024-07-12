@@ -29,7 +29,7 @@
                 <th>Aksi</th>
             </tr>
             @foreach ($downloads as $download)
-                <tr>
+                <tr class="text-black">
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $download->name }}</td>
                     <td>

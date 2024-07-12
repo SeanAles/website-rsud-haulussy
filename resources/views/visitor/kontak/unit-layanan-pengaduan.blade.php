@@ -88,8 +88,6 @@
             </button>
         </a>
 
-
-
     </div>
 
     <div class="container mt-5">
@@ -97,6 +95,10 @@
             <h3 class="text-danger mb-2"><b>Nomor Telepon Unit Layanan Pengaduan </b></h3>
             <h3 class="text-black text-stretch">0812 4788 6931</h3>
         </div>
+    </div>
+
+    <div class="text-center mt-5 mb-5">
+        <h1>Hasil Laporan Pengaduan</h1>
     </div>
 
 @endsection
