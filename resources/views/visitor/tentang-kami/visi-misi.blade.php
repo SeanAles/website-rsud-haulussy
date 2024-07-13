@@ -94,7 +94,7 @@
         </div>
 
         <div class="motto-container">
-            <h1 class="text-center mb-2">Motto </h1>
+            <h1 class="text-center mb-2">Motto</h1>
             <div class="motto-text">
                 Kami ada untuk melayani
             </div>
@@ -102,7 +102,7 @@
 
 
         <div class="motto-container">
-            <h1 class="text-center mb-2">Nilai-nilai </h1>
+            <h1 class="text-center mb-2">Nilai-nilai Luhur</h1>
             <p class="text-black">Nilai-nilai luhur yang harus diimplementasikan dalam aktivitas kerja para pegawai RS
                 disebut "PELA GANDONG"
                 yang berupakan singkatan dari nilai-nilai berikut:</p>
@@ -139,7 +139,7 @@
                             </tr>
                             <tr>
                                 <td class="no-border"></td>
-                                <th scope="col">D : Disiplin</th>
+                                <th scope="col">G : Gairah Kerja</th>
                             </tr>
 
 
