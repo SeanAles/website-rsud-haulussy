@@ -52,7 +52,7 @@
                 </div>
             </div>
             <p class="text-danger">
-                <b>*Diperbarui 28 Mei 2024</b>
+                <b>*Diperbarui 15 Juli 2024</b>
             </p>
         </div>
     </div>
