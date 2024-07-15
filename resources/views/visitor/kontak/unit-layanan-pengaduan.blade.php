@@ -55,7 +55,7 @@
 
     <div class="container mb-5">
         <div class="d-flex justify-content-center">
-            <img class="img-responsive" src="{{ asset('visitor/assets/img/alur-pelayanan/Pengaduan.jpg') }}">
+            <img class="img-responsive" src="{{ asset('visitor/assets/img/alur-pelayanan/Pengaduan New.jpeg') }}">
         </div>
         <p class="text-center text-black bold-sub">Bagan Alur Pengaduan</p>
     </div>

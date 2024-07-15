@@ -88,7 +88,7 @@
 
             <div class="d-flex justify-content-center">
                 <img class="img-responsive"
-                    src="{{ asset('visitor/assets/img/visi-misi/Maklumat dan Janji Pelayanan.jpeg') }}"
+                    src="{{ asset('visitor/assets/img/visi-misi/Maklumat dan Janji Pelayanan New.jpeg') }}"
                     alt="Maklumat dan Janji Pelayanan">
             </div>
         </div>
