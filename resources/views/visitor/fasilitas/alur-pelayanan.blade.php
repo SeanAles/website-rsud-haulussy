@@ -23,25 +23,25 @@
         <div class="row justify-content-center">
             <div class="col-12 col-sm-12 col-md-11 col-lg-9 col-xl-7">
                 <div class="mb-5 square-image">
-                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/IGD.jpg') }}"
+                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan IGD.jpg') }}"
                         alt="Alur Peyananan IGD">
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-11 col-lg-9 col-xl-7">
                 <div class="mb-5 square-image">
-                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Hemodialisis.jpg') }}"
+                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan HD.jpg') }}"
                         alt="Alur Pelayanan Hemodialisis">
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-11 col-lg-9 col-xl-7">
                 <div class="mb-5 square-image">
-                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Rawat Jalan.jpg') }}"
+                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan Rawat Jalan.jpg') }}"
                         alt="Alur Pelayanan Rawat Jalan">
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-11 col-lg-9 col-xl-7">
                 <div class="mb-5 square-image">
-                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Rawat Inap.jpg') }}"
+                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan Rawat Inap.jpg') }}"
                         alt="Alur Pelayanan Rawat Inap">
                 </div>
             </div>
