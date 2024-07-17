@@ -35,7 +35,7 @@
             </div>
             <div class="col-12 col-sm-12 col-md-11 col-lg-9 col-xl-7">
                 <div class="mb-5 square-image">
-                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Alur Pelayanan Rawat Jalan.jpg') }}"
+                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/Rawat Jalan New.jpeg') }}"
                         alt="Alur Pelayanan Rawat Jalan">
                 </div>
             </div>
