@@ -106,7 +106,7 @@
             <option value="{{ asset('visitor/assets/img/tarif/Perinatologi.png') }}">Perinatologi</option>
             <option value="{{ asset('visitor/assets/img/tarif/Neonatologi.png') }}">Neonatologi</option>
             <option value="{{ asset('visitor/assets/img/tarif/Poliklinik.png') }}">Poliklinik</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Klinik Paru.png') }}">Klinik Paru</option>
+            <option value="{{ asset('visitor/assets/img/tarif/Klinik Paru New.png') }}">Klinik Paru</option>
             <option value="{{ asset('visitor/assets/img/tarif/Klinik Jantung.png') }}">Klinik Jantung</option>
             <option value="{{ asset('visitor/assets/img/tarif/Kinik Anak New.png') }}">Klinik Anak</option>
             <option value="{{ asset('visitor/assets/img/tarif/Klinik Mata.png') }}">Klinik Mata</option>
