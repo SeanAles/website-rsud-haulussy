@@ -57,7 +57,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="modal-body">
-                    <img src="{{ asset('visitor/assets/img/iklan/Perjanjian Kerjasama STIKES Husada.jpg') }}" class="img-fluid"
+                    <img src="{{ asset('visitor/assets/img/iklan/Semarak Kemerdekaan RI.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
                 </div>
             </div>
@@ -1018,7 +1018,7 @@
                                 maxlength="100" placeholder="Pesan (Maksimum 100 karakter)" style="height: 250px"></textarea>
                             <span id="messageError" class="error"></span>
                         </div>
-    
+
                         <div class="col-md-12">
                             <label class="form-label visually-hidden" for="hope">Pesan</label>
                             <textarea class="form-control form-livedoc-control" id="hope" name="hope" style="font-style:italic"
@@ -1109,7 +1109,7 @@
             } else if ($("#message").val() === "") {
                 $("#messageError").show();
                 $("#messageError").text("Pesan tidak boleh kosong");
-            }  else if ($("#hope").val() === "") {
+            } else if ($("#hope").val() === "") {
                 $("#hopeError").show();
                 $("#hopeError").text("Harapan tidak boleh kosong");
             } else {
