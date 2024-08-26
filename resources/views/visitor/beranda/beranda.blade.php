@@ -57,7 +57,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="modal-body">
-                    <img src="{{ asset('visitor/assets/img/iklan/Semarak Kemerdekaan RI.jpg') }}" class="img-fluid"
+                    <img src="{{ asset('visitor/assets/img/iklan/17 Agustus 2024.png') }}" class="img-fluid"
                         alt="Gambar Modal">
                 </div>
             </div>
