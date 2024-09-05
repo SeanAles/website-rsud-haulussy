@@ -40,11 +40,11 @@
         @foreach ($downloadCategories as $downloadCategory)
             <a class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 text-decoration-none" href="/unduh/{{ $downloadCategory->id }}">
                 <div class="card mt-3">
-                    @unless ($downloadCategory->id == 8 || $downloadCategory->name == 9)
+                    @if ($downloadCategory->id == 8 || $downloadCategory->id == 9)
                         <img src="{{ asset('visitor/assets/icon/yellow-folder.png') }}" class="card-img-top w-100 pl-5 pr-5" alt="...">
                     @else
                         <img src="{{ asset('visitor/assets/icon/blue-folder.png') }}" class="card-img-top w-100 pl-5 pr-5" alt="...">
-                    @endunless
+                    @endif
                     
                     <div class="card-body">
                       <p class="card-text text-center text-black">{{ $downloadCategory->name }}</p>
