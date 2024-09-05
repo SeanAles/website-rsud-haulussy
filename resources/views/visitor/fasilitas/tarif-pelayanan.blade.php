@@ -71,6 +71,7 @@
 @section('content')
     <div class="text-center mb-5">
         <h1>Tarif Pelayanan</h1>
+        <p class="text-danger">(Berdasarkan Tarif Retribusi - Perda Maluku No. 2 Thn 2024)</p>
     </div>
 
     <div class="text-center">
