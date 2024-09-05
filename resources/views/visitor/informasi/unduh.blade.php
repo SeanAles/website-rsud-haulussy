@@ -47,7 +47,7 @@
                     @endif
                     
                     <div class="card-body">
-                      <p class="card-text text-center text-black">{{  }}</p>
+                      <p class="card-text text-center text-black">{{ $downloadCategory->name }}</p>
                     </div>
                   </div>
             </a>
