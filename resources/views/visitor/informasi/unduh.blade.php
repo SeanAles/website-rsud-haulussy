@@ -40,9 +40,14 @@
         @foreach ($downloadCategories as $downloadCategory)
             <a class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 text-decoration-none" href="/unduh/{{ $downloadCategory->id }}">
                 <div class="card mt-3">
-                    <img src="{{ asset('visitor/assets/icon/blue-folder.png') }}" class="card-img-top w-100 pl-5 pr-5" alt="...">
+                    @if ($downloadCategory->name == "Regulasi Pemprov & Rumah Sakit" || $downloadCategory->name == "Regulasi Pemerintah")
+                        <img src="{{ asset('visitor/assets/icon/yellow-folder.png') }}" class="card-img-top w-100 pl-5 pr-5" alt="...">
+                    @else
+                        <img src="{{ asset('visitor/assets/icon/blue-folder.png') }}" class="card-img-top w-100 pl-5 pr-5" alt="...">
+                    @endif
+                    
                     <div class="card-body">
-                      <p class="card-text text-center text-black">{{ $downloadCategory->name }}</p>
+                      <p class="card-text text-center text-black">{{  }}</p>
                     </div>
                   </div>
             </a>
