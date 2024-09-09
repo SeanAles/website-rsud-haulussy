@@ -345,7 +345,7 @@
                             class="card-img-top" alt="Instalasi Pemulasaran Jenazah">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Pemulasaran Jenazah</h5>
-                            <p class="card-text">-</p>
+                            <p class="card-text">Natal Librek Luarmasse</p>
                         </div>
                     </div>
                 </div>
@@ -388,8 +388,8 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                             class="card-img-top" alt="IPSRS">
                         <div class="card-body">
-                            <h5 class="card-title">IPSRS</h5>
-                            <p class="card-text">Sintya P. N. Saliama, SKM</p>
+                            <h5 class="card-title"> Instalasi IPSRS</h5>
+                            <p class="card-text">Markus Samalelaway</p>
                         </div>
                     </div>
                 </div>
@@ -400,7 +400,7 @@
                             class="card-img-top mt-3" alt="Instalasi Sanitasi">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Sanitasi</h5>
-                            <p class="card-text">Tresye Limba, A.Md.KL</p>
+                            <p class="card-text">Williem Noya, S.K.M</p>
                         </div>
                     </div>
                 </div>
