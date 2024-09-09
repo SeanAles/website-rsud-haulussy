@@ -385,7 +385,7 @@
     
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
                             class="card-img-top" alt="IPSRS">
                         <div class="card-body">
                             <h5 class="card-title"> Instalasi IPSRS</h5>
@@ -396,7 +396,7 @@
     
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
                             class="card-img-top mt-3" alt="Instalasi Sanitasi">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Sanitasi</h5>
