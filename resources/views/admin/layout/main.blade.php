@@ -220,6 +220,17 @@
                             </li>
                         @endif
 
+                        @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
+                            <li class="nav-item">
+                                <a href="/promkes" class="nav-link">
+                                    <i class="nav-icon fas  fa-tag"></i>
+                                    <p>
+                                        Promosi Kesehatan
+                                    </p>
+                                </a>
+                            </li>
+                        @endif
+
                         @if (Auth::user()->role_id === 1)
                             <li class="nav-item">
                                 <a href="/account" class="nav-link">

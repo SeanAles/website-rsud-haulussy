@@ -11,9 +11,11 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\PromkesController;
 use App\Models\Bed;
 use App\Models\Event;
 use App\Models\Post;
+use App\Models\Promkes;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -162,6 +164,12 @@ Route::middleware(['auth'])->group(function () {
         Route::patch('/download-category/{id}', [DownloadCategoryController::class, 'update']);
         Route::delete('/download-category/{id}', [DownloadCategoryController::class, 'destroy']);
 
+        // Promkes Route
+        Route::get('/promkes', [PromkesController::class,'index'])->name('promkes.index');
+        Route::post('/promkes', [PromkesController::class,'store']);
+        Route::patch('/promkes/{id}', [PromkesController::class, 'update']);
+        Route::delete('/promkes/{id}', [PromkesController::class, 'destroy']);
+    
         // Suggestion Route
         Route::get('/suggestion', [SuggestionController::class, 'index'])->name('suggestion.index');
 
