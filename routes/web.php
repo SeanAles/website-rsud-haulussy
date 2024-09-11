@@ -73,7 +73,7 @@ Route::get('/tarif-pelayanan', function(){
     return view('visitor.fasilitas.tarif-pelayanan');
 });
 
-Route::get('/promosi-kesehatan', function(){return view('visitor.fasilitas.promosi-kesehatan');});
+Route::get('/promosi-kesehatan', [PromkesController::class, 'indexPromkes']);
 Route::get('/tata-tertib', function(){
     return view('visitor.fasilitas.tata-tertib');
 });

@@ -176,4 +176,10 @@ class PromkesController extends Controller
         return response()->json(['message' => 'Gagal Menghapus Artikel'], 401);
     }
 
+    public function indexPromkes(){
+        $promkes = Promkes::all();
+        
+        return view('visitor.fasilitas.promosi-kesehatan', ['promkes' => $promkes,]);
+    }
+
 }
