@@ -32,7 +32,17 @@
     </div>
 
     <div class="container" id="table">
-        <p class="note">*Pelayanan keperawatan dimulai sejak 08:00.</p>
+        <table class="mb-2">
+            <tr>
+                <td><p class="note">Mulai Pendaftaran </p></td>
+                <td><p class="note">: 08:00 - 11:00.</p></td>
+            </tr>
+            <tr>
+                <td><p class="note">Mulai Pelayanan </p></td>
+                <td><p class="note">: 09:00 - 14:00.</p></td>
+            </tr>
+        </table>
+    
         <table class="table table-striped table-bordered">
             <thead>
                 <tr class="tb-header">
@@ -329,6 +339,6 @@
                 </tr>
             </tbody>
         </table>
-        <p class="text-danger note-bottom"><i>*19 Februari 2024</i></p>
+        <p class="text-danger note-bottom"><i>*11 September 2024</i></p>
     </div>
 @endsection
