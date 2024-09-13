@@ -53,12 +53,12 @@ class SuggestionController extends Controller
                                         </div>
                                         <div class="form-group">
                                             <label for="message-' . $suggestion->id . '">Pesan</label>
-                                            <textarea rows="4" type="text" class="form-control" id="message-' . $suggestion->id . '" disabled>'.$suggestion->message.'
+                                            <textarea rows="4" type="text" class="form-control" id="message' . $suggestion->id . '" disabled>'.$suggestion->message.'
                                             </textarea>
                                         </div>
                                          <div class="form-group">
-                                            <label for="message-' . $suggestion->id . '">Pesan</label>
-                                            <textarea rows="4" type="text" class="form-control" id="message-' . $suggestion->id . '" disabled>'.$suggestion->hope.'
+                                            <label for="message-' . $suggestion->id . '">Harapan</label>
+                                            <textarea rows="4" type="text" class="form-control" id="hope' . $suggestion->id . '" disabled>'.$suggestion->hope.'
                                             </textarea>
                                         </div>
                                     </div>
