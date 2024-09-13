@@ -209,7 +209,7 @@
                            
                         @endif
 
-                        @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
+                        @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2 || Auth::user()->role_id === 6)
                             <li class="nav-item">
                                 <a href="/suggestion" class="nav-link">
                                     <i class="nav-icon fas  fa-lightbulb"></i>

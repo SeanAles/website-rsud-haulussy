@@ -32,6 +32,9 @@ class AuthController extends Controller
             if($user->role_id === 5){
                 return response()->json(['redirect_url' => '/news']);
             }
+            if($user->role_id === 6){
+                return response()->json(['redirect_url' => '/suggestion']);
+            }
         } 
         
         return response()->json(['message' => 'Email atau password salah'], 401);

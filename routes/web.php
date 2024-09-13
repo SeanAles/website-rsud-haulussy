@@ -169,10 +169,6 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/promkes', [PromkesController::class,'store']);
         Route::patch('/promkes/{id}', [PromkesController::class, 'update']);
         Route::delete('/promkes/{id}', [PromkesController::class, 'destroy']);
-    
-        // Suggestion Route
-        Route::get('/suggestion', [SuggestionController::class, 'index'])->name('suggestion.index');
-
     });
 
     Route::middleware('admin.bed')->group(function () {
@@ -207,6 +203,11 @@ Route::middleware(['auth'])->group(function () {
          Route::patch('/news/{id}', [NewsController::class, 'update']);
          Route::delete('/news/{id}', [NewsController::class, 'destroy']);
     });
+
+    Route::middleware('admin.pengaduan')->group(function () {
+        // Suggestion Route
+        Route::get('/suggestion', [SuggestionController::class, 'index'])->name('suggestion.index');
+   });
 
     Route::get('/logout', [AuthController::class, 'logout'])->middleware('prevent.back.history');
 });
