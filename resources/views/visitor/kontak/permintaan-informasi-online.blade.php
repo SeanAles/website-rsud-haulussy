@@ -37,7 +37,7 @@
             </div>
 
             <div class="col-lg-6 z-index-2 mb-5"><img class="w-100 rounded"
-                    src="{{ asset('visitor/assets/img/gallery/info.jpg') }}" alt="..." />
+                    src="{{ asset('visitor/assets/img/gallery/request.png') }}" alt="..." />
             </div>
 
             <div class="col-lg-6 z-index-2">

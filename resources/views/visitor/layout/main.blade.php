@@ -240,6 +240,7 @@
                             <a class="dropdown-item" href="/survei-kepuasaan-masyarakat">Survei Kepuasan Masyarakat</a>
                             <a class="dropdown-item" href="/unit-layanan-pengaduan">Unit Layanan Pengaduan</a>
                             <a class="dropdown-item" href="/kritik-saran">Kritik & Saran</a>
+                            <a class="dropdown-item" href="/permintaan-informasi-online">Permintaan Informasi Online</a>
                         </div>
                     </li>
                 </ul>
