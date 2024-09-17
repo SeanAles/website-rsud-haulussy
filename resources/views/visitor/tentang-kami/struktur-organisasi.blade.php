@@ -7,10 +7,10 @@
         <h1>Struktur Organisasi</h1>
     </div>
     <div class="container">
-        <img src="{{ asset('visitor/assets/img/diagram/Diagram Struktur Organisasi RS(16 Juni 2024).png') }}" alt=""
+        <img src="{{ asset('visitor/assets/img/diagram/Diagram visitor/assets/img/diagram/Diagram Struktur Organisasi (17 September 2024).png') }}" alt=""
             width="100%" height="100%">
         <p class="text-danger">
-            <b>*Diperbarui 01 Mei 2024</b>
+            <b>*Diperbarui 17 September 2024</b>
         </p>
     </div>
 @endsection
