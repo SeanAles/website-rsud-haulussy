@@ -12,6 +12,7 @@ use App\Http\Controllers\NoteController;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\PromkesController;
+use App\Http\Controllers\RequestOnlineInformationController;
 use App\Models\Bed;
 use App\Models\Event;
 use App\Models\Post;
@@ -109,6 +110,10 @@ Route::get('/unit-layanan-pengaduan', function(){
 // Kritik dan Saran Route
 Route::get('/kritik-saran', function(){ return view('visitor.kontak.kritik-saran');});
 Route::post('/kritik-saran', [SuggestionController::class, 'create']);
+
+// Permintaan Informasi Online Route
+Route::get('/permintaan-informasi-online', function(){ return view('visitor.kontak.permintaan-informasi-online');});
+Route::post('/permintaan-informasi-online', [RequestOnlineInformationController::class, 'create']);
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('prevent.back.history');

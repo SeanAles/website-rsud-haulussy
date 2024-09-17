@@ -1,6 +1,6 @@
 @extends('visitor.layout.main')
 
-@section('title', 'Kontak')
+@section('title', 'Permintaan Informasi Online')
 
 @section('style')
     <style>
@@ -27,7 +27,7 @@
 
 @section('content')
     <div class="text-center mb-5">
-        <h1>Kritik & Saran</h1>
+        <h1>Permintaan Informasi Online</h1>
     </div>
 
     <div class="container">
@@ -64,34 +64,29 @@
                     </div>
 
                     <div class="col-md-12">
-                        <label class="form-label visually-hidden" for="message">Pesan</label>
-                        <textarea class="form-control form-livedoc-control" id="message" name="message" style="font-style:italic"
-                            maxlength="100" placeholder="Pesan (Maksimum 100 karakter)" style="height: 250px"></textarea>
-                        <span id="messageError" class="error"></span>
+                        <label class="form-label visually-hidden" for="information">Informasi Online yang Dimintakan</label>
+                        <textarea class="form-control form-livedoc-control" id="information" name="information" style=""
+                            maxlength="300" placeholder="Permintaan Informasi Online" style="height: 250px"></textarea>
+                        <span id="informationError" class="error"></span>
                     </div>
 
                     <div class="col-md-12">
-                        <label class="form-label visually-hidden" for="hope">Pesan</label>
-                        <textarea class="form-control form-livedoc-control" id="hope" name="hope" style="font-style:italic"
-                            maxlength="100" placeholder="Harapan (Maksimum 100 karakter)" style="height: 250px"></textarea>
-                        <span id="hopeError" class="error"></span>
+                        <label class="form-label visually-hidden" for="reason">Maksud Permintaan Informasi Online</label>
+                        <textarea class="form-control form-livedoc-control" id="reason" name="reason" style=""
+                            maxlength="300" placeholder="Maksud Permintaan Informasi Online" style="height: 250px"></textarea>
+                        <span id="reasonError" class="error"></span>
                     </div>
 
                     <div class="col-12">
                         <div class="d-grid">
-                            <button id="sendSuggestionButton" class="btn btn-primary rounded-pill" type="button"
-                                onclick="sendSuggestion()">Kirim</button>
+                            <button id="sendRequestButton" class="btn btn-primary rounded-pill" type="button"
+                                onclick="sendRequest()">Kirim Permintaan</button>
                         </div>
                     </div>
 
-                    <span id="suggestionError" class="error"></span>
-                    <span id="suggestionSuccess" class="success"></span>
+                    <span id="requestError" class="error"></span>
+                    <span id="reasonSuccess" class="success"></span>
                 </form>
-
-                <div class="mt-4">
-                    <h4 class="text-danger mb-2"><b class="">Unit Pengaduan </b></h4>
-                    <h4 class="text-black text-stretch">0812 4788 6931</h4>
-                </div>
             </div>
         </div>
     </div>
@@ -119,14 +114,15 @@
             }
         }
 
-        function sendSuggestion() {
+        function sendRequest() {
             $("#nameError").hide();
             $("#emailError").hide();
             $("#phoneNumberError").hide();
-            $("#messageError").hide();
-            $("#hopeError").hide();
-            $("#suggestionError").hide();
-            $("#suggestionSuccess").hide();
+            $("#informationError").hide();
+            $("#reasonError").hide();
+
+            $("#requestError").hide();
+            $("#requestSuccess").hide();
 
             $(".error").text("");
             if ($("#name").val() === "") {
@@ -147,45 +143,46 @@
             } else if (validatePhoneNumber($("#phone_number").val())) {
                 $("#phoneNumberError").show();
                 $("#phoneNumberError").text("Format nomor HP salah");
-            } else if ($("#message").val() === "") {
-                $("#messageError").show();
-                $("#messageError").text("Pesan tidak boleh kosong");
-            } else if ($("#hope").val() === "") {
-                $("#hopeError").show();
-                $("#hopeError").text("Harapan tidak boleh kosong");
+            } else if ($("#information").val() === "") {
+                $("#informationError").show();
+                $("#informationError").text("Permintaan informasi online yang dimintakan tidak boleh kosong");
+            } else if ($("#reason").val() === "") {
+                $("#reasonError").show();
+                $("#reasonError").text("Maksud permintaan informasi online tidak boleh kosong");
             } else {
                 $("#name").prop("disabled", true);
                 $("#email").prop("disabled", true);
                 $("#phone_number").prop("disabled", true);
-                $("#message").prop("disabled", true);
-                document.getElementById("sendSuggestionButton").disabled = true;
+                $("#information").prop("disabled", true);
+                $("#reason").prop("disabled", true);
+                document.getElementById("sendRequestButton").disabled = true;
                 $.ajax({
                     type: 'POST',
-                    url: '/kritik-saran',
+                    url: '/permintaan-informasi-online',
                     data: {
                         name: $("#name").val(),
                         email: $("#email").val(),
                         phone_number: $("#phone_number").val(),
-                        message: $("#message").val(),
-                        hope: $("#hope").val(),
+                        information: $("#information").val(),
+                        reason: $("#reason").val(),
                         _token: '{{ csrf_token() }}'
                     },
                     success: function(response) {
                         if (response.success) {
-                            $("#suggestionSuccess").show();
-                            $("#suggestionSuccess").text(response.success);
+                            $("#reasonSuccess").show();
+                            $("#reasonSuccess").text(response.success);
                         }
                     },
                     error: function(xhr, status, error) {
-                        $("#suggestionError").show();
-                        $("#suggestionError").text(error);
+                        $("#requestError").show();
+                        $("#requestError").text(error);
                         
                         $("#name").prop("disabled", false);
                         $("#email").prop("disabled", false);
                         $("#phone_number").prop("disabled", false);
-                        $("#request").prop("disabled", false);
-                        $("#message").prop("disabled", false);
-                        document.getElementById("sendSuggestionButton").disabled = false;
+                        $("#information").prop("disabled", false);
+                        $("#reason").prop("disabled", false);
+                        document.getElementById("sendRequestButton").disabled = false;
                     }
                 });
             }
