@@ -53,7 +53,13 @@
             </a>
         @endforeach
         </div>
+        <div class="mt-5">
+            <p class="text-danger italic">Semua file PNPK diambil dari Website Kementrian Kesehatan</p>
+            <p class="text-black">Link : <a href="https://www.kemkes.go.id/id/media/subfolder/pedoman/pedoman-nasional-pelayanan-kedokteran-pnpk">https://www.kemkes.go.id/id/media/subfolder/pedoman/pedoman-nasional-pelayanan-kedokteran-pnpk</a></p>
+        </div>
     </div>
+
+    
    
     {{-- {{ $downloadCategories }} --}}
 
