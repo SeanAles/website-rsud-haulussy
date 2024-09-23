@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
 
-@section('title', 'Akun')
+@section('title', 'Akun User')
 
 @section('link')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -14,7 +14,7 @@
         <!-- Button trigger modal Add Account -->
         <button type="button" class="mr-1 mt-1 create btn btn-success btn-md" data-toggle="modal"
             data-target="#addAccountModal">
-            Tambahkan Akun
+            Tambahkan Akun 
         </button>
 
         <!-- Add Account -->
