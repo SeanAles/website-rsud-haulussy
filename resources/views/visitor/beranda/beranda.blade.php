@@ -57,7 +57,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="modal-body">
-                    <img src="{{ asset('visitor/assets/img/iklan/Kunjungan PAN.jpg') }}" class="img-fluid"
+                    <img src="{{ asset('visitor/assets/img/iklan/Survei Kemenkes.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
                 </div>
             </div>
