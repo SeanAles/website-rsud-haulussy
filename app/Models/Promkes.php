@@ -12,7 +12,8 @@ class Promkes extends Model
     use HasFactory;
 
     protected $fillable = [
-        "name",
+        "date_of_released",
+        "name", 
         "url",
     ];
 }
