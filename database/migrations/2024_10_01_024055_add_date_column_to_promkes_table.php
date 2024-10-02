@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('promkes', function (Blueprint $table) {
-            $table->date('date_of_released')->after('id')->nullable();
+            $table->text('date_of_released')->after('id')->nullable();
         });
     }
 
