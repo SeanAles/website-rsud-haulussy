@@ -46,7 +46,7 @@ class PromkesController extends Controller
                                     </div>
                                     <div class="modal-body">
                                     <div class="form-group">
-                                            <label for="date_of_released' . $promkes->id . '">Judul Artikel</label>
+                                            <label for="date_of_released' . $promkes->id . '">Tanggal Artikel</label>
                                             <input value="' . $promkes->date_of_released . '" type="text" class="form-control" id="date_of_released' . $promkes->id . '" disabled>
                                         </div>
                                         <div class="form-group">
