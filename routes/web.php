@@ -151,6 +151,7 @@ Route::middleware(['auth'])->group(function () {
         // Event Route
         Route::get('/event', [EventController::class,'index'])->name('event.index');
         Route::post('/event', [EventController::class,'create']);
+        Route::patch('/event/{id}', [EventController::class, 'update']);
         Route::delete('/event/{id}', [EventController::class, 'destroy']);
         Route::get('/event/{id}', [EventController::class, 'show'])->name('event.detail');
         // Event Picture Route

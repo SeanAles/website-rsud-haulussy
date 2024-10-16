@@ -68,6 +68,7 @@ class EventController extends Controller
     {
         $rules = [
             'name' => 'required',
+            'date_of_released' => 'required',
             'pictures' => 'required',
             'pictures.*' => 'mimes:jpeg,png,jpg|max:512'
         ];
@@ -88,6 +89,7 @@ class EventController extends Controller
 
         $event = Event::create([
             "name" => $request->name,
+            'date_of_released' => $request->date_of_released,
             'slug' => $slug,
         ]);
 
@@ -163,6 +165,25 @@ class EventController extends Controller
         }
 
         return view("admin.event.event-detail", ['event' => $event]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $event = Event::findOrFail($id);
+
+        $updateEvent = $event->update([
+            "name" => $request->name,
+            "date_of_released" => $request->date_of_released,
+        ]);
+
+        if ($updateEvent) {
+            $event = Event::where("id", '=' ,$id)->first();
+            return response()->json(['status' => 'success', 
+                                           'message' => 'Berhasil Mengedit Detail Kegiatan.',
+                                           'event' => $event]);
+        }
+
+        return response()->json(['message' => 'Gagal Mengedit Detail Kegiatan'], 401);
     }
 
     public function destroy($id)

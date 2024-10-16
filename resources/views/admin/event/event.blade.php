@@ -7,6 +7,8 @@
     {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet"> --}}
     <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
 @endsection
 
 @section('content')
@@ -35,6 +37,10 @@
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Nama">
                             </div>
                             <div class="form-group">
+                                <label for="date_of_released">Tanggal Kegiatan</label>
+                                <input type="text" class="date form-control" name="date_of_released" id="date_of_released" placeholder="Tanggal">
+                            </div>
+                            <div class="form-group">
                                 <label for="pictures">Gambar Kegiatan (maks: 512kb, 5 Gambar Maksimal)</label>
                                 <input type="file" name="pictures[]" id="pictures" class="pb-5 pt-3 form-control"
                                     multiple>
@@ -57,6 +63,7 @@
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>Tanggal Kegiatan</th>
                     <th>Nama Kegiatan</th>
                     <th>Action</th>
                 </tr>
@@ -68,7 +75,9 @@
 @endsection
 
 @section('script')
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -78,6 +87,9 @@
     <script src="//cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
     <script>
+        $(".date").datepicker({ 
+            dateFormat: 'dd-mm-yy' 
+        });
         $('.data-table').DataTable({
             language: {
                 "lengthMenu": "Tampilkan _MENU_ data",
@@ -112,6 +124,10 @@
                     'searchable': false
                 },
                 {
+                    data: 'date_of_released',
+                    name: 'date_of_released'
+                },
+                {
                     data: 'name',
                     name: 'name'
                 },
@@ -129,6 +145,7 @@
             event.preventDefault();
             const pictures = document.getElementById('pictures').files;
             const name = $('#name').val();
+            const date = $('#date_of_released').val();
             const maxSizeInBytes = 512 * 1024; // 512 kb
             const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
             let statusPicturesSize = false;
@@ -156,6 +173,8 @@
 
             if (name === '') {
                 toastr.error("Nama kegiatan tidak boleh kosong");
+            } else if (date === '') {
+                toastr.error("Tanggal kegiatan tidak boleh kosong");
             } else if (pictures.length <= 0) {
                 toastr.error("Gambar kegiatan tidak boleh kosong");
             } else if (statusPicturesTotal) {

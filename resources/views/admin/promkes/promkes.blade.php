@@ -276,7 +276,7 @@
         function addArtikelLuar() {
             const name = $('#name').val();
             const url = $('#url').val();
-            const date = $('#date').val();
+            const date = $('#date_of_released').val();
 
             if (date === '') {
                 toastr.error("Tanggal artikel harus diisi");
