@@ -113,33 +113,11 @@
                 </tr>
                 <tr>
                     <th scope="row">4</th>
-                    <td>Klinik Saraf</td>
-                    <td>dr. Laura Huwae, Sp.S, M.Kes</td>
-                    <td>Senin</td>
-                    <td>09.00 - selesai</td>
+                    <td>Klinik Bedah Digestive</td>
+                    <td>dr. Helfi Nikijuluw, Sp.B-KBD</td>
+                    <td>Selasa, Rabu, Jumat</td>
+                    <td>08:00 - selesai</td>
                 </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td>dr. Enseline Nikijuluw, Sp.N</td>
-                    <td>Selasa</td>
-                    <td>09.00 - selesai</td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td>dr. Enseline Nikijuluw, Sp.N</td>
-                    <td>Rabu</td>
-                    <td>09.00 - selesai</td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td>dr. Yosi Silalahi, Sp.S, M. Kes</td>
-                    <td>Kamis</td>
-                    <td>09.00 - selesai</td>
-                </tr>
-
 
                 <tr>
                     <th scope="row">5</th>
@@ -274,13 +252,37 @@
                     <td>Jumat (Imunisasi)</td>
                     <td>09.00 - selesai</td>
                 </tr>
+                
                 <tr>
                     <th scope="row">12</th>
-                    <td>Klinik Bedah Digestive</td>
-                    <td>dr. Helfi Nikijuluw, Sp.B-KBD</td>
-                    <td>Selasa, Rabu, Jumat</td>
-                    <td>08:00 - selesai</td>
+                    <td>Klinik Saraf</td>
+                    <td>dr. Laura Huwae, Sp.S, M.Kes</td>
+                    <td>Senin</td>
+                    <td>09.00 - selesai</td>
                 </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td>dr. Enseline Nikijuluw, Sp.N</td>
+                    <td>Selasa</td>
+                    <td>09.00 - selesai</td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td>dr. Enseline Nikijuluw, Sp.N</td>
+                    <td>Rabu</td>
+                    <td>09.00 - selesai</td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td>dr. Yosi Silalahi, Sp.S, M. Kes</td>
+                    <td>Kamis</td>
+                    <td>09.00 - selesai</td>
+                </tr>
+
+
                 <tr>
                     <th scope="row">13</th>
                     <td>Klinik THT</td>
