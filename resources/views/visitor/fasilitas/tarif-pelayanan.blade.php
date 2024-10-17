@@ -78,6 +78,7 @@
         <select id="pilihanGambar">
             <option value="{{ asset('visitor/assets/img/tarif/IGD.png') }}">IGD</option>
             <option value="{{ asset('visitor/assets/img/tarif/ICU.png') }}">ICU</option>
+            <option value="{{ asset('visitor/assets/img/tarif/ICCU.png') }}">ICCU</option>
             <option value="{{ asset('visitor/assets/img/tarif/Laboratorium Klinik.png') }}">Laboratorium Klinik</option>
             <option value="{{ asset('visitor/assets/img/tarif/Hemostasis.png') }}">Hemostasis</option>
             <option value="{{ asset('visitor/assets/img/tarif/Tinja.png') }}">Tinja</option>
@@ -95,7 +96,6 @@
             <option value="{{ asset('visitor/assets/img/tarif/Biopsi Khusus.png') }}">Biopsi Khusus (Hati Esofagus, Gaster  Colon Gunjal)</option>
             <option value="{{ asset('visitor/assets/img/tarif/Sitopatologi.png') }}">Sitopatologi</option>
             <option value="{{ asset('visitor/assets/img/tarif/Kultur.png') }}">Kultur</option>
-            <option value="{{ asset('visitor/assets/img/tarif/ICCU.png') }}">ICCU</option>
             <option value="{{ asset('visitor/assets/img/tarif/Radiologi.png') }}">Radiologi</option>
             <option value="{{ asset('visitor/assets/img/tarif/Kamar Operasi.png') }}">Kamar Operasi</option>
             <option value="{{ asset('visitor/assets/img/tarif/Rawat Inap.png') }}">Rawat Inap </option>
