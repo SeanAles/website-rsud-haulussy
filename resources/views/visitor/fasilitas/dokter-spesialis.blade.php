@@ -43,18 +43,18 @@
 
     <div class="container">
         <p class="text-danger">
-            <b>*Diperbarui 28 Mei 2024</b>
+            <b>*Diperbarui 01 Oktober 2024</b>
         </p>
         <div class="row justify-content-center">
             <!-- Daftar dokter dengan Bootstrap grid -->
             <div class="col-md-6 col-sm-12 col-12">
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterOO')">dr. Achmad Tuahuns,
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterOO')">dr. Achmad Tuahuns,
                     Sp.B
                 </button>
                 <div class="panel" id="DokterOO">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter OO"
                         id="doctor-image" />
-                </div>
+                </div> --}}
 
 
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterBB')">dr. Astri
@@ -129,13 +129,13 @@
                 </div>
 
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterKK')">dr. Fitri Kadarsih
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterKK')">dr. Fitri Kadarsih
                     Bandjar, Sp.KK
                 </button>
                 <div class="panel" id="DokterKK">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter KK"
                         id="doctor-image" />
-                </div>
+                </div> --}}
 
 
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterSSSS')">
@@ -250,17 +250,19 @@
                         id="doctor-image" />
                 </div>
 
+               
+            </div>
+
+            <!-- kanan -->
+            <div class="col-12 col-sm-12 col-md-6">
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterZZZ')">drg. Lina
-                    Mardiana
+                    Mardiana, M.KG
                 </button>
                 <div class="panel" id="DokterZZZ">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter F"
                         id="doctor-image" />
                 </div>
-            </div>
 
-            <!-- kanan -->
-            <div class="col-12 col-sm-12 col-md-6">
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterR')">dr. Marisa
                     Afifudin, Sp.P
                 </button>
@@ -301,13 +303,13 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterGG')">dr. Ony
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterGG')">dr. Ony
                     Wibriyono Angkejaya, Sp.An., M.Kes.
                 </button>
                 <div class="panel" id="DokterGG">
                     <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Ony Wibriyono Angkejaya, Sp.An., M.Kes..png') }}"
                         alt="Foto Dokter GG" id="doctor-image" />
-                </div>
+                </div> --}}
 
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterII')">dr. Parningotan
                     Yosi Silalahi, Sp.S.
@@ -326,7 +328,7 @@
                 </div>
 
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterBBB')">
-                    dr. Prajayanti, Palulun, SpMK
+                    dr. Prajayanti Palulun, SpMK
                 </button>
                 <div class="panel" id="DokterBBB">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter II"
@@ -349,13 +351,13 @@
                         alt="Foto Dokter C" id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterQ')">dr. Semuel
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterQ')">dr. Semuel
                     Alexander Wagiu, Sp.N
                 </button>
                 <div class="panel" id="DokterQ">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter Q"
                         id="doctor-image" />
-                </div>
+                </div> --}}
 
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterCCC')">
                     dr. Serlly Wattimury, Sp.Rad.
@@ -421,21 +423,13 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterY')">dr. Yulandri
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterY')">dr. Yulandri
                     Franeldo Uneputty, Sp.B
                 </button>
                 <div class="panel" id="DokterY">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="Foto Dokter Y"
                         id="doctor-image" />
-                </div>
-
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterP')">dr. Zulaiha
-                    Maricar Sahib
-                </button>
-                <div class="panel" id="DokterP">
-                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter P"
-                        id="doctor-image" />
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

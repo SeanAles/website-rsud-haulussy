@@ -158,11 +158,11 @@
     
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang KB Fix.png') }}"
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang KB Fix (2).png') }}"
                             class="card-img-top" alt="Kamar Bersalin">
                         <div class="card-body">
                             <h5 class="card-title">Kamar Bersalin</h5>
-                            <p class="card-text">Antonia Anaktototy, S.ST.</p>
+                            <p class="card-text">Ferawati Agustina Mularen, Amd.Keb.</p>
                         </div>
                     </div>
                 </div>
@@ -242,11 +242,11 @@
     
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Gawat Darurat Fix.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
                             class="card-img-top" alt="Instalasi Gawat Darurat">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Gawat Darurat</h5>
-                            <p class="card-text">dr. Ony Wibriyono Angkejaya, Sp.An., M.Kes.</p>
+                            <p class="card-text">-</p>
                         </div>
                     </div>
                 </div>
@@ -264,11 +264,11 @@
     
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Rawat Inap.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                             class="card-img-top" alt="Instalasi Rawat Inap">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Rawat Inap</h5>
-                            <p class="card-text">dr. Novita Elevia Nikijuluw</p>
+                            <p class="card-text">dr. Susan Timisela, Sp.PD</p>
                         </div>
                     </div>
                 </div>
@@ -345,7 +345,7 @@
                             class="card-img-top" alt="Instalasi Pemulasaran Jenazah">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Pemulasaran Jenazah</h5>
-                            <p class="card-text">Natal Librek Luarmasse</p>
+                            <p class="card-text">Ns. Natal Librek Luarmasse, S.Kep.</p>
                         </div>
                     </div>
                 </div>
@@ -417,7 +417,7 @@
                     </div>
             </div>
             <p class="text-danger text-right">
-                <b>*Diperbarui 01 Mei 2024</b>
+                <b>*Diperbarui 01 Oktober 2024</b>
             </p>
         </div>
     </div>
