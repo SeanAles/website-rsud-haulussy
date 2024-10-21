@@ -91,7 +91,7 @@
             <option value="{{ asset('visitor/assets/img/tarif/PT (Penanda Tumor).png') }}">PT (Penanda Tumor)</option>
             <option value="{{ asset('visitor/assets/img/tarif/Mikrobiologi.png') }}">Mikrobiologi</option>
             <option value="{{ asset('visitor/assets/img/tarif/Mikrobiologi Mikroskopik.png') }}">Mikrobiologi Mikroskopik</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Narkoba.png') }}">Narkoba</option>
+            <option value="{{ asset('visitor/assets/imgls/tarif/Narkoba.png') }}">Narkoba</option>
             <option value="{{ asset('visitor/assets/img/tarif/Histopatologi.png') }}">Histopatologi</option>
             <option value="{{ asset('visitor/assets/img/tarif/Biopsi Khusus.png') }}">Biopsi Khusus (Hati Esofagus, Gaster  Colon Gunjal)</option>
             <option value="{{ asset('visitor/assets/img/tarif/Sitopatologi.png') }}">Sitopatologi</option>

@@ -252,17 +252,9 @@
                     <td>Jumat (Imunisasi)</td>
                     <td>09.00 - selesai</td>
                 </tr>
-                
                 <tr>
                     <th scope="row">12</th>
                     <td>Klinik Saraf</td>
-                    <td>dr. Laura Huwae, Sp.S, M.Kes</td>
-                    <td>Senin</td>
-                    <td>09.00 - selesai</td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
                     <td>dr. Enseline Nikijuluw, Sp.N</td>
                     <td>Selasa</td>
                     <td>09.00 - selesai</td>
@@ -329,6 +321,13 @@
                     <th scope="row">18</th>
                     <td>Klinik VCT (Voluntary Counseling and Testing) / POMBO</td>
                     <td>dr. Sheila Dewanty Christin Maunuputty</td>
+                    <td>Senin & Kamis</td>
+                    <td>09:00 - Selesai</td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td>dr. Denny Jolanda, Sp.PD, FINASIM</td>
                     <td>Senin & Kamis</td>
                     <td>09:00 - Selesai</td>
                 </tr>
