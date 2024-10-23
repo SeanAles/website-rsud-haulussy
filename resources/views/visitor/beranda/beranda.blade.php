@@ -64,7 +64,7 @@
         </div>
     </div>
     <section class="w-100">
-        <h1 class="text-center pb-5">Poliklinik</h1>
+        <h1 class="text-center pb-5">Poliklinik test</h1>
 
         <div class="container">
             <h2 class="pb-3">Lantai 1</h2>
