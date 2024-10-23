@@ -682,7 +682,7 @@
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#hiv" style="font-size: 30px"><i class="fa-solid fa-bacteria"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">Klinik VCT (Voluntary Counseling and Testing) / POMBO</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Klinik Voluntary Counseling and Testing (VCT) / Care Support and Treatment (CST)</p>
                             </a>
                         </div>
                     </div>
