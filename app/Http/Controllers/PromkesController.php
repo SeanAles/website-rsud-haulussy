@@ -45,6 +45,10 @@ class PromkesController extends Controller
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                    <div class="form-group">
+                                            <label for="date_of_released' . $promkes->id . '">Tanggal Artikel</label>
+                                            <input value="' . $promkes->date_of_released . '" type="text" class="form-control" id="date_of_released' . $promkes->id . '" disabled>
+                                        </div>
                                         <div class="form-group">
                                             <label for="name' . $promkes->id . '">Judul Artikel</label>
                                             <input value="' . $promkes->name . '" type="text" class="form-control" id="name' . $promkes->id . '" disabled>
@@ -78,6 +82,11 @@ class PromkesController extends Controller
                                 <form id="formUpdateArtikelLuar' . $promkes->id . '">
                                     <div class="modal-body"> 
                                         <input type="hidden" name="_token" value="' . csrf_token() . '" /> 
+                                        <div class="form-group">
+                                            <label for="name' . $promkes->id . '">Tanggal Artikel</label>
+                                            <input value="' . $promkes->date_of_released . '" type="text" class="date-update form-control" name="date_of_released" id="date_of_released-update' . $promkes->id . '">
+                                        </div>
+
                                         <div class="form-group">
                                             <label for="name' . $promkes->id . '">Judul Artikel</label>
                                             <input value="' . $promkes->name . '" type="text" class="form-control" name="name" id="name-update' . $promkes->id . '">
@@ -138,6 +147,7 @@ class PromkesController extends Controller
     public function store(Request $request)
     {
         $promkes = Promkes::create([
+            "date_of_released" => $request->date_of_released,
             "name" => $request->name,
             "url" => $request->url,
         ]);
@@ -154,6 +164,7 @@ class PromkesController extends Controller
         $promkes = Promkes::findOrFail($id);
 
         $updateAccount = $promkes->update([
+            "date_of_released" => $request->date_of_released,
             "name" => $request->name,
             "url" => $request->url,
         ]);

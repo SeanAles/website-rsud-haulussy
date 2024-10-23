@@ -167,7 +167,7 @@
                             </li>
                         @endif
 
-                        @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
+                        @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2 || Auth::user()->role_id === 7)
                             <li class="nav-item">
                                 <a href="/event" class="nav-link">
                                     <i class="nav-icon fas fa-images"></i>
@@ -206,7 +206,6 @@
                                     </li>
                                 </ul>
                             </li>
-                           
                         @endif
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2 || Auth::user()->role_id === 6)

@@ -57,7 +57,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="modal-body">
-                    <img src="{{ asset('visitor/assets/img/iklan/Kunjungan PAN.jpg') }}" class="img-fluid"
+                    <img src="{{ asset('visitor/assets/img/iklan/Cuci Tangan Sedunia.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
                 </div>
             </div>
@@ -682,7 +682,7 @@
                         <div class="icon-box text-center">
                             <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
                                 data-bs-target="#hiv" style="font-size: 30px"><i class="fa-solid fa-bacteria"></i>
-                                <p class="fs-1 fs-xxl-2 text-center">HIV (Pulau Pombo)</p>
+                                <p class="fs-1 fs-xxl-2 text-center">Klinik VCT (Voluntary Counseling and Testing) / POMBO</p>
                             </a>
                         </div>
                     </div>

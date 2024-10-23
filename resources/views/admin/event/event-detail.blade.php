@@ -8,6 +8,8 @@
     <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('plugins/lightbox/css/lightbox.min.css') }}">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
 @endsection
 
 @section('style')
@@ -29,14 +31,22 @@
 
     <table class="table table-bordered">
         <tr>
-            <td>Nama Kegiatan</td>
-            <td><b>{{ $event->name }}</b></td>
+            <td >Nama Kegiatan</td>
+            <td><b id="name-result">{{ $event->name }}</b></td>
+        </tr>
+        <tr>
+            <td>Tanggal Kegiatan</td>
+            <td><b id="date-result">{{ $event->date_of_released }}</b></td>
         </tr>
         <tr>
             <td>Slug Gambar Kegiatan</td>
             <td><b>{{ $event->slug }}</b></td>
         </tr>
     </table>
+    <button type="button" class="mr-1 mt-1 mb-4 create btn btn-warning btn-md" data-toggle="modal"
+            data-target="#editEventDetailModal">
+            Edit Detail Kegiatan
+    </button>
 
     <div class="p-0">
         <hr>
@@ -59,6 +69,40 @@
         </table>
     </div>
 
+    <!-- Edit Event Detail -->
+    <div class="modal fade" id="editEventDetailModal" tabindex="-1" role="dialog"
+        aria-labelledby="editEventDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editEventDetailModalLabel">Tambahkan Gambar Kegiatan
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="formEditEventDetail" onsubmit="return false;">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="name">Nama Kegiatan</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Nama" value="{{ $event->name }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="date_of_released">Tanggal Kegiatan</label>
+                            <input type="text" class="date form-control" name="date_of_released" id="date_of_released" placeholder="Tanggal" value="{{ $event->date_of_released }}">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"
+                            id="cancelEditEventDetail">Batal</button>
+                        <button type="button" onclick="editEventDetail({{ $event->id }})" class="btn btn-success"
+                            id="editEventDetailButton">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Add Event Picture -->
     <div class="modal fade" id="addEventPictureModal" tabindex="-1" role="dialog"
@@ -95,7 +139,9 @@
 
 
 @section('script')
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -110,6 +156,10 @@
             wrapAround: false,
             albumLabel: "Gambar ke %1 dari %2"
         })
+
+        $(".date").datepicker({ 
+            dateFormat: 'dd-mm-yy' 
+        });
 
         $('.data-table').DataTable({
             language: {
@@ -248,6 +298,39 @@
                         $('.data-table').DataTable().ajax.reload();
                         toastr.error("Error");
                         document.getElementById("addEventPictureButton").disabled = false;
+                    }
+                });
+            }
+        }
+
+        function editEventDetail(id) {
+            const name = $('#name').val();
+            const date = $('#date_of_released').val();
+
+            if (name === '') {
+                toastr.error("Nama Kegiatan harus diisi");
+            } else if(date === ''){
+                toastr.error("Tanggal Kegiatan harus diisi");
+            } 
+            else {
+                document.getElementById("editEventDetailButton").disabled = true;
+                $.ajax({
+                    type: 'PATCH',
+                    url: '/event/' + id,
+                    data: $('#formEditEventDetail').serialize(),
+                    success: function(response) {
+                        $('#cancelEditEventDetail').click();
+                        toastr.success(response.message);
+                        $('#name-result').html(response.event.name);
+                        $('#name').val(response.event.name);
+                        $('#date-result').html(response.event.date_of_released);
+                        $('#date_of_released').val(response.event.date_of_released);
+                        document.getElementById("editEventDetailButton").disabled = false;
+                    },
+                    error: function(error) {
+                        $('#cancelEditEventDetail').click();
+                        toastr.error("Error");
+                        document.getElementById("editEventDetailButton").disabled = false;
                     }
                 });
             }

@@ -148,15 +148,6 @@ Route::middleware(['auth'])->group(function () {
             ]);
         })->middleware('prevent.back.history');
 
-        // Event Route
-        Route::get('/event', [EventController::class,'index'])->name('event.index');
-        Route::post('/event', [EventController::class,'create']);
-        Route::delete('/event/{id}', [EventController::class, 'destroy']);
-        Route::get('/event/{id}', [EventController::class, 'show'])->name('event.detail');
-        // Event Picture Route
-        Route::post('/event-picture/{id}', [EventPictureController::class, 'store']);
-        Route::delete('/event-picture/{id}', [EventPictureController::class, 'destroy']);
-
         // Download Route
         // File Route
         Route::get('/download', [DownloadController::class,'index'])->name('download.index');
@@ -174,6 +165,19 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/promkes', [PromkesController::class,'store']);
         Route::patch('/promkes/{id}', [PromkesController::class, 'update']);
         Route::delete('/promkes/{id}', [PromkesController::class, 'destroy']);
+    });
+
+    Route::middleware('admin.event')->group(function () {
+         // Event Route
+         Route::get('/event', [EventController::class,'index'])->name('event.index');
+         Route::post('/event', [EventController::class,'create']);
+         Route::patch('/event/{id}', [EventController::class, 'update']);
+         Route::delete('/event/{id}', [EventController::class, 'destroy']);
+         Route::get('/event/{id}', [EventController::class, 'show'])->name('event.detail');
+         // Event Picture Route
+         Route::post('/event-picture/{id}', [EventPictureController::class, 'store']);
+         Route::delete('/event-picture/{id}', [EventPictureController::class, 'destroy']);
+ 
     });
 
     Route::middleware('admin.bed')->group(function () {
@@ -212,7 +216,7 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware('admin.pengaduan')->group(function () {
         // Suggestion Route
         Route::get('/suggestion', [SuggestionController::class, 'index'])->name('suggestion.index');
-   });
+    });
 
     Route::get('/logout', [AuthController::class, 'logout'])->middleware('prevent.back.history');
 });

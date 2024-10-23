@@ -11,6 +11,7 @@ class Event extends Model
 
     protected $fillable = [
         "name",
+        "date_of_released",
         "slug",
     ];
 
