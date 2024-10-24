@@ -39,11 +39,11 @@
                 <img src="{{ asset('visitor/assets/img/iklan/Promkes Iklan.jpg') }}" width="100%" alt="Promkes 4"><br>
             </div>
             <div class="text-center col-12 col-sm-12 col-md-8 col-lg-4 mt-3">
-                <img src="{{ asset('visitor/assets/img/iklan/Rekrutmen IT.jpeg') }}" width="100%" alt="Promkes 7"><br>
-            </div>
-            <div class="text-center col-12 col-sm-12 col-md-8 col-lg-4 mt-3">
                 <img src="{{ asset('visitor/assets/img/iklan/Jumat Sehat (25 Oktober 2024).jpeg') }}" width="100%"
                     alt="Promkes 8"><br>
+            </div>
+            <div class="text-center col-12 col-sm-12 col-md-8 col-lg-4 mt-3">
+                <img src="{{ asset('visitor/assets/img/iklan/Rekrutmen IT.jpeg') }}" width="100%" alt="Promkes 7"><br>
             </div>
             <div class="text-center col-12 col-sm-12 col-md-8 col-lg-4 mt-3">
                 <img src="{{ asset('visitor/assets/img/iklan/Cuci Tangan Sedunia.jpg') }}" width="100%"
