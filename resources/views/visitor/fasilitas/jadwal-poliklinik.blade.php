@@ -319,7 +319,7 @@
                 </tr>
                 <tr>
                     <th scope="row">18</th>
-                    <td>Klinik VCT (Voluntary Counseling and Testing) / POMBO</td>
+                    <td>Klinik Voluntary Counseling and Testing (VCT) / Care Support and Treatment (CST)</td>
                     <td>dr. Denny Jolanda, Sp.PD, FINASIM</td>
                     <td>Senin & Kamis</td>
                     <td>09:00 - Selesai</td>
