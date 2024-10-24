@@ -253,11 +253,11 @@
     
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Rawat Jalan Fix 2.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                             class="card-img-top" alt="Instalasi Rawat Jalan">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Rawat Jalan</h5>
-                            <p class="card-text">dr. Enseline Nikijuluw, Sp.N</p>
+                            <p class="card-text">Ns. Hernita Frisnawati Purba, S.Kep., M.Kep.</p>
                         </div>
                     </div>
                 </div>
