@@ -128,10 +128,10 @@
                     <div class="card custom-card">
                         <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Pendidikan,
                             Penelitian dan Akreditasi </h3>
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi SIMRS.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
                             class="card-img-top" alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">dr. Semuel A. Wagiu, Sp. N (Plt)</h5>
+                            <h5 class="card-text text-secondary text-center">Dan Tandi, S.Kep., Ns., M.Kep.</h5>
                         </div>
                     </div>
                 </div>
