@@ -53,7 +53,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Zakaria N. Elwuar, S.Pd., MH.Kes.</h5>
+                            <h5 class="card-text text-secondary text-center">Julia Nancy de Queljoe, S.K.M</h5>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">-</h5>
+                            <h5 class="card-text text-secondary text-center">dr. Novy Riyanti, Sp.OG</h5>
                         </div>
                     </div>
                 </div>
@@ -139,10 +139,10 @@
                     <div class="card custom-card">
                         <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Penunjang
                             Diagnostik dan Logistik </h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Sri Rohani Mony, SKM, M.Kes. (Plt)</h5>
+                            <h5 class="card-text text-secondary text-center">Hendrik Birahy, S.K.M</h5>
                         </div>
                     </div>
                 </div>

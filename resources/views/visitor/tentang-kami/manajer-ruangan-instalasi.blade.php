@@ -330,7 +330,7 @@
     
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Farmasi Fix.png') }}"
                             class="card-img-top" alt="Instalasi Farmasi">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Farmasi</h5>
@@ -374,11 +374,11 @@
     
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Promkes Fix.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                             class="card-img-top" alt="Instalasi Promkes">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Promkes</h5>
-                            <p class="card-text">Violend H. Wattimury, S.K.M., M.Kes.</p>
+                            <p class="card-text">Ns. Selvi Jaga, S.Kep</p>
                         </div>
                     </div>
                 </div>
