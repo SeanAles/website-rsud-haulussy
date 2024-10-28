@@ -50,7 +50,7 @@
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
                         <h3 class="card-title text-center pt-3">Subkoordinator <span><br>Umum dan Humas</span></h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Julia Nancy de Queljoe, S.K.M</h5>
@@ -63,7 +63,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Janiba Marasabessy, SKM</h5>
+                            <h5 class="card-text text-secondary text-center">Janiba Marasabessy, S.K.M</h5>
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Bernadetta Rosianti, SKM, M.Kes.</h5>
+                            <h5 class="card-text text-secondary text-center">Bernadetta Rosianti, S.K.M, M.Kes.</h5>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Sri Rohani Mony, SKM, M.Kes.</h5>
+                            <h5 class="card-text text-secondary text-center">Sri Rohani Mony, S.K.M, M.Kes.</h5>
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
                         <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Keuangan </h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
                             class="card-img-top" alt="IGD">
                         <div class="card-body">
                             <h5 class="card-text text-secondary text-center">Rio Talama, S.E., Ak. M.Si. CA.</h5>
@@ -188,7 +188,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                             class="card-img-top" alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Selvi Jaga, S.Kep., Ns.</h5>
+                            <h5 class="card-text text-secondary text-center">Meggy Roselin Oktavia Tuhumena, S.kep., Ns.</h5>
                         </div>
                     </div>
                 </div>
@@ -210,7 +210,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                             class="card-img-top" alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Suci Diliyanti, S.Kep., Ns.</h5>
+                            <h5 class="card-text text-secondary text-center">Mariyana Katjong, S.Kep., Ns.</h5>
                         </div>
                     </div>
                 </div>
@@ -221,7 +221,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
                             class="card-img-top" alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Dan Tandi, S.Kep., Ns., M.Kep.</h5>
+                            <h5 class="card-text text-secondary text-center">Zakaria N. Elwuar, S.Pd., M.H.Kes</h5>
                         </div>
                     </div>
                 </div>
@@ -250,10 +250,10 @@
                     <div class="card custom-card">
                         <h3 style="height: 120px" class="card-title text-center pt-3">Subkoordinator <br>Penunjang
                             Logistik</h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
                             class="card-img-top" alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Rosalinda Latuputty, AMG</h5>
+                            <h5 class="card-text text-secondary text-center">Johanes N. Urlialy, S.K.M</h5>
                         </div>
                     </div>
                 </div>
@@ -264,7 +264,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                             class="card-img-top" alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Jeany C. Wattimena, SKM, M.Epid., Ph.D</h5>
+                            <h5 class="card-text text-secondary text-center">Melsa Palijama, S.E., M.Si.</h5>
                         </div>
                     </div>
                 </div>
