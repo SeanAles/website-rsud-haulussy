@@ -237,7 +237,7 @@
                         $('.data-table').DataTable().ajax.reload();
                         toastr.success(response.message);
                         $('#name').val('');
-                        $('#url').val('');
+                        $('#price').val('');
                         document.getElementById("addTreatmentButton").disabled = false;
                     },
                     error: function(error) {
