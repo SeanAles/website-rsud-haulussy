@@ -9,10 +9,12 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventPictureController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\PromkesController;
 use App\Http\Controllers\RequestOnlineInformationController;
+use App\Http\Controllers\TreatmentController;
 use App\Models\Bed;
 use App\Models\Event;
 use App\Models\Post;
@@ -165,6 +167,18 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/promkes', [PromkesController::class,'store']);
         Route::patch('/promkes/{id}', [PromkesController::class, 'update']);
         Route::delete('/promkes/{id}', [PromkesController::class, 'destroy']);
+
+        // Tarif Route
+        // Room Route
+        Route::get('/room', [RoomController::class,'index'])->name('room.index');
+        Route::post('/room', [RoomController::class,'store']);
+        Route::patch('/room/{id}', [RoomController::class, 'update']);
+
+        // Treatment Route
+        Route::get('/treatment', [TreatmentController::class,'index'])->name('treatment.index');
+        Route::post('/treatment', [TreatmentController::class,'store']);
+        Route::patch('/treatment/{id}', [TreatmentController::class, 'update']);
+        Route::delete('/treatment/{id}', [TreatmentController::class, 'destroy']);
     });
 
     Route::middleware('admin.event')->group(function () {

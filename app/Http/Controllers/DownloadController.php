@@ -48,7 +48,7 @@ class DownloadController extends Controller
                             </div>
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="detailSuggestionModalLabel">Lihat File | 
+                                        <h5 class="modal-title" id="detailDownloadModalLabel">Lihat File | 
                                             <b>' . $download->id . '</b>
                                         </h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -177,13 +177,13 @@ class DownloadController extends Controller
     {
         $download = Download::findOrFail($id);
 
-        $updateAccount = $download->update([
+        $updateDownload = $download->update([
             "name" => $request->name,
             "url" => $request->url,
             "download_category_id" => $request->download_category_id,
         ]);
 
-        if ($updateAccount) {
+        if ($updateDownload) {
             return response()->json(['status' => 'success', 'message' => 'Berhasil Mengedit File.']);
         }
 

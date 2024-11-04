@@ -181,6 +181,36 @@
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-money-bill"></i>
+                                    <p>
+                                        Tarif
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview pl-3">
+                                    <li class="nav-item">
+                                        <a href="/room" class="nav-link">
+                                            <i class="nav-icon fas fa-home"></i>
+                                            <p>
+                                                Ruangan
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/treatment" class="nav-link">
+                                            <i class="nav-icon fas fa-notes-medical"></i>
+                                            <p>
+                                                Tindakan
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
+
+                        @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-folder"></i>
                                     <p>
                                         Download
