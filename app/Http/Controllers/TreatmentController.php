@@ -159,7 +159,7 @@ class TreatmentController extends Controller
 
     public function indexTreatment(){
         $rooms = Room::all();
-        $treatments = Treatment::where('room_id', '=', '5')->get();
+        $treatments = Treatment::where('room_id', '=', '1')->get();
 
         return view('visitor.fasilitas.tarif-pelayanan', ['rooms' => $rooms, 'treatments' => $treatments]);
     }
