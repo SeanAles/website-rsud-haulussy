@@ -72,9 +72,8 @@ Route::get('/medical-check-up', function(){
     return view('visitor.maintenance.under-construction');
 });
 Route::get('/ketersediaan-tempat-tidur', [BedController::class, 'indexBed']);
-Route::get('/tarif-pelayanan', function(){
-    return view('visitor.fasilitas.tarif-pelayanan');
-});
+Route::get('/tarif-pelayanan', [TreatmentController::class, 'indexTreatment']);
+Route::get('/tarif-pelayanan/{id}', [TreatmentController::class, 'showTreatment']);
 
 Route::get('/promosi-kesehatan', [PromkesController::class, 'indexPromkes']);
 Route::get('/tata-tertib', function(){

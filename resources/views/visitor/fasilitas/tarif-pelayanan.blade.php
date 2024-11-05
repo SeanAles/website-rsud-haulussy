@@ -3,148 +3,98 @@
 @section('title', 'Tarif Pelayanan')
 
 @section('style')
-    <style>
-        #table {
-            z-index: 1;
-            background-color: white;
-            padding: 0;
-        }
-
-        .witdh-fit {
-            white-space: nowrap;
-            width: 1%;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        #pilihanGambar {
-            width: 90%;
-            /* Default width for small screens */
-            height: 60px;
-            /* Adjust the height as needed */
-            font-size: 16px;
-            /* Adjust the font size as needed */
-            background-color: #f0f0f0;
-            /* Background color of the dropdown */
-            color: #333;
-            /* Text color */
-            border: 2px solid #ccc;
-            /* Border color and size */
-            border-radius: 5px;
-            /* Rounded corners */
-            padding: 5px;
-            /* Padding inside the dropdown */
-            margin: 0 auto;
-            /* Center the dropdown */
-        }
-
-        #pilihanGambar option {
-            background-color: #fff;
-            /* Background color of options */
-            color: #333;
-            /* Text color of options */
-        }
-
-        #displayedImage {
-            width: 90%;
-            transition: opacity 0.5s ease-in-out; /* Transition effect */
-            opacity: 0; /* Start with the image hidden */
-            /* Default width for small screens */
-        }
-
-        @media (min-width: 768px) {
-            #pilihanGambar {
-                width: 20%;
-                /* Width for medium and large screens */
-            }
-
-            #displayedImage {
-                width: 35%;
-                /* Width for larger screens */
-            }
-        }
-    </style>
+<style>
+   /* Styling untuk select element */
+   select {
+      width: auto;           
+      min-width: 150px;      
+      padding: 15px 20px;   
+      font-size: 16px;     
+      background-color: white; 
+      color: #333;           
+      border: 2px solid #ccc;
+      border-radius: 10px;   
+      cursor: pointer;     
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+</style>
 @endsection
 
 @section('content')
     <div class="text-center mb-5">
         <h1>Tarif Pelayanan</h1>
-        <p class="text-danger">(Berdasarkan Perda Maluku No. 2 Tahun 2024 Tentang Pajak Daerah dan Retribusi Daerah)</p>
     </div>
-
-    <div class="text-center">
-        <select id="pilihanGambar">
-            <option value="{{ asset('visitor/assets/img/tarif/IGD.png') }}">IGD</option>
-            <option value="{{ asset('visitor/assets/img/tarif/ICU.png') }}">ICU</option>
-            <option value="{{ asset('visitor/assets/img/tarif/ICCU.png') }}">ICCU</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Laboratorium Klinik.png') }}">Laboratorium Klinik</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Hemostasis.png') }}">Hemostasis</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Tinja.png') }}">Tinja</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Fungsi Ginjal.png') }}">Fungsi Ginjal</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Profil Lipid.png') }}">Profil Lipid</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Glukosa.png') }}">Glukosa</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Jantung.png') }}">Jantung</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Imunoserologi.png') }}">Imunoserologi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Imunologi Otomatik.png') }}">Imunologi Otomatik</option>
-            <option value="{{ asset('visitor/assets/img/tarif/PT (Penanda Tumor).png') }}">PT (Penanda Tumor)</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Mikrobiologi.png') }}">Mikrobiologi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Mikrobiologi Mikroskopik.png') }}">Mikrobiologi Mikroskopik</option>
-            <option value="{{ asset('visitor/assets/imgls/tarif/Narkoba.png') }}">Narkoba</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Histopatologi.png') }}">Histopatologi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Biopsi Khusus.png') }}">Biopsi Khusus (Hati Esofagus, Gaster  Colon Gunjal)</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Sitopatologi.png') }}">Sitopatologi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Kultur.png') }}">Kultur</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Radiologi.png') }}">Radiologi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Kamar Operasi.png') }}">Kamar Operasi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Rawat Inap.png') }}">Rawat Inap </option>
-            <option value="{{ asset('visitor/assets/img/tarif/Pemeriksaan Dokter.png') }}">Pemeriksaan Dokter/Visite</option>
-            <option value="{{ asset('visitor/assets/img/tarif/VIP Kamar Khusus.png') }}">VIP Kamar Khusus</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Ruangan Bedah.png') }}">Ruangan Bedah</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Ruangan Anak.png') }}">Ruangan Anak</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Tindakan Obstetri Ginekologi.png') }}">Tindakan Obstetri Ginekologi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Perinatologi.png') }}">Perinatologi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Neonatologi.png') }}">Neonatologi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Poliklinik.png') }}">Poliklinik</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Klinik Paru New.png') }}">Klinik Paru</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Klinik Jantung.png') }}">Klinik Jantung</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Kinik Anak New.png') }}">Klinik Anak</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Klinik Mata.png') }}">Klinik Mata</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Fisioterapi.png') }}">Fisioterapi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/EMG.png') }}">EMG</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Klinik Obstetri Ginekologi.png') }}">Klinik Obstetri Ginekologi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Gizi.png') }}">Gizi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Klinik THT.png') }}">Klinik THT</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Klinik Kulit Kelamin.png') }}">Klinik Kulit Kelamin</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Tindakan Neurologi.png') }}">Tindakan Neurologi</option>
-            <option value="{{ asset('visitor/assets/img/tarif/CT Scan.png') }}">CT Scan</option>
-            <option value="{{ asset('visitor/assets/img/tarif/Ambulans.png') }}">Ambulans</option>
+    <div class="container d-flex justify-content-center">
+        <select id="room_id">
+          @foreach ($rooms as $room)
+            <option value="{{ $room->id }}">{{ $room->name }}</option>
+          @endforeach
         </select>
-        <br><br>
-        <img id="displayedImage" src="{{ asset('visitor/assets/img/tarif/IGD.png') }}" alt="Medical Service Image">
+    </div>
+    <div class="container col-10 col-sm-10 col-md-8 col-lg-6 mt-4" id="table">
+        <table id="treatment-table" class="table table-bordered table-striped">
+            <thead>
+                <tr style="color: white; background-color: #283779">
+                    <th>No.</th>
+                    <th>Nama Tindakan</th>
+                    <th>Tarif</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($treatments as $treatment)
+                    <tr class="text-black">
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $treatment->name }}</td>
+                        <td class="idr">{{ $treatment->price }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 @endsection
 
 @section('script')
-    <script>
-        document.getElementById("pilihanGambar").addEventListener("change", function() {
-            var selectedImageURL = this.value; // Mengambil URL gambar dari nilai dropdown yang dipilih
-            var imgElement = document.getElementById("displayedImage");
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Function to format numbers to IDR (without "Rp" and commas)
+    function formatIDR(amount) {
+        return amount.toLocaleString('id-ID'); // format with no currency symbol, only the number
+    }
 
-            // Fade out the image
-            imgElement.style.opacity = 0;
-
-            setTimeout(function() {
-                imgElement.src = selectedImageURL;
-                imgElement.style.opacity = 1;
-            }, 500); // Match this duration with the CSS transition duration
+    // Function to apply IDR formatting to all td elements with class "idr"
+    window.onload = function() {
+        let tdElements = document.querySelectorAll('td.idr');
+        tdElements.forEach(function(td) {
+            let value = parseFloat(td.textContent);
+            if (!isNaN(value)) {
+                td.textContent = formatIDR(value);
+            }
         });
+    };
 
+    $('#room_id').on('change', function() {
+        var room_id = $(this).val();  // Ambil nilai yang dipilih dari dropdown
 
-        // Initial load, fade in the image
-        window.onload = function() {
-            document.getElementById("displayedImage").style.opacity = 1;
-        };
-    </script>
+        // Kirim permintaan AJAX ke server
+        $.ajax({
+            url: '/tarif-pelayanan/'+room_id,  // URL endpoint yang akan dipanggil
+            method: 'GET',
+            success: function(response) {
+                $('#treatment-table tbody').remove();
+                var newTbody = $('<tbody></tbody>');
+                response.treatments.forEach(function(treatment, index) {
+                    var newRow = $('<tr class="text-black"</tr>');
+                    newRow.append('<td>' + (index + 1) + '</td>');
+                    newRow.append('<td>' + treatment.name + '</td>');
+                    newRow.append('<td class="idr">' + treatment.price + '</td>');
+                    newTbody.append(newRow);
+                });
+                $('#treatment-table').append(newTbody);
+            },
+            error: function(xhr, status, error) {
+                console.error("Terjadi kesalahan: " + error);
+            }
+        });
+    });
+</script>
 @endsection

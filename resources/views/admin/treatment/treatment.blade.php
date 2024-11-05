@@ -150,11 +150,6 @@
                 order: [
                     [1, "asc"],
                 ],
-                columnDefs: [{
-                    targets: [0, 2],
-                    orderable: false,
-                    searchable: false
-                }],
                 processing: true,
                 serverSide: true,
                 responsive: true,

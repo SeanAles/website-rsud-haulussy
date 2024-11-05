@@ -156,4 +156,17 @@ class TreatmentController extends Controller
 
         return response()->json(['message' => 'Gagal Menghapus Tindakan'], 401);
     }
+
+    public function indexTreatment(){
+        $rooms = Room::all();
+        $treatments = Treatment::where('room_id', '=', '5')->get();
+
+        return view('visitor.fasilitas.tarif-pelayanan', ['rooms' => $rooms, 'treatments' => $treatments]);
+    }
+
+    public function showTreatment($id){
+        $treatments = Treatment::where('room_id', '=', $id)->get();
+
+        return response()->json(['treatments' => $treatments]);
+    }
 }
