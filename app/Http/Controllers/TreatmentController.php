@@ -57,7 +57,7 @@ class TreatmentController extends Controller
 
                                         <div class="form-group">
                                             <label for="price' . $treatment->id . '">Harga</label>
-                                            <input value="' . $treatment->price . '" type="number" class="form-control" name="price" id="price-update' . $treatment->id . '">
+                                            <input value="' . $treatment->price . '" type="text" class="form-control" name="price" id="price-update' . $treatment->id . '">
                                         </div>
                                         <div class="form group">
                                             <label for="room_id' . $treatment->id . '">Ruangan</label>

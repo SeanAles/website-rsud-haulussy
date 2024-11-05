@@ -45,7 +45,7 @@
                     <tr class="text-black">
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $treatment->name }}</td>
-                        <td class="idr">{{ $treatment->price }}</td>
+                        <td>{{ $treatment->price }}</td>
                     </tr>
                 @endforeach
             </tbody>
@@ -56,22 +56,6 @@
 @section('script')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    // Function to format numbers to IDR (without "Rp" and commas)
-    function formatIDR(amount) {
-        return amount.toLocaleString('id-ID'); // format with no currency symbol, only the number
-    }
-
-    // Function to apply IDR formatting to all td elements with class "idr"
-    window.onload = function() {
-        let tdElements = document.querySelectorAll('td.idr');
-        tdElements.forEach(function(td) {
-            let value = parseFloat(td.textContent);
-            if (!isNaN(value)) {
-                td.textContent = formatIDR(value);
-            }
-        });
-    };
-
     $('#room_id').on('change', function() {
         var room_id = $(this).val();  // Ambil nilai yang dipilih dari dropdown
 
@@ -86,7 +70,7 @@
                     var newRow = $('<tr class="text-black"</tr>');
                     newRow.append('<td>' + (index + 1) + '</td>');
                     newRow.append('<td>' + treatment.name + '</td>');
-                    newRow.append('<td class="idr">' + treatment.price + '</td>');
+                    newRow.append('<td>' + treatment.price + '</td>');
                     newTbody.append(newRow);
                 });
                 $('#treatment-table').append(newTbody);

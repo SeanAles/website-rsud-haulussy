@@ -77,7 +77,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="url">Harga</label>
-                                <input type="number" class="form-control" name="price" id="price" placeholder="Masukkan harga...">
+                                <input type="text" class="form-control" name="price" id="price" placeholder="Masukkan harga...">
                             </div>
                             <div class="form group">
                                 <label for="room_id">Ruangan</label>
