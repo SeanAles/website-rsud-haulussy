@@ -260,7 +260,7 @@
                 <div class="row min-vh-xl-100 min-vh-xxl-25">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 order-0 order-lg-1">
                         <img class="p-0 img-fluid" width="90%"
-                            src="{{ asset('visitor/assets/img/gallery/cover.png') }}" alt="hero-header" />
+                            src="{{ asset('visitor/assets/img/gallery/cover baru.png') }}" alt="hero-header" />
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-lg-start text-main large-top-margin">
                         <b>
