@@ -46,7 +46,7 @@
                     <tr class="text-black">
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $treatment->name }}</td>
-                        <td style="text-align: right;">{{ $treatment->price }}</td>
+                        <td>{{ $treatment->price }}</td>
                     </tr>
                 @endforeach
             </tbody>
