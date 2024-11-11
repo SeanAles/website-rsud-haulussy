@@ -103,7 +103,7 @@
         }
 
         #preloader {
-            background: #fff url(/visitor/assets/img/gif/tiktok-dualball.gif) no-repeat center center;
+            background: #fff url(/visitor/assets/img/gif/hourglass.gif) no-repeat center center;
             background-size: 5%;
             height: 100vh;
             width: 100%;
