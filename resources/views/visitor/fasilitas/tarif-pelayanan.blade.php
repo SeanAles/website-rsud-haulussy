@@ -45,7 +45,7 @@
                     <tr class="text-black">
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $treatment->name }}</td>
-                        <td>{{ $treatment->price }}</td>
+                        <td style="text-align: right;">{{ $treatment->price }}</td>
                     </tr>
                 @endforeach
             </tbody>
@@ -55,7 +55,7 @@
 
 @section('script')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
+<script>git 
     $('#room_id').on('change', function() {
         var room_id = $(this).val();  // Ambil nilai yang dipilih dari dropdown
 
