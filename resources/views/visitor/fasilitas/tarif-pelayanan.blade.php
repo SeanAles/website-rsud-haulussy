@@ -23,7 +23,8 @@
 @section('content')
     <div class="text-center mb-5">
         <h1>Tarif Pelayanan</h1>
-        <p>Perda Nomor 2 Tahun 2024 </p>
+        <p>Perda Provinsi Maluku Nomor 2
+            tahun 2024 tentang Pajak Daerah dan Retribusi Daerah </p>
     </div>
     <div class="container d-flex justify-content-center">
         <select id="room_id">
