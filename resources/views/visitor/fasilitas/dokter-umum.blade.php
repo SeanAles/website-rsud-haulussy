@@ -46,7 +46,7 @@
     <!-- kiri -->
     <div class="container">
         <p class="text-danger text-right">
-            <b>*Diperbarui 1 Mei 2024</b>
+            <b>*Diperbarui 18 November 2024</b>
         </p>
         <div class="row justify-content-center">
             <!-- Daftar dokter dengan Bootstrap grid -->
@@ -59,9 +59,9 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drEbramNainggolan')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drEbramNainggolan')">
                     dr. Ebram Nainggolan
-                </button>
+                </button> --}}
                 <div class="panel" id="drEbramNainggolan">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="dr. Ebram Nainggolan"
                         id="doctor-image" />
@@ -131,25 +131,25 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drMeigyNitalessy')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drMeigyNitalessy')">
                     dr. Meigy Nitalessy
-                </button>
+                </button> --}}
                 <div class="panel" id="drMeigyNitalessy">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Meigy Nitalessy"
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drNadyaNovitaManalu')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drNadyaNovitaManalu')">
                     dr. Nadya Novita Manalu
-                </button>
+                </button> --}}
                 <div class="panel" id="drNadyaNovitaManalu">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Nadya Novita Manalu"
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drNazaruddinMSc')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drNazaruddinMSc')">
                     dr. Nazaruddin, M.Sc
-                </button>
+                </button> --}}
                 <div class="panel" id="drNazaruddinMSc">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Nazaruddin, M.Sc"
                         id="doctor-image" />
@@ -217,9 +217,9 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drSetiawanWinarso')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drSetiawanWinarso')">
                     dr. Setiawan Winarso
-                </button>
+                </button> --}}
                 <div class="panel" id="drSetiawanWinarso">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Setiawan Winarso"
                         id="doctor-image" />
@@ -233,9 +233,9 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drSusiSaptawarni')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drSusiSaptawarni')">
                     dr. Susi Saptawarni
-                </button>
+                </button> --}}
                 <div class="panel" id="drSusiSaptawarni">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Susi Saptawarni"
                         id="doctor-image" />
@@ -249,9 +249,9 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drNovitaEleviaNikijuluw')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drNovitaEleviaNikijuluw')">
                     dr. Novita Elevia Nikijuluw
-                </button>
+                </button> --}}
                 <div class="panel" id="drNovitaEleviaNikijuluw">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Novita Elevia Nikijuluw"
                         id="doctor-image" />
