@@ -67,9 +67,9 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drFelmiDelima')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drFelmiDelima')">
                     dr. Felmi Delima
-                </button>
+                </button> --}}
                 <div class="panel" id="drFelmiDelima">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Felmi Delima"
                         id="doctor-image" />
@@ -83,9 +83,9 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drFrangkySukwendy')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drFrangkySukwendy')">
                     dr. Frangky Sukwendy
-                </button>
+                </button> --}}
                 <div class="panel" id="drFrangkySukwendy">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="dr. Frangky Sukwendy"
                         id="doctor-image" />
@@ -107,9 +107,9 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drLeoniAvicaHuningkor')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drLeoniAvicaHuningkor')">
                     dr. Leoni Avica Huningkor
-                </button>
+                </button> --}}
                 <div class="panel" id="drLeoniAvicaHuningkor">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Leoni Avica Huningkor"
                         id="doctor-image" />
@@ -123,9 +123,9 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drMarischaTitaThiono')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drMarischaTitaThiono')">
                     dr. Marischa Tita Thiono
-                </button>
+                </button> --}}
                 <div class="panel" id="drMarischaTitaThiono">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="dr. Marischa Tita Thiono"
                         id="doctor-image" />
@@ -265,9 +265,9 @@
                         id="doctor-image" />
                 </div>
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drYehielFlaviusKabanga')">
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('drYehielFlaviusKabanga')">
                     dr. Yehiel Flavius Kabanga
-                </button>
+                </button> --}}
                 <div class="panel" id="drYehielFlaviusKabanga">
                     <img src="{{ asset('visitor/assets/img/avatar/avatar_laki.png') }}" alt="dr. Yehiel Flavius Kabanga"
                         id="doctor-image" />
