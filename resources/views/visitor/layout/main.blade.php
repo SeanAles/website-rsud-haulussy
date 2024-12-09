@@ -82,7 +82,7 @@
         }
 
         #preloader {
-            background: #fff url(/visitor/assets/img/gif/infinit.gif) no-repeat center center;
+            background: #fff url(/visitor/assets/img/gif/loader.gif) no-repeat center center;
             background-size: 15%;
             height: 100vh;
             width: 100%;
@@ -99,11 +99,11 @@
     @media (min-width: 991px) {
         .nav-item {
             margin-bottom: 20px;
-            margin-right: 0px;
+            margin-right: 0px; 
         }
 
         #preloader {
-            background: #fff url(/visitor/assets/img/gif/infinit.gif) no-repeat center center;
+            background: #fff url(/visitor/assets/img/gif/loader.gif) no-repeat center center;
             background-size: 5%;
             height: 100vh;
             width: 100%;
