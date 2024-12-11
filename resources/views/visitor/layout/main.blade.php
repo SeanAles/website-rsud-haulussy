@@ -463,11 +463,11 @@
     @yield('script')
 
     <!-- Script JavaScript untuk menampilkan modal saat halaman dimuat -->
-    <!-- <script>
+     <script>
         $(document).ready(function() {
             $("#myModal").modal("show");
         });
-    </script> -->
+    </script> 
 
 
 </body>
