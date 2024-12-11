@@ -1051,10 +1051,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script>
         $(document).ready(function() {
-            // $('#gambarModal').modal('show');
-            // $('.close-btn').click(function() {
-            //     $('#gambarModal').modal('hide');
-            // });
+            $('#gambarModal').modal('show');
+            $('.close-btn').click(function() {
+                $('#gambarModal').modal('hide');
+            });
         });
 
         function validateEmail(email) {
