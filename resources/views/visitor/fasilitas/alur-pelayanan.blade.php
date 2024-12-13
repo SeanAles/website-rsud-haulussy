@@ -51,6 +51,12 @@
                         alt="Alur Pengaduan Pasien">
                 </div>
             </div>
+            <div class="col-12 col-sm-12 col-md-11 col-lg-9 col-xl-7">
+                <div class="mb-5 square-image">
+                    <img width="100%" src="{{ asset('visitor/assets/img/alur-pelayanan/kamar jenazah.png') }}"
+                        alt="Alur Pengaduan Pasien">
+                </div>
+            </div>
             <p class="text-danger">
                 <b>*Diperbarui 15 Juli 2024</b>
             </p>
