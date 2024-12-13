@@ -58,7 +58,7 @@
                 </div>
             </div>
             <p class="text-danger">
-                <b>*Diperbarui 15 Juli 2024</b>
+                <b>*Diperbarui 13 Desember 2024</b>
             </p>
         </div>
     </div>
