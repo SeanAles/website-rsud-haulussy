@@ -57,7 +57,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="modal-body">
-                    <img src="{{ asset('visitor/assets/img/iklan/piagam.jpg') }}" class="img-fluid"
+                    <img src="{{ asset('visitor/assets/img/iklan/natal r.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
                 </div>
             </div>
@@ -1051,10 +1051,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script>
         $(document).ready(function() {
-            $('#gambarModal').modal('show');
-            $('.close-btn').click(function() {
-                $('#gambarModal').modal('hide');
-            });
+            // $('#gambarModal').modal('show');
+            // $('.close-btn').click(function() {
+            //     $('#gambarModal').modal('hide');
+            // });
         });
 
         function validateEmail(email) {

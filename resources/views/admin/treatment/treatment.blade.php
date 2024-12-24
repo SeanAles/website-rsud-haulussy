@@ -79,7 +79,7 @@
                                 <label for="url">Harga</label>
                                 <input type="text" class="form-control" name="price" id="price" placeholder="Masukkan harga...">
                             </div>
-                            <div class="form group">
+                            <div class="form group">        
                                 <label for="room_id">Ruangan</label>
                                 <select class="custom-select" id="room_id" name="room_id">
                                     @foreach ($rooms as $room)
