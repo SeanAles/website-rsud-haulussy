@@ -450,11 +450,11 @@
     <script>
         var loader = document.querySelector("#preloader");
 
-        // window.addEventListener("load", function() {
-        //     setTimeout(function() {
-        //         loader.style.display = 'none';
-        //     }, 1000);
-        // });
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                loader.style.display = 'none';
+            }, 1000);
+        });
 
         setTimeout(function() {
             console.log("Executed after 1 second");
