@@ -3,15 +3,32 @@
 @section('title', 'Profil Rumah Sakit')
 
 @section('style')
+    <style>
+        .custom-card {
+            margin-bottom: 20px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+            transition: all 0.6s ease;
+        }
 
+        .custom-card:hover {
+            box-shadow: rgba(150, 204, 223, 0.199) -10px 10px, rgba(150, 204, 223, 0.19) -20px 20px;
+        }
+    </style>
 @endsection
 
 @section('content')
     <div class="text-center mb-5">
         <h1>Profil Rumah Sakit</h1>
     </div>
-    <div class="container">
+    <div class="container mb-5">
         <div class="row align-items-center">
+            {{-- <iframe width="560" height="815" src="https://www.youtube.com/embed/2esDJQmP2sE?si=PH5RY-ruosKuwY4E" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+            </iframe> --}}
             <video controls autoplay controlsList="nodownload">
                 <!-- Replace "video.mp4" with the actual path to your video file -->
                 <source src="{{ asset('visitor/assets/video/Video Profil Rumah Sakit.mp4') }}" type="video/mp4">
@@ -22,4 +39,43 @@
             </video>
         </div>
     </div>
+
+    <div class="text-center mb-5">
+        <h1>PRESTASI RUMAH SAKIT</h1>
+    </div>
+    <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+            <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                <div class="card custom-card">
+                    <h3 class="card-title text-center pt-3"> PIAGAM <span><br> PENGHARGAAN COVID</span>
+                    </h3>
+                    <div class="base m-3">
+                        <img src="{{ asset('visitor/assets/img/sertifikat/piagam_covid.png') }}" class="card-img-top"
+                            alt="IGD">
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                <div class="card custom-card">
+                    <h3 class="card-title text-center pt-3"> SERTIFIKAT <span><br> AKREDITASI RUMAH SAKIT</span>
+                    </h3>
+                    <div class="base m-3">
+                        <img src="{{ asset('visitor/assets/img/sertifikat/sertifikat_akreditasi.png') }}" class="card-img-top"
+                        alt="IGD">
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                <div class="card custom-card">
+                    <h3 class="card-title text-center pt-3"> PIAGAM <span><br> PENGHARGAAN OMBUDSMAN</span>
+                    </h3>
+                    <div class="base m-3">
+                        <img src="{{ asset('visitor/assets/img/sertifikat/piagam_ombudsman.png') }}" class="card-img-top"
+                            alt="IGD">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
