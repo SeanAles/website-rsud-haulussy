@@ -33,14 +33,14 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen>
             </iframe> --}}
-            {{-- <video controls autoplay controlsList="nodownload">
+            <video controls autoplay controlsList="nodownload">
                 <!-- Replace "video.mp4" with the actual path to your video file -->
                 <source src="{{ asset('visitor/assets/video/Video Profil Rumah Sakit.mp4') }}" type="video/mp4" >
                 <!-- Provide alternative sources for different formats if necessary -->
                 <!-- <source src="video.webm" type="video/webm"> -->
                 <!-- <source src="video.ogg" type="video/ogg"> -->
                 Your browser does not support the video tag.
-            </video> --}}
+            </video>
         </div>
     </div>
 
