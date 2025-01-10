@@ -82,7 +82,7 @@
         }
 
         #preloader {
-            background: #fff url(/visitor/assets/img/gif/baru.gif) no-repeat center center;
+            background: #fff url(/visitor/assets/img/gif/tiktok-dualball.gif) no-repeat center center;
             background-size: 15%;
             height: 100vh;
             width: 100%;
@@ -103,7 +103,7 @@
         }
 
         #preloader {
-            background: #fff url(/visitor/assets/img/gif/baru.gif) no-repeat center center;
+            background: #fff url(/visitor/assets/img/gif/tiktok-dualball.gif) no-repeat center center;
             background-size: 5%;
             height: 100vh;
             width: 100%;
@@ -321,6 +321,9 @@
                             <li class="lh-lg"><a class="footer-link" target="_blank"
                                     href="https://rstambon.co.id">RS Tk.II Prof. dr. J. A. Latumeten</a>
                             </li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                href="https://rshative.org/">RS Hative</a>
+                        </li>
                         </ul>
                     </div>
                     <div class="col-12 col-sm-12 col-lg-3 mb-3 order-3 order-sm-2">

@@ -2,6 +2,10 @@
 
 @section('title', 'Profil Rumah Sakit')
 
+@section('link')
+    <link rel="stylesheet" href="{{ asset('plugins/lightbox/css/lightbox.min.css') }}">
+@endsection
+
 @section('style')
     <style>
         .custom-card {
@@ -31,7 +35,7 @@
             </iframe> --}}
             <video controls autoplay controlsList="nodownload">
                 <!-- Replace "video.mp4" with the actual path to your video file -->
-                <source src="{{ asset('visitor/assets/video/Video Profil Rumah Sakit.mp4') }}" type="video/mp4">
+                <source src="{{ asset('visitor/assets/video/Video Profil Rumah Sakit new.mp4') }}" type="video/mp4" >
                 <!-- Provide alternative sources for different formats if necessary -->
                 <!-- <source src="video.webm" type="video/webm"> -->
                 <!-- <source src="video.ogg" type="video/ogg"> -->
@@ -44,38 +48,77 @@
         <h1>PRESTASI RUMAH SAKIT</h1>
     </div>
     <div class="container mt-4">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center">
             <div class="col-10 col-sm-10 col-md-7 col-lg-4">
                 <div class="card custom-card">
-                    <h3 class="card-title text-center pt-3"> PIAGAM <span><br> PENGHARGAAN COVID</span>
+                    <h3 class="card-title text-center pt-3"> PIAGAM 
+                        <span><br> PENGHARGAAN COVID</span>
                     </h3>
                     <div class="base m-3">
-                        <img src="{{ asset('visitor/assets/img/sertifikat/piagam_covid.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <a href="{{ asset('visitor/assets/img/sertifikat/piagam_covid.png') }}" data-lightbox="prestasi" data-title="Piagam Penghargaan COVID">
+                            <img src="{{ asset('visitor/assets/img/sertifikat/piagam_covid.png') }}" class="card-img-top" alt="IGD">
+                        </a>
                     </div>
+                    <div class="card-body">
+                        <p class="card-text text-center">Piagam Penghargaan dari Gubernur Maluku & Walikota Ambon atas Pelayanan Penanganan Covid-19 dan Pelayanan Penyakit lainnya.</p>
+                      </div>
+                      <div class="card-footer text-center text-muted">
+                        September 2021
+                      </div>
                 </div>
             </div>
             <div class="col-10 col-sm-10 col-md-7 col-lg-4">
                 <div class="card custom-card">
-                    <h3 class="card-title text-center pt-3"> SERTIFIKAT <span><br> AKREDITASI RUMAH SAKIT</span>
+                    <h3 class="card-title text-center pt-3"> SERTIFIKAT 
+                        <span><br> AKREDITASI RUMAH SAKIT</span>
                     </h3>
                     <div class="base m-3">
-                        <img src="{{ asset('visitor/assets/img/sertifikat/sertifikat_akreditasi.png') }}" class="card-img-top"
-                        alt="IGD">
+                        <a href="{{ asset('visitor/assets/img/sertifikat/sertifikat_akreditasi.png') }}" data-lightbox="prestasi" data-title="SERTIFIKAT AKREDITASI RUMAH SAKIT">
+                            <img src="{{ asset('visitor/assets/img/sertifikat/sertifikat_akreditasi.png') }}" class="card-img-top" alt="IGD">
+                        </a>
                     </div>
+                    <div class="card-body">
+                        <p class="card-text text-center">Sertifikat Akreditasi RS dengan Tingkat Kelulusan PARIPURNA.</p>
+                      </div>
+                      <div class="card-footer text-center text-muted">
+                        11 April 2023
+                      </div>
                 </div>
             </div>
             <div class="col-10 col-sm-10 col-md-7 col-lg-4">
                 <div class="card custom-card">
-                    <h3 class="card-title text-center pt-3"> PIAGAM <span><br> PENGHARGAAN OMBUDSMAN</span>
+                    <h3 class="card-title text-center pt-3"> PIAGAM 
+                        <span><br> PENGHARGAAN OMBUDSMAN </span>
                     </h3>
                     <div class="base m-3">
-                        <img src="{{ asset('visitor/assets/img/sertifikat/piagam_ombudsman.png') }}" class="card-img-top"
-                            alt="IGD">
+                        <a href="{{ asset('visitor/assets/img/sertifikat/piagam_ombudsman.png') }}" data-lightbox="prestasi" data-title="PIAGAM PENGHARGAAN OMBUDSMAN">
+                            <img src="{{ asset('visitor/assets/img/sertifikat/piagam_ombudsman.png') }}" class="card-img-top" alt="IGD">
+                        </a>
                     </div>
+                    <div class="card-body">
+                        <p class="card-text text-center">Piagam Penghargaan Pelayanan Publik oleh Ombudsman RI dengan Predikat KUALITAS TINGGI.</p>
+                      </div>
+                      <div class="card-footer text-center text-muted">
+                        14 November 2024
+                      </div>
                 </div>
             </div>
         </div>
     </div>
-
-@endsection
+    @endsection
+    
+    @section('script')
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="{{ asset('plugins/lightbox/js/lightbox.min.js') }}"></script>
+    <script>
+        lightbox.option({
+            maxWidth: 800,  // Lebar maksimum gambar
+            maxHeight: 600, // Tinggi maksimum gambar
+            resizeDuration: 500,
+            wrapAround: true, // Aktifkan navigasi untuk gambar berikutnya dan sebelumnya
+            albumLabel: "Gambar ke %1 dari %2", // Label album
+            fitImagesInViewport: true
+        });
+    </script>
+    @endsection
+    
