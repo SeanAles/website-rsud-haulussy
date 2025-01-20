@@ -49,7 +49,28 @@
     </div>
     <div class="container mt-4">
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center">
-            <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+            {{-- piagam 1 --}}
+            <div class="col-10 col-sm-10 col-md-7 col-lg-3">
+                <div class="card custom-card">
+                    <h3 class="card-title text-center pt-3"> SERTIFIKAT 
+                        <span><br> FASKES BERKOMITMEN JKN</span>
+                    </h3>
+                    <div class="base m-3">
+                        <a href="{{ asset('visitor/assets/img/sertifikat/sertifikat_BPJS.png') }}" data-lightbox="prestasi" data-title="SERTIFIKAT
+FASKES BERKOMITMEN JKN">
+                            <img src="{{ asset('visitor/assets/img/sertifikat/sertifikat_BPJS.png') }}" class="card-img-top" alt="IGD">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-center">Sertifikat sebagai faskes tingkat lanjutan berkomitmen JKN.</p>
+                      </div>
+                      <div class="card-footer text-center text-muted">
+                        7 september 2021
+                      </div>
+                </div>
+            </div>
+            {{-- piagam 2 --}}
+            <div class="col-10 col-sm-10 col-md-7 col-lg-3">
                 <div class="card custom-card">
                     <h3 class="card-title text-center pt-3"> PIAGAM 
                         <span><br> PENGHARGAAN COVID</span>
@@ -67,7 +88,8 @@
                       </div>
                 </div>
             </div>
-            <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+            {{-- piagam 3 --}}
+            <div class="col-10 col-sm-10 col-md-7 col-lg-3">
                 <div class="card custom-card">
                     <h3 class="card-title text-center pt-3"> SERTIFIKAT 
                         <span><br> AKREDITASI RUMAH SAKIT</span>
@@ -85,7 +107,8 @@
                       </div>
                 </div>
             </div>
-            <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+            {{-- piagam 4 --}}
+            <div class="col-10 col-sm-10 col-md-7 col-lg-3">
                 <div class="card custom-card">
                     <h3 class="card-title text-center pt-3"> PIAGAM 
                         <span><br> PENGHARGAAN OMBUDSMAN </span>
@@ -94,6 +117,9 @@
                         <a href="{{ asset('visitor/assets/img/sertifikat/piagam_ombudsman.png') }}" data-lightbox="prestasi" data-title="PIAGAM PENGHARGAAN OMBUDSMAN">
                             <img src="{{ asset('visitor/assets/img/sertifikat/piagam_ombudsman.png') }}" class="card-img-top" alt="IGD">
                         </a>
+                        <div class="middle">
+                            <div class="text">John Doe</div>
+                          </div>
                     </div>
                     <div class="card-body">
                         <p class="card-text text-center">Piagam Penghargaan Pelayanan Publik oleh Ombudsman RI dengan Predikat KUALITAS TINGGI.</p>
@@ -103,8 +129,10 @@
                       </div>
                 </div>
             </div>
+
         </div>
     </div>
+
     @endsection
     
     @section('script')
