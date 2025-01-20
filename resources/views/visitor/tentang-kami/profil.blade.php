@@ -117,9 +117,6 @@ FASKES BERKOMITMEN JKN">
                         <a href="{{ asset('visitor/assets/img/sertifikat/piagam_ombudsman.png') }}" data-lightbox="prestasi" data-title="PIAGAM PENGHARGAAN OMBUDSMAN">
                             <img src="{{ asset('visitor/assets/img/sertifikat/piagam_ombudsman.png') }}" class="card-img-top" alt="IGD">
                         </a>
-                        <div class="middle">
-                            <div class="text">John Doe</div>
-                          </div>
                     </div>
                     <div class="card-body">
                         <p class="card-text text-center">Piagam Penghargaan Pelayanan Publik oleh Ombudsman RI dengan Predikat KUALITAS TINGGI.</p>
