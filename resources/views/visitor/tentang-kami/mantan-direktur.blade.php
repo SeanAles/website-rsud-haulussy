@@ -660,7 +660,7 @@
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                 <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
-                        src="{{ asset('visitor/assets/img/direk/dr. Rodrigo Limmon, Sp.THT. MARS.png') }}"
+                        src="{{ asset('visitor/assets/img/direk/dr. rodrigo.png') }}"
                         alt="news" />
                     <div class="card-body"><span class="fs--1 text-primary me-3">Plt Direktur</span>
                         <svg class="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12"
@@ -690,7 +690,7 @@
                         </div>
                         <div class="text-center">
                             <div class="modal-body">
-                                <img src="{{ asset('visitor/assets/img/direk/dr. Rodrigo Limmon, Sp.THT. MARS.png') }}"
+                                <img src="{{ asset('visitor/assets/img/direk/dr. rodrigo.png') }}"
                                     style="max-height: 500px; max-width: 300px;">
                             </div>
                         </div>
@@ -816,7 +816,7 @@
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                 <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
-                        src="{{ asset('visitor/assets/img/direk/dr. Adonia.png') }}" alt="news" />
+                        src="{{ asset('visitor/assets/img/direk/dr. adonia.png') }}" alt="news" />
                     <div class="card-body"><span class="fs--1 text-primary me-3">Plt Direktur</span>
                         <svg class="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12"
                             height="12" fill="currentColor" viewBox="0 0 16 16">
@@ -844,13 +844,53 @@
                         </div>
                         <div class="text-center">
                             <div class="modal-body">
-                                <img src="{{ asset('visitor/assets/img/direk/dr. Adonia.png') }}"
+                                <img src="{{ asset('visitor/assets/img/direk/dr. adonia.png') }}"
                                     style="max-height: 500px; max-width: 300px;">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+                <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3"
+                        src="{{ asset('visitor/assets/img/direk/dr.vita.png') }}" alt="news" />
+                    <div class="card-body"><span class="fs--1 text-primary me-3">Direktur</span>
+                        <svg class="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12"
+                            height="12" fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z">
+                            </path>
+                            <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z">
+                            </path>
+                        </svg><span class="fs--1 text-900">2022 - 2023</span><span class="fs--1"></span>
+                        <h6 class="font-base fs-lg-0 fs-xl-1 my-3">dr. Novita Elevia Nikijuluw.</h6>
+                        <a class="custom-link" data-bs-toggle="modal" data-bs-target="#tes004">Lihat Lebih Lanjut</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="tes004" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog ">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Direktur</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="text-center">
+                            <div class="modal-body">
+                                <img src="{{ asset('visitor/assets/img/direk/dr.vita.png') }}"
+                                    style="max-height: 500px; max-width: 300px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 @endsection
