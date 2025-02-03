@@ -26,7 +26,7 @@
         /* Style Tambahan */
         .modal-content img {
             max-width: 100%;
-            height: auto;
+            height: 800px; //height : auto;
         }
 
         /* Gaya Tombol Close */
@@ -51,13 +51,13 @@
     <!-- Modal -->
     <div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="gambarModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div style="width: 300px" class="modal-content">
                 <!-- Tombol Close -->
                 <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <div class="modal-body">
-                    <img src="{{ asset('visitor/assets/img/iklan/ban.jpg') }}" class="img-fluid"
+                <div  class="modal-body">
+                    <img src="{{ asset('visitor/assets/img/iklan/X-Banner Pergub No. 37 Tahun 2024 tentang Tarif RS.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
                 </div>
             </div>

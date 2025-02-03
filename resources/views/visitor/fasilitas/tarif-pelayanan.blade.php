@@ -17,14 +17,24 @@
             cursor: pointer;
             transition: background-color 0.3s ease, border-color 0.3s ease;
         }
+      /* new 3febuari2025 */
+        .notif {
+        color: red;
+        font-size: 35px;
+        font-weight: bold;
+        animation: blink 1s infinite;
+    }
+
+        @keyframes blink {
+        50% { opacity: 0; }
+        } 
     </style>
 @endsection
 
 @section('content')
     <div class="text-center mb-5">
-        <h1>Tarif Pelayanan</h1>
-        <p>Perda Provinsi Maluku Nomor 2
-            tahun 2024 tentang Pajak Daerah dan Retribusi Daerah </p>
+        <h1>Tarif Pelayanan <span class="notif">*</span></h1>
+        <p>PERATURAN GUBERNUR MALUKU NOMOR 37 (05 NOVEMBER) TAHUN 2024 TENTANG PENETAPAN TARIF RETRIBUSI DAERAH (Tarif Baru RSUD dr. M. Haulussy Ambon).</p>
     </div>
     <div class="container d-flex justify-content-center">
         <select id="room_id">
