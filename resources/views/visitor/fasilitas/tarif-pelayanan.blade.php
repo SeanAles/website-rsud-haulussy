@@ -17,7 +17,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease, border-color 0.3s ease;
         }
-      /* new 3feb2025 */
+      /* new 3febuari2025 */
         .notif {
         color: red;
         font-size: 35px;
