@@ -221,7 +221,7 @@
                             <a class="dropdown-item" href="/medical-check-up">Medical Check Up</a> --}}
                             <a class="dropdown-item" href="/ketersediaan-tempat-tidur">Ketersediaan Tempat
                                 Tidur</a>
-                            <a class="dropdown-item" href="/tarif-pelayanan">Tarif Pelayanan <span class="notif">*</span></a>
+                            <a class="dropdown-item" href="/tarif-pelayanan">Tarif Pelayanan</a>
                             <a class="dropdown-item" href="/promosi-kesehatan">Promosi Kesehatan</a>
                             <a class="dropdown-item" href="/tata-tertib">Tata Tertib</a>
                             <div class="dropdown-divider"></div>
