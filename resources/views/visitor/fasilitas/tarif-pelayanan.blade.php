@@ -34,8 +34,8 @@
 @section('content')
     <div class="text-center mb-5">
         <h1>Tarif Pelayanan<span class="notif">*</span></h1>
-        <p>PERATURAN GUBERNUR MALUKU NOMOR 37 TAHUN 2024 (05 November 2024) </p>
-        <p>TENTANG PENETAPAN TARIF RETRIBUSI DAERAH (Tarif Baru RSUD dr. M. Haulussy Ambon).</p> 
+        <p>PERATURAN GUBERNUR MALUKU NOMOR 37 TAHUN 2024 (05 November 2024) 
+        TENTANG PENETAPAN TARIF RETRIBUSI DAERAH (Tarif Baru RSUD dr. M. Haulussy Ambon). </p>
     </div>
     <div class="container d-flex justify-content-center">
         <select id="room_id">
