@@ -56,10 +56,12 @@
                 <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+                <center>
                 <div  class="modal-body">
                     <img src="{{ asset('visitor/assets/img/iklan/X-Banner Pergub No. 37 Tahun 2024 tentang Tarif RS.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
                 </div>
+                </center>
             </div>
         </div>
     </div>
