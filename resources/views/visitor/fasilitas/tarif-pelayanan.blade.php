@@ -20,7 +20,7 @@
         /* new 30jan2025 */
         .notif {
         color: red;
-        font-size: 25px;
+        font-size: 35px;
         font-weight: bold;
         animation: blink 1s infinite;
     }
