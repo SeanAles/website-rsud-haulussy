@@ -62,6 +62,12 @@
                 @endforeach
             </tbody>
         </table>
+
+        {{-- note --}}
+        <div class="mt-2 text-danger font-weight-bold">
+            <p><i>*Pemberlakuan rencana akhir bulan Ferbuari atau awal Maret 2025 </i></p>
+        </div>
+
     </div>
 @endsection
 
