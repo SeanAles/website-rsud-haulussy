@@ -48,7 +48,7 @@
             <thead>
                 <tr style="color: white; background-color: #283779">
                     <th>No.</th>
-                    <th>Nama Tindakan</th>
+                    <th>Nama</th>
                     <th>Tarif</th>
                 </tr>
             </thead>
