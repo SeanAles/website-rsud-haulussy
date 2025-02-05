@@ -65,7 +65,7 @@
 
         {{-- note --}}
         <div class="mt-2 text-danger font-weight-bold">
-            <p><i>*Pemberlakuan rencana akhir bulan Ferbuari atau awal Maret 2025 </i></p>
+            <p><i>*Pemberlakuan rencana akhir bulan Februari atau awal Maret 2025 </i></p>
         </div>
 
     </div>
@@ -73,6 +73,7 @@
 
 @section('script')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         $('#room_id').on('change', function() {
             var room_id = $(this).val(); // Ambil nilai yang dipilih dari dropdown
