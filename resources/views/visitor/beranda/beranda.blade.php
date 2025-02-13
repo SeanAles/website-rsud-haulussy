@@ -26,7 +26,7 @@
         /* Style Tambahan */
         .modal-content img {
             max-width: 100%;
-            height: 800px; //height : auto;
+            height : auto;
         }
 
         /* Gaya Tombol Close */
@@ -51,7 +51,7 @@
     <!-- Modal -->
     <div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="gambarModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div style="width: 300px" class="modal-content">
+            <div class="modal-content">
                 <!-- Tombol Close -->
                 <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
