@@ -58,7 +58,7 @@
                 </button>
                 <center>
                 <div  class="modal-body">
-                    <img src="{{ asset('visitor/assets/img/iklan/X-Banner Pergub No. 37 Tahun 2024 tentang Tarif RS.jpg') }}" class="img-fluid"
+                    <img src="{{ asset('visitor/assets/img/iklan/sehat.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
                 </div>
                 </center>
