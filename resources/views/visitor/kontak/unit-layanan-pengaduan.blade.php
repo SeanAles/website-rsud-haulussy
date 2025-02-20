@@ -63,7 +63,7 @@
     <div class="container mb-5">
         <div class="d-flex justify-content-center">
             <img class="img-responsive"
-                src="{{ asset('visitor/assets/img/qrcode/bar promkes') }}">
+                src="{{ asset('visitor/assets/img/qrcode/bar promkes.png') }}">
         </div>
         <div class="d-flex justify-content-center">
             <a class="text-center"
