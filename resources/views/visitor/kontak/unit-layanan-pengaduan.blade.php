@@ -66,7 +66,7 @@
                 src="{{ asset('visitor/assets/img/qrcode/bar promkes.png') }}">
         </div>
         <div class="d-flex justify-content-center">
-            <a class="text-center"
+            <a class="text-center" target="_blank"
                 href="https://tinyurl.com/FormulirKeluhanPasien">https://tinyurl.com/FormulirKeluhanPasien</a>
         </div>
         <p class="text-center text-black bold-sub">Formulir Keluhan Pasien</p>
