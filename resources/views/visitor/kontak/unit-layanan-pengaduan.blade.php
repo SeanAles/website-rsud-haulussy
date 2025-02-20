@@ -63,7 +63,7 @@
     <div class="container mb-5">
         <div class="d-flex justify-content-center">
             <img class="img-responsive"
-                src="{{ asset('visitor/assets/img/qrcode/QR Code Formulir Keluhan Pasien - RSUD dr. M. Haulussy (1).jpeg') }}">
+                src="{{ asset('visitor/assets/img/qrcode/bar promkes') }}">
         </div>
         <div class="d-flex justify-content-center">
             <a class="text-center"
