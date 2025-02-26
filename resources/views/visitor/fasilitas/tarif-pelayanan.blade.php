@@ -65,7 +65,7 @@
 
         {{-- note --}}
         <div class="mt-2 text-danger font-weight-bold">
-            <p><i>*Pemberlakuan rencana akhir bulan Februari atau awal Maret 2025.</i></p>
+            <p><i>*Pemberlakuan akan dimulai 01 Maret 2025.</i></p>
         </div>
 
     </div>
