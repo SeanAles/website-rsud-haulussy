@@ -738,11 +738,15 @@
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center text-md-start p-md-6">
                     <h2 class="fw-bold mb-4">Kami Ada Untuk Melayani</h2>
                     <p class="text-justify">
-                        RSUD dr. M Haulussy Ambon sebagai rumah sakit kelas B Pendidikan merupakan rumah sakit rujukan
-                        Provinsi Maluku yang merupakan daerah kepulauan yang terdiri dari 632 pulau besar dan kecil.
+                        RSUD dr. M. Haulussy Ambon sebagai Rumah Sakit Tipe B Pendidikan merupakan rumah sakit rujukan
+                        Provinsi Maluku yang merupakan daerah kepulauan terdiri dari 1.388 pulau besar dan kecil.
                         Luas
-                        daratan Provinsi Maluku yang hanya 7,6 % dari luas Wilayah 712.479,69 km2 dihuni oleh 1.200.000
+                        daratan Provinsi Maluku yang hanya 2,44 % dari luas Wilayah 46.158,27 km2 dihuni oleh 1.200.000
                         jiwa.
+                        <br>
+                        Rumah Sakit hadir di Kota Ambon sejak 13 Maret 1954, luas kota 359,45 Km2 dengan jumlah penduduk sebanyak 384.132 jiwa.
+                        <br>
+                        <p><i>*Badan Pusat Statistik Maluku 2024.</i></p>
                     </p>
                 </div>
             </div>
