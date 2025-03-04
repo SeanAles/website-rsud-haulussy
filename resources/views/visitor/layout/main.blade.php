@@ -343,6 +343,22 @@
                     <div class="col-12 col-sm-12 col-lg-3 mb-3 order-3 order-sm-2">
                         <ul class="list-unstyled mb-md-4 mb-lg-0">
                             <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://kemkes.go.id/id/home">Kementerian Kesehatan
+                                    </a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://satusehat.kemkes.go.id/">Satusehat</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://promkes.kemkes.go.id/">
+                                    Promkes Kementerian Kesehatan</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://www.dto.kemkes.go.id/">DTO (Digital Transformation Office)</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://kemendagri.go.id/">Kementerian Dalam Negeri</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-3 mb-3 order-3 order-sm-3">
+                        <ul class="list-unstyled mb-md-4 mb-lg-0">
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
                                     href="https://malukuprov.go.id">Pemerintah
                                     Provinsi
                                     Maluku</a></li>
@@ -354,10 +370,7 @@
                                     Dinas Infokom Maluku</a></li>
                             <li class="lh-lg"><a class="footer-link" target="_blank"
                                     href="https://www.bnpb.go.id/">BNPB</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-sm-12 col-lg-3 mb-3 order-3 order-sm-3">
-                        <ul class="list-unstyled mb-md-4 mb-lg-0">
+                            <li><br></li>
                             <li class="lh-lg"><a class="footer-link" target="_blank"
                                     href="https://ambon.go.id">Pemerintah Kota
                                     Ambon</a></li>
@@ -372,6 +385,7 @@
                                     href="https://fk.unpatti.ac.id">Falkutas
                                     Kedokteran
                                     Unpatti</a></li>
+                            
                         </ul>
                     </div>
                 </div>
