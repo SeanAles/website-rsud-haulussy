@@ -159,9 +159,21 @@ class TreatmentController extends Controller
 
     public function indexTreatment(){
         $rooms = Room::all();
-        $treatments = Treatment::where('room_id', '=', '1')->get();
+        $treatments = Treatment::where('room_id','=','1')->get();
 
-        return view('visitor.fasilitas.tarif-pelayanan', ['rooms' => $rooms, 'treatments' => $treatments]);
+        // group ruangan
+        // untuk mengatur group ruangan disini, disesuaikan dengan id rooms 
+        $roomGroups = [
+            'Rawat Jalan' => [2, 19, 20, 13, 14, 15, 17, 21, 11, 12],
+            'Gawat Darurat' => [3],
+            'Penunjang' => [6, 7, 10, 16, 18, 22, 23, 24, 25],
+            'Lainnya' => [1]
+        ];
+        return view('visitor.fasilitas.tarif-pelayanan', [
+            'rooms' => $rooms,
+            'treatments' => $treatments,
+            'roomGroups' => $roomGroups 
+        ]);
     }
 
     public function showTreatment($id){
