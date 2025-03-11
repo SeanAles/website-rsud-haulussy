@@ -67,6 +67,7 @@
 @endsection
 
 @section('content')
+
     <div class="text-center">
         <h1>Visi & Misi</h1>
     </div>
@@ -91,7 +92,20 @@
                     src="{{ asset('visitor/assets/img/visi-misi/Maklumat dan Janji Pelayanan New.jpeg') }}"
                     alt="Maklumat dan Janji Pelayanan">
             </div>
+
+            <div class="d-flex justify-content-center mt-5">
+                <h1>Visi & Misi Pemerintah Kota Ambon</h1>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <img class="img-responsive"
+                    src="{{ asset('visitor/assets/img/visi-misi/pemkot.jpg') }}"
+                    alt="Maklumat dan Janji Pelayanan">
+            </div>
         </div>
+
+
+       
 
         <div class="motto-container">
             <h1 class="text-center mb-2">Motto</h1>
