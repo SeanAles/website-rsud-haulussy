@@ -94,7 +94,7 @@
             </div>
 
             <div class="d-flex justify-content-center mt-5">
-                <h1>Visi & Misi Pemerintah Kota Ambon</h1>
+                <h1>Visi & Misi Pemprov Maluku 2025 - 2030</h1>
             </div>
 
             <div class="d-flex justify-content-center">
