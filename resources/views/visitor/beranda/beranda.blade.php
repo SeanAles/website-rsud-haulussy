@@ -58,8 +58,10 @@
                 </button>
                 <center>
                 <div  class="modal-body">
-                    <img src="{{ asset('visitor/assets/img/iklan/tarif.jpg') }}" class="img-fluid"
+                    <a href="/visi-misi">
+                    <img src="{{ asset('visitor/assets/img/iklan/tarif fix.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
+                    </a>
                 </div>
                 </center>
             </div>

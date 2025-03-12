@@ -69,7 +69,7 @@
 @section('content')
 
     <div class="text-center">
-        <h1>Visi & Misi</h1>
+    <h1>Visi & Misi Pemprov Maluku 2025 - 2030</h1>
     </div>
 
     <div class="bg-holder bg-size mb-5"
@@ -79,27 +79,27 @@
     <div class="container">
         <div class="mb-5">
             <div class="d-flex justify-content-center">
-                <img class="img-responsive" src="{{ asset('visitor/assets/img/visi-misi/Visi dan Misi.jpg') }}"
+                <img class="img-responsive" src="{{ asset('visitor/assets/img/visi-misi/pemkot.jpg') }}"
                     alt="Maklumat dan Janji Pelayanan">
             </div>
 
             <div class="d-flex justify-content-center mt-5">
-                <h1>Maklumat dan Janji Pelayanan</h1>
+            <h1>Visi & Misi</h1>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <img class="img-responsive"
+                    src="{{ asset('visitor/assets/img/visi-misi/Visi dan Misi.jpg') }}"
+                    alt="Maklumat dan Janji Pelayanan">
+            </div>
+
+            <div class="d-flex justify-content-center mt-5">
+            <h1>Maklumat dan Janji Pelayanan</h1>
             </div>
 
             <div class="d-flex justify-content-center">
                 <img class="img-responsive"
                     src="{{ asset('visitor/assets/img/visi-misi/Maklumat dan Janji Pelayanan New.jpeg') }}"
-                    alt="Maklumat dan Janji Pelayanan">
-            </div>
-
-            <div class="d-flex justify-content-center mt-5">
-                <h1>Visi & Misi Pemprov Maluku 2025 - 2030</h1>
-            </div>
-
-            <div class="d-flex justify-content-center">
-                <img class="img-responsive"
-                    src="{{ asset('visitor/assets/img/visi-misi/pemkot.jpg') }}"
                     alt="Maklumat dan Janji Pelayanan">
             </div>
         </div>
