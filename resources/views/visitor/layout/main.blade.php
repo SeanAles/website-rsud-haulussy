@@ -307,7 +307,7 @@
             <!--/.bg-holder-->
 
             <div class="container">
-                <div class="row pt-5 pb-4">
+                <div class="row pt-5 pb-3">
                     <div class="col-12 col-sm-12 col-lg-3 mb-4 order-0 order-sm-0">
                         <a class="text-decoration-none" href="#"><img
                                 src="{{ asset('visitor/assets/img/gallery/maluku.png') }}" height="51"
@@ -393,34 +393,58 @@
 
             <div class="container mb-4">
                 <div class="row align-items-center">
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
                         <a target="_blank" href="https://bpjs-kesehatan.go.id/">
                             <img src="{{ asset('visitor/assets/img/kerjasama/BPJS Kesehatan.png') }}"
                                 alt="BPJS Kesehatan" width="100%">
                         </a>
                     </div>
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
                         <a target="_blank" href="https://www.bpjsketenagakerjaan.go.id/">
                             <img src="{{ asset('visitor/assets/img/kerjasama/BPJS Ketenagakerjaan.png') }}"
                                 alt="BPJS Ketenagakerjaan" width="100%">
                         </a>
                     </div>
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
                         <a target="_blank" href="https://www.inhealth.co.id/">
                             <img src="{{ asset('visitor/assets/img/kerjasama/Mandiri Inhealth.png') }}"
                                 alt="Mandiri Inhealth.png" width="80%">
                         </a>
                     </div>
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
                         <a target="_blank" href="https://www.taspen.co.id/">
                             <img src="{{ asset('visitor/assets/img/kerjasama/Taspen.png') }}" alt="Taspen.png"
                                 width="80%">
                         </a>
                     </div>
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
                         <a target="_blank" href="https://www.jasaraharja.co.id/">
                             <img src="{{ asset('visitor/assets/img/kerjasama/Jasa Raharja.png') }}"
+                                alt="Jasa Raharja.png" width="210px">
+                        </a>
+                    </div>
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
+                        <a target="_blank" href="https://bankmalukumalut.co.id/">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/BPD MALUKU.png') }}"
                                 alt="Jasa Raharja.png" width="100%">
+                        </a>
+                    </div>
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
+                        <a target="_blank" href="https://www.bni.co.id/">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/BNI.png') }}"
+                                alt="Jasa Raharja.png" width="100%">
+                        </a>
+                    </div>
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
+                        <a target="_blank" href="https://www.btn.co.id/">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/BTN.png') }}"
+                                alt="Jasa Raharja.png" width="70%">
+                        </a>
+                    </div>
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
+                        <a target="_blank" href="https://www.bri.co.id/">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/BRI.png') }}"
+                                alt="Jasa Raharja.png" width="67%">
                         </a>
                     </div>
                 </div>
