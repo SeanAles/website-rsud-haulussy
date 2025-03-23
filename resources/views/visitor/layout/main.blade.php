@@ -426,27 +426,27 @@
                     <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
                         <a target="_blank" href="https://bankmalukumalut.co.id/">
                             <img src="{{ asset('visitor/assets/img/kerjasama/BPD MALUKU.png') }}"
-                                alt="Jasa Raharja.png" width="100%">
+                                alt="logo BPDM.png" width="100%">
                         </a>
                     </div>
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
+                    <!-- <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
                         <a target="_blank" href="https://www.bni.co.id/">
                             <img src="{{ asset('visitor/assets/img/kerjasama/BNI.png') }}"
-                                alt="Jasa Raharja.png" width="100%">
+                                alt="logo bni.png" width="100%">
                         </a>
-                    </div>
+                    </div> -->
                     <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
                         <a target="_blank" href="https://www.btn.co.id/">
                             <img src="{{ asset('visitor/assets/img/kerjasama/BTN.png') }}"
-                                alt="Jasa Raharja.png" width="70%">
+                                alt="logo BTN.png" width="70%">
                         </a>
                     </div>
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
+                    <!-- <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
                         <a target="_blank" href="https://www.bri.co.id/">
                             <img src="{{ asset('visitor/assets/img/kerjasama/BRI.png') }}"
-                                alt="Jasa Raharja.png" width="67%">
+                                alt="logo bri.png" width="67%">
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
