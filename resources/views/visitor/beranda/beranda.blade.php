@@ -58,7 +58,7 @@
                 </button>
                 <center>
                 <div  class="modal-body">
-                    <a href="/visi-misi">
+                    <a href="/artikel/sHKk6VAKR9">
                     <img src="{{ asset('visitor/assets/img/iklan/puasa_ramadhan.png') }}" class="img-fluid"
                         alt="Gambar Modal">
                     </a>
