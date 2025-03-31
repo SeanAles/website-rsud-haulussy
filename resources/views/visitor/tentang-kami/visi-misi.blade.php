@@ -89,7 +89,7 @@
 
             <div class="d-flex justify-content-center">
                 <img class="img-responsive"
-                    src="{{ asset('visitor/assets/img/visi-misi/Visi dan Misi.jpg') }}"
+                    src="{{ asset('visitor/assets/img/visi-misi/Vispg') }}"
                     alt="Maklumat dan Janji Pelayanan">
             </div>
 

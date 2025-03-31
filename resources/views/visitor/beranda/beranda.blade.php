@@ -59,7 +59,7 @@
                 <center>
                 <div  class="modal-body">
                     <a href="/artikel/sHKk6VAKR9">
-                    <img src="{{ asset('visitor/assets/img/iklan/ramadhan.jpg') }}" class="img-fluid"
+                    <img src="{{ asset('visitor/assets/img/iklan/ramdhan.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
                     </a>
                 </div>
