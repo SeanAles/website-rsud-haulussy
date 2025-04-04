@@ -52,7 +52,7 @@
             @endforeach
         </table>
         <div class="mt-2 mb-4 text-black font-weight-bold">
-            Total Rawat Inap : 230 Tempat Tidur (tak termasuk IGD)
+            Total Rawat Inap : 222 Tempat Tidur (tidak termasuk IGD)
         </div>
 
         <div class="mt-2 text-danger font-weight-bold">
