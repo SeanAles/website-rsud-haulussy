@@ -11,10 +11,11 @@
 
 @section('content')
     <div>
+        @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
         <button type="button" class="update btn btn-success mb-2" data-toggle="modal" data-target="#addBedModal">
             Tambahkan Ruangan
         </button>
-
+        @endif
         <div>
             <button type="button" class="update btn btn-warning" data-toggle="modal" data-target="#editNoteModal">
                 Edit Keterangan
