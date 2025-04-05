@@ -196,7 +196,7 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware('admin.bed')->group(function () {
         //Bed Route
         Route::get('/bed', [BedController::class, 'index'])->name('beds.index');
-        // Route::post('/bed', [BedController::class, 'store']);
+        Route::post('/bed', [BedController::class, 'store']);
         Route::patch('/bed/{id}', [BedController::class, 'update']);
         Route::delete('/bed/{id}', [BedController::class, 'destroy']);
 
