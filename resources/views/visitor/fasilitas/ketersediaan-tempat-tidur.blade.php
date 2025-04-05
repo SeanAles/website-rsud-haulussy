@@ -52,7 +52,9 @@
             @endforeach
         </table>
         <div class="mt-2 mb-4 text-black font-weight-bold">
-            Total Rawat Inap : 222 Tempat Tidur (tidak termasuk IGD)
+            Total Rawat Inap : 222 Tempat Tidur (tidak termasuk IGD, ICU, ICCU, HD, dan Kamar Operasi).
+            <br>
+            <p><i>*sesuai SK Direktur No. 445/1768/SK/XII/2024 tanggal 05 Desember 2024.</i></p>
         </div>
 
         <div class="mt-2 text-danger font-weight-bold">
