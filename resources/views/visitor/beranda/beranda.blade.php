@@ -49,7 +49,7 @@
 
 @section('content')
     <!-- Modal -->
-    <div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="gambarModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="gambarModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <!-- Tombol Close -->
@@ -66,7 +66,7 @@
                 </center>
             </div>
         </div>
-    </div>
+    </div> --}}
     <section class="w-100">
         <h1 class="text-center pb-5">Poliklinik</h1>
 

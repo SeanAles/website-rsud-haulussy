@@ -99,11 +99,11 @@
     @media (min-width: 991px) {
         .nav-item {
             margin-bottom: 20px;
-            margin-right: 0px; 
+            margin-right: 0px;
         }
 
         #preloader {
-            background: #fff url(/visitor/assets/img/gif/idul.gif) no-repeat center center;
+            background: #fff url(/visitor/assets/img/gif/lingkaran.gif) no-repeat center center;
             background-size: 5%;
             height: 100vh;
             width: 100%;
@@ -154,7 +154,7 @@
 
     @keyframes blink {
     50% { opacity: 0; }
-    } 
+    }
 
 
 </style>
@@ -385,7 +385,7 @@
                                     href="https://fk.unpatti.ac.id">Falkutas
                                     Kedokteran
                                     Unpatti</a></li>
-                            
+
                         </ul>
                     </div>
                 </div>
