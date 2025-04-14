@@ -16,7 +16,12 @@ class Post extends Model
         "author",
         "slug",
         "user_id",
-        "category"
+        "category",
+        "views"
+    ];
+
+    protected $attributes = [
+        'views' => 0
     ];
 
     /**

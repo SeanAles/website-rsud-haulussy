@@ -22,13 +22,13 @@ class NewsController extends Controller
                 ->addColumn('action', function ($news) {
                     $actionBtn = '
                     <div class="row">
-                    <a href="/news/' . $news->id . '" class="mr-1 mt-1 detail btn btn-primary btn-sm">Detail</a> 
+                    <a href="/news/' . $news->id . '" class="mr-1 mt-1 detail btn btn-primary btn-sm">Detail</a>
                     <a href="/news-edit/' . $news->id . '" class="mr-1 mt-1 edit btn btn-success btn-sm">Edit</a>
 
                     <button type="button" class="mr-1 mt-1 delete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteNewsModal' . $news->id . '">
                        Hapus
                     </button>
-  
+
                     <!-- Modal -->
                     <div class="modal fade" id="deleteNewsModal' . $news->id . '" tabindex="-1" role="dialog" aria-labelledby="deleteNewsModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -46,10 +46,10 @@ class NewsController extends Controller
                                 </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" id="cancelDeleteNews'.$news->id.'" class="btn btn-primary" data-dismiss="modal">Batal</button>
-                                <form id="formDeleteNews'.$news->id.'">
-                                    <input type="hidden" name="_token" value="' . csrf_token() . '" /> 
-                                    <button type="button" onclick="deleteNews('.$news->id.')" class="btn btn-danger" id="deleteNewsButton'.$news->id.'">Hapus</button>
+                                <button type="button" id="cancelDeleteNews' . $news->id . '" class="btn btn-primary" data-dismiss="modal">Batal</button>
+                                <form id="formDeleteNews' . $news->id . '">
+                                    <input type="hidden" name="_token" value="' . csrf_token() . '" />
+                                    <button type="button" onclick="deleteNews(' . $news->id . ')" class="btn btn-danger" id="deleteNewsButton' . $news->id . '">Hapus</button>
                                 </form>
                             </div>
                         </div>
@@ -91,12 +91,12 @@ class NewsController extends Controller
         $description = $dom->saveHTML();
         $slug = Str::random(10);
 
-        
+
         $thumbnail = "";
-        if($request->file("thumbnail")){
-            $thumbnail  = time(). "." . $request->file("thumbnail")->extension();
+        if ($request->file("thumbnail")) {
+            $thumbnail  = time() . "." . $request->file("thumbnail")->extension();
         }
-        
+
         $news = Post::create([
             'title' => $request->title,
             'author' => $request->author,
@@ -116,7 +116,7 @@ class NewsController extends Controller
 
         return response()->json(['message' => 'Gagal Menambahkan Berita'], 401);
     }
-    
+
     public function show($id)
     {
         $news = Post::with('user')->findOrFail($id);
@@ -180,13 +180,13 @@ class NewsController extends Controller
             }
         }
 
-        $pathThumbnail = public_path()."/images/news/thumbnails/".$news->thumbnail;
+        $pathThumbnail = public_path() . "/images/news/thumbnails/" . $news->thumbnail;
         if (File::exists($pathThumbnail)) {
             File::delete($pathThumbnail);
         }
 
         $deleteNews = $news->delete();
-        if($deleteNews){
+        if ($deleteNews) {
             return response()->json(['status' => 'success', 'message' => 'Berhasil Menghapus Data.']);
         }
 
@@ -194,18 +194,19 @@ class NewsController extends Controller
     }
 
     // News (User Section)
-    public function indexBerita(){
+    public function indexBerita()
+    {
         $news = Post::where('category', '=', 'news')->orderByDesc('created_at')->paginate(4);
-        
-        return view('visitor.informasi.daftar-berita', ['news' => $news ]);
+
+        return view('visitor.informasi.daftar-berita', ['news' => $news]);
     }
-    
+
     public function showBerita($slug)
     {
         $new = Post::with('user')->where('slug', '=', $slug)->first();
         $news = Post::where([['slug', '!=', $slug], ['category', '=', 'news']])->orderByDesc('created_at')->get();
-        
-        if(!$new){
+
+        if (!$new) {
             return abort(404);
         }
 

@@ -16,10 +16,9 @@
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title')</title>
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <title>@yield('title') - Admin RSUD dr. M. Haulussy</title>
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Font Awesome -->
@@ -37,10 +36,172 @@
     <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
-    <!-- summernote -->
-    <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+    <!-- ckeditor -->
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/45.0.0/ckeditor5.css" crossorigin>
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5-premium-features/45.0.0/ckeditor5-premium-features.css" crossorigin>
+    <link rel="stylesheet" href="{{ asset('plugins/ckeditor/style.css') }}">
     {{-- toastr --}}
     <link rel="stylesheet" href="{{ asset('plugins/toastr/toastr.min.css') }}">
+    <!-- Material Icons CDN (for modern icons) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3182ce;
+            --secondary-color: #4299e1;
+            --accent-color: #7f9cf5;
+            --dark-color: #2d3748;
+            --light-color: #f8fafc;
+            --success-color: #38a169;
+            --warning-color: #ecc94b;
+            --danger-color: #e53e3e;
+            --info-color: #4299e1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Improved sidebar styling */
+        .main-sidebar {
+            background: linear-gradient(180deg, #2c5282 0%, #3182ce 100%);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Brand styling */
+        .brand-link {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+            padding: 12px 10px;
+            display: flex;
+            align-items: center;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .brand-image {
+            max-height: 30px;
+            margin-right: 5px;
+        }
+
+        .brand-text {
+            font-weight: 600 !important;
+            letter-spacing: 0.2px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* User panel styling */
+        .user-panel {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+            padding: 15px 10px;
+        }
+
+        .user-panel .info p {
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .user-panel .image img {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Navbar styling */
+        .main-header {
+            background: #fff;
+            box-shadow: 0 1px 15px rgba(0, 0, 0, 0.05);
+            border: none;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        /* Improved menu icons */
+        .nav-icon {
+            margin-right: 8px !important;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Date display */
+        .date-display {
+            display: flex;
+            align-items: center;
+            background-color: #edf2f7;
+            padding: 5px 12px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .date-icon {
+            font-size: 16px;
+            color: #4a5568;
+            margin-right: 6px;
+        }
+
+        .date-text {
+            font-size: 13px;
+            font-weight: 500;
+            color: #4a5568;
+        }
+
+        /* Custom logout button */
+        .btn-logout {
+            background: linear-gradient(45deg, #e53e3e, #f56565);
+            border: none;
+            padding: 6px 16px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(229, 62, 62, 0.2);
+            display: flex;
+            align-items: center;
+            height: 34px;
+            margin-right: 10px;
+            margin-top : 3px;
+        }
+
+        .btn-logout:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(229, 62, 62, 0.3);
+        }
+
+        .btn-logout i {
+            font-size: 18px;
+            margin-right: 6px;
+        }
+
+        .btn-logout span {
+            font-size: 13px;
+        }
+
+        /* Content wrapper styling */
+        .content-wrapper {
+            background-color: #f8fafc;
+        }
+
+        /* Card styling */
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border: none;
+        }
+
+        .card-header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+        }
+    </style>
     @yield('link')
 </head>
 
@@ -54,17 +215,26 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
-                            class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+                        <i class="material-icons-round">menu</i>
+                    </a>
                 </li>
             </ul>
 
-
-            <ul class="navbar-nav mb-3">
-                <!-- Navbar Search -->
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-3">
+                    <div class="date-display">
+                        <i class="material-icons-round date-icon">today</i>
+                        <span class="date-text">{{ date('d M Y') }}</span>
+                    </div>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout" role="button">
-                        <button class="btn btn-danger">Logout</button>
+                    <a class="nav-link p-0" href="/logout">
+                        <button class="btn-logout">
+                            <i class="material-icons-round">logout</i>
+                            <span>Logout</span>
+                        </button>
                     </a>
                 </li>
             </ul>
@@ -75,8 +245,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <div class="brand-link">
-                <img src="{{ asset('images/maluku.png') }}" class="brand-image" style="opacity: .8">
-                <span class="brand-text font-weight-light">| RSUD dr. M. Haulussy</span>
+                <img src="{{ asset('images/maluku.png') }}" class="brand-image">
+                <span class="brand-text font-weight-light">RS dr. M. Haulussy</span>
             </div>
 
             <!-- Sidebar -->
@@ -87,7 +257,10 @@
                         <img src="{{ asset('dist/img/avatar5.png') }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <p class="d-block text-white">{{ Auth::user()->name }}</p>
+                        <p class="d-block text-white">
+                            <i class="material-icons-round mr-1" style="font-size: 14px; vertical-align: middle;">verified_user</i>
+                            {{ Auth::user()->name }}
+                        </p>
                     </div>
                 </div>
 
@@ -100,7 +273,7 @@
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                             <li class="nav-item">
                                 <a href="/dashboard" class="nav-link">
-                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <i class="nav-icon material-icons-round">dashboard</i>
                                     <p>
                                         Dashboard
                                     </p>
@@ -111,7 +284,7 @@
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2 || Auth::user()->role_id === 3)
                             <li class="nav-item">
                                 <a href="/bed" class="nav-link">
-                                    <i class="nav-icon fas fa-bed"></i>
+                                    <i class="nav-icon material-icons-round">hotel</i>
                                     <p>
                                         Ketersediaan Bed
                                     </p>
@@ -122,16 +295,16 @@
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-folder"></i>
+                                    <i class="nav-icon material-icons-round">article</i>
                                     <p>
                                         Postingan
-                                        <i class="fas fa-angle-left right"></i>
+                                        <i class="material-icons-round right" style="font-size: 18px;">keyboard_arrow_down</i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview pl-3">
                                     <li class="nav-item">
                                         <a href="/article" class="nav-link">
-                                            <i class="nav-icon fas fa-book"></i>
+                                            <i class="nav-icon material-icons-round">description</i>
                                             <p>
                                                 Artikel
                                             </p>
@@ -139,7 +312,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <a href="/news" class="nav-link">
-                                            <i class="nav-icon fas fa-newspaper"></i>
+                                            <i class="nav-icon material-icons-round">feed</i>
                                             <p>
                                                 Berita
                                             </p>
@@ -150,7 +323,7 @@
                         @elseif (Auth::user()->role_id === 4)
                             <li class="nav-item">
                                 <a href="/article" class="nav-link">
-                                    <i class="nav-icon fas fa-book"></i>
+                                    <i class="nav-icon material-icons-round">description</i>
                                     <p>
                                         Artikel
                                     </p>
@@ -159,7 +332,7 @@
                         @elseif (Auth::user()->role_id === 5)
                             <li class="nav-item">
                                 <a href="/news" class="nav-link">
-                                    <i class="nav-icon fas fa-newspaper"></i>
+                                    <i class="nav-icon material-icons-round">feed</i>
                                     <p>
                                         Berita
                                     </p>
@@ -170,7 +343,7 @@
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2 || Auth::user()->role_id === 7)
                             <li class="nav-item">
                                 <a href="/event" class="nav-link">
-                                    <i class="nav-icon fas fa-images"></i>
+                                    <i class="nav-icon material-icons-round">photo_library</i>
                                     <p>
                                         Galeri Kegiatan
                                     </p>
@@ -181,16 +354,16 @@
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-money-bill"></i>
+                                    <i class="nav-icon material-icons-round">payments</i>
                                     <p>
                                         Tarif
-                                        <i class="fas fa-angle-left right"></i>
+                                        <i class="material-icons-round right" style="font-size: 18px;">keyboard_arrow_down</i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview pl-3">
                                     <li class="nav-item">
                                         <a href="/room" class="nav-link">
-                                            <i class="nav-icon fas fa-home"></i>
+                                            <i class="nav-icon material-icons-round">meeting_room</i>
                                             <p>
                                                 Ruangan
                                             </p>
@@ -198,7 +371,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <a href="/treatment" class="nav-link">
-                                            <i class="nav-icon fas fa-notes-medical"></i>
+                                            <i class="nav-icon material-icons-round">healing</i>
                                             <p>
                                                 Tindakan
                                             </p>
@@ -211,16 +384,16 @@
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-folder"></i>
+                                    <i class="nav-icon material-icons-round">download</i>
                                     <p>
                                         Download
-                                        <i class="fas fa-angle-left right"></i>
+                                        <i class="material-icons-round right" style="font-size: 18px;">keyboard_arrow_down</i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview pl-3">
                                     <li class="nav-item">
                                         <a href="/download" class="nav-link">
-                                            <i class="nav-icon fas fa-file"></i>
+                                            <i class="nav-icon material-icons-round">insert_drive_file</i>
                                             <p>
                                                 File
                                             </p>
@@ -228,7 +401,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <a href="/download-category" class="nav-link">
-                                            <i class="nav-icon fas fa-list"></i>
+                                            <i class="nav-icon material-icons-round">category</i>
                                             <p>
                                                 Kategori Download
                                             </p>
@@ -241,7 +414,7 @@
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2 || Auth::user()->role_id === 6)
                             <li class="nav-item">
                                 <a href="/suggestion" class="nav-link">
-                                    <i class="nav-icon fas  fa-lightbulb"></i>
+                                    <i class="nav-icon material-icons-round">lightbulb</i>
                                     <p>
                                         Kritik dan Saran
                                     </p>
@@ -252,7 +425,7 @@
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                             <li class="nav-item">
                                 <a href="/promkes" class="nav-link">
-                                    <i class="nav-icon fas  fa-tag"></i>
+                                    <i class="nav-icon material-icons-round">local_hospital</i>
                                     <p>
                                         Promosi Kesehatan
                                     </p>
@@ -263,7 +436,7 @@
                         @if (Auth::user()->role_id === 1)
                             <li class="nav-item">
                                 <a href="/account" class="nav-link">
-                                    <i class="nav-icon fas fa-users"></i>
+                                    <i class="nav-icon material-icons-round">people</i>
                                     <p>
                                         Akun
                                     </p>
@@ -339,8 +512,6 @@
     <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-    <!-- Summernote -->
-    <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
     <!-- overlayScrollbars -->
     <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
     <!-- AdminLTE App -->
@@ -348,8 +519,10 @@
     <!-- AdminLTE for demo purposes -->
     {{-- <script src="dist/js/pages/dashboard.js"></script> --}}
 
-
-
+    <!-- CKEditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/45.0.0/ckeditor5.umd.js" crossorigin></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5-premium-features/45.0.0/ckeditor5-premium-features.umd.js" crossorigin></script>
+    <script src="https://cdn.ckbox.io/ckbox/2.6.1/ckbox.js" crossorigin></script>
 
     @yield('script')
 </body>
