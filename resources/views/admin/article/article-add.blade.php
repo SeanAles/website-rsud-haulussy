@@ -291,7 +291,7 @@
                                         <label for="title">Judul Artikel</label>
                                         <div class="input-icon-wrapper">
                                             <input type="text" class="form-control icon-input" name="title" id="title"
-                                                placeholder="Masukkan judul artikel yang menarik...">
+                                                placeholder="Masukkan judul artikel">
                                             <i class="fas fa-heading input-icon"></i>
                                         </div>
                                     </div>
@@ -301,7 +301,7 @@
                                         <label for="author">Pembuat Artikel</label>
                                         <div class="input-icon-wrapper">
                                             <input type="text" class="form-control icon-input" name="author" id="author"
-                                                placeholder="Masukkan nama penulis atau sumber artikel">
+                                                placeholder="Masukkan nama penulis">
                                             <i class="fas fa-user-edit input-icon"></i>
                                         </div>
                                     </div>
