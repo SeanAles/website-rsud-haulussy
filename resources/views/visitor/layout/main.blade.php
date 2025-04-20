@@ -385,6 +385,12 @@
                                     href="https://fk.unpatti.ac.id">Falkutas
                                     Kedokteran
                                     Unpatti</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://stikesmalukuhusada.ac.id/">STIKES Maluku Husada</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://ukim.ac.id/akademik/fakultas-kesehatan/">Fakultas Keperawatan UKIM</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://poltekkes-maluku.ac.id/">POLTEKES KEMENKES Maluku</a></li>
 
                         </ul>
                     </div>
