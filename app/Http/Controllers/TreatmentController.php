@@ -9,7 +9,8 @@ use Yajra\DataTables\Facades\DataTables;
 
 class TreatmentController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         if ($request->ajax()) {
             $data = Treatment::with(['room'])->get();
 
@@ -40,7 +41,7 @@ class TreatmentController extends Controller
                             <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                <h5 class="modal-title" id="updateTreatmentModalLabel">Update Tindakan | 
+                                <h5 class="modal-title" id="updateTreatmentModalLabel">Update Tindakan |
                                     <b>' . $treatment->name . '</b>
                                 </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -48,8 +49,8 @@ class TreatmentController extends Controller
                                 </button>
                                 </div>
                                 <form id="formUpdateTreatment' . $treatment->id . '">
-                                    <div class="modal-body"> 
-                                        <input type="hidden" name="_token" value="' . csrf_token() . '" /> 
+                                    <div class="modal-body">
+                                        <input type="hidden" name="_token" value="' . csrf_token() . '" />
                                         <div class="form-group">
                                             <label for="name' . $treatment->id . '">Nama Tindakan</label>
                                             <input value="' . $treatment->name . '" type="text" class="form-control" name="name" id="name-update' . $treatment->id . '">
@@ -68,7 +69,7 @@ class TreatmentController extends Controller
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelUpdateTreatment' . $treatment->id . '">Batal</button>
-                                        <button type="button" onclick="updateTreatment(' . $treatment->id . ')" class="btn btn-success" id="updateTreatmentButton' . $treatment->id . '">Update</button>  
+                                        <button type="button" onclick="updateTreatment(' . $treatment->id . ')" class="btn btn-success" id="updateTreatmentButton' . $treatment->id . '">Update</button>
                                     </div>
                                 </form>
                             </div>
@@ -92,10 +93,10 @@ class TreatmentController extends Controller
                                 </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" id="cancelDeleteTreatment'.$treatment->id.'" class="btn btn-primary" data-dismiss="modal">Batal</button>
-                                <form id="formDeleteTreatment'.$treatment->id.'">
-                                    <input type="hidden" name="_token" value="' . csrf_token() . '" /> 
-                                    <button type="button" onclick="deleteTreatment('.$treatment->id.')" class="btn btn-danger" id="deleteTreatmentButton'.$treatment->id.'">Hapus</button>
+                                <button type="button" id="cancelDeleteTreatment' . $treatment->id . '" class="btn btn-primary" data-dismiss="modal">Batal</button>
+                                <form id="formDeleteTreatment' . $treatment->id . '">
+                                    <input type="hidden" name="_token" value="' . csrf_token() . '" />
+                                    <button type="button" onclick="deleteTreatment(' . $treatment->id . ')" class="btn btn-danger" id="deleteTreatmentButton' . $treatment->id . '">Hapus</button>
                                 </form>
                             </div>
                         </div>
@@ -110,7 +111,7 @@ class TreatmentController extends Controller
         }
 
         $rooms = Room::all();
-    
+
         return view('admin.treatment.treatment', ['rooms' => $rooms]);
     }
 
@@ -146,37 +147,42 @@ class TreatmentController extends Controller
         return response()->json(['message' => 'Gagal Mengedit Tindakan'], 401);
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $treatment = Treatment::findOrFail($id);
         $deleteTreatment = $treatment->delete();
 
-        if($deleteTreatment){
+        if ($deleteTreatment) {
             return response()->json(['status' => 'success', 'message' => 'Berhasil Menghapus Tindakan.']);
         }
 
         return response()->json(['message' => 'Gagal Menghapus Tindakan'], 401);
     }
 
-    public function indexTreatment(){
+    public function indexTreatment()
+    {
         $rooms = Room::all();
-        $treatments = Treatment::where('room_id','=','1')->get();
+        $treatments = Treatment::where('room_id', '=', '1')->get();
 
         // group ruangan
-        // untuk mengatur group ruangan disini, disesuaikan dengan id rooms 
+        // untuk mengatur group ruangan disini, disesuaikan dengan id rooms
         $roomGroups = [
-            'Rawat Jalan' => [2, 19, 20, 13, 14, 15, 17, 21, 11, 12],
             'Gawat Darurat' => [3],
-            'Penunjang' => [6, 7, 10, 16, 18, 22, 23, 24, 25],
-            'Lainnya' => [1]
+            'intensive care' => [4, 5],
+            'Rawat Jalan' => [2, 19, 20, 13, 14, 15, 17, 21, 11, 12, 16, 18, 22],
+            'Rawat Inap' => [8, 9, 7, 10, 25],
+            'Penunjang' => [23, 24, 26, 27, 28],
+            'Lainnya' => [1, 6]
         ];
         return view('visitor.fasilitas.tarif-pelayanan', [
             'rooms' => $rooms,
             'treatments' => $treatments,
-            'roomGroups' => $roomGroups 
+            'roomGroups' => $roomGroups
         ]);
     }
 
-    public function showTreatment($id){
+    public function showTreatment($id)
+    {
         $treatments = Treatment::where('room_id', '=', $id)->get();
 
         return response()->json(['treatments' => $treatments]);
