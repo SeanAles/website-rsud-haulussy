@@ -317,7 +317,7 @@
     /* Styling untuk kolom harga */
     #treatment-table td:last-child {
         width: 150px;
-        text-align: left;
+        text-align: right;
         font-family: 'Roboto Mono', monospace;
         font-weight: 500;
         color: #283779;
@@ -327,7 +327,7 @@
 
     /* Styling untuk header kolom harga */
     #treatment-table th:last-child {
-        text-align: left;
+        text-align: right;
         padding-left: 25px !important;
     }
 

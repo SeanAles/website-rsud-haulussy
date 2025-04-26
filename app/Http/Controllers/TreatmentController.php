@@ -169,10 +169,10 @@ class TreatmentController extends Controller
         $roomGroups = [
             'Gawat Darurat' => [3],
             'intensive care' => [4, 5],
-            'Rawat Jalan' => [2, 19, 20, 13, 14, 15, 17, 21, 11, 12, 16, 18, 22],
-            'Rawat Inap' => [8, 9, 7, 10, 25],
+            'Rawat Jalan' => [20, 13, 14, 15, 17, 21, 11, 12, 16, 18, 22],
+            'Rawat Inap' => [2, 8, 9, 7, 10, 25],
             'Penunjang' => [23, 24, 26, 27, 28],
-            'Lainnya' => [1, 6]
+            'Lainnya' => [1, 6, 19]
         ];
         return view('visitor.fasilitas.tarif-pelayanan', [
             'rooms' => $rooms,
