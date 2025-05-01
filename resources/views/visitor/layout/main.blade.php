@@ -390,7 +390,7 @@
                             <li class="lh-lg"><a class="footer-link" target="_blank"
                                     href="https://ukim.ac.id/akademik/fakultas-kesehatan/">Fakultas Keperawatan UKIM</a></li>
                             <li class="lh-lg"><a class="footer-link" target="_blank"
-                                    href="https://poltekkes-maluku.ac.id/">POLTEKES KEMENKES Maluku</a></li>
+                                    href="https://poltekkes-maluku.ac.id/">Poltekkes Kemenkes Maluku</a></li>
 
                         </ul>
                     </div>
