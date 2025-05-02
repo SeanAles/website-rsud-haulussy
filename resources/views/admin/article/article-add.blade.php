@@ -291,7 +291,7 @@
                                         <label for="title">Judul Artikel</label>
                                         <div class="input-icon-wrapper">
                                             <input type="text" class="form-control icon-input" name="title" id="title"
-                                                placeholder="Masukkan judul artikel...">
+                                                placeholder="Masukkan judul artikel yang menarik...">
                                             <i class="fas fa-heading input-icon"></i>
                                         </div>
                                     </div>
@@ -301,7 +301,7 @@
                                         <label for="author">Pembuat Artikel</label>
                                         <div class="input-icon-wrapper">
                                             <input type="text" class="form-control icon-input" name="author" id="author"
-                                                placeholder="Masukkan nama penulis...">
+                                                placeholder="Masukkan nama penulis atau sumber artikel">
                                             <i class="fas fa-user-edit input-icon"></i>
                                         </div>
                                     </div>
@@ -360,64 +360,29 @@
             const {
                 ClassicEditor,
                 Alignment,
-                Autoformat,
-                AutoImage,
                 AutoLink,
                 Autosave,
-                BalloonToolbar,
                 BlockQuote,
-                BlockToolbar,
                 Bold,
                 Bookmark,
-                CKBox,
-                CKBoxImageEdit,
-                CloudServices,
                 Code,
-                Emoji,
                 Essentials,
-                FindAndReplace,
                 FontBackgroundColor,
                 FontColor,
                 FontFamily,
                 FontSize,
-                GeneralHtmlSupport,
                 Heading,
                 Highlight,
                 HorizontalLine,
-                ImageBlock,
-                ImageCaption,
                 ImageEditing,
-                ImageInline,
-                ImageInsert,
-                ImageInsertViaUrl,
-                ImageResize,
-                ImageStyle,
-                ImageTextAlternative,
-                ImageToolbar,
-                ImageUpload,
                 ImageUtils,
                 Indent,
                 IndentBlock,
                 Italic,
                 Link,
-                LinkImage,
-                List,
-                ListProperties,
-                Mention,
-                PageBreak,
                 Paragraph,
-                PasteFromOffice,
-                PictureEditing,
                 RemoveFormat,
-                SpecialCharacters,
-                SpecialCharactersArrows,
-                SpecialCharactersCurrency,
-                SpecialCharactersEssentials,
-                SpecialCharactersLatin,
-                SpecialCharactersMathematical,
-                SpecialCharactersText,
                 Strikethrough,
-                Style,
                 Subscript,
                 Superscript,
                 Table,
@@ -426,8 +391,6 @@
                 TableColumnResize,
                 TableProperties,
                 TableToolbar,
-                TextTransformation,
-                TodoList,
                 Underline
             } = window.CKEDITOR;
 
@@ -446,7 +409,7 @@
             } = window.CKEDITOR_PREMIUM_FEATURES;
 
             const LICENSE_KEY =
-                'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NDU2MjU1OTksImp0aSI6IjZhYjhjOGNhLTRlNWUtNDA1NS04MWJhLWMxNjllM2E0MjJlMiIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiLCJzaCJdLCJ3aGl0ZUxhYmVsIjp0cnVlLCJsaWNlbnNlVHlwZSI6InRyaWFsIiwiZmVhdHVyZXMiOlsiKiJdLCJ2YyI6ImU1ODVjOGQ3In0.lKlk3KkjcIKJ9fuDmiwXFE66wb2m2H9eiuKNAq7QUb4fA22Gy3kOCOSig3uiaDt3Bl_plWSbS1xhDwZ1q2WEHg';
+                'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NDc0Mzk5OTksImp0aSI6ImFmYzc4NGMxLTI1N2MtNDNmOS04ZThiLWM0ZTdjZWFlN2IxZCIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiLCJzaCJdLCJ3aGl0ZUxhYmVsIjp0cnVlLCJsaWNlbnNlVHlwZSI6InRyaWFsIiwiZmVhdHVyZXMiOlsiKiJdLCJ2YyI6IjQ1ZjJiNDc0In0.LcYfyVA0qhN3I21xYcctXgJsTqT87C1zcYnhfhfT-cBmqqPmZSo2ppab4gJWV5Hkd3oBQKzLWcHkoCWcImI_Nw';
 
             const CLOUD_SERVICES_TOKEN_URL =
                 'https://nsr96y_lu3xb.cke-cs.com/token/dev/933adc537230dc1f31fb6028ea08e7e014d9bad344ae29f146539107a49a?limit=10';
@@ -454,18 +417,7 @@
             const editorConfig = {
                 toolbar: {
                     items: [
-                        'insertMergeField',
-                        'previewMergeFields',
-                        '|',
-                        'importWord',
-                        'exportWord',
-                        'exportPdf',
-                        'formatPainter',
-                        'caseChange',
-                        'findAndReplace',
-                        '|',
                         'heading',
-                        'style',
                         '|',
                         'fontSize',
                         'fontFamily',
@@ -475,101 +427,44 @@
                         'bold',
                         'italic',
                         'underline',
-                        'strikethrough',
-                        'subscript',
-                        'superscript',
-                        'code',
-                        'removeFormat',
                         '|',
-                        'emoji',
-                        'specialCharacters',
-                        'horizontalLine',
-                        'pageBreak',
                         'link',
-                        'bookmark',
-                        'insertImage',
-                        'insertImageViaUrl',
-                        'ckbox',
                         'insertTable',
-                        'tableOfContents',
-                        'insertTemplate',
                         'highlight',
                         'blockQuote',
                         '|',
                         'alignment',
                         '|',
-                        'bulletedList',
-                        'numberedList',
-                        'multiLevelList',
-                        'todoList',
                         'outdent',
-                        'indent',
-                        '|',
-                        'undo',
-                        'redo'
+                        'indent'
                     ],
-                    shouldNotGroupWhenFull: true
+                    shouldNotGroupWhenFull: false
                 },
                 plugins: [
                     Alignment,
-                    Autoformat,
-                    AutoImage,
                     AutoLink,
                     Autosave,
-                    BalloonToolbar,
                     BlockQuote,
-                    BlockToolbar,
                     Bold,
                     Bookmark,
-                    CKBox,
-                    CKBoxImageEdit,
-                    CloudServices,
                     Code,
-                    Emoji,
                     Essentials,
-                    FindAndReplace,
                     FontBackgroundColor,
                     FontColor,
                     FontFamily,
                     FontSize,
-                    GeneralHtmlSupport,
                     Heading,
                     Highlight,
                     HorizontalLine,
-                    ImageBlock,
-                    ImageCaption,
                     ImageEditing,
-                    ImageInline,
-                    ImageInsert,
-                    ImageInsertViaUrl,
-                    ImageResize,
-                    ImageStyle,
-                    ImageTextAlternative,
-                    ImageToolbar,
-                    ImageUpload,
                     ImageUtils,
                     Indent,
                     IndentBlock,
                     Italic,
                     Link,
-                    LinkImage,
-                    List,
-                    ListProperties,
-                    Mention,
-                    PageBreak,
                     Paragraph,
-                    PasteFromOffice,
-                    PictureEditing,
                     RemoveFormat,
-                    SpecialCharacters,
-                    SpecialCharactersArrows,
-                    SpecialCharactersCurrency,
-                    SpecialCharactersEssentials,
-                    SpecialCharactersLatin,
-                    SpecialCharactersMathematical,
-                    SpecialCharactersText,
                     Strikethrough,
-                    Style,
                     Subscript,
                     Superscript,
                     Table,
@@ -578,20 +473,7 @@
                     TableColumnResize,
                     TableProperties,
                     TableToolbar,
-                    TextTransformation,
-                    TodoList,
-                    Underline,
-                    CaseChange,
-                    ExportPdf,
-                    ExportWord,
-                    FormatPainter,
-                    ImportWord,
-                    MergeFields,
-                    MultiLevelList,
-                    PasteFromOfficeEnhanced,
-                    SlashCommand,
-                    TableOfContents,
-                    Template
+                    Underline
                 ],
                 balloonToolbar: ['bold', 'italic', '|', 'link', 'insertImage', '|', 'bulletedList', 'numberedList'],
                 blockToolbar: [
@@ -763,7 +645,7 @@
                     window.editor = newEditor;
                     console.log('Editor berhasil dibuat');
 
-                    // Sembunyikan loading overlay setelah sperskian detik yang ditentukan di css
+                    // Sembunyikan loading overlay setelah 2 detik
                     setTimeout(() => {
                         document.getElementById('editorLoadingOverlay').style.opacity = '0';
                         setTimeout(() => {
