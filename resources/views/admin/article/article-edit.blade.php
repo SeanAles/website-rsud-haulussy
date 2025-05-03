@@ -489,7 +489,7 @@
                 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NDc0Mzk5OTksImp0aSI6ImFmYzc4NGMxLTI1N2MtNDNmOS04ZThiLWM0ZTdjZWFlN2IxZCIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiLCJzaCJdLCJ3aGl0ZUxhYmVsIjp0cnVlLCJsaWNlbnNlVHlwZSI6InRyaWFsIiwiZmVhdHVyZXMiOlsiKiJdLCJ2YyI6IjQ1ZjJiNDc0In0.LcYfyVA0qhN3I21xYcctXgJsTqT87C1zcYnhfhfT-cBmqqPmZSo2ppab4gJWV5Hkd3oBQKzLWcHkoCWcImI_Nw';
 
             const CLOUD_SERVICES_TOKEN_URL =
-                'https://nsr96y_lu3xb.cke-cs.com/token/dev/933adc537230dc1f31fb6028ea08e7e014d9bad344ae29f146539107a49a?limit=10';
+                'https://e_p3191_pdf1.cke-cs.com/token/dev/7887cfa9d2fb31c36638b0d07cfc5e1c483618d6b803efbcb48c263a0227?limit=10';
 
             const editorConfig = {
                 toolbar: {
