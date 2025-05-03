@@ -215,7 +215,10 @@ class ArticleController extends Controller
         $article = Post::findOrFail($id);
 
         $dom = new DOMDocument();
-        $dom->loadHTML($article->description, 9);
+        libxml_use_internal_errors(true);
+        $dom->loadHTML('<?xml encoding="utf-8" ?>' . $article->description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD); // menggantkan prmeter 9
+        libxml_clear_errors();
+
         $images = $dom->getElementsByTagName('img');
 
         foreach ($images as $key => $img) {
