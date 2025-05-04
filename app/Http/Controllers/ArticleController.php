@@ -156,16 +156,6 @@ class ArticleController extends Controller
 
             $description = $request->description;
 
-            // Log semua data yang diterima untuk debugging
-            error_log('========= UPDATE ARTICLE DATA =========');
-            error_log('ID: ' . $id);
-            error_log('Title: ' . $request->title);
-            error_log('Author: ' . $request->author);
-            error_log('Description (bytes): ' . (is_string($description) ? strlen($description) : 'bukan string'));
-            error_log('Has description in request: ' . ($request->has('description') ? 'Ya' : 'Tidak'));
-            error_log('Request method: ' . $request->method());
-            error_log('========= END UPDATE ARTICLE DATA =========');
-
             // Validasi description
             if (empty($description)) {
                 return response()->json(['message' => 'Konten artikel tidak boleh kosong'], 422);
@@ -173,8 +163,8 @@ class ArticleController extends Controller
 
             // Proses HTML dan gambar
             $dom = new DOMDocument();
-            libxml_use_internal_errors(true); // Suppress warnings for malformed HTML
-            $dom->loadHTML($description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            libxml_use_internal_errors(true);
+            $dom->loadHTML('<?xml encoding="utf-8" ?>' . $description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
             libxml_clear_errors();
 
             $images = $dom->getElementsByTagName('img');
@@ -192,12 +182,43 @@ class ArticleController extends Controller
 
             $description = $dom->saveHTML();
 
-            // Update artikel
-            $editArticle = $article->update([
+            // Data untuk update artikel
+            $updateData = [
                 'title' => $request->title,
                 'author' => $request->author,
                 'description' => $description,
-            ]);
+            ];
+
+            // Handle thumbnail jika ada
+            if ($request->hasFile('thumbnail')) {
+                $file = $request->file('thumbnail');
+
+                // Validasi file
+                $allowedExtensions = ['jpg', 'jpeg', 'png'];
+                if (!in_array(strtolower($file->getClientOriginalExtension()), $allowedExtensions)) {
+                    return response()->json(['message' => 'Thumbnail harus memiliki ekstensi JPG, JPEG, atau PNG'], 422);
+                }
+
+                if ($file->getSize() > 1048576) { // 1MB = 1048576 bytes
+                    return response()->json(['message' => 'Ukuran thumbnail maksimal 1024 KB'], 422);
+                }
+
+                // Hapus thumbnail lama jika ada
+                $oldThumbnailPath = public_path() . "/images/article/thumbnails/" . $article->thumbnail;
+                if ($article->thumbnail && File::exists($oldThumbnailPath)) {
+                    File::delete($oldThumbnailPath);
+                }
+
+                // Generate nama file baru dan simpan
+                $thumbnail = time() . "." . $file->getClientOriginalExtension();
+                $file->storeAs('images/article/thumbnails/', $thumbnail);
+
+                // Tambahkan ke data update
+                $updateData['thumbnail'] = $thumbnail;
+            }
+
+            // Update artikel
+            $editArticle = $article->update($updateData);
 
             if ($editArticle) {
                 return response()->json(['message' => 'Artikel berhasil diperbarui', 'redirect_url' => '/article']);
@@ -209,6 +230,7 @@ class ArticleController extends Controller
             return response()->json(['message' => 'Terjadi kesalahan: ' . $e->getMessage()], 500);
         }
     }
+
 
     public function destroy($id)
     {

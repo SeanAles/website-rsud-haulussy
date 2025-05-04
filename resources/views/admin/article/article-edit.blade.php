@@ -201,6 +201,383 @@
             font-size: 0.9rem;
         }
 
+        /* thumbnail */
+        :root {
+            --primary-color: #4299e1;
+            --primary-hover: #3182ce;
+            --primary-gradient: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+            --success-color: #48bb78;
+            --warning-color: #ed8936;
+            --light-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --text-dark: #2d3748;
+            --text-muted: #718096;
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --border-radius: 12px;
+            --transition-speed: 0.3s;
+        }
+
+        .control-label {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            font-size: 1rem;
+            display: block;
+        }
+
+        /* Upload Thumbnail Styling */
+        .thumbnail-upload-wrapper,
+        .current-thumbnail-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+            height: 300px;
+        }
+
+        .thumbnail-upload-container,
+        .current-thumbnail-container {
+            height: 100%;
+        }
+
+        .thumbnail-dropzone {
+            position: relative;
+            height: 100%;
+            border: 2px dashed var(--border-color);
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            transition: all var(--transition-speed) ease;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .thumbnail-dropzone:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(66, 153, 225, 0.05);
+        }
+
+        .thumbnail-dropzone.drag-over {
+            border-color: var(--primary-color);
+            background-color: rgba(66, 153, 225, 0.1);
+            transform: scale(1.02);
+        }
+
+        .thumbnail-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .thumbnail-placeholder {
+            text-align: center;
+            padding: 30px;
+            width: 100%;
+        }
+
+        .upload-icon-container {
+            margin-bottom: 20px;
+            width: 80px;
+            height: 80px;
+            background: rgba(66, 153, 225, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .upload-icon {
+            font-size: 36px;
+            color: var(--primary-color);
+        }
+
+        .upload-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .upload-text .primary-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .upload-text .secondary-text {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Preview Styling */
+        .thumbnail-preview {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-bg);
+            padding: 20px;
+        }
+
+        .thumbnail-preview img {
+            max-height: 60%;
+            max-width: 70%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail-preview img:hover {
+            transform: scale(1.05);
+        }
+
+        .thumbnail-preview-info {
+            margin-top: 15px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            width: 100%;
+        }
+
+        #filename-display {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        #filesize-display {
+            font-size: 13px;
+        }
+
+        .change-file-tip {
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--primary-color);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .file-selected-indicator {
+            position: absolute;
+            bottom: 15px;
+            background-color: var(--success-color);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            animation: fadeInUp 0.5s ease forwards;
+            box-shadow: 0 3px 10px rgba(72, 187, 120, 0.3);
+        }
+
+        .file-selected-indicator i {
+            margin-right: 6px;
+        }
+
+        /* Current Thumbnail Styling */
+        .current-thumbnail-card {
+            height: 100%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed) ease;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .current-thumbnail-card:hover {
+            box-shadow: var(--hover-shadow);
+            transform: translateY(-5px);
+        }
+
+        .current-thumbnail-header {
+            padding: 15px 20px;
+            background-image: var(--primary-gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icon {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .header-icon i {
+            font-size: 16px;
+        }
+
+        .header-text {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .current-thumbnail-body {
+            flex: 1;
+            padding: 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-bg);
+            position: relative;
+        }
+
+        /* Container gambar yang fixed size dengan ukuran yang lebih kecil */
+        .image-container {
+            width: 70%;
+            height: 55%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+            background-color: white;
+            border-radius: 8px;
+            padding: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .current-thumbnail-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .current-thumbnail-image:hover {
+            transform: scale(1.05);
+        }
+
+        .image-metadata {
+            margin-top: auto;
+            text-align: center;
+            width: 100%;
+        }
+
+        .image-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .image-dimensions {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .current-thumbnail-footer {
+            padding: 12px 20px;
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-info {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-info i {
+            color: var(--warning-color);
+            margin-right: 8px;
+            font-size: 15px;
+        }
+
+        /* Upload Status */
+        .upload-status {
+            margin-top: 15px;
+            display: none;
+        }
+
+        .thumbnail-progress {
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            background-color: #e2e8f0;
+        }
+
+        .thumbnail-progress .progress-bar {
+            background-image: var(--primary-gradient);
+            transition: width 0.5s ease;
+        }
+
+        .status-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            margin-top: 8px;
+            color: var(--text-muted);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse 1s ease infinite;
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             #formEditArticle {
@@ -229,7 +606,7 @@
                             <p><i class="fas fa-info-circle mr-2"></i> Anda sedang mengedit artikel <strong>{{ $article->title }}</strong> yang dibuat oleh <strong>{{ $article->author }}</strong></p>
                         </div>
 
-                        <form id="formEditArticle" method="POST">
+                        <form id="formEditArticle" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="_method" value="PATCH">
@@ -254,6 +631,88 @@
                                             <input type="text" class="form-control icon-input" name="author" id="author"
                                                 value="{{ $article->author }}">
                                             <i class="fas fa-user-edit input-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Thumbnail Section -->
+                            <h3 class="section-heading"><i class="fas fa-image"></i> Thumbnail Artikel</h3>
+                            <div class="row mb-4">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="thumbnail" class="control-label">Upload Thumbnail Baru</label>
+                                        <div class="thumbnail-upload-wrapper">
+                                            <div class="thumbnail-upload-container">
+                                                <div class="thumbnail-dropzone" id="thumbnail-dropzone">
+                                                    <input type="file" class="thumbnail-input" name="thumbnail" id="thumbnail" accept=".jpg,.jpeg,.png">
+                                                    <!-- Area saat belum ada file dipilih -->
+                                                    <div class="thumbnail-placeholder">
+                                                        <div class="upload-icon-container">
+                                                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                                        </div>
+                                                        <div class="upload-text">
+                                                            <span class="primary-text">Klik atau seret gambar ke sini</span>
+                                                            <span class="secondary-text">Format: JPG, JPEG, PNG | Maks: 1024 KB</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Area setelah file dipilih (preview) -->
+                                                    <div class="thumbnail-preview" id="thumbnail-preview-container" style="display:none;">
+                                                        <img src="#" alt="Preview" id="thumbnail-preview-image">
+                                                        <div class="thumbnail-preview-info">
+                                                            <span id="filename-display"></span>
+                                                            <span id="filesize-display"></span>
+                                                        </div>
+                                                        <div class="file-selected-indicator">
+                                                            <i class="fas fa-check-circle"></i> File dipilih
+                                                        </div>
+                                                        <div class="change-file-tip">
+                                                            Klik area ini untuk memilih file lain
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="upload-status" id="upload-status">
+                                                <div class="progress thumbnail-progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <div class="status-text"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Thumbnail Saat Ini</label>
+                                        <div class="current-thumbnail-wrapper">
+                                            <div class="current-thumbnail-container">
+                                                <!-- Card untuk thumbnail saat ini -->
+                                                <div class="current-thumbnail-card">
+                                                    <div class="current-thumbnail-header">
+                                                        <div class="header-icon">
+                                                            <i class="fas fa-image"></i>
+                                                        </div>
+                                                        <div class="header-text">
+                                                            Thumbnail Artikel Saat Ini
+                                                        </div>
+                                                    </div>
+                                                    <div class="current-thumbnail-body">
+                                                        <div class="image-container">
+                                                            <img src="{{ asset('images/article/thumbnails/' . $article->thumbnail) }}"
+                                                                alt="{{ $article->title }}" class="current-thumbnail-image" id="current-thumbnail-image">
+                                                        </div>
+                                                        <div class="image-metadata">
+                                                            <div class="image-name">{{ $article->thumbnail }}</div>
+                                                            <div class="image-dimensions" id="current-dimensions"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="current-thumbnail-footer">
+                                                        <div class="footer-info">
+                                                            <i class="fas fa-info-circle"></i>
+                                                            <span>Thumbnail ini akan diganti jika Anda mengunggah yang baru</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -343,12 +802,35 @@
                     formData.append('author', author);
                     formData.append('description', description);
 
+                    // Tambahkan thumbnail jika ada file yang dipilih
+                    const thumbnailFile = $('#thumbnail')[0].files[0];
+                    if (thumbnailFile) {
+                        // Validasi ukuran dan tipe file
+                        const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                        const maxSizeInBytes = 1 * 1024 * 1024; // 1024 KB
+
+                        if (!allowedExtensions.exec(thumbnailFile.name)) {
+                            toastr.error("Thumbnail harus memiliki ekstensi JPG, JPEG, atau PNG");
+                            document.getElementById("editArticleButton").disabled = false;
+                            return;
+                        }
+
+                        if (thumbnailFile.size > maxSizeInBytes) {
+                            toastr.error("Ukuran thumbnail maksimal 1024 KB");
+                            document.getElementById("editArticleButton").disabled = false;
+                            return;
+                        }
+
+                        formData.append('thumbnail', thumbnailFile);
+                    }
+
                     // Debug log untuk memastikan data sudah benar ka blm
                     for (let pair of formData.entries()) {
                         console.log(pair[0] + ': ' + (pair[0] === 'description' ?
                             ('[data length: ' + pair[1].length + ', excerpt: ' + pair[1].substring(0, 50) + '...]') :
                             pair[1]));
                     }
+
 
                     // Kirim AJAX request
                     $.ajax({
@@ -813,5 +1295,107 @@
                     console.error('Error saat membuat editor:', error);
                 });
         });
+
+        // thumbnail
+        $(document).ready(function() {
+            // Cek dimensi gambar thumbnail saat ini
+            var currentImg = document.getElementById('current-thumbnail-image');
+            currentImg.onload = function() {
+                $('#current-dimensions').text(this.naturalWidth + ' × ' + this.naturalHeight + ' px');
+            };
+
+            // Preview thumbnail saat file dipilih
+            $('#thumbnail').on('change', function() {
+                const file = this.files[0];
+
+                if (file) {
+                    // Tampilkan nama file dan ukuran
+                    const fileName = file.name;
+                    const fileSize = formatFileSize(file.size);
+
+                    $('#filename-display').text(fileName);
+                    $('#filesize-display').text(fileSize);
+
+                    // Baca file untuk preview
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('#thumbnail-preview-image').attr('src', e.target.result);
+                        $('#thumbnail-preview-container').fadeIn();
+                        $('.thumbnail-placeholder').hide();
+
+                        // Tampilkan status upload
+                        showUploadStatus();
+
+                        // Animasi gambar preview
+                        $('#thumbnail-preview-image').addClass('fade-in');
+
+                        // Cek dimensi gambar
+                        var img = new Image();
+                        img.onload = function() {
+                            $('#filesize-display').append(' • ' + this.width + ' × ' + this.height + ' px');
+                        };
+                        img.src = e.target.result;
+                    };
+
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Efek drag dan drop
+            $('#thumbnail-dropzone')
+                .on('dragover', function(e) {
+                    e.preventDefault();
+                    $(this).addClass('drag-over');
+                })
+                .on('dragleave dragend', function(e) {
+                    e.preventDefault();
+                    $(this).removeClass('drag-over');
+                })
+                .on('drop', function(e) {
+                    e.preventDefault();
+                    $(this).removeClass('drag-over');
+
+                    if (e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.files.length) {
+                        $('#thumbnail')[0].files = e.originalEvent.dataTransfer.files;
+                        $('#thumbnail').trigger('change');
+                    }
+                });
+
+            // Format file size untuk display
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            // Simulasi status upload
+            function showUploadStatus() {
+                $('#upload-status').slideDown();
+
+                // Simulasi progress
+                $('.status-text').html('<i class="fas fa-circle-notch fa-spin mr-2"></i> Mempersiapkan file...');
+
+                setTimeout(function() {
+                    $('.progress-bar').css('width', '30%');
+                    $('.status-text').html('<i class="fas fa-circle-notch fa-spin mr-2"></i> Memvalidasi format...');
+                }, 500);
+
+                setTimeout(function() {
+                    $('.progress-bar').css('width', '60%');
+                    $('.status-text').html('<i class="fas fa-circle-notch fa-spin mr-2"></i> Mengoptimalkan gambar...');
+                }, 1000);
+
+                setTimeout(function() {
+                    $('.progress-bar').css('width', '100%');
+                    $('.status-text').html('<i class="fas fa-check-circle mr-2 text-success"></i> File siap diunggah');
+                }, 1500);
+            }
+        });
+
     </script>
 @endsection
