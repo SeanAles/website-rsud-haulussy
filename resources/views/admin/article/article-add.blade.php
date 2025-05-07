@@ -114,56 +114,229 @@
             color: #4299e1;
         }
 
-        /* Style untuk thumbnail uploader */
-        .thumbnail-upload-area {
-            border: 2px dashed #cbd5e0;
-            padding: 30px;
-            text-align: center;
-            border-radius: 12px;
-            background-color: #f7fafc;
-            margin-bottom: 25px;
-            transition: all 0.3s;
-            cursor: pointer;
+        /* Style Thumbnail */
+        :root {
+            --primary-color: #4299e1;
+            --primary-hover: #3182ce;
+            --primary-gradient: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+            --success-color: #48bb78;
+            --warning-color: #ed8936;
+            --light-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --text-dark: #2d3748;
+            --text-muted: #718096;
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --border-radius: 12px;
+            --transition-speed: 0.3s;
+        }
+
+        .control-label {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            font-size: 1rem;
+            display: block;
+        }
+
+        .thumbnail-upload-wrapper {
             position: relative;
+            margin-bottom: 20px;
+            height: 300px;
         }
 
-        .thumbnail-upload-area:hover {
-            border-color: #4299e1;
-            background-color: #ebf4ff;
-        }
-
-        .thumbnail-upload-icon {
-            font-size: 2.5rem;
-            color: #a0aec0;
-            margin-bottom: 10px;
-            transition: all 0.3s;
-        }
-
-        .thumbnail-upload-area:hover .thumbnail-upload-icon {
-            color: #4299e1;
-            transform: scale(1.1);
-        }
-
-        .thumbnail-upload-text {
-            color: #4a5568;
-            font-weight: 500;
-        }
-
-        .thumbnail-upload-hint {
-            font-size: 0.85rem;
-            color: #718096;
-            margin-top: 8px;
-        }
-
-        .file-input-hidden {
-            position: absolute;
-            width: 100%;
+        .thumbnail-upload-container {
             height: 100%;
+        }
+
+        .thumbnail-dropzone {
+            position: relative;
+            height: 100%;
+            border: 2px dashed var(--border-color);
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            transition: all var(--transition-speed) ease;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .thumbnail-dropzone:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(66, 153, 225, 0.05);
+        }
+
+        .thumbnail-dropzone.drag-over {
+            border-color: var(--primary-color);
+            background-color: rgba(66, 153, 225, 0.1);
+            transform: scale(1.02);
+        }
+
+        .thumbnail-input {
+            position: absolute;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
             opacity: 0;
             cursor: pointer;
+            z-index: 10;
         }
+
+        .thumbnail-placeholder {
+            text-align: center;
+            padding: 30px;
+            width: 100%;
+        }
+
+        .upload-icon-container {
+            margin-bottom: 20px;
+            width: 80px;
+            height: 80px;
+            background: rgba(66, 153, 225, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .upload-icon {
+            font-size: 36px;
+            color: var(--primary-color);
+        }
+
+        .upload-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .upload-text .primary-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .upload-text .secondary-text {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .thumbnail-preview {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-bg);
+            padding: 20px;
+        }
+
+        .thumbnail-preview img {
+            max-height: 60%;
+            max-width: 70%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail-preview img:hover {
+            transform: scale(1.05);
+        }
+
+        .thumbnail-preview-info {
+            margin-top: 15px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            width: 100%;
+        }
+
+        #filename-display {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        #filesize-display {
+            font-size: 13px;
+        }
+
+        .change-file-tip {
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--primary-color);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .file-selected-indicator {
+            position: absolute;
+            bottom: 15px;
+            background-color: var(--success-color);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            animation: fadeInUp 0.5s ease forwards;
+            box-shadow: 0 3px 10px rgba(72, 187, 120, 0.3);
+        }
+
+        .file-selected-indicator i {
+            margin-right: 6px;
+        }
+
+        .upload-status {
+            margin-top: 15px;
+            display: none;
+        }
+
+        .thumbnail-progress {
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            background-color: #e2e8f0;
+        }
+
+        .thumbnail-progress .progress-bar {
+            background-image: var(--primary-gradient);
+            transition: width 0.5s ease;
+        }
+
+        .status-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            margin-top: 8px;
+            color: var(--text-muted);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Akhir Style Thumbnail */
+
+
 
         /* Style untuk tombol posting */
         .btn-posting {
@@ -308,16 +481,54 @@
                                 </div>
                             </div>
 
-                            <!-- Thumbnail Artikel -->
-                            <div class="form-group">
-                                <label for="thumbnail">Thumbnail Artikel</label>
-                                <div class="thumbnail-upload-area">
-                                    <i class="fas fa-cloud-upload-alt thumbnail-upload-icon"></i>
-                                    <h5 class="thumbnail-upload-text">Pilih atau Seret File Gambar Thumbnail</h5>
-                                    <p class="thumbnail-upload-hint">Format: JPG, PNG, JPEG (Maks: 1024kb)</p>
-                                    <input type="file" name="thumbnail" id="thumbnail" class="file-input-hidden">
+                            <!-- Thumbnail Section -->
+                            <h3 class="section-heading"><i class="fas fa-image"></i> Thumbnail Artikel</h3>
+                            <div class="row mb-4">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="thumbnail" class="control-label">Upload Thumbnail</label>
+                                        <div class="thumbnail-upload-wrapper">
+                                            <div class="thumbnail-upload-container">
+                                                <div class="thumbnail-dropzone" id="thumbnail-dropzone">
+                                                    <input type="file" class="thumbnail-input" name="thumbnail" id="thumbnail" accept=".jpg,.jpeg,.png">
+                                                    <!-- Area saat belum ada file dipilih -->
+                                                    <div class="thumbnail-placeholder">
+                                                        <div class="upload-icon-container">
+                                                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                                        </div>
+                                                        <div class="upload-text">
+                                                            <span class="primary-text">Klik atau seret gambar ke sini</span>
+                                                            <span class="secondary-text">Format: JPG, JPEG, PNG | Maks: 1024 KB</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Area setelah file dipilih (preview) -->
+                                                    <div class="thumbnail-preview" id="thumbnail-preview-container" style="display:none;">
+                                                        <img src="#" alt="Preview" id="thumbnail-preview-image">
+                                                        <div class="thumbnail-preview-info">
+                                                            <span id="filename-display"></span>
+                                                            <span id="filesize-display"></span>
+                                                        </div>
+                                                        <div class="file-selected-indicator">
+                                                            <i class="fas fa-check-circle"></i> File dipilih
+                                                        </div>
+                                                        <div class="change-file-tip">
+                                                            Klik area ini untuk memilih file lain
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="upload-status" id="upload-status">
+                                                <div class="progress thumbnail-progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <div class="status-text"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- Akhir Thumbnail Section -->
+
 
                             <!-- Konten Artikel -->
                             <h3 class="section-heading"><i class="fas fa-file-alt"></i> Konten Artikel</h3>
@@ -775,6 +986,80 @@
                     console.error('Error saat membuat editor:', error);
                 });
         });
+
+        // Thumbnail
+        $(document).ready(function() {
+
+            $('#thumbnail').on('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    const fileName = file.name;
+                    const fileSize = formatFileSize(file.size);
+                    $('#filename-display').text(fileName);
+                    $('#filesize-display').text(fileSize);
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#thumbnail-preview-image').attr('src', e.target.result);
+                        $('#thumbnail-preview-container').fadeIn();
+                        $('.thumbnail-placeholder').hide();
+                        showUploadStatus();
+                        $('#thumbnail-preview-image').addClass('fade-in');
+                        var img = new Image();
+                        img.onload = function() {
+                            $('#filesize-display').append(' • ' + this.width + ' × ' + this.height + ' px');
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            $('#thumbnail-dropzone')
+                .on('dragover', function(e) {
+                    e.preventDefault();
+                    $(this).addClass('drag-over');
+                })
+                .on('dragleave dragend', function(e) {
+                    e.preventDefault();
+                    $(this).removeClass('drag-over');
+                })
+                .on('drop', function(e) {
+                    e.preventDefault();
+                    $(this).removeClass('drag-over');
+                    if (e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.files.length) {
+                        $('#thumbnail')[0].files = e.originalEvent.dataTransfer.files;
+                        $('#thumbnail').trigger('change');
+                    }
+                });
+
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            function showUploadStatus() {
+                $('#upload-status').slideDown();
+                $('.status-text').html('<i class="fas fa-circle-notch fa-spin mr-2"></i> Mempersiapkan file...');
+                setTimeout(function() {
+                    $('.progress-bar').css('width', '30%');
+                    $('.status-text').html('<i class="fas fa-circle-notch fa-spin mr-2"></i> Memvalidasi format...');
+                }, 500);
+                setTimeout(function() {
+                    $('.progress-bar').css('width', '60%');
+                    $('.status-text').html('<i class="fas fa-circle-notch fa-spin mr-2"></i> Mengoptimalkan gambar...');
+                }, 1000);
+                setTimeout(function() {
+                    $('.progress-bar').css('width', '100%');
+                    $('.status-text').html('<i class="fas fa-check-circle mr-2 text-success"></i> File siap diunggah');
+                }, 1500);
+            }
+        });
+        // Akhir Thumbnail
+
+
 
         function addArticle() {
             console.log('Fungsi addArticle dipanggil');
