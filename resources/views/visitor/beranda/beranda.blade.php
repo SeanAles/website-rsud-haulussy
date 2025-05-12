@@ -49,7 +49,7 @@
 
 @section('content')
     <!-- Modal -->
-    {{-- <div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="gambarModalLabel" aria-hidden="true">
+    <div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="gambarModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <!-- Tombol Close -->
@@ -59,14 +59,14 @@
                 <center>
                 <div  class="modal-body">
                     <a href="/artikel/sHKk6VAKR9">
-                    <img src="{{ asset('visitor/assets/img/iklan/fitri.jpg') }}" class="img-fluid"
+                    <img src="{{ asset('visitor/assets/img/iklan/info-pelayanan rsud.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
                     </a>
                 </div>
                 </center>
             </div>
         </div>
-    </div> --}}
+    </div>
     <section class="w-100">
         <h1 class="text-center pb-5">Poliklinik</h1>
 
