@@ -22,7 +22,7 @@
     <div class="container">
         <div class="mt-4">
             <h3 class="mb-3 mt-5">Pejabat Ruang Pelayanan</h3>
-    
+
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang ICCU Fix.png') }}"
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang ICU Fix.png') }}"
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Kamar Operasi Fix.png') }}"
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Saraf Fix.png') }}"
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Bedah Gabung Fix.png') }}"
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Cendrawasih.png') }}"
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang RKK-PICU Fix.png') }}"
@@ -111,7 +111,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Interna Wanita Fix.png') }}"
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Interna Laki Fix.png') }}"
@@ -133,7 +133,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Paru & TBC MDR Fix.png') }}"
@@ -144,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Nifas.png') }}"
@@ -155,7 +155,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang KB Fix (2).png') }}"
@@ -166,7 +166,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Ginekologi Fix.png') }}"
@@ -177,7 +177,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang NICU Fix.png') }}"
@@ -188,7 +188,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Paru & TBC MDR Fix.png') }}"
@@ -199,7 +199,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Isolasi Fix.png') }}"
@@ -210,7 +210,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/ruangan/Ruang Hemodialisis Fix.png') }}"
@@ -221,25 +221,25 @@
                         </div>
                     </div>
                 </div>
-    
+
             </div>
         </div>
-    
+
         <div class="mt-8">
             <h3 class="mb-3 mt-5">Pejabat Instalasi</h3>
-    
+
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Rekam Medik Fix.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
                             class="card-img-top" alt="Instalasi Rekam Medik">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Rekam Medik</h5>
-                            <p class="card-text">Glenny L. Syaranamual, Amd.PKStrT.</p>
+                            <p class="card-text">Marchel Lekahena</p>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
@@ -250,7 +250,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
@@ -261,7 +261,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
@@ -272,7 +272,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Bedah Sentral Fix.png') }}"
@@ -283,7 +283,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Laboratorium Fix.png') }}"
@@ -294,7 +294,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
@@ -305,7 +305,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Gizi Fix.png') }}"
@@ -316,7 +316,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi CSSD Fix.png') }}"
@@ -327,7 +327,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Farmasi.png') }}"
@@ -338,7 +338,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
@@ -349,7 +349,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Rehab Medik Fix.png') }}"
@@ -360,29 +360,29 @@
                         </div>
                     </div>
                 </div>
-    
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Laundry Fix.png') }}"
-                            class="card-img-top" alt="Instalasi Laundry">
-                        <div class="card-body">
-                            <h5 class="card-title">Instalasi Laundry</h5>
-                            <p class="card-text">Margaritha Sipasulta, Amd.Kep.</p>
-                        </div>
-                    </div>
-                </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
-                            class="card-img-top" alt="Instalasi Promkes">
+                            class="card-img-top" alt="Instalasi Laundry">
                         <div class="card-body">
-                            <h5 class="card-title">Instalasi Promkes</h5>
-                            <p class="card-text">Ns. Selvi Jaga, S.Kep</p>
+                            <h5 class="card-title">Instalasi Laundry</h5>
+                            <p class="card-text">Penina Matulessy</p>
                         </div>
                     </div>
                 </div>
-    
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card custom-card">
+                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Promkes Fix.png') }}"
+                            class="card-img-top" alt="Instalasi Promkes">
+                        <div class="card-body">
+                            <h5 class="card-title">Instalasi Promosi Kesehatan RS</h5>
+                            <p class="card-text">Violend H. Wattimury, SKM, M.Kes</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
@@ -393,7 +393,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
@@ -404,7 +404,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="card custom-card">
                             <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi SIMRS.png') }}"
@@ -417,7 +417,7 @@
                     </div>
             </div>
             <p class="text-danger text-right">
-                <b>*Diperbarui 01 Oktober 2024</b>
+                <b>*Diperbarui 13 Mei 2025</b>
             </p>
         </div>
     </div>
