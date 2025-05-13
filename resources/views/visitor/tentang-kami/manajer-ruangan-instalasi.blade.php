@@ -417,7 +417,7 @@
                     </div>
             </div>
             <p class="text-danger text-right">
-                <b>*Diperbarui 13 Mei 2025</b>
+                <b>*Diperbarui 1 April 2025</b>
             </p>
         </div>
     </div>
