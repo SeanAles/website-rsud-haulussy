@@ -58,8 +58,8 @@
                 </button>
                 <center>
                 <div  class="modal-body">
-                    <a href="/artikel/sHKk6VAKR9">
-                    <img src="{{ asset('visitor/assets/img/iklan/info-pelayanan rsud.jpg') }}" class="img-fluid"
+                    <a href="/artikel/IL4qi8etn8">
+                    <img src="{{ asset('visitor/assets/img/iklan/HARI KAPITAN PATTIMURA.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
                     </a>
                 </div>
