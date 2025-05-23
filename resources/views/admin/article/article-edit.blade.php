@@ -971,7 +971,7 @@
                 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NDkyNTQzOTksImp0aSI6IjY4ZmZhNzMwLTZlNDUtNGUyYi1hOGQwLTg5ZmQzOWZhYjU5MCIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiLCJzaCJdLCJ3aGl0ZUxhYmVsIjp0cnVlLCJsaWNlbnNlVHlwZSI6InRyaWFsIiwiZmVhdHVyZXMiOlsiKiJdLCJ2YyI6ImE0ZTdmNjMxIn0.9Awknu8Dd5IyxfysGdwI5w7IYttfwGKjAehjGhgGG-ALlbxT72Y5PudF7wzEgH6Df5bG-J7CjmTb_dRrNWDYgw';
 
             const CLOUD_SERVICES_TOKEN_URL =
-                'https://e_p3191_pdf1.cke-cs.com/token/dev/7887cfa9d2fb31c36638b0d07cfc5e1c483618d6b803efbcb48c263a0227?limit=10';
+                'https://wu_dxjepse3m.cke-cs.com/token/dev/8115b60389b74a85146a538965248e317744b0896146577a41b5483cb6f0?limit=10';
 
             const editorConfig = {
                 toolbar: {
