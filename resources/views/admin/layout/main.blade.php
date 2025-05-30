@@ -19,6 +19,8 @@
     <title>@yield('title') - Admin RSUD dr. M. Haulussy</title>
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Font Awesome -->
@@ -72,6 +74,17 @@
             background: rgba(255, 255, 255, 0.1);
             border-left: 4px solid #fff;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Active submenu styling - simplified */
+        .sidebar-dark-primary .nav-treeview>.nav-item>.nav-link.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        /* Menu open state - simplified */
+        .nav-item.menu-open > .nav-link {
+            background: rgba(255, 255, 255, 0.05);
         }
 
         /* Brand styling */
@@ -201,6 +214,8 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             font-weight: 600;
         }
+
+
     </style>
     @yield('link')
 </head>
@@ -272,7 +287,7 @@
                with font-awesome or any other icon font library -->
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                             <li class="nav-item">
-                                <a href="/dashboard" class="nav-link">
+                                <a href="/dashboard" class="nav-link {{ request()->is('dashboard*') ? 'active' : '' }}">
                                     <i class="nav-icon material-icons-round">dashboard</i>
                                     <p>
                                         Dashboard
@@ -283,7 +298,7 @@
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2 || Auth::user()->role_id === 3)
                             <li class="nav-item">
-                                <a href="/bed" class="nav-link">
+                                <a href="/bed" class="nav-link {{ request()->is('bed*') ? 'active' : '' }}">
                                     <i class="nav-icon material-icons-round">hotel</i>
                                     <p>
                                         Ketersediaan Bed
@@ -293,8 +308,8 @@
                         @endif
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                            <li class="nav-item {{ request()->is('article*') || request()->is('news*') ? 'menu-open' : '' }}">
+                                <a href="#" class="nav-link {{ request()->is('article*') || request()->is('news*') ? 'active' : '' }}">
                                     <i class="nav-icon material-icons-round">article</i>
                                     <p>
                                         Postingan
@@ -303,7 +318,7 @@
                                 </a>
                                 <ul class="nav nav-treeview pl-3">
                                     <li class="nav-item">
-                                        <a href="/article" class="nav-link">
+                                        <a href="/article" class="nav-link {{ request()->is('article*') ? 'active' : '' }}">
                                             <i class="nav-icon material-icons-round">description</i>
                                             <p>
                                                 Artikel
@@ -311,7 +326,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/news" class="nav-link">
+                                        <a href="/news" class="nav-link {{ request()->is('news*') ? 'active' : '' }}">
                                             <i class="nav-icon material-icons-round">feed</i>
                                             <p>
                                                 Berita
@@ -322,7 +337,7 @@
                             </li>
                         @elseif (Auth::user()->role_id === 4)
                             <li class="nav-item">
-                                <a href="/article" class="nav-link">
+                                <a href="/article" class="nav-link {{ request()->is('article*') ? 'active' : '' }}">
                                     <i class="nav-icon material-icons-round">description</i>
                                     <p>
                                         Artikel
@@ -331,7 +346,7 @@
                             </li>
                         @elseif (Auth::user()->role_id === 5)
                             <li class="nav-item">
-                                <a href="/news" class="nav-link">
+                                <a href="/news" class="nav-link {{ request()->is('news*') ? 'active' : '' }}">
                                     <i class="nav-icon material-icons-round">feed</i>
                                     <p>
                                         Berita
@@ -342,7 +357,7 @@
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2 || Auth::user()->role_id === 7)
                             <li class="nav-item">
-                                <a href="/event" class="nav-link">
+                                <a href="/event" class="nav-link {{ request()->is('event*') ? 'active' : '' }}">
                                     <i class="nav-icon material-icons-round">photo_library</i>
                                     <p>
                                         Galeri Kegiatan
@@ -352,8 +367,8 @@
                         @endif
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                            <li class="nav-item {{ request()->is('room*') || request()->is('treatment*') ? 'menu-open' : '' }}">
+                                <a href="#" class="nav-link {{ request()->is('room*') || request()->is('treatment*') ? 'active' : '' }}">
                                     <i class="nav-icon material-icons-round">payments</i>
                                     <p>
                                         Tarif
@@ -362,7 +377,7 @@
                                 </a>
                                 <ul class="nav nav-treeview pl-3">
                                     <li class="nav-item">
-                                        <a href="/room" class="nav-link">
+                                        <a href="/room" class="nav-link {{ request()->is('room*') ? 'active' : '' }}">
                                             <i class="nav-icon material-icons-round">meeting_room</i>
                                             <p>
                                                 Ruangan
@@ -370,7 +385,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/treatment" class="nav-link">
+                                        <a href="/treatment" class="nav-link {{ request()->is('treatment*') ? 'active' : '' }}">
                                             <i class="nav-icon material-icons-round">healing</i>
                                             <p>
                                                 Tindakan
@@ -382,8 +397,8 @@
                         @endif
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                            <li class="nav-item {{ request()->is('download*') ? 'menu-open' : '' }}">
+                                <a href="#" class="nav-link {{ request()->is('download*') ? 'active' : '' }}">
                                     <i class="nav-icon material-icons-round">download</i>
                                     <p>
                                         Download
@@ -392,7 +407,7 @@
                                 </a>
                                 <ul class="nav nav-treeview pl-3">
                                     <li class="nav-item">
-                                        <a href="/download" class="nav-link">
+                                        <a href="/download" class="nav-link {{ request()->is('download') || request()->is('download/create') || request()->is('download/*/edit') ? 'active' : '' }}">
                                             <i class="nav-icon material-icons-round">insert_drive_file</i>
                                             <p>
                                                 File
@@ -400,7 +415,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/download-category" class="nav-link">
+                                        <a href="/download-category" class="nav-link {{ request()->is('download-category*') ? 'active' : '' }}">
                                             <i class="nav-icon material-icons-round">category</i>
                                             <p>
                                                 Kategori Download
@@ -413,7 +428,7 @@
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2 || Auth::user()->role_id === 6)
                             <li class="nav-item">
-                                <a href="/suggestion" class="nav-link">
+                                <a href="/suggestion" class="nav-link {{ request()->is('suggestion*') ? 'active' : '' }}">
                                     <i class="nav-icon material-icons-round">lightbulb</i>
                                     <p>
                                         Kritik dan Saran
@@ -424,7 +439,7 @@
 
                         @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                             <li class="nav-item">
-                                <a href="/promkes" class="nav-link">
+                                <a href="/promkes" class="nav-link {{ request()->is('promkes*') ? 'active' : '' }}">
                                     <i class="nav-icon material-icons-round">local_hospital</i>
                                     <p>
                                         Promosi Kesehatan
@@ -433,9 +448,22 @@
                             </li>
                         @endif
 
+                        {{-- iklan --}}
+                        @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2) {{-- Sesuaikan dengan role_id admin/superadmin Anda --}}
+                        <li class="nav-item">
+                            <a href="{{ route('iklan.index') }}" class="nav-link {{ request()->is('iklan*') ? 'active' : '' }}">
+                                <i class="nav-icon material-icons-round">campaign</i> {{-- atau fas fa-ad --}}
+                                <p>
+                                    Manajemen Iklan
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+                        {{-- end of iklan --}}
+
                         @if (Auth::user()->role_id === 1)
                             <li class="nav-item">
-                                <a href="/account" class="nav-link">
+                                <a href="/account" class="nav-link {{ request()->is('account*') ? 'active' : '' }}">
                                     <i class="nav-icon material-icons-round">people</i>
                                     <p>
                                         Akun
@@ -473,8 +501,28 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright 2023 RSUD dr. M. Haulussy Ambon.</strong>
+        <footer class="main-footer" style="
+            background: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            padding: 15px 30px;
+            margin-left: 250px;
+        ">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                 <div class="text-muted" style="font-size: 13px;">
+                     Made with
+                                <svg class="bi bi-suit-heart-fill" xmlns="http://https://w3.org/2000/svg"
+                                    width="12" height="12" fill="#F95C19" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z">
+                                    </path>
+                                </svg>&nbsp;by&nbsp;
+                                <a class="fw-bold text-info" href="https://www.instagram.com/rsud.dr.m.haulussy.official/"
+                                    target="_blank">RSUD dr. M. Haulussy Ambon</a>
+                 </div>
+                 <div style="color: #6c757d; font-size: 13px;">
+                     © 2025 - All rights reserved
+                 </div>
+             </div>
         </footer>
 
         <!-- Control Sidebar -->

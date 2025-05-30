@@ -18,38 +18,36 @@
             display: none;
         }
 
-        /* Centang Background */
+        /* Modal backdrop styling */
         .modal-backdrop {
             background-color: rgba(0, 0, 0, 0.5) !important;
         }
 
-        /* Style Tambahan */
+        /* Responsive image styling */
         .modal-content img {
             max-width: 100%;
             height : auto;
         }
 
-        /* Gaya Tombol Close */
+        /* Close button positioning */
         .close-btn {
             position: absolute;
             top: -15px;
             right: -4px;
             z-index: 1050;
-            /* Menyimpan di atas modal */
             font-size: 2.5em;
-            /* Memperbesar font-size */
         }
 
+        /* Text letter spacing */
         .text-stretch {
             letter-spacing: 0.15em;
-            /* adjust the value to stretch text more or less */
         }
     </style>
 @endsection
 
 @section('content')
-    <!-- Modal -->
-    <div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="gambarModalLabel" aria-hidden="true">
+    <!-- Legacy modal (commented out) -->
+    {{-- <div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="gambarModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <!-- Tombol Close -->
@@ -59,14 +57,42 @@
                 <center>
                 <div  class="modal-body">
                     <a href="/artikel/IL4qi8etn8">
-                    <img src="{{ asset('visitor/assets/img/iklan/info-pelayanan rsud.jpg') }}" class="img-fluid"
+                    <img src="{{ asset('visitor/assets/img/iklan/HARI KAPITAN PATTIMURA.jpg') }}" class="img-fluid"
                         alt="Gambar Modal">
                     </a>
                 </div>
                 </center>
             </div>
         </div>
-    </div>
+    </div> --}}
+
+    {{-- Advertisement modal --}}
+    @if(isset($iklanAktif) && $iklanAktif)
+        <div class="modal fade" id="iklanModalHomepage" tabindex="-1" aria-labelledby="iklanModalHomepageLabel" aria-hidden="true" style="backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); background: rgba(0,0,0,0.3);">
+            <div class="modal-dialog" style="max-width: fit-content; max-height: 90vh; width: auto; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.7); margin: 0; transition: all 0.6s ease-in-out; opacity: 0;">
+                <div class="modal-content" style="border: none; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2); max-height: 90vh; display: flex; flex-direction: column; transition: all 0.4s ease-in-out; background: white;"
+                    <!-- Modal close button -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: 10px; right: 15px; z-index: 1050; background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width: 35px; height: 35px; font-size: 18px; line-height: 1; color: #333; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.2s ease-in-out;" onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='scale(1.1)';" onmouseout="this.style.background='rgba(255,255,255,0.9)'; this.style.transform='scale(1)';">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <!-- Modal content -->
+                    <div class="modal-body" style="padding: 0; text-align: center; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        @if($iklanAktif->link)
+                            <a href="{{ $iklanAktif->link }}" target="_blank" title="{{ $iklanAktif->judul }}" style="display: block; max-width: 100%; max-height: 100%;">
+                                <img src="{{ asset('visitor/assets/img/iklan/' . $iklanAktif->gambar) }}" alt="{{ $iklanAktif->judul }}" class="img-fluid" style="max-width: 100%; max-height: 85vh; width: auto; height: auto; object-fit: contain; border-radius: 15px;">
+                            </a>
+                        @else
+                            <img src="{{ asset('visitor/assets/img/iklan/' . $iklanAktif->gambar) }}" alt="{{ $iklanAktif->judul }}" class="img-fluid" style="max-width: 100%; max-height: 85vh; width: auto; height: auto; object-fit: contain; border-radius: 15px;">
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+    {{-- End advertisement modal --}}
+
+
     <section class="w-100">
         <h1 class="text-center pb-5">Poliklinik</h1>
 
@@ -84,7 +110,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="dalam" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -116,7 +142,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="bedahUmum" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -148,7 +174,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="bedahVaskular" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -179,7 +205,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="saraf" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -209,7 +235,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="gigi" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -239,7 +265,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="jantung" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -270,7 +296,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="asma" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -301,7 +327,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="bidan" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -347,7 +373,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="hemodialisis" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -367,7 +393,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="mata" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -398,7 +424,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="endoskopi" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -430,7 +456,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="mcu" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -465,7 +491,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="kulit" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -497,7 +523,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="anak" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -528,7 +554,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="bedahDigestive" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -561,7 +587,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="tht" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -591,7 +617,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="paru" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -628,7 +654,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="gizi" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -661,7 +687,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="fisioterapi" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -693,7 +719,7 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Legacy modal (commented out) -->
                 <div class="modal fade" id="hiv" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog ">
@@ -754,236 +780,6 @@
             </div>
         </div>
     </section>
-
-    {{-- <section class="pb-0">
-        <div class="col-12 py-3">
-            <h1 class="text-center">Kepala Ruangan</h1>
-        </div>
-
-        <div class="bg-holder bg-size"
-            style="background-image: url(/visitor/assets/img/gallery/doctors-bg.png); background-position: top center; background-size: contain">
-        </div>
-        <!--/.bg-holder-->
-
-        <div class="container">
-            <div class="row flex-center">
-                <div class="col-xl-10 px-0">
-                    <div class="carousel slide" id="carouselExampleDark" data-bs-ride="carousel">
-                        <a class="carousel-control-prev carousel-icon z-index-2" href="#carouselExampleDark"
-                            role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"
-                                aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a
-                            class="carousel-control-next carousel-icon z-index-2" href="#carouselExampleDark"
-                            role="button" data-bs-slide="next"><span class="carousel-control-next-icon"
-                                aria-hidden="true"></span><span class="visually-hidden">Next</span></a>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="10000">
-                                <div class="row h-100 m-lg-7 mx-3 mt-6 mx-md-4 my-md-7">
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/igd.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Martha M. E. T. Pentury, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer IGD</p>
-                                                <!-- <p class="text-600 mb-0">Florida, United States</p>
-                                                                                                                                                                                                                                                                                                            <p class="text-600 mb-4">10 years experience</p> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Ns. Magdalena Pattipeilohy, M.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer IBS</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/iccu.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Salianty Riupassa, S.ST</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer ICCU</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="carousel-item" data-bs-interval="2000">
-                                <div class="row h-100 m-lg-7 mx-3 mt-6 mx-md-4 my-md-7">
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/icu.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Ns. Rolita Vien Tuwanakotta, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer ICU</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/rkk.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Sandra A. Jacob, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer RKK</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Ns. Anat Roosemarie Talubun, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer CENDRAWASIH</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row h-100 m-lg-7 mx-3 mt-6 mx-md-4 my-md-7">
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/nifas.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Yohana Lakusa, S.ST</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer NIFAS</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/ginekolgi.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Christa Metekohy, S.ST</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer GINEKOLOGI</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/bersalin.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Antonia Anaktototi, S.ST</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer KAMAR BERSALIN</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="row h-100 m-lg-7 mx-3 mt-6 mx-md-4 my-md-7">
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/nicu.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Ns. Sherli Latuminase, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer NICU</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/rpp.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Ns. Liensya F. Lekatompessy, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer RPP</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Ns. Karolina Samloy, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer ISOLASI</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="row h-100 m-lg-7 mx-3 mt-6 mx-md-4 my-md-7">
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/ril.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Ns. Adriana Kelmakosu, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer RIL (Ruang Interna Laki)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Ns. Jacqueline, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer RIW (Ruang Interna Wanita)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/gabung.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Ns. Josina Lekatompessy, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer Bedah Gabungan</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="row h-100 m-lg-7 mx-3 mt-6 mx-md-4 my-md-7">
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/kepala_ruangan/saraf.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Ns. Dortje M. Sabono, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer NEUROLOGI</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-8 mb-md-0">
-                                        <div class="card card-span h-100 shadow">
-                                            <div class="card-body d-flex flex-column flex-center py-5">
-                                                <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}"
-                                                    width="230" alt="..." />
-                                                <h5 class="mt-3">Ns. Henderjeta Benendik, S.Kep</h5>
-                                                <p class="mb-0 fs-xxl-1">Manajer HEMODIALISIS</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
     <section class="py-5">
         <h1 class="text-center mt-8 mb-6">Kritik & Saran</h1>
@@ -1057,13 +853,75 @@
 
 @section('script')
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    @if(isset($iklanAktif) && $iklanAktif)
+    <style>
+        /* Image transition effect */
+        #iklanModalHomepage img {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+
     <script>
-        $(document).ready(function() {
-            $('#gambarModal').modal('show');
-            $('.close-btn').click(function() {
-                $('#gambarModal').modal('hide');
+        $(document).ready(function(){
+            // Check if modal was closed in current session
+            if (!sessionStorage.getItem('iklanModalHomepageClosed_v2')) {
+                // Show modal with delay
+                setTimeout(function() {
+                    $('#iklanModalHomepage').modal('show');
+                }, 2000);
+            }
+
+            // Modal show animation
+            $('#iklanModalHomepage').on('shown.bs.modal', function () {
+                const $dialog = $(this).find('.modal-dialog');
+
+                // Scale and fade in animation
+                $dialog.css({
+                    'transform': 'translate(-50%, -50%) scale(1)',
+                    'opacity': '1',
+                    'transition': 'all 0.5s ease-in-out'
+                });
+            });
+
+            // Modal hide animation
+            $('#iklanModalHomepage').on('hide.bs.modal', function () {
+                const $dialog = $(this).find('.modal-dialog');
+
+                $dialog.css({
+                    'transform': 'translate(-50%, -50%) scale(0.8)',
+                    'opacity': '0',
+                    'transition': 'all 0.4s ease-in-out'
+                });
+            });
+
+            // Mark modal as closed for current session
+            $('#iklanModalHomepage').on('hidden.bs.modal', function () {
+                sessionStorage.setItem('iklanModalHomepageClosed_v2', 'true');
+            });
+
+            // Close button handler
+            $('#iklanModalHomepage .close').on('click', function() {
+                $('#iklanModalHomepage').modal('hide');
+            });
+
+            // Close modal on backdrop click
+            $('#iklanModalHomepage').on('click', function(e) {
+                if (e.target === this) {
+                    $('#iklanModalHomepage').modal('hide');
+                }
             });
         });
+    </script>
+    @endif
+
+    <script>
+        // $(document).ready(function() {
+        //     $('#gambarModal').modal('show');
+        //     $('.close-btn').click(function() {
+        //         $('#gambarModal').modal('hide');
+        //     });
+        // });
 
         function validateEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

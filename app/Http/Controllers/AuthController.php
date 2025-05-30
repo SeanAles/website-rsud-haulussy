@@ -9,46 +9,47 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
-    public function login(){
-        session()->put('success','Item Successfully Created.');
+    public function login()
+    {
         return view("login");
     }
 
-    public function auth(Request $request){
+    public function auth(Request $request)
+    {
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             $user = User::where('email', 'like', $request->email)->first();
-            if($user->role_id === 1 || $user->role_id === 2){
+            if ($user->role_id === 1 || $user->role_id === 2) {
                 return response()->json(['redirect_url' => '/dashboard']);
             }
-            if($user->role_id === 3){
+            if ($user->role_id === 3) {
                 return response()->json(['redirect_url' => '/bed']);
             }
-            if($user->role_id === 4){
+            if ($user->role_id === 4) {
                 return response()->json(['redirect_url' => '/article']);
             }
-            if($user->role_id === 5){
+            if ($user->role_id === 5) {
                 return response()->json(['redirect_url' => '/news']);
             }
-            if($user->role_id === 6){
+            if ($user->role_id === 6) {
                 return response()->json(['redirect_url' => '/suggestion']);
             }
-            if($user->role_id === 7){
+            if ($user->role_id === 7) {
                 return response()->json(['redirect_url' => '/event']);
             }
-        } 
-        
+        }
+
         return response()->json(['message' => 'Email atau password salah'], 401);
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
         return redirect("/login");
     }
-
 }

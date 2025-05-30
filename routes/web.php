@@ -15,6 +15,8 @@ use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\PromkesController;
 use App\Http\Controllers\RequestOnlineInformationController;
 use App\Http\Controllers\TreatmentController;
+use App\Http\Controllers\IklanController;
+use App\Http\Controllers\Visitor\BerandaController;
 use App\Models\Bed;
 use App\Models\Event;
 use App\Models\Post;
@@ -33,9 +35,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Beranda Route
-Route::get('/', function () {
-    return view('visitor.beranda.beranda');
-});
+// Route::get('/', function () {
+//     return view('visitor.beranda.beranda');
+// });
+
+Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 
 // Tentang Kami Route
 Route::get('/profil', function () {
@@ -171,7 +175,7 @@ Route::middleware(['auth'])->group(function () {
                 'bedCount' => $bedCount,
                 'eventCount' => $eventCount
             ]);
-        })->middleware('prevent.back.history');
+        })->middleware('prevent.back.history')->name('admin.dashboard');
 
         // Download Route
         // File Route
@@ -202,6 +206,26 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/treatment', [TreatmentController::class, 'store']);
         Route::patch('/treatment/{id}', [TreatmentController::class, 'update']);
         Route::delete('/treatment/{id}', [TreatmentController::class, 'destroy']);
+
+        // =====================================================
+        // RESOURCE ROUTE UNTUK MANAJEMEN IKLAN
+        // =====================================================
+        Route::resource('iklan', IklanController::class)->except(['show']);
+        // URL akan menjadi: /iklan, /iklan/create, /iklan/{iklan}/edit
+        // Nama route akan menjadi: iklan.index, iklan.create, iklan.edit, dll.
+
+        // ROUTE UNTUK TOGGLE STATUS IKLAN
+        Route::patch('iklan/{iklan}/toggle-status', [IklanController::class, 'toggleStatus'])->name('iklan.toggle-status');
+        // URL akan menjadi: /iklan/{id}/toggle-status
+        // Jika Anda ingin URL nya menjadi /admin/iklan, maka grup luar ('auth')
+        // perlu memiliki prefix 'admin'. Tapi sepertinya struktur Anda saat ini
+        // URL adminnya langsung tanpa prefix /admin di URL, tapi dilindungi middleware.
+        // Jadi, URL /iklan akan dilindungi oleh middleware 'auth' dan 'admin'.
+        // Ini sudah benar sesuai struktur Anda.
+        // =====================================================
+
+
+
     });
 
     Route::middleware('admin.event')->group(function () {
