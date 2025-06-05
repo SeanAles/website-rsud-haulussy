@@ -237,7 +237,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/berita">Berita</a>
-                            <a class="dropdown-item" href="/artikel">Artikel Kesehatan</a>
+                            <a class="dropdown-item" href="/artikel">Artikel Kesehatan & Teknologi</a>
                             <a class="dropdown-item" href="/galeri">Galeri Foto</a>
                             <a class="dropdown-item" href="/unduh">Unduh</a>
                         </div>
