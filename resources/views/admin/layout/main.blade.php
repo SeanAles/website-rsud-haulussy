@@ -449,7 +449,7 @@
                         @endif
 
                         {{-- iklan --}}
-                        @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2) {{-- Sesuaikan dengan role_id admin/superadmin Anda --}}
+                        @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2 || Auth::user()->role_id === 7) {{-- Sesuaikan dengan role_id admin/superadmin Anda --}}
                         <li class="nav-item">
                             <a href="{{ route('iklan.index') }}" class="nav-link {{ request()->is('iklan*') ? 'active' : '' }}">
                                 <i class="nav-icon material-icons-round">campaign</i> {{-- atau fas fa-ad --}}

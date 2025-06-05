@@ -206,6 +206,18 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/treatment', [TreatmentController::class, 'store']);
         Route::patch('/treatment/{id}', [TreatmentController::class, 'update']);
         Route::delete('/treatment/{id}', [TreatmentController::class, 'destroy']);
+    });
+
+    Route::middleware('admin.event')->group(function () {
+        // Event Route
+        Route::get('/event', [EventController::class, 'index'])->name('event.index');
+        Route::post('/event', [EventController::class, 'create']);
+        Route::patch('/event/{id}', [EventController::class, 'update']);
+        Route::delete('/event/{id}', [EventController::class, 'destroy']);
+        Route::get('/event/{id}', [EventController::class, 'show'])->name('event.detail');
+        // Event Picture Route
+        Route::post('/event-picture/{id}', [EventPictureController::class, 'store']);
+        Route::delete('/event-picture/{id}', [EventPictureController::class, 'destroy']);
 
         // =====================================================
         // RESOURCE ROUTE UNTUK MANAJEMEN IKLAN
@@ -224,20 +236,6 @@ Route::middleware(['auth'])->group(function () {
         // Ini sudah benar sesuai struktur Anda.
         // =====================================================
 
-
-
-    });
-
-    Route::middleware('admin.event')->group(function () {
-        // Event Route
-        Route::get('/event', [EventController::class, 'index'])->name('event.index');
-        Route::post('/event', [EventController::class, 'create']);
-        Route::patch('/event/{id}', [EventController::class, 'update']);
-        Route::delete('/event/{id}', [EventController::class, 'destroy']);
-        Route::get('/event/{id}', [EventController::class, 'show'])->name('event.detail');
-        // Event Picture Route
-        Route::post('/event-picture/{id}', [EventPictureController::class, 'store']);
-        Route::delete('/event-picture/{id}', [EventPictureController::class, 'destroy']);
     });
 
     Route::middleware('admin.bed')->group(function () {
