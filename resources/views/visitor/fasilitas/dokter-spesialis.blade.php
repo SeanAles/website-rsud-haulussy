@@ -159,14 +159,6 @@
                         id="doctor-image" />
                 </div> --}}
 
-                <button class="accordion btn btn-primary">
-                    dr. Gracia Lilihata, Sp.JP
-                </button>
-                <div class="panel" id="DokterSSSS">
-                    <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe.png') }}" alt="Foto Dokter KK"
-                        id="doctor-image" />
-                </div>
-
 
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterHH')">dr. Halidah
                     Rahawarin, M.Kes., Sp.PA
@@ -211,14 +203,6 @@
                     <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Iman Haryana, Sp.JP.png') }}"
                         alt="Foto Dokter DD" id="doctor-image" />
                 </div> --}}
-
-                <button class="accordion btn btn-primary">dr. Iman
-                    Haryana, Sp.JP
-                </button>
-                <div class="panel" id="DokterDD">
-                    <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Iman Haryana, Sp.JP.png') }}"
-                        alt="Foto Dokter DD" id="doctor-image" />
-                </div>
 
 
                 <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterF')">dr. Ingrid
