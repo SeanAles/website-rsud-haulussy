@@ -43,7 +43,7 @@
 
     <div class="container">
         <p class="text-danger">
-            <b>*Diperbarui 01 Oktober 2024</b>
+            <b>*Diperbarui 02 Juni 2025</b>
         </p>
         <div class="row justify-content-center">
             <!-- Daftar dokter dengan Bootstrap grid -->
@@ -203,8 +203,16 @@
                         alt="Foto Dokter A" id="doctor-image" />
                 </div>
 
+                {{-- dr iman --}}
+                {{-- <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterDD')">dr. Iman
+                    Haryana, Sp.JP
+                </button>
+                <div class="panel" id="DokterDD">
+                    <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Iman Haryana, Sp.JP.png') }}"
+                        alt="Foto Dokter DD" id="doctor-image" />
+                </div> --}}
 
-                <button class="accordion btn btn-primary" onclick="toggleDoctorPanel('DokterDD')">dr. Iman
+                <button class="accordion btn btn-primary">dr. Iman
                     Haryana, Sp.JP
                 </button>
                 <div class="panel" id="DokterDD">
