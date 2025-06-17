@@ -224,6 +224,36 @@
                     </div>
                 </div>
 
+                <div class="col-4 col-md-4 col-lg-2 text-lg-start">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="icon-box text-center">
+                            <a class="stretched-link text-decoration-none" role="button" data-bs-toggle="modal"
+                                data-bs-target="#psikiatri" style="font-size: 30px"><i class="fa-solid fa-comments"></i>
+                                <p class="fs-1 fs-xxl-2 text-center">Psikiatri</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legacy modal (commented out) -->
+                <div class="modal fade" id="psikiatri" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Poliklinik</h1>
+                                {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" --}}
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="text-center">
+                                {{-- <div class="modal-body">
+                                    <img src="{{ 'visitor/assets/img/poli/psikiatri.jpg' }}" width="100%" height="100%">
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-4 col-md-4 col-lg-2 text-xl-start mb-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="icon-box text-center">
