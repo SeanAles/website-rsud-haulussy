@@ -176,8 +176,14 @@ class NewsController extends Controller
     {
         $news = Post::findOrFail($id);
         $description = $request->description;
+
+        libxml_use_internal_errors(true);
+
         $dom = new DOMDocument();
-        $dom->loadHTML($description, 9);
+
+        $dom->loadHTML('<?xml encoding="utf-8" ?>' . $description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+        libxml_clear_errors();
 
         $images = $dom->getElementsByTagName('img');
 
@@ -194,11 +200,29 @@ class NewsController extends Controller
 
         $description = $dom->saveHTML();
 
-        $editNews = $news->update([
+        // Handle thumbnail upload
+        $updateData = [
             'title' => $request->title,
             'author' => $request->author,
             'description' => $description,
-        ]);
+        ];
+
+        if ($request->hasFile('thumbnail')) {
+            // Delete old thumbnail if exists
+            if ($news->thumbnail) {
+                $oldThumbnailPath = public_path('images/news/thumbnails/' . $news->thumbnail);
+                if (File::exists($oldThumbnailPath)) {
+                    File::delete($oldThumbnailPath);
+                }
+            }
+
+            // Save new thumbnail
+            $thumbnail = time() . "." . $request->file("thumbnail")->extension();
+            $request->file('thumbnail')->storeAs('images/news/thumbnails/', $thumbnail);
+            $updateData['thumbnail'] = $thumbnail;
+        }
+
+        $editNews = $news->update($updateData);
 
         if ($editNews) {
             return response()->json(['redirect_url' => '/news']);

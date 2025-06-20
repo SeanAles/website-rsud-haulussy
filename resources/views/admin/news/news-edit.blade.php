@@ -5,42 +5,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
-        /* Copy all styles from news-add.blade.php */
-        .editor-loading-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 1;
-            transition: opacity 0.02s ease-out;
-        }
-
-        .editor-loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #4299e1;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            transition: all 0.02s ease;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .editor-wrapper {
-            position: relative;
-            min-height: 350px;
-        }
-
+        /* Custom styles untuk CKEditor */
         .ck-editor__editable {
             min-height: 350px !important;
             max-height: 600px;
@@ -55,6 +20,7 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
+        /* Style untuk form */
         #formEditNews {
             background: linear-gradient(145deg, #ffffff, #f5f7fa);
             padding: 30px;
@@ -76,6 +42,7 @@
             letter-spacing: 0.5px;
         }
 
+        /* Icon input styling */
         .input-icon-wrapper {
             position: relative;
         }
@@ -111,6 +78,130 @@
             color: #4299e1;
         }
 
+        /* Style untuk tombol simpan */
+        .btn-save {
+            background: linear-gradient(to right, #3182ce, #4299e1);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.2);
+        }
+
+        .btn-save:hover {
+            background: linear-gradient(to right, #2c5282, #3182ce);
+            box-shadow: 0 6px 20px rgba(49, 130, 206, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .btn-save:active {
+            transform: translateY(1px);
+        }
+
+        .btn-save i {
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+
+        /* Section heading */
+        .section-heading {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, #4299e1, #7f9cf5);
+            border-radius: 5px;
+        }
+
+        .section-heading i {
+            margin-right: 10px;
+            color: #4299e1;
+            font-size: 1.3em;
+        }
+
+        /* Card styling */
+        .content-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .content-card-header {
+            background: linear-gradient(to right, #4299e1, #7f9cf5);
+            color: white;
+            padding: 20px 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .content-card-header i {
+            margin-right: 12px;
+            font-size: 1.4em;
+        }
+
+        .content-card-body {
+            padding: 30px;
+            background-color: #fff;
+        }
+
+        /* Status badge */
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+
+        .status-badge.draft {
+            background-color: #edf2f7;
+            color: #4a5568;
+        }
+
+        .status-badge.published {
+            background-color: #c6f6d5;
+            color: #2f855a;
+        }
+
+        /* Original content info */
+        .original-info {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .original-info p {
+            margin: 0;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        /* thumbnail */
         :root {
             --primary-color: #4299e1;
             --primary-hover: #3182ce;
@@ -135,13 +226,16 @@
             display: block;
         }
 
-        .thumbnail-upload-wrapper {
+        /* Upload Thumbnail Styling */
+        .thumbnail-upload-wrapper,
+        .current-thumbnail-wrapper {
             position: relative;
             margin-bottom: 20px;
             height: 300px;
         }
 
-        .thumbnail-upload-container {
+        .thumbnail-upload-container,
+        .current-thumbnail-container {
             height: 100%;
         }
 
@@ -196,8 +290,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 20px;
         }
 
         .upload-icon {
@@ -206,473 +299,1103 @@
         }
 
         .upload-text {
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 5px;
+            display: flex;
+            flex-direction: column;
         }
 
-        .upload-hint {
-            font-size: 0.85rem;
+        .upload-text .primary-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .upload-text .secondary-text {
+            font-size: 14px;
             color: var(--text-muted);
         }
 
-        .thumbnail-preview-container {
+        /* Preview Styling */
+        .thumbnail-preview {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            display: none;
-            padding: 10px;
-        }
-
-        .thumbnail-preview {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: calc(var(--border-radius) - 4px);
-        }
-
-        .thumbnail-actions {
-            position: absolute;
-            top: 15px;
-            right: 15px;
+            z-index: 5;
             display: flex;
-            gap: 10px;
-            z-index: 20;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-bg);
+            padding: 20px;
         }
 
-        .thumbnail-action-btn {
+        .thumbnail-preview img {
+            max-height: 60%;
+            max-width: 70%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail-preview img:hover {
+            transform: scale(1.05);
+        }
+
+        .thumbnail-preview-info {
+            margin-top: 15px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            width: 100%;
+        }
+
+        #filename-display {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        #filesize-display {
+            font-size: 13px;
+        }
+
+        .change-file-tip {
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--primary-color);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .file-selected-indicator {
+            position: absolute;
+            bottom: 15px;
+            background-color: var(--success-color);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            animation: fadeInUp 0.5s ease forwards;
+            box-shadow: 0 3px 10px rgba(72, 187, 120, 0.3);
+        }
+
+        .file-selected-indicator i {
+            margin-right: 6px;
+        }
+
+        /* Current Thumbnail Styling */
+        .current-thumbnail-card {
+            height: 100%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed) ease;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .current-thumbnail-card:hover {
+            box-shadow: var(--hover-shadow);
+            transform: translateY(-5px);
+        }
+
+        .current-thumbnail-header {
+            padding: 15px 20px;
+            background-image: var(--primary-gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icon {
             width: 36px;
             height: 36px;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
+            background-color: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: all var(--transition-speed) ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-right: 15px;
         }
 
-        .thumbnail-action-btn:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-            transform: scale(1.1);
+        .header-icon i {
+            font-size: 16px;
         }
 
-        .thumbnail-info {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 0.8rem;
+        .header-text {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .current-thumbnail-body {
+            flex: 1;
+            padding: 1px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            z-index: 20;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all var(--transition-speed) ease;
+            justify-content: center;
+            background-color: var(--light-bg);
+            position: relative;
         }
 
-        .thumbnail-preview-container:hover .thumbnail-info {
-            opacity: 1;
-            transform: translateY(0);
+        /* Container gambar yang fixed size dengan ukuran yang lebih kecil */
+        .image-container {
+            width: 70%;
+            height: 55%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+            background-color: white;
+            border-radius: 8px;
+            padding: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
-        .file-name {
+        .current-thumbnail-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .current-thumbnail-image:hover {
+            transform: scale(1.05);
+        }
+
+        .image-metadata {
+            margin-top: auto;
+            text-align: center;
+            width: 100%;
+        }
+
+        .image-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 70%;
+            max-width: 90%;
+            margin: 0 auto;
         }
 
-        .file-size {
-            font-weight: 600;
+        .image-dimensions {
+            font-size: 13px;
+            color: var(--text-muted);
         }
 
-        .thumbnail-validation-error {
-            color: #e53e3e;
-            font-size: 0.875rem;
-            margin-top: 10px;
+        .current-thumbnail-footer {
+            padding: 12px 20px;
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-info {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-info i {
+            color: var(--warning-color);
+            margin-right: 8px;
+            font-size: 15px;
+        }
+
+        /* Upload Status */
+        .upload-status {
+            margin-top: 15px;
             display: none;
         }
 
-        .btn-save {
-            background: var(--primary-gradient);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all var(--transition-speed);
-            display: inline-flex;
+        .thumbnail-progress {
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            background-color: #e2e8f0;
+        }
+
+        .thumbnail-progress .progress-bar {
+            background-image: var(--primary-gradient);
+            transition: width 0.5s ease;
+        }
+
+        .status-text {
+            display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 25px;
-            box-shadow: 0 4px 15px rgba(66, 153, 225, 0.2);
+            font-size: 13px;
+            margin-top: 8px;
+            color: var(--text-muted);
         }
 
-        .btn-save:hover {
-            background: linear-gradient(135deg, #3182ce 0%, #5a67d8 100%);
-            box-shadow: var(--hover-shadow);
-            transform: translateY(-2px);
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .btn-save:active {
-            transform: translateY(1px);
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
-        .btn-save i {
-            margin-right: 10px;
-            font-size: 1.1em;
+        .pulse-animation {
+            animation: pulse 1s ease infinite;
         }
 
-        .btn-save:disabled {
-            background: #a0aec0;
-            cursor: not-allowed;
-            box-shadow: none;
-            transform: none;
+        .fade-in {
+            animation: fadeInUp 0.5s ease forwards;
         }
 
-        .section-heading {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding-bottom: 10px;
-        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #formEditNews {
+                padding: 20px;
+            }
 
-        .section-heading::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary-gradient);
-            border-radius: 5px;
-        }
-
-        .section-heading i {
-            margin-right: 10px;
-            color: var(--primary-color);
-            font-size: 1.3em;
-        }
-
-        .content-card {
-            border: none;
-            border-radius: var(--border-radius);
-            box-shadow: var(--card-shadow);
-            overflow: hidden;
-        }
-
-        .content-card-header {
-            background: var(--primary-gradient);
-            color: white;
-            padding: 20px 25px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-        }
-
-        .content-card-header i {
-            margin-right: 12px;
-            font-size: 1.4em;
-        }
-
-        .content-card-body {
-            padding: 30px;
-            background-color: #fff;
+            .content-card-body {
+                padding: 20px;
+            }
         }
     </style>
 @endsection
 
 @section('content')
-<div class="container-fluid py-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="content-card">
-                <div class="content-card-header">
-                    <i class="material-icons-round">edit</i>
-                    <span>Edit Berita</span>
-                </div>
-                <div class="content-card-body">
-                    <form id="formEditNews" enctype="multipart/form-data">
-                        @csrf
-                        <input type="hidden" id="id" name="id" value="{{ $news->id }}">
-                        <input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id }}">
-                        <input type="hidden" id="category" name="category" value="news">
-
-                        <div class="section-heading">
-                            <i class="fas fa-info-circle"></i>
-                            <span>Detail Berita</span>
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <i class="fas fa-edit"></i>
+                        <h5 class="mb-0">Edit Berita</h5>
+                        <span class="status-badge published">Diterbitkan: {{ $news->created_at->format('d M Y') }}</span>
+                    </div>
+                    <div class="content-card-body">
+                        <div class="original-info">
+                            <p><i class="fas fa-info-circle mr-2"></i> Anda sedang mengedit berita <strong>{{ $news->title }}</strong> yang dibuat oleh <strong>{{ $news->author }}</strong></p>
                         </div>
 
-                        <div class="form-group">
-                            <label for="title">Judul Berita</label>
-                            <div class="input-icon-wrapper">
-                                <i class="input-icon fas fa-heading"></i>
-                                <input type="text" class="form-control icon-input" name="title" id="title" value="{{ $news->title }}" placeholder="e.g., Perkembangan Terbaru RSUD Haulussy">
-                            </div>
-                        </div>
+                        <form id="formEditNews" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="_method" value="PATCH">
 
-                        <div class="form-group">
-                            <label for="author">Penulis</label>
-                            <div class="input-icon-wrapper">
-                                <i class="input-icon fas fa-user-edit"></i>
-                                <input type="text" class="form-control icon-input" name="author" id="author" value="{{ $news->author }}" placeholder="e.g., John Doe">
-                            </div>
-                        </div>
-
-                        <div class="section-heading mt-5">
-                            <i class="fas fa-image"></i>
-                            <span>Thumbnail Berita</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label">Upload Gambar Thumbnail (Opsional)</label>
-                            <div class="thumbnail-upload-wrapper">
-                                <div class="thumbnail-upload-container">
-                                    <div class="thumbnail-dropzone" id="thumbnailDropzone">
-                                        <input type="file" name="thumbnail" id="thumbnail" class="thumbnail-input" accept="image/jpeg, image/png, image/jpg">
-                                        <div class="thumbnail-placeholder" style="display: {{ $news->thumbnail ? 'none' : 'flex' }};">
-                                            <div class="upload-icon-container">
-                                                <i class="fas fa-cloud-upload-alt upload-icon"></i>
-                                            </div>
-                                            <p class="upload-text">Seret & Lepas file atau Klik untuk Memilih</p>
-                                            <p class="upload-hint">PNG, JPG, atau JPEG (Maks. 1MB)</p>
+                            <!-- Judul & Author Section -->
+                            <h3 class="section-heading"><i class="fas fa-heading"></i> Informasi Berita</h3>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="title">Judul Berita</label>
+                                        <div class="input-icon-wrapper">
+                                            <input type="text" class="form-control icon-input" name="title" id="title"
+                                                value="{{ $news->title }}">
+                                            <i class="fas fa-heading input-icon"></i>
                                         </div>
-                                        <div class="thumbnail-preview-container" id="thumbnailPreviewContainer" style="display: {{ $news->thumbnail ? 'block' : 'none' }};">
-                                            <img src="{{ $news->thumbnail ? asset('storage/news_thumbnail/' . $news->thumbnail) : '' }}" alt="Preview" class="thumbnail-preview" id="thumbnailPreview">
-                                            <div class="thumbnail-actions">
-                                                <button type="button" class="thumbnail-action-btn" id="changeThumbnailBtn" title="Ganti Gambar"><i class="fas fa-sync-alt"></i></button>
-                                                <button type="button" class="thumbnail-action-btn" id="removeThumbnailBtn" title="Hapus Gambar"><i class="fas fa-trash-alt"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="author">Pembuat Berita</label>
+                                        <div class="input-icon-wrapper">
+                                            <input type="text" class="form-control icon-input" name="author" id="author"
+                                                value="{{ $news->author }}">
+                                            <i class="fas fa-user-edit input-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Thumbnail Section -->
+                            <h3 class="section-heading"><i class="fas fa-image"></i> Thumbnail Berita</h3>
+                            <div class="row mb-4">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="thumbnail" class="control-label">Upload Thumbnail Baru</label>
+                                        <div class="thumbnail-upload-wrapper">
+                                            <div class="thumbnail-upload-container">
+                                                <div class="thumbnail-dropzone" id="thumbnail-dropzone">
+                                                    <input type="file" class="thumbnail-input" name="thumbnail" id="thumbnail" accept=".jpg,.jpeg,.png">
+                                                    <!-- Area saat belum ada file dipilih -->
+                                                    <div class="thumbnail-placeholder">
+                                                        <div class="upload-icon-container">
+                                                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                                        </div>
+                                                        <div class="upload-text">
+                                                            <span class="primary-text">Klik atau seret gambar ke sini</span>
+                                                            <span class="secondary-text">Format: JPG, JPEG, PNG | Maks: 1024 KB</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Area setelah file dipilih (preview) -->
+                                                    <div class="thumbnail-preview" id="thumbnail-preview-container" style="display:none;">
+                                                        <img src="#" alt="Preview" id="thumbnail-preview-image">
+                                                        <div class="thumbnail-preview-info">
+                                                            <span id="filename-display"></span>
+                                                            <span id="filesize-display"></span>
+                                                        </div>
+                                                        <div class="file-selected-indicator">
+                                                            <i class="fas fa-check-circle"></i> File dipilih
+                                                        </div>
+                                                        <div class="change-file-tip">
+                                                            Klik area ini untuk memilih file lain
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="thumbnail-info">
-                                                <span class="file-name" id="fileName">{{ $news->thumbnail ?? 'Nama File' }}</span>
-                                                <span class="file-size" id="fileSize"></span>
+                                            <div class="upload-status" id="upload-status">
+                                                <div class="progress thumbnail-progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <div class="status-text"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="thumbnail-validation-error" id="thumbnailError"></div>
-                            </div>
-                        </div>
-
-                        <div class="section-heading mt-5">
-                            <i class="fas fa-file-alt"></i>
-                            <span>Konten Berita</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="description">Isi Konten</label>
-                            <div class="editor-wrapper">
-                                <div class="editor-loading-overlay" id="editorLoading">
-                                    <div class="editor-loading-spinner"></div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Thumbnail Saat Ini</label>
+                                        <div class="current-thumbnail-wrapper">
+                                            <div class="current-thumbnail-container">
+                                                <!-- Card untuk thumbnail saat ini -->
+                                                <div class="current-thumbnail-card">
+                                                    <div class="current-thumbnail-header">
+                                                        <div class="header-icon">
+                                                            <i class="fas fa-image"></i>
+                                                        </div>
+                                                        <div class="header-text">
+                                                            Thumbnail Berita Saat Ini
+                                                        </div>
+                                                    </div>
+                                                    <div class="current-thumbnail-body">
+                                                        <div class="image-container">
+                                                            <img src="{{ asset('images/news/thumbnails/' . $news->thumbnail) }}"
+                                                                alt="{{ $news->title }}" class="current-thumbnail-image" id="current-thumbnail-image">
+                                                        </div>
+                                                        <div class="image-metadata">
+                                                            <div class="image-name">{{ $news->thumbnail }}</div>
+                                                            <div class="image-dimensions" id="current-dimensions"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="current-thumbnail-footer">
+                                                        <div class="footer-info">
+                                                            <i class="fas fa-info-circle"></i>
+                                                            <span>Thumbnail ini akan diganti jika Anda mengunggah yang baru</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <textarea name="description" id="description" cols="30" rows="10">{{ $news->description }}</textarea>
                             </div>
-                        </div>
 
-                        <button type="button" onclick="updateNews()" class="btn btn-save" id="updateNewsButton">
-                            <i class="fas fa-save"></i>
-                            <span>Update Berita</span>
-                        </button>
-                    </form>
+                            <!-- Konten Berita -->
+                            <h3 class="section-heading"><i class="fas fa-file-alt"></i> Konten Berita</h3>
+                            <div class="form-group mb-4">
+                                <p class="text-muted mb-3">Edit konten berita sesuai kebutuhan.</p>
+                                <textarea name="description" id="description" cols="30" rows="10">{{ $news->description }}</textarea>
+                                <div class="small text-muted mt-2">
+                                    <i class="fas fa-info-circle mr-1"></i> Perubahan yang Anda buat akan langsung ditampilkan di website
+                                </div>
+                            </div>
+
+                            <!-- Hidden field untuk menyimpan data CKEditor -->
+                            <input type="hidden" id="description_data" name="description_data" value="{{ $news->description }}">
+
+                            <!-- Aksi -->
+                            <div class="form-group text-center mt-5">
+                                <button type="submit" class="btn-save" id="editNewsButton">
+                                    <i class="fas fa-save"></i>Simpan Perubahan
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
 
 @section('script')
-<script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/super-build/ckeditor.js"></script>
-<script src="{{ asset('js/ckeditor-config.js') }}"></script>
-<script>
-    let editorInstance;
+    <script>
+        $(function() {
+            // Form submit handler
+            $('#formEditNews').on('submit', function(e) {
+                e.preventDefault();
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize CKEditor
-        initializeCKEditor('description', {
-            placeholder: 'Tuliskan konten berita yang menarik di sini...',
-            initialData: `{!! addslashes($news->description) !!}`,
-            onReady: () => {
-                document.getElementById('editorLoading').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('editorLoading').style.display = 'none';
-                }, 200);
-            }
-        }).then(editor => {
-            editorInstance = editor;
-        }).catch(error => {
-            console.error('Error initializing CKEditor:', error);
-            const editorWrapper = document.querySelector('.editor-wrapper');
-            editorWrapper.innerHTML = '<div class="alert alert-danger">Gagal memuat editor. Silakan coba muat ulang halaman.</div>';
-        });
+                // Disable tombol untuk mencegah submit berulangg
+                document.getElementById("editNewsButton").disabled = true;
 
-        // Thumbnail upload logic
-        const dropzone = document.getElementById('thumbnailDropzone');
-        const input = document.getElementById('thumbnail');
-        const previewContainer = document.getElementById('thumbnailPreviewContainer');
-        const previewImg = document.getElementById('thumbnailPreview');
-        const placeholder = document.querySelector('.thumbnail-placeholder');
-        const errorDiv = document.getElementById('thumbnailError');
-        const fileNameSpan = document.getElementById('fileName');
-        const fileSizeSpan = document.getElementById('fileSize');
+                try {
+                    // Perksa apakahh editor sudah siapp
+                    if (!window.editor) {
+                        console.error('Editor belum siap');
+                        toastr.error("Editor belum siap, silakan muat ulang halaman");
+                        document.getElementById("editNewsButton").disabled = false;
+                        return;
+                    }
 
-        dropzone.addEventListener('click', () => input.click());
-        dropzone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dropzone.classList.add('drag-over');
-        });
-        dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag-over'));
-        dropzone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dropzone.classList.remove('drag-over');
-            if (e.dataTransfer.files.length) {
-                input.files = e.dataTransfer.files;
-                handleFile(input.files[0]);
-            }
-        });
+                    // Ambil nilai dari inputt
+                    let title = $("#title").val();
+                    let author = $("#author").val();
+                    let description = window.editor.getData();
 
-        input.addEventListener('change', () => {
-            if (input.files.length) {
-                handleFile(input.files[0]);
-            }
-        });
+                    console.log('DATA EDITOR:', description);
 
-        document.getElementById('changeThumbnailBtn').addEventListener('click', () => input.click());
-        document.getElementById('removeThumbnailBtn').addEventListener('click', () => {
-            input.value = '';
-            previewContainer.style.display = 'none';
-            placeholder.style.display = 'flex';
-            errorDiv.style.display = 'none';
-            errorDiv.textContent = '';
-            // Add a hidden input to signal removal of thumbnail on the backend
-            if (!document.querySelector('input[name="remove_thumbnail"]')) {
-                const removeInput = document.createElement('input');
-                removeInput.type = 'hidden';
-                removeInput.name = 'remove_thumbnail';
-                removeInput.value = '1';
-                document.getElementById('formEditNews').appendChild(removeInput);
-            }
-        });
+                    // Valdasi input dasar
+                    if (!title || title.trim() === '') {
+                        toastr.error("Judul berita tidak boleh kosong");
+                        document.getElementById("editNewsButton").disabled = false;
+                        return;
+                    }
 
-        function handleFile(file) {
-            if (!validateFile(file)) return;
+                    if (!author || author.trim() === '') {
+                        toastr.error("Pembuat berita tidak boleh kosong");
+                        document.getElementById("editNewsButton").disabled = false;
+                        return;
+                    }
 
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                previewImg.src = e.target.result;
-                fileNameSpan.textContent = file.name;
-                fileSizeSpan.textContent = `${(file.size / 1024).toFixed(1)} KB`;
-                placeholder.style.display = 'none';
-                previewContainer.style.display = 'block';
-                // Remove the 'remove_thumbnail' signal if a new file is chosen
-                const removeInput = document.querySelector('input[name="remove_thumbnail"]');
-                if (removeInput) removeInput.remove();
-            };
-            reader.readAsDataURL(file);
-        }
+                    // Validasi isi editor
+                    if (!description || description.trim() === '') {
+                        toastr.error("Konten berita tidak boleh kosong");
+                        document.getElementById("editNewsButton").disabled = false;
+                        return;
+                    }
 
-        function validateFile(file) {
-            errorDiv.style.display = 'none';
-            errorDiv.textContent = '';
+                    // ID berita dari URL
+                    const newsId = {{ $news->id }};
 
-            const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-            const maxSize = 1 * 1024 * 1024; // 1MB
+                    // Siapkan formData dengan APPENDING description
+                    const formData = new FormData();
+                    formData.append('_token', $('input[name="_token"]').val());
+                    formData.append('_method', 'PATCH');
+                    formData.append('title', title);
+                    formData.append('author', author);
+                    formData.append('description', description);
 
-            if (!allowedTypes.includes(file.type)) {
-                errorDiv.textContent = 'Format file tidak valid. Gunakan PNG, JPG, atau JPEG.';
-                errorDiv.style.display = 'block';
-                return false;
-            }
+                    // Tambahkan thumbnail jika ada file yang dipilih
+                    const thumbnailFile = $('#thumbnail')[0].files[0];
+                    if (thumbnailFile) {
+                        // Validasi ukuran dan tipe file
+                        const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                        const maxSizeInBytes = 1 * 1024 * 1024; // 1024 KB
 
-            if (file.size > maxSize) {
-                errorDiv.textContent = `Ukuran file terlalu besar. Maksimal 1MB (file Anda ${(file.size / 1024 / 1024).toFixed(2)}MB).`;
-                errorDiv.style.display = 'block';
-                return false;
-            }
+                        if (!allowedExtensions.exec(thumbnailFile.name)) {
+                            toastr.error("Thumbnail harus memiliki ekstensi JPG, JPEG, atau PNG");
+                            document.getElementById("editNewsButton").disabled = false;
+                            return;
+                        }
 
-            return true;
-        }
-    });
+                        if (thumbnailFile.size > maxSizeInBytes) {
+                            toastr.error("Ukuran thumbnail maksimal 1024 KB");
+                            document.getElementById("editNewsButton").disabled = false;
+                            return;
+                        }
 
-    function updateNews() {
-        const button = document.getElementById('updateNewsButton');
-        button.disabled = true;
-        button.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Mengupdate...';
+                        formData.append('thumbnail', thumbnailFile);
+                    }
 
-        const formData = new FormData(document.getElementById('formEditNews'));
-        const description = editorInstance.getData();
-        formData.set('description', description);
+                    // Debug log untuk memastikan data sudah benar ka blm
+                    for (let pair of formData.entries()) {
+                        console.log(pair[0] + ': ' + (pair[0] === 'description' ?
+                            ('[data length: ' + pair[1].length + ', excerpt: ' + pair[1].substring(0, 50) + '...]') :
+                            pair[1]));
+                    }
 
-        // Validation
-        let isValid = true;
-        const title = formData.get('title');
-        const author = formData.get('author');
 
-        if (!title.trim()) {
-            toastr.error('Judul berita tidak boleh kosong.');
-            isValid = false;
-        }
-        if (!author.trim()) {
-            toastr.error('Penulis tidak boleh kosong.');
-            isValid = false;
-        }
-        if (!description.trim() || description === '<p></p>') {
-            toastr.error('Konten berita tidak boleh kosong.');
-            isValid = false;
-        }
-
-        if (!isValid) {
-            button.disabled = false;
-            button.innerHTML = '<i class="fas fa-save"></i> <span>Update Berita</span>';
-            return;
-        }
-
-        $.ajax({
-            type: 'POST',
-            url: '/news/update',
-            data: formData,
-            contentType: false,
-            processData: false,
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function(response) {
-                toastr.success('Berita berhasil diupdate!');
-                setTimeout(() => {
-                    window.location.href = response.redirect_url;
-                }, 1500);
-            },
-            error: function(xhr) {
-                button.disabled = false;
-                button.innerHTML = '<i class="fas fa-save"></i> <span>Update Berita</span>';
-                const errors = xhr.responseJSON.errors;
-                if (errors) {
-                    let errorMessages = '';
-                    $.each(errors, function(key, value) {
-                        errorMessages += value.join(' ') + '\n';
+                    // Kirim AJAX request
+                    $.ajax({
+                        url: `/news/${newsId}`,
+                        method: "POST", // Gunakan POST dengan _method=PATCH untuk compatibility
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        beforeSend: function(xhr) {
+                            const csrfToken = $('meta[name=csrf-token]').attr('content');
+                            xhr.setRequestHeader('X-CSRF-Token', csrfToken);
+                        },
+                        success: function(data) {
+                            toastr.success(data.message || "Berita berhasil diperbarui");
+                            setTimeout(function() {
+                                window.location.href = '/news';
+                            }, 2000);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("Error response:", xhr.responseJSON);
+                            if (xhr.responseJSON && xhr.responseJSON.message) {
+                                toastr.error(xhr.responseJSON.message);
+                            } else {
+                                toastr.error("Terjadi kesalahan. Silakan coba lagi.");
+                            }
+                            document.getElementById("editNewsButton").disabled = false;
+                        }
                     });
-                    toastr.error(errorMessages, 'Gagal Validasi');
-                } else {
-                    toastr.error(xhr.responseJSON.message || 'Terjadi kesalahan saat mengupdate berita.');
+                } catch (e) {
+                    console.error("Terjadi kesalahan:", e);
+                    toastr.error("Terjadi kesalahan saat mengedit berita");
+                    document.getElementById("editNewsButton").disabled = false;
                 }
+            });
+
+            // Pastikan form di-reset saat halaman dimuat
+            $('#formEditNews')[0].reset();
+
+            // Memastikan content editor bisa diambil dengan benar
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    if (window.editor) {
+                        // Verifikasi konten editor setelah halaman dimuat sepenuhnya
+                        console.log('Content editor saat halaman dimuat:', window.editor.getData() ? window.editor.getData().substring(0, 100) + '...' : '(kosong)');
+                    }
+                }, 1000);
+            });
+
+            const {
+                ClassicEditor,
+                Alignment,
+                Autoformat,
+                AutoImage,
+                AutoLink,
+                Autosave,
+                BalloonToolbar,
+                BlockQuote,
+                BlockToolbar,
+                Bold,
+                Bookmark,
+                CKBox,
+                CKBoxImageEdit,
+                CloudServices,
+                Code,
+                Emoji,
+                Essentials,
+                FindAndReplace,
+                FontBackgroundColor,
+                FontColor,
+                FontFamily,
+                FontSize,
+                GeneralHtmlSupport,
+                Heading,
+                Highlight,
+                HorizontalLine,
+                ImageBlock,
+                ImageCaption,
+                ImageEditing,
+                ImageInline,
+                ImageInsert,
+                ImageInsertViaUrl,
+                ImageResize,
+                ImageStyle,
+                ImageTextAlternative,
+                ImageToolbar,
+                ImageUpload,
+                ImageUtils,
+                Indent,
+                IndentBlock,
+                Italic,
+                Link,
+                LinkImage,
+                List,
+                ListProperties,
+                Mention,
+                PageBreak,
+                Paragraph,
+                PasteFromOffice,
+                PictureEditing,
+                RemoveFormat,
+                SpecialCharacters,
+                SpecialCharactersArrows,
+                SpecialCharactersCurrency,
+                SpecialCharactersEssentials,
+                SpecialCharactersLatin,
+                SpecialCharactersMathematical,
+                SpecialCharactersText,
+                Strikethrough,
+                Style,
+                Subscript,
+                Superscript,
+                Table,
+                TableCaption,
+                TableCellProperties,
+                TableColumnResize,
+                TableProperties,
+                TableToolbar,
+                TextTransformation,
+                TodoList,
+                Underline
+            } = window.CKEDITOR;
+
+            const {
+                CaseChange,
+                ExportPdf,
+                ExportWord,
+                FormatPainter,
+                ImportWord,
+                MergeFields,
+                MultiLevelList,
+                PasteFromOfficeEnhanced,
+                SlashCommand,
+                TableOfContents,
+                Template
+            } = window.CKEDITOR_PREMIUM_FEATURES;
+
+            const LICENSE_KEY =
+                'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NTA4OTU5OTksImp0aSI6ImNlMWE4YTc1LWU0NmEtNDA4My04MmNlLWEwMWZmMWJhMDc0MyIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiLCJzaCJdLCJ3aGl0ZUxhYmVsIjp0cnVlLCJsaWNlbnNlVHlwZSI6InRyaWFsIiwiZmVhdHVyZXMiOlsiKiJdLCJ2YyI6IjZkNzhiZmQ5In0.1VjlMQwsh5pZeKuxewK_DrygqQyJzSX8pbdfUjlrnBGASoSPRQBEOOVi4chaY0gn3BtzasmMxhAbdkec5nJelA';
+
+            const CLOUD_SERVICES_TOKEN_URL =
+                'https://5_j9r80q2uf5.cke-cs.com/token/dev/800cfe86f138081a49188bb528a1f4514199c1d1f4f2f969cb353c8e0cda?limit=10';
+
+            const editorConfig = {
+                toolbar: {
+                    items: [
+                        'insertMergeField',
+                        'previewMergeFields',
+                        '|',
+                        'importWord',
+                        'exportWord',
+                        'exportPdf',
+                        'formatPainter',
+                        'caseChange',
+                        'findAndReplace',
+                        '|',
+                        'heading',
+                        'style',
+                        '|',
+                        'fontSize',
+                        'fontFamily',
+                        'fontColor',
+                        'fontBackgroundColor',
+                        '|',
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strikethrough',
+                        'subscript',
+                        'superscript',
+                        'code',
+                        'removeFormat',
+                        '|',
+                        'emoji',
+                        'specialCharacters',
+                        'horizontalLine',
+                        'pageBreak',
+                        'link',
+                        'bookmark',
+                        'insertImage',
+                        'insertImageViaUrl',
+                        'ckbox',
+                        'insertTable',
+                        'tableOfContents',
+                        'insertTemplate',
+                        'highlight',
+                        'blockQuote',
+                        '|',
+                        'alignment',
+                        '|',
+                        'bulletedList',
+                        'numberedList',
+                        'multiLevelList',
+                        'todoList',
+                        'outdent',
+                        'indent',
+                        '|',
+                        'undo',
+                        'redo'
+                    ],
+                    shouldNotGroupWhenFull: true
+                },
+                plugins: [
+                    Alignment,
+                    Autoformat,
+                    AutoImage,
+                    AutoLink,
+                    Autosave,
+                    BalloonToolbar,
+                    BlockQuote,
+                    BlockToolbar,
+                    Bold,
+                    Bookmark,
+                    CKBox,
+                    CKBoxImageEdit,
+                    CloudServices,
+                    Code,
+                    Emoji,
+                    Essentials,
+                    FindAndReplace,
+                    FontBackgroundColor,
+                    FontColor,
+                    FontFamily,
+                    FontSize,
+                    GeneralHtmlSupport,
+                    Heading,
+                    Highlight,
+                    HorizontalLine,
+                    ImageBlock,
+                    ImageCaption,
+                    ImageEditing,
+                    ImageInline,
+                    ImageInsert,
+                    ImageInsertViaUrl,
+                    ImageResize,
+                    ImageStyle,
+                    ImageTextAlternative,
+                    ImageToolbar,
+                    ImageUpload,
+                    ImageUtils,
+                    Indent,
+                    IndentBlock,
+                    Italic,
+                    Link,
+                    LinkImage,
+                    List,
+                    ListProperties,
+                    Mention,
+                    PageBreak,
+                    Paragraph,
+                    PasteFromOffice,
+                    PictureEditing,
+                    RemoveFormat,
+                    SpecialCharacters,
+                    SpecialCharactersArrows,
+                    SpecialCharactersCurrency,
+                    SpecialCharactersEssentials,
+                    SpecialCharactersLatin,
+                    SpecialCharactersMathematical,
+                    SpecialCharactersText,
+                    Strikethrough,
+                    Style,
+                    Subscript,
+                    Superscript,
+                    Table,
+                    TableCaption,
+                    TableCellProperties,
+                    TableColumnResize,
+                    TableProperties,
+                    TableToolbar,
+                    TextTransformation,
+                    TodoList,
+                    Underline,
+                    // Plugin premium
+                    CaseChange,
+                    ExportPdf,
+                    ExportWord,
+                    FormatPainter,
+                    ImportWord,
+                    MergeFields,
+                    MultiLevelList,
+                    PasteFromOfficeEnhanced,
+                    SlashCommand,
+                    TableOfContents,
+                    Template
+                ],
+                balloonToolbar: ['bold', 'italic', '|', 'link', 'insertImage', '|', 'bulletedList', 'numberedList'],
+                blockToolbar: [
+                    'fontSize',
+                    'fontColor',
+                    'fontBackgroundColor',
+                    '|',
+                    'bold',
+                    'italic',
+                    '|',
+                    'link',
+                    'insertImage',
+                    'insertTable',
+                    '|',
+                    'bulletedList',
+                    'numberedList',
+                    'outdent',
+                    'indent'
+                ],
+                cloudServices: {
+                    tokenUrl: CLOUD_SERVICES_TOKEN_URL
+                },
+                licenseKey: LICENSE_KEY,
+                placeholder: 'Silahkan Tulis Konten Berita...',
+                fontFamily: {
+                    supportAllValues: true
+                },
+                fontSize: {
+                    options: [10, 12, 14, 'default', 18, 20, 22],
+                    supportAllValues: true
+                },
+                heading: {
+                    options: [
+                        {
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        },
+                        {
+                            model: 'heading3',
+                            view: 'h3',
+                            title: 'Heading 3',
+                            class: 'ck-heading_heading3'
+                        },
+                        {
+                            model: 'heading4',
+                            view: 'h4',
+                            title: 'Heading 4',
+                            class: 'ck-heading_heading4'
+                        },
+                        {
+                            model: 'heading5',
+                            view: 'h5',
+                            title: 'Heading 5',
+                            class: 'ck-heading_heading5'
+                        },
+                        {
+                            model: 'heading6',
+                            view: 'h6',
+                            title: 'Heading 6',
+                            class: 'ck-heading_heading6'
+                        }
+                    ]
+                },
+                htmlSupport: {
+                    allow: [
+                        {
+                            name: /^.*$/,
+                            styles: true,
+                            attributes: true,
+                            classes: true
+                        }
+                    ]
+                },
+                image: {
+                    toolbar: [
+                        'toggleImageCaption',
+                        'imageTextAlternative',
+                        '|',
+                        'imageStyle:inline',
+                        'imageStyle:wrapText',
+                        'imageStyle:breakText',
+                        '|',
+                        'resizeImage'
+                    ]
+                },
+                link: {
+                    addTargetToExternalLinks: true,
+                    defaultProtocol: 'https://'
+                },
+                list: {
+                    properties: {
+                        styles: true,
+                        startIndex: true,
+                        reversed: true
+                    }
+                },
+                style: {
+                    definitions: [
+                        {
+                            name: 'Article category',
+                            element: 'h3',
+                            classes: ['category']
+                        },
+                        {
+                            name: 'Title',
+                            element: 'h2',
+                            classes: ['document-title']
+                        },
+                        {
+                            name: 'Subtitle',
+                            element: 'h3',
+                            classes: ['document-subtitle']
+                        },
+                        {
+                            name: 'Info box',
+                            element: 'p',
+                            classes: ['info-box']
+                        },
+                        {
+                            name: 'Side quote',
+                            element: 'blockquote',
+                            classes: ['side-quote']
+                        },
+                        {
+                            name: 'Marker',
+                            element: 'span',
+                            classes: ['marker']
+                        },
+                        {
+                            name: 'Spoiler',
+                            element: 'span',
+                            classes: ['spoiler']
+                        },
+                        {
+                            name: 'Code (dark)',
+                            element: 'pre',
+                            classes: ['fancy-code', 'fancy-code-dark']
+                        },
+                        {
+                            name: 'Code (bright)',
+                            element: 'pre',
+                            classes: ['fancy-code', 'fancy-code-bright']
+                        }
+                    ]
+                },
+                table: {
+                    contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
+                }
+            };
+
+            // Definisikan variabel editor di scope global
+            window.editor = null;
+
+            // Log untuk memastikan konten textarea description
+            console.log('Konten textarea description:', $('#description').val() ? $('#description').val().substring(0, 100) + '...' : '(kosong)');
+
+            ClassicEditor.create(document.querySelector('#description'), editorConfig)
+                .then(newEditor => {
+                    window.editor = newEditor;
+                    console.log('Editor berhasil dibuat');
+                    // Verifikasi konten editor setelah dibuat
+                    console.log('Konten editor setelah dibuat:', window.editor.getData() ? window.editor.getData().substring(0, 100) + '...' : '(kosong)');
+                })
+                .catch(error => {
+                    console.error('Error saat membuat editor:', error);
+                });
+        });
+
+        // thumbnail
+        $(document).ready(function() {
+            // Cek dimensi gambar thumbnail saat ini
+            var currentImg = document.getElementById('current-thumbnail-image');
+            currentImg.onload = function() {
+                $('#current-dimensions').text(this.naturalWidth + ' × ' + this.naturalHeight + ' px');
+            };
+
+            // Preview thumbnail saat file dipilih
+            $('#thumbnail').on('change', function() {
+                const file = this.files[0];
+
+                if (file) {
+                    // Tampilkan nama file dan ukuran
+                    const fileName = file.name;
+                    const fileSize = formatFileSize(file.size);
+
+                    $('#filename-display').text(fileName);
+                    $('#filesize-display').text(fileSize);
+
+                    // Baca file untuk preview
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('#thumbnail-preview-image').attr('src', e.target.result);
+                        $('#thumbnail-preview-container').fadeIn();
+                        $('.thumbnail-placeholder').hide();
+
+                        // Tampilkan status upload
+                        showUploadStatus();
+
+                        // Animasi gambar preview
+                        $('#thumbnail-preview-image').addClass('fade-in');
+
+                        // Cek dimensi gambar
+                        var img = new Image();
+                        img.onload = function() {
+                            $('#filesize-display').append(' • ' + this.width + ' × ' + this.height + ' px');
+                        };
+                        img.src = e.target.result;
+                    };
+
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Efek drag dan drop
+            $('#thumbnail-dropzone')
+                .on('dragover', function(e) {
+                    e.preventDefault();
+                    $(this).addClass('drag-over');
+                })
+                .on('dragleave dragend', function(e) {
+                    e.preventDefault();
+                    $(this).removeClass('drag-over');
+                })
+                .on('drop', function(e) {
+                    e.preventDefault();
+                    $(this).removeClass('drag-over');
+
+                    if (e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.files.length) {
+                        $('#thumbnail')[0].files = e.originalEvent.dataTransfer.files;
+                        $('#thumbnail').trigger('change');
+                    }
+                });
+
+            // Format file size untuk display
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            // Simulasi status upload
+            function showUploadStatus() {
+                $('#upload-status').slideDown();
+
+                // Simulasi progress
+                $('.status-text').html('<i class="fas fa-circle-notch fa-spin mr-2"></i> Mempersiapkan file...');
+
+                setTimeout(function() {
+                    $('.progress-bar').css('width', '30%');
+                    $('.status-text').html('<i class="fas fa-circle-notch fa-spin mr-2"></i> Memvalidasi format...');
+                }, 500);
+
+                setTimeout(function() {
+                    $('.progress-bar').css('width', '60%');
+                    $('.status-text').html('<i class="fas fa-circle-notch fa-spin mr-2"></i> Mengoptimalkan gambar...');
+                }, 1000);
+
+                setTimeout(function() {
+                    $('.progress-bar').css('width', '100%');
+                    $('.status-text').html('<i class="fas fa-check-circle mr-2 text-success"></i> File siap diunggah');
+                }, 1500);
             }
         });
-    }
-</script>
+
+    </script>
 @endsection
