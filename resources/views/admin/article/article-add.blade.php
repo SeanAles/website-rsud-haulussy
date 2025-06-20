@@ -18,7 +18,7 @@
             align-items: center;
             z-index: 1000;
             opacity: 1;
-            transition: opacity 0.02s ease-out;
+            transition: opacity 0.3s ease-out;
         }
 
         .editor-loading-spinner {
@@ -28,7 +28,6 @@
             border-top: 4px solid #4299e1;
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
-            transition: all 0.02s ease;
         }
 
         @keyframes spin {
@@ -39,6 +38,9 @@
         .editor-wrapper {
             position: relative;
             min-height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         /* Custom styles untuk CKEditor */
@@ -47,13 +49,11 @@
             max-height: 600px;
             font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
+            border-radius: 0 0 15px 15px !important;
         }
 
-        .ck.ck-editor__main>.ck-editor__editable {
-            padding: 1.5em;
-            background-color: #fff;
-            border: 1px solid #e0e0e0 !important;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+            border-color: #e0e0e0 !important;
         }
 
         /* Style untuk form */
