@@ -14,10 +14,10 @@ class NewsController extends Controller
 {
     public function index(Request $request)
     {
-        // Jika reqst dari vistr (tidak ada parameter admin)
+        // Jika request dari visitor (tidak ada parameter admin)
         if (!$request->has('admin')) {
             $news = Post::where('category', 'news')->latest()->paginate(9);
-            return view('visitor.informasi.berita', compact('news'));
+            return view('visitor.informasi.daftar-berita', compact('news'));
         }
 
         // Jika request dari admn
