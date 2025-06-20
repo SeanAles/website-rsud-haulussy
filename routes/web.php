@@ -21,6 +21,7 @@ use App\Models\Bed;
 use App\Models\Event;
 use App\Models\Post;
 use App\Models\Promkes;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -109,8 +110,8 @@ Route::get('/dokter-umum', function () {
 Route::get('/artikel', [ArticleController::class, 'indexArtikel']);
 Route::get('/artikel/{slug}', [ArticleController::class, 'showArtikel']);
 // Informasi Berita Route
-Route::get('/berita', [NewsController::class, 'indexBerita']);
-Route::get('/berita/{slug}', [NewsController::class, 'showBerita']);
+Route::get('/berita', [NewsController::class, 'index']);
+Route::get('/berita/{slug}', [NewsController::class, 'show']);
 // Informasi Galeri Kegiatan Route
 Route::get('/galeri', [EventController::class, 'indexGaleri']);
 Route::get('/galeri/{slug}', [EventController::class, 'showGaleri']);
@@ -262,7 +263,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware('admin.news')->group(function () {
         //News Route
-        Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+        Route::get('/news', function(Request $request) {
+            $request->merge(['admin' => true]);
+            return app(NewsController::class)->index($request);
+        })->name('news.index');
         Route::get('/news-add', [NewsController::class, 'create']);
         Route::post('/news', [NewsController::class, 'store']);
         Route::get('/news/{id}', [NewsController::class, 'show']);

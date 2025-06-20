@@ -14,7 +14,14 @@ class NewsController extends Controller
 {
     public function index(Request $request)
     {
-        $category = "news";
+        // Jika reqst dari vistr (tidak ada parameter admin)
+        if (!$request->has('admin')) {
+            $news = Post::where('category', 'news')->latest()->paginate(9);
+            return view('visitor.informasi.berita', compact('news'));
+        }
+
+        // Jika request dari admn
+         $category = "news";
         if ($request->ajax()) {
             $data = Post::select('*')->where('category', '=', $category);
             return Datatables::of($data)
@@ -66,6 +73,39 @@ class NewsController extends Controller
 
         return view('admin.news.news');
     }
+
+    public function show($slugOrId)
+    {
+        // Jika parameter adalah slug (untuk pengunjung)
+        if (!is_numeric($slugOrId)) {
+            $new = Post::where('slug', $slugOrId)->firstOrFail();
+
+            // Mekanisme anti-spam untuk view counter
+            $sessionKey = 'news_' . $new->id . '_viewed';
+
+            if (!session()->has($sessionKey)) {
+                // Increment view counter hanya jika berita belum dilihat dalam session ini
+                $new->increment('views');
+
+                // Set session untuk mencatat bahwa berita ini sudah dilihat
+                session()->put($sessionKey, true);
+                session()->save();
+            }
+
+            $news = Post::where('category', 'news')
+                ->where('id', '!=', $new->id)
+                ->latest()
+                ->take(3)
+                ->get();
+
+            return view('visitor.informasi.baca-berita', compact('new', 'news'));
+        }
+
+        // Jika parameter adalah ID (untuk admin)
+        $news = Post::with('user')->findOrFail($slugOrId);
+        return view('admin.news.news-detail', ['news' => $news]);
+    }
+
     public function create()
     {
         return view('admin.news.news-add');
@@ -124,12 +164,6 @@ class NewsController extends Controller
         }
 
         return response()->json(['message' => 'Gagal Menambahkan Berita'], 401);
-    }
-
-    public function show($id)
-    {
-        $news = Post::with('user')->findOrFail($id);
-        return view('admin.news.news-detail', ['news' => $news]);
     }
 
     public function edit($id)
@@ -202,23 +236,5 @@ class NewsController extends Controller
         return response()->json(['message' => 'Gagal Menghapus Data'], 401);
     }
 
-    // News (User Section)
-    public function indexBerita()
-    {
-        $news = Post::where('category', '=', 'news')->orderByDesc('created_at')->paginate(4);
 
-        return view('visitor.informasi.daftar-berita', ['news' => $news]);
-    }
-
-    public function showBerita($slug)
-    {
-        $new = Post::with('user')->where('slug', '=', $slug)->first();
-        $news = Post::where([['slug', '!=', $slug], ['category', '=', 'news']])->orderByDesc('created_at')->get();
-
-        if (!$new) {
-            return abort(404);
-        }
-
-        return view('visitor.informasi.baca-berita', ['news' => $news, 'new' => $new]);
-    }
 }
