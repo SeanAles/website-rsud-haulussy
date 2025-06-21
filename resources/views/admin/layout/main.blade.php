@@ -198,6 +198,21 @@
             font-size: 13px;
         }
 
+        .nav-sidebar .nav-link p {
+            white-space: normal;
+            word-wrap: break-word;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1.2;
+            margin-left: .2rem;
+        }
+
+        .nav-sidebar .nav-link i {
+            vertical-align: middle;
+            width: 1.6rem;
+            text-align: center;
+        }
+
         /* Content wrapper styling */
         .content-wrapper {
             background-color: #f8fafc;
@@ -432,6 +447,14 @@
                                     <i class="nav-icon material-icons-round">lightbulb</i>
                                     <p>
                                         Kritik dan Saran
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('request-online-information.index') }}" class="nav-link {{ request()->is('permintaan-informasi-online*') ? 'active' : '' }}">
+                                    <i class="nav-icon material-icons-round">contact_support</i>
+                                    <p>
+                                        Permintaan Informasi Online
                                     </p>
                                 </a>
                             </li>

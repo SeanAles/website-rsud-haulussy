@@ -144,6 +144,7 @@ Route::get('/permintaan-informasi-online', function () {
     return view('visitor.kontak.permintaan-informasi-online');
 });
 Route::post('/permintaan-informasi-online', [RequestOnlineInformationController::class, 'create']);
+Route::get('/admin/permintaan-informasi-online', [RequestOnlineInformationController::class, 'index'])->name('request-online-information.index');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('prevent.back.history');
