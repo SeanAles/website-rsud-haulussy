@@ -14,24 +14,37 @@
             <!-- Bagian Kiri (67%) -->
             <div class="col-md-8 col-lg-8 left-panel">
                     <h2 class="article-title">{{ $new->title }}</h2>
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="article-info">
-                            <span class="text-muted">
-                                <i class="fas fa-user-edit mr-1"></i> {{ $new->author }}
-                                <i class="fas fa-calendar-alt ml-3 mr-1"></i> {{ $new->created_at->format('d - m - Y') }}
-                                <i class="far fa-eye ml-3 mr-1"></i> {{ number_format($new->views) }} kali dibaca
-                                <i class="far fa-clock ml-3 mr-1"></i>
-                                @php
-                                    $readTime = strlen($new->description) > 0
-                                        ? max(2, ceil(str_word_count(strip_tags($new->description)) / 200))
-                                        : 2;
-                                @endphp
-                                {{ $readTime }} menit
-                            </span>
+                    <div class="d-flex flex-column flex-xl-row justify-content-between align-items-start align-items-xl-center mb-3 article-meta-section">
+                        <div class="article-info mb-2 mb-xl-0">
+                            <div class="article-meta-wrapper">
+                                <span class="article-meta-item">
+                                    <i class="fas fa-user-edit"></i>
+                                    <span class="meta-text">{{ $new->author }}</span>
+                                </span>
+                                <span class="article-meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span class="meta-text">{{ $new->created_at->format('d - m - Y') }}</span>
+                                </span>
+                                <span class="article-meta-item">
+                                    <i class="far fa-eye"></i>
+                                    <span class="meta-text">{{ number_format($new->views) }} kali dibaca</span>
+                                </span>
+                                <span class="article-meta-item">
+                                    <i class="far fa-clock"></i>
+                                    <span class="meta-text">
+                                        @php
+                                            $readTime = strlen($new->description) > 0
+                                                ? max(2, ceil(str_word_count(strip_tags($new->description)) / 200))
+                                                : 2;
+                                        @endphp
+                                        {{ $readTime }} menit
+                                    </span>
+                                </span>
+                            </div>
                         </div>
                         <div class="social-sharing">
                             <button type="button" class="share-btn copy" id="copyButton" onclick="copyToClipboard()">
-                                <i class="fas fa-copy"></i> Salin URL
+                                <i class="fas fa-copy"></i> <span class="copy-text">Salin URL</span>
                             </button>
                             <a href="#" class="share-btn whatsapp" id="shareWhatsApp" onclick="shareWhatsApp(event)">
                                 <i class="fab fa-whatsapp"></i>
