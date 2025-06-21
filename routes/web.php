@@ -8,6 +8,7 @@ use App\Http\Controllers\DownloadCategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventPictureController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\SuggestionController;
@@ -144,7 +145,6 @@ Route::get('/permintaan-informasi-online', function () {
     return view('visitor.kontak.permintaan-informasi-online');
 });
 Route::post('/permintaan-informasi-online', [RequestOnlineInformationController::class, 'create']);
-Route::get('/admin/permintaan-informasi-online', [RequestOnlineInformationController::class, 'index'])->name('request-online-information.index');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('prevent.back.history');
@@ -152,6 +152,10 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+    // Notification Routes - Available for roles with access to suggestions and online information requests
+    Route::get('/notifications/unread', [NotificationController::class, 'getUnreadNotifications'])->name('notifications.unread');
+    Route::post('/notifications/mark-read', [NotificationController::class, 'markAsRead'])->name('notifications.mark-read');
+
     Route::middleware('super.admin')->group(function () {
         //Account Route
         Route::get('account', [AccountController::class, 'index'])->name('account.index');
@@ -196,6 +200,8 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/promkes', [PromkesController::class, 'store']);
         Route::patch('/promkes/{id}', [PromkesController::class, 'update']);
         Route::delete('/promkes/{id}', [PromkesController::class, 'destroy']);
+
+
 
         // Tarif Route
         // Room Route
@@ -279,6 +285,11 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware('admin.pengaduan')->group(function () {
         // Suggestion Route
         Route::get('/suggestion', [SuggestionController::class, 'index'])->name('suggestion.index');
+        Route::get('/suggestion/{id}', [SuggestionController::class, 'show'])->name('admin.suggestions.show');
+
+        // Request Online Information Route
+        Route::get('/request-online-information', [RequestOnlineInformationController::class, 'index'])->name('admin.request-online-information.index');
+        Route::get('/request-online-information/{id}', [RequestOnlineInformationController::class, 'show'])->name('admin.request-online-information.show');
     });
 
     Route::get('/logout', [AuthController::class, 'logout'])->middleware('prevent.back.history');

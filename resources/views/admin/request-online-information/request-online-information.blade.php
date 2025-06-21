@@ -54,7 +54,7 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
         serverSide: true,
         responsive: true,
         autoWidth: false,
-        ajax: "{{ route('request-online-information.index') }}",
+        ajax: "{{ route('admin.request-online-information.index') }}",
         columns: [
             {
                 data: 'id',

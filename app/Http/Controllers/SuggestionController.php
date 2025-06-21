@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Suggestion;
+use App\Models\User;
+use App\Notifications\NewSuggestionNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use Yajra\DataTables\Facades\DataTables;
 
 class SuggestionController extends Controller
@@ -20,56 +23,14 @@ class SuggestionController extends Controller
                 ->addColumn('action', function ($suggestion) {
                     $actionBtn = '
                     <div class="row">
-                        <button type="button" class="mr-1 mt-1 update btn btn-success btn-sm" data-toggle="modal" data-target="#detailSuggestionModal' . $suggestion->id . '">
+                        <a href="' . route('admin.suggestions.show', $suggestion->id) . '" class="mr-1 mt-1 btn btn-success btn-sm">
                             Detail
-                        </button>
-
-                        <!-- Modal Detail -->
-                        <div class="modal fade" id="detailSuggestionModal' . $suggestion->id . '" tabindex="-1" role="dialog" aria-labelledby="detailSuggestionModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                            <div class="modal-body">
-                            </div>
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="detailSuggestionModalLabel">Lihat Kritik atau Saran | 
-                                            <b>' . $suggestion->id . '</b>
-                                        </h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="name-' . $suggestion->id . '">Nama</label>
-                                            <input value="' . $suggestion->name . '" type="text" class="form-control" id="name-' . $suggestion->id . '" disabled>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email-' . $suggestion->id . '">Email</label>
-                                            <input value="' . $suggestion->email . '" type="text" class="form-control" id="email-' . $suggestion->id . '" disabled>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="phone-number-' . $suggestion->id . '">Nomor Telepon</label>
-                                            <input value="' . $suggestion->phone_number . '" type="text" class="form-control" id="phone-number-' . $suggestion->id . '" disabled>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="message-' . $suggestion->id . '">Pesan</label>
-                                            <textarea rows="4" type="text" class="form-control" id="message' . $suggestion->id . '" disabled>'.$suggestion->message.'
-                                            </textarea>
-                                        </div>
-                                         <div class="form-group">
-                                            <label for="message-' . $suggestion->id . '">Harapan</label>
-                                            <textarea rows="4" type="text" class="form-control" id="hope' . $suggestion->id . '" disabled>'.$suggestion->hope.'
-                                            </textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
+                        </a>
                     </div>
                     ';
                     return $actionBtn;
                 })
-                ->editColumn('created_at', function($data){ 
+                ->editColumn('created_at', function($data){
                     $date = Carbon::parse($data->created_at);
                     $indonesianDate = $date->format('d-m-Y');
                     return $indonesianDate;
@@ -92,9 +53,19 @@ class SuggestionController extends Controller
         ]);
 
         if ($suggestion) {
+            // Send notification to roles with access to suggestions (role_id 1, 2, 6)
+            $admins = User::whereIn('role_id', [1, 2, 6])->get();
+            Notification::send($admins, new NewSuggestionNotification($suggestion));
+
             return response()->json(['success' => 'Berhasil mengirimkan kritik atau saran']);
         }
 
         return response()->json(['error' => 'Gagal mengirimkan kritik atau saran'], 400);
+    }
+
+    public function show($id)
+    {
+        $suggestion = Suggestion::findOrFail($id);
+        return view('admin.suggestion.detail', compact('suggestion'));
     }
 }
