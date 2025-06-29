@@ -82,7 +82,7 @@
         }
 
         #preloader {
-            background: #fff url(/visitor/assets/img/gif/idul.gif) no-repeat center center;
+            background: #fff url(/visitor/assets/img/gif/load.gif) no-repeat center center;
             background-size: 15%;
             height: 100vh;
             width: 100%;
@@ -103,7 +103,7 @@
         }
 
         #preloader {
-            background: #fff url(/visitor/assets/img/gif/lingkaran.gif) no-repeat center center;
+            background: #fff url(/visitor/assets/img/gif/load.gif) no-repeat center center;
             background-size: 5%;
             height: 100vh;
             width: 100%;
