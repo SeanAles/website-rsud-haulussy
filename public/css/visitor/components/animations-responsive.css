@@ -1,0 +1,213 @@
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(108, 92, 231, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(108, 92, 231, 0.6); }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-5px) rotate(2deg); }
+    50% { transform: translateY(-8px) rotate(0deg); }
+    75% { transform: translateY(-5px) rotate(-2deg); }
+}
+
+@keyframes pulse-text {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation effects for article cards */
+.article-card {
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+}
+
+.col:nth-child(1) .article-card { animation-delay: 0.1s; }
+.col:nth-child(2) .article-card { animation-delay: 0.2s; }
+.col:nth-child(3) .article-card { animation-delay: 0.3s; }
+.col:nth-child(4) .article-card { animation-delay: 0.4s; }
+.col:nth-child(5) .article-card { animation-delay: 0.5s; }
+.col:nth-child(6) .article-card { animation-delay: 0.6s; }
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .article-grid {
+        margin: 0 10px;
+    }
+
+    .page-header {
+        padding: 20px 0;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .article-img {
+        height: 180px;
+    }
+
+    .search-container {
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+
+    .search-form .form-control {
+        padding: 15px 20px 15px 50px;
+        font-size: 15px;
+    }
+
+    .search-icon {
+        left: 20px;
+        font-size: 18px;
+    }
+
+    .search-input {
+        padding: 15px 45px 15px 50px;
+        font-size: 15px;
+    }
+
+    .search-icon-container {
+        left: 15px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .clear-button {
+        right: 15px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .article-title {
+        font-size: 16px;
+        height: 48px;
+    }
+
+    .article-content {
+        padding: 16px 20px;
+    }
+
+    .pagination .page-item .page-link {
+        padding: 8px 14px;
+        font-size: 14px;
+        margin: 0 2px;
+    }
+
+    .pagination-container {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .no-results {
+        padding: 40px 20px;
+        margin: 0 15px;
+    }
+
+    .no-results i {
+        font-size: 3em;
+    }
+
+    .no-results h3 {
+        font-size: 1.4em;
+    }
+
+    .search-results-count {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .page-title {
+        font-size: 24px;
+    }
+
+    .article-img {
+        height: 160px;
+    }
+
+    .search-container {
+        padding: 0 10px;
+        margin-bottom: 25px;
+    }
+
+    .search-input {
+        padding: 14px 40px 14px 45px;
+        font-size: 14px;
+    }
+
+    .article-title {
+        font-size: 15px;
+        height: 45px;
+    }
+
+    .article-content {
+        padding: 14px 18px;
+    }
+
+    .article-author, .article-date {
+        font-size: 13px;
+    }
+
+    .pagination .page-item .page-link {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .no-results {
+        padding: 30px 15px;
+    }
+
+    .no-results i {
+        font-size: 2.5em;
+    }
+
+    .no-results h3 {
+        font-size: 1.2em;
+    }
+
+    .no-results .btn-primary {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}

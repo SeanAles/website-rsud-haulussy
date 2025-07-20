@@ -265,11 +265,63 @@ class ArticleController extends Controller
     }
 
     // Artikel (VisitorSection)
-    public function indexArtikel()
+    public function indexArtikel(Request $request)
     {
-        $articles = Post::where('category', '=', 'article')->orderByDesc('created_at')->paginate(4);
+        $query = Post::where('category', '=', 'article');
 
-        return view('visitor.informasi.daftar-artikel', ['articles' => $articles]);
+        // Pencarian artikel berdasarkan judul dan penulis
+        if ($request->has('search') && $request->search != '') {
+            $searchTerm = $request->search;
+            $query->where(function ($q) use ($searchTerm) {
+                $q->where('title', 'LIKE', "%{$searchTerm}%")
+                    ->orWhere('author', 'LIKE', "%{$searchTerm}%");
+            });
+        }
+
+        $articles = $query->orderByDesc('created_at')->paginate(6);
+
+        // Mempertahankan parameter pencarian pada pagination
+        if ($request->has('search')) {
+            $articles->appends(['search' => $request->search]);
+        }
+
+        // Jika request AJAX, mengmblikan hanya HTML yang diperlukan
+        if ($request->ajax() || $request->has('ajax')) {
+            $html = '';
+            $count = $articles->total();
+
+            if ($articles->count() > 0) {
+                foreach ($articles as $article) {
+                    $html .= view('visitor.informasi._article_card', [
+                        'article' => $article
+                    ])->render();
+                }
+            } else {
+                $html = '<div class="col-12 text-center py-5">
+                    <div class="no-results">
+                        <i class="fas fa-search fa-3x mb-3 text-muted"></i>
+                        <h3 class="mb-3">Tidak ada artikel ditemukan</h3>
+                        <p class="text-muted mb-4">Maaf, tidak ada artikel yang sesuai dengan pencarian "' . $request->search . '"</p>
+                        <button type="button" id="backToAllArticles" class="btn btn-primary">
+                            <i class="fas fa-arrow-left mr-2"></i> Kembali ke semua artikel
+                        </button>
+                    </div>
+                </div>';
+            }
+
+            $pagination = $articles->appends(['search' => $request->search])->links()->toHtml();
+
+            return response()->json([
+                'html' => $html,
+                'count' => $count,
+                'pagination' => $pagination
+            ]);
+        }
+
+        return view('visitor.informasi.daftar-artikel', [
+            'articles' => $articles,
+            'searchTerm' => $request->search ?? ''
+        ]);
     }
 
     public function showArtikel($slug)

@@ -108,7 +108,7 @@ Route::get('/dokter-umum', function () {
 
 // Informasi Route
 // Informasi Artikel Route
-Route::get('/artikel', [ArticleController::class, 'indexArtikel']);
+Route::get('/artikel', [ArticleController::class, 'indexArtikel'])->name('artikel');
 Route::get('/artikel/{slug}', [ArticleController::class, 'showArtikel']);
 // Informasi Berita Route
 Route::get('/berita', [NewsController::class, 'index']);
@@ -270,7 +270,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware('admin.news')->group(function () {
         //News Route
-        Route::get('/news', function(Request $request) {
+        Route::get('/news', function (Request $request) {
             $request->merge(['admin' => true]);
             return app(NewsController::class)->index($request);
         })->name('news.index');

@@ -1,0 +1,286 @@
+/* Article Meta Information and Social Sharing */
+
+/* Styling untuk section meta artikel */
+.article-meta-section {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+/* Styling untuk info artikel */
+.article-info {
+    font-size: 0.9em;
+    margin-bottom: 12px;
+    color: #6c757d;
+}
+
+.article-info .text-muted {
+    color: #606060 !important;
+}
+
+.article-info .text-muted i.fa-eye {
+    color: #3498db;
+}
+
+/* Styling untuk meta wrapper yang responsif */
+.article-meta-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.article-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #606060;
+    font-size: 0.9em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: fit-content;
+    line-height: 1.4;
+}
+
+.article-meta-item i {
+    color: #3498db;
+    font-size: 0.95em;
+    flex-shrink: 0;
+    width: 16px;
+    text-align: center;
+    display: inline-block;
+}
+
+.article-meta-item .meta-text {
+    color: #606060;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+/* Styling untuk tombol berbagi */
+.social-sharing {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    color: white !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.share-btn i {
+    font-size: 1.2rem;
+}
+
+.share-btn.copy {
+    width: auto;
+    padding: 0 15px;
+    background-color: #3498db;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.share-btn.copy i {
+    font-size: 0.85rem;
+}
+
+.share-btn.whatsapp {
+    background-color: #25D366;
+}
+
+.share-btn.facebook {
+    background-color: #3b5998;
+}
+
+.share-btn.x-twitter {
+    background-color: #000000;
+}
+
+.share-btn.telegram {
+    background-color: #0088cc;
+}
+
+/* Success Notification for Copy URL */
+.copy-success {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1050;
+    animation: fadeInOut 2s;
+}
+
+/* Layout responsif untuk article meta section */
+@media (min-width: 1200px) {
+    .article-meta-section {
+        flex-direction: row !important;
+    }
+    
+    .article-info {
+        margin-bottom: 0 !important;
+    }
+    
+    .social-sharing {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+    /* Responsivitas untuk tablet */
+    .article-meta-wrapper {
+        gap: 8px 16px;
+    }
+
+    .article-meta-item {
+        font-size: 0.9em;
+        gap: 5px;
+    }
+
+    .social-sharing {
+        gap: 12px;
+    }
+
+    .article-meta-section {
+        padding-bottom: 12px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .social-sharing {
+        gap: 8px;
+        justify-content: flex-start;
+    }
+
+    /* Menyembunyikan teks pada tombol copy tapi tetap tampilkan icon */
+    .share-btn.copy {
+         width: 40px;
+         height: 40px;
+         padding: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
+ 
+     .share-btn.copy .copy-text {
+         display: none;
+     }
+ 
+     .share-btn.copy i {
+         font-size: 1.1rem;
+         margin: 0;
+     }
+
+    /* Responsivitas untuk article meta - memastikan icon dan text tetap bersatu */
+    .article-meta-wrapper {
+        gap: 8px 12px;
+        justify-content: flex-start;
+    }
+
+    .article-meta-item {
+        font-size: 0.85em;
+        gap: 4px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        min-width: fit-content;
+    }
+
+    .article-meta-item i {
+        flex-shrink: 0;
+        width: 14px;
+        text-align: center;
+    }
+
+    .article-meta-item .meta-text {
+        flex-shrink: 0;
+    }
+
+    .article-meta-section {
+        padding-bottom: 10px;
+    }
+
+    .article-info {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .share-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .share-btn i {
+        font-size: 1rem;
+    }
+
+    /* Menyembunyikan teks pada tombol copy untuk layar sangat kecil tapi tetap tampilkan icon */
+    .share-btn.copy {
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .share-btn.copy .copy-text {
+        display: none;
+    }
+
+    .share-btn.copy i {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    /* Responsivitas ekstra untuk layar sangat kecil */
+    .article-meta-wrapper {
+        gap: 6px 10px;
+    }
+
+    .article-meta-item {
+        font-size: 0.8em;
+        gap: 3px;
+    }
+
+    .article-meta-item i {
+        font-size: 0.85em;
+        width: 12px;
+    }
+
+    .article-meta-section {
+        padding-bottom: 8px;
+    }
+
+    .social-sharing {
+        gap: 6px;
+        justify-content: flex-start;
+    }
+}

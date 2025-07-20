@@ -1,0 +1,324 @@
+/* Related Articles Styling (Right Panel) */
+
+.other-articles {
+    padding-left: 30px;
+    padding-top: 10px;
+    position: relative;
+}
+
+.articles-wrapper {
+    background-color: #f9fafc;
+    background-image: linear-gradient(135deg, #f9fafc 0%, #f1f7fa 100%);
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+    padding: 25px 20px;
+    border: 1px solid rgba(230, 230, 230, 0.8);
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.articles-wrapper:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+.articles-wrapper:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 120px;
+    height: 120px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23f2f2f2" d="M168 80c-13.3 0-24 10.7-24 24V408c0 13.3 10.7 24 24 24H344c13.3 0 24-10.7 24-24V104c0-13.3-10.7-24-24-24H168zM72 96c-13.3 0-24 10.7-24 24V392c0 13.3 10.7 24 24 24s24-10.7 24-24V120c0-13.3-10.7-24-24-24zm400 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V392c0 13.3 10.7 24 24 24s24-10.7 24-24V120z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.articles-wrapper:after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="%23e6e6e6" d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.articles-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.articles-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background-color: #3498db;
+    border-radius: 2px;
+}
+
+.articles-container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    z-index: 2;
+    margin-top: 5px;
+}
+
+.related-article-card {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-decoration: none !important;
+    position: relative;
+    border: 1px solid rgba(230, 230, 230, 0.7);
+    width: 100%;
+    max-width: none;
+    height: 100px; /* Tetapkan tinggi tetap untuk kartu */
+    z-index: 1;
+}
+
+.related-article-card:hover {
+    box-shadow: 0 8px 16px rgba(52, 152, 219, 0.10);
+    transform: translateY(-3px);
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
+.related-article-card:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+}
+
+.related-article-card:hover:after {
+    transform: translateX(100%);
+}
+
+.related-article-thumbnail-wrapper {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.related-article-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.related-article-card:hover .related-article-thumbnail {
+    transform: scale(1.05);
+}
+
+.related-article-thumbnail-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 4px 0;
+    background: linear-gradient(to bottom, rgba(41, 128, 185, 0.4) 0%, rgba(41, 128, 185, 0.9) 70%);
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    backdrop-filter: blur(2px);
+}
+
+.related-article-content {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    min-width: 0;
+    overflow: hidden; /* Untuk memastikan konten yang terlalu panjang tidak meluap */
+    position: relative;
+}
+
+.related-article-title {
+    font-weight: 700;
+    color: #2c3e50 !important;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.3s ease;
+    letter-spacing: 0.2px;
+    white-space: nowrap; /* Tambahkan white-space nowrap untuk satu baris */
+    position: relative;
+    padding-right: 16px; /* Ruang untuk badge */
+    font-family: 'Open Sans', sans-serif;
+}
+
+.related-article-card:hover .related-article-title {
+    color: #3498db !important;
+}
+
+.related-article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 12px;
+}
+
+.related-article-date {
+    font-size: 0.75rem;
+    color: #95a5a6 !important;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.related-article-date i {
+    margin-right: 12px; /* Jarak yang lebih jelas antara ikon dan teks */
+    font-size: 0.75rem;
+    width: 14px;
+    text-align: center;
+    color: #3498db;
+}
+
+.read-time {
+    font-size: 0.75rem;
+    color: #95a5a6 !important;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.read-time i {
+    margin-right: 12px; /* Jarak yang lebih jelas antara ikon dan teks */
+    font-size: 0.75rem;
+    width: 14px;
+    text-align: center;
+    color: #e74c3c;
+}
+
+.article-category {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.68rem;
+    color: #3498db;
+    font-weight: 600;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    padding: 1px 8px;
+    border-radius: 12px;
+    background-color: rgba(52, 152, 219, 0.06);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    max-width: fit-content;
+    white-space: nowrap; /* Untuk kategori yang panjang */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.2s ease;
+}
+
+.related-article-card:hover .article-category {
+    background-color: rgba(52, 152, 219, 0.1);
+    border-color: rgba(52, 152, 219, 0.4);
+}
+
+.article-category i {
+    margin-right: 10px;
+    font-size: 0.7rem;
+    width: 14px;
+    text-align: center;
+}
+
+.article-views {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    font-weight: 500;
+    padding: 1px 0;
+    transition: color 0.2s ease;
+}
+
+.article-views i {
+    margin-right: 12px;
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    opacity: 0.8;
+}
+
+.related-article-card:hover .article-views {
+    color: #3498db;
+}
+
+.related-article-card:hover .article-views i {
+    color: #3498db;
+}
+
+.no-other-articles {
+    color: #7f8c8d;
+    font-style: italic;
+    margin-top: 20px;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px dashed #e0e0e0;
+}
+
+.label-artikel {
+    display: none;
+}
+
+.new-article-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    margin-left: 5px;
+    animation: pulse 1.2s infinite;
+}

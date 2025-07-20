@@ -4,7 +4,12 @@
 
 @section('style')
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/visitor/article-view.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitor/components/table-of-contents.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitor/components/article-typography.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitor/components/article-meta.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitor/components/related-articles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitor/components/article-layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitor/components/article-animations.css') }}">
 @endsection
 
 @section('content')

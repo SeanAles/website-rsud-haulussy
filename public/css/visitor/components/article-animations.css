@@ -1,0 +1,52 @@
+/* Article Animations and Visual Effects */
+
+/* Animasi highlight untuk heading target */
+@keyframes highlightHeading {
+    0% { background-color: rgba(33, 150, 243, 0); }
+    30% { background-color: rgba(33, 150, 243, 0.15); }
+    70% { background-color: rgba(33, 150, 243, 0.15); }
+    100% { background-color: rgba(33, 150, 243, 0); }
+}
+
+.highlight-heading {
+    animation: highlightHeading 2s ease;
+    border-radius: 4px;
+    /* Memastikan tidak ada perubahan ukuran yang mempengaruhi layout */
+    box-sizing: border-box;
+}
+
+/* Pulse Animation for New Article Indicator */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Fade In Out Animation for Copy Success Notification */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+    15% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    85% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+}

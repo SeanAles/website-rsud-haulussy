@@ -1,0 +1,201 @@
+/* Table of Contents Styling */
+.table-of-contents {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px 0 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.table-of-contents-header {
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    background-color: #f2f7fa;
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+    color: #444;
+}
+
+.table-of-contents-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #2196F3;
+}
+
+.table-of-contents-list {
+    list-style-type: none;
+    padding: 15px 20px;
+    margin: 0;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.table-of-contents-list ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.table-of-contents-list li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.table-of-contents-list a {
+    color: #444;
+    text-decoration: none;
+    display: block;
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+
+.table-of-contents-list a.active {
+    color: #1976D2;
+}
+
+/* Styling garis putus-putus pada TOC items */
+.table-of-contents-list li {
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e0e0e0;
+    margin-bottom: 8px;
+}
+
+.table-of-contents-list li:last-child {
+    border-bottom: none;
+}
+
+/* Styling untuk sub-items */
+.table-of-contents-list ul {
+    border-left: 1px dashed #e0e0e0;
+    margin-top: 8px;
+    padding-left: 20px;
+}
+
+/* Enhanced Table of Contents Styling */
+.table-of-contents {
+    background-color: #f5f5f5; /* Warna background sedikit berbeda */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px 35px;
+    margin: 30px 0 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.table-of-contents-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    user-select: none;
+}
+
+.table-of-contents-toggle {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(41, 128, 185, 0.1);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.table-of-contents-toggle.collapsed {
+    transform: rotate(180deg);
+}
+
+.table-of-contents-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    counter-reset: toc-item;
+    transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.table-of-contents-list li {
+    margin-bottom: 10px !important;
+    position: relative;
+    line-height: 1.4;
+}
+
+.table-of-contents-list > li {
+    counter-increment: toc-item;
+}
+
+.table-of-contents-list a {
+    text-decoration: none !important;
+    color: #2c3e50 !important;
+    font-size: 1rem;
+    display: block;
+    padding: 5px 0 5px 25px;
+    position: relative;
+    transition: color 0.2s ease, padding 0.2s ease;
+    border: none !important;
+    font-weight: 500;
+}
+
+.table-of-contents-list > li > a {
+    font-weight: 600;
+}
+
+.table-of-contents-list a:hover {
+    color: #3498db !important;
+}
+
+.table-of-contents-list ul {
+    padding-left: 15px !important;
+    list-style: none !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+}
+
+.table-of-contents-list > li > ul > li > a {
+    padding-left: 45px; /* Konsisten padding */
+    font-size: 0.95rem;
+    color: #5dade2 !important; /* Warna sub-link */
+}
+
+/* Styling sederhana untuk submenu */
+.table-of-contents-list > li > ul > li > a {
+    color: #5dade2;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design for Table of Contents */
+@media (max-width: 767.98px) {
+    .table-of-contents {
+        padding: 15px;
+    }
+
+    .table-of-contents-list a {
+        padding-left: 22px;
+    }
+
+    .table-of-contents-list a:before {
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+    }
+
+    .table-of-contents-list > li > ul > li > a {
+        padding-left: 35px;
+    }
+
+    .table-of-contents-list > li > ul > li > a:before {
+        left: 25px;
+    }
+}
