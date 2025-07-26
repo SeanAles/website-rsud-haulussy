@@ -212,10 +212,30 @@ class EventController extends Controller
         return response()->json(['status' => 'error', 'message' => 'Data tidak ditemukan.']);
     }
 
-    public function indexGaleri(){
-        $events = Event::with('eventPicture')->orderByDesc('created_at')->paginate(4);
-
-        return view('visitor.informasi.daftar-galeri', ['events' => $events]);
+    public function indexGaleri(Request $request){
+        $searchTerm = $request->get('search', '');
+        
+        $events = Event::with('eventPicture')
+            ->when($searchTerm, function ($query) use ($searchTerm) {
+                return $query->where('name', 'like', '%' . $searchTerm . '%');
+            })
+            ->orderByDesc('created_at')
+            ->paginate(6);
+        
+        if ($request->ajax()) {
+            $html = '';
+            foreach ($events as $event) {
+                $html .= view('visitor.informasi._gallery_card', ['event' => $event])->render();
+            }
+            
+            return response()->json([
+                'html' => $html,
+                'count' => $events->total(),
+                'pagination' => $events->appends(request()->except('page'))->links()->render()
+            ]);
+        }
+        
+        return view('visitor.informasi.daftar-galeri', ['events' => $events, 'searchTerm' => $searchTerm]);
     }
 
     public function showGaleri($slug){
