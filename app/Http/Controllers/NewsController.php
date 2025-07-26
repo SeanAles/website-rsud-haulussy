@@ -16,8 +16,61 @@ class NewsController extends Controller
     {
         // Jika request dari visitor (tidak ada parameter admin)
         if (!$request->has('admin')) {
-            $news = Post::where('category', 'news')->latest()->paginate(9);
-            return view('visitor.informasi.daftar-berita', compact('news'));
+            $query = Post::where('category', 'news');
+
+            // Pencarian berita berdasarkan judul dan penulis
+            if ($request->has('search') && $request->search != '') {
+                $searchTerm = $request->search;
+                $query->where(function ($q) use ($searchTerm) {
+                    $q->where('title', 'LIKE', "%{$searchTerm}%")
+                        ->orWhere('author', 'LIKE', "%{$searchTerm}%");
+                });
+            }
+
+            $news = $query->latest()->paginate(6);
+
+            // Mempertahankan parameter pencarian pada pagination
+            if ($request->has('search')) {
+                $news->appends(['search' => $request->search]);
+            }
+
+            // Jika request AJAX, mengembalikan hanya HTML yang diperlukan
+            if ($request->ajax() || $request->has('ajax')) {
+                $html = '';
+                $count = $news->total();
+
+                if ($news->count() > 0) {
+                    foreach ($news as $new) {
+                        $html .= view('visitor.informasi._news_card', [
+                            'news' => $new
+                        ])->render();
+                    }
+                } else {
+                    $html = '<div class="col-12 text-center py-5">
+                        <div class="no-results">
+                            <i class="fas fa-search fa-3x mb-3 text-muted"></i>
+                            <h3 class="mb-3">Tidak ada berita ditemukan</h3>
+                            <p class="text-muted mb-4">Maaf, tidak ada berita yang sesuai dengan pencarian "' . $request->search . '"</p>
+                            <button type="button" id="backToAllNews" class="btn btn-primary">
+                                <i class="fas fa-arrow-left mr-2"></i> Kembali ke semua berita
+                            </button>
+                        </div>
+                    </div>';
+                }
+
+                $pagination = $news->appends(['search' => $request->search])->links()->toHtml();
+
+                return response()->json([
+                    'html' => $html,
+                    'count' => $count,
+                    'pagination' => $pagination
+                ]);
+            }
+
+            return view('visitor.informasi.daftar-berita', [
+                'news' => $news,
+                'searchTerm' => $request->search ?? ''
+            ]);
         }
 
         // Jika request dari admn
