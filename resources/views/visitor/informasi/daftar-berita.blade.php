@@ -43,7 +43,7 @@
         <div class="row g-4" id="newsContainer">
             @if($news->count() > 0)
                 @foreach ($news as $index => $new)
-                    @include('visitor.informasi._news_card', ['news' => $new])
+                    @include('visitor.components.content-card', ['type' => 'berita', 'item' => $new])
                 @endforeach
             @else
                 <div class="col-12 text-center py-5">
@@ -70,5 +70,19 @@
 
 @section('script')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('js/visitor/daftar-berita.js') }}"></script>
+<script src="{{ asset('js/visitor/components/search-handler.js') }}"></script>
+<script>
+$(document).ready(function() {
+    const searchHandler = new SearchHandler({
+        searchInputId: 'searchInput',
+        clearButtonId: 'clearSearch',
+        containerId: 'newsContainer',
+        searchResultsCountId: 'searchResultsCount',
+        paginationContainerClass: 'pagination-container',
+        searchEndpoint: '/berita',
+        contentType: 'berita',
+        backButtonId: 'backToAllNews'
+    });
+});
+</script>
 @endsection

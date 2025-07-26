@@ -44,7 +44,7 @@
         <div class="row g-4" id="galeriContainer">
             @if($events->count() > 0)
                 @foreach ($events as $index => $event)
-                    @include('visitor.informasi._gallery_card', ['event' => $event])
+                    @include('visitor.components.content-card', ['type' => 'galeri', 'item' => $event, 'showAuthor' => false])
                 @endforeach
             @else
                 <div class="col-12 text-center py-5">
@@ -71,5 +71,19 @@
 
 @section('script')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('js/visitor/daftar-galeri.js') }}"></script>
+<script src="{{ asset('js/visitor/components/search-handler.js') }}"></script>
+<script>
+$(document).ready(function() {
+    const searchHandler = new SearchHandler({
+        searchInputId: 'searchInput',
+        clearButtonId: 'clearSearch',
+        containerId: 'galeriContainer',
+        searchResultsCountId: 'searchResultsCount',
+        paginationContainerClass: 'pagination-container',
+        searchEndpoint: '/galeri',
+        contentType: 'galeri',
+        backButtonId: 'backToAllGalleries'
+    });
+});
+</script>
 @endsection

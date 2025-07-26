@@ -43,7 +43,7 @@
         <div class="row g-4" id="articlesContainer">
             @if($articles->count() > 0)
                 @foreach ($articles as $index => $article)
-                    @include('visitor.informasi._article_card', ['article' => $article])
+                    @include('visitor.components.content-card', ['type' => 'artikel', 'item' => $article])
                 @endforeach
             @else
                 <div class="col-12 text-center py-5">
@@ -70,5 +70,19 @@
 
 @section('script')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('js/visitor/daftar-article.js') }}"></script>
+<script src="{{ asset('js/visitor/components/search-handler.js') }}"></script>
+<script>
+$(document).ready(function() {
+    const searchHandler = new SearchHandler({
+        searchInputId: 'searchInput',
+        clearButtonId: 'clearSearch',
+        containerId: 'articlesContainer',
+        searchResultsCountId: 'searchResultsCount',
+        paginationContainerClass: 'pagination-container',
+        searchEndpoint: '/artikel',
+        contentType: 'artikel',
+        backButtonId: 'backToAllArticles'
+    });
+});
+</script>
 @endsection
