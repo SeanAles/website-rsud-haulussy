@@ -208,7 +208,7 @@ class DownloadController extends Controller
     }
 
     public function showDownload($id){
-        $downloads = Download::with(['downloadCategory'])->where('download_category_id', '=', $id)->get();
+        $downloads = Download::with(['downloadCategory'])->where('download_category_id', '=', $id)->orderBy('created_at', 'desc')->get();
 
         return view('visitor.informasi.lihat-unduh', ['downloads' => $downloads]);
     }
