@@ -207,10 +207,65 @@ class DownloadController extends Controller
         return view('visitor.informasi.unduh', ['downloadCategories' => $downloadCategories,]);
     }
 
-    public function showDownload($id){
-        $downloads = Download::with(['downloadCategory'])->where('download_category_id', '=', $id)->orderBy('created_at', 'desc')->get();
+    public function showDownload($id, Request $request){
+        $query = Download::with(['downloadCategory'])
+            ->where('download_category_id', '=', $id);
+        
+        // Search functionality
+        if ($request->has('search') && $request->search != '') {
+            $searchTerm = $request->search;
+            $query->where('name', 'LIKE', "%{$searchTerm}%");
+        }
+        
+        $downloads = $query->orderBy('created_at', 'desc')->paginate(10);
+        
+        // Get category info
+        $category = DownloadCategory::findOrFail($id);
+        
+        // Mempertahankan parameter pencarian pada pagination
+        if ($request->has('search')) {
+            $downloads->appends(['search' => $request->search]);
+        }
+        
+        // AJAX response for search
+        if ($request->ajax() || $request->has('ajax')) {
+            $html = '';
+            $count = $downloads->total();
+            
+            if ($downloads->count() > 0) {
+                foreach ($downloads as $index => $download) {
+                    $html .= view('visitor.informasi._download_row', [
+                        'download' => $download,
+                        'index' => $index + 1 + ($downloads->currentPage() - 1) * $downloads->perPage()
+                    ])->render();
+                }
+            } else {
+                $html = '<tr><td colspan="3" class="text-center py-5">
+                    <div class="no-results">
+                        <i class="fas fa-search fa-2x mb-3 text-muted"></i>
+                        <h5 class="mb-3">Tidak ada file ditemukan</h5>
+                        <p class="text-muted mb-4">Maaf, tidak ada file yang sesuai dengan pencarian "' . $request->search . '"</p>
+                        <button type="button" id="backToAllFiles" class="btn btn-primary btn-sm">
+                            <i class="fas fa-arrow-left mr-2"></i> Kembali ke semua file
+                        </button>
+                    </div>
+                </td></tr>';
+            }
+            
+            $pagination = $downloads->appends(['search' => $request->search])->links()->toHtml();
+            
+            return response()->json([
+                'html' => $html,
+                'count' => $count,
+                'pagination' => $pagination
+            ]);
+        }
 
-        return view('visitor.informasi.lihat-unduh', ['downloads' => $downloads]);
+        return view('visitor.informasi.lihat-unduh', [
+            'downloads' => $downloads,
+            'category' => $category,
+            'searchTerm' => $request->search ?? ''
+        ]);
     }
 
 }

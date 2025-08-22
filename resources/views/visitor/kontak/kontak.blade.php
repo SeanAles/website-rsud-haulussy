@@ -49,7 +49,7 @@
 
             <video controls autoplay>
                 <!-- Replace "video.mp4" with the actual path to your video file -->
-                <source src="{{ asset('visitor/assets/video/RSUD dr. M. Haulussy Ambon.mp4') }}" type="video/mp4">
+                <source src="{{ asset('visitor/assets/video/Video Profil Rumah Sakit.mp4') }}" type="video/mp4">
                 <!-- Provide alternative sources for different formats if necessary -->
                 <!-- <source src="video.webm" type="video/webm"> -->
                 <!-- <source src="video.ogg" type="video/ogg"> -->
