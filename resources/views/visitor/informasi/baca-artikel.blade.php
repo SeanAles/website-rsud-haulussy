@@ -10,87 +10,162 @@
     <link rel="stylesheet" href="{{ asset('css/visitor/components/related-articles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/visitor/components/article-layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/visitor/components/article-animations.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitor/components/category-badge.css') }}">
     <style>
-        /* Styling untuk Category dan Tags di artikel utama */
-        .article-taxonomy {
-            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-            border-radius: 12px;
-            padding: 16px;
-            margin: 16px 0;
-            border: 1px solid rgba(226, 232, 240, 0.6);
-            box-shadow: 
-                0 4px 16px rgba(0, 0, 0, 0.04),
-                0 1px 4px rgba(0, 0, 0, 0.02);
-        }
-
-        .article-category-main {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+        /* Category Badge di atas title - simplified since using component */
+        .article-category-top {
             margin-bottom: 12px;
-            padding: 6px 12px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 8px;
-            border: 1px solid rgba(226, 232, 240, 0.4);
         }
 
-        .article-category-main i {
-            font-size: 14px;
+        /* Article Info Container (Meta + Social dalam 1 container) */
+        .article-info-container {
+            margin: 16px 0 24px 0;
         }
 
-        .category-name {
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.4px;
-            text-transform: uppercase;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        /* Row 1: Meta Info */
+        .article-meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #dee2e6;
         }
 
-        .article-tags-main {
+        .article-meta-item {
             display: flex;
             align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .article-meta-item i {
+            color: #495057;
+            font-size: 13px;
+        }
+
+        /* Row 2: Social Share */
+        .article-social-info {
+            margin: 0;
+        }
+
+        .social-sharing-full {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-start;
             flex-wrap: wrap;
+        }
+
+        .social-sharing-full .share-btn {
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: none;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .social-sharing-full .copy {
+            background: #6c757d;
+        }
+
+        .social-sharing-full .whatsapp {
+            background: #25d366;
+        }
+
+        .social-sharing-full .facebook {
+            background: #1877f2;
+        }
+
+        .social-sharing-full .x-twitter {
+            background: #000000;
+        }
+
+        .social-sharing-full .telegram {
+            background: #0088cc;
+        }
+
+        .social-sharing-full .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Tags Inside Article Content */
+        .article-tags-inside {
+            margin-top: 30px;
+        }
+
+        .tags-divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e9ecef, transparent);
+            margin: 20px 0;
+        }
+
+        .tags-title {
+            margin-bottom: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #495057;
+            display: flex;
+            align-items: center;
             gap: 8px;
         }
 
-        .tags-label {
-            font-size: 0.9rem;
-            color: #6c757d;
-            font-weight: 500;
-            margin-right: 5px;
+        .tags-title i {
+            color: #667eea;
+            font-size: 16px;
         }
 
-        .article-tag-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 10px;
-            font-weight: 600;
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-link {
+            padding: 6px 14px;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
             text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 3px;
-            transition: all 0.2s ease;
-            line-height: 1.2;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        .article-tag-badge:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+        .tag-link::before {
+            content: '#';
+            margin-right: 4px;
+            font-weight: 600;
+            opacity: 0.7;
+        }
+
+        .tag-link:hover {
+            background: #667eea;
             color: white;
             text-decoration: none;
+            border-color: #667eea;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
         }
 
-        .article-tag-badge::before {
-            content: '#';
-            font-size: 9px;
-            opacity: 0.7;
+        .tag-link:hover::before {
+            opacity: 0.9;
         }
 
         /* Styling untuk category di artikel lainnya (sidebar) */
@@ -106,71 +181,68 @@
             font-size: 0.9em;
         }
 
-        /* Responsive adjustments */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .article-taxonomy {
-                padding: 12px;
-                margin: 12px 0;
-                border-radius: 10px;
+            
+            .article-info-container {
+                margin: 12px 0 20px 0;
             }
             
-            .article-category-main {
-                gap: 5px;
-                margin-bottom: 10px;
-                padding: 5px 10px;
-            }
-            
-            .article-category-main i {
-                font-size: 12px;
-            }
-            
-            .category-name {
-                font-size: 11px;
-            }
-            
-            .article-tags-main {
+            .article-meta-info {
                 flex-wrap: wrap;
-                gap: 5px;
+                gap: 12px 15px;
+                margin-bottom: 12px;
+                padding-bottom: 12px;
             }
             
-            .article-tag-badge {
-                font-size: 9px;
-                padding: 2px 6px;
-                border-radius: 10px;
+            .article-meta-item {
+                font-size: 13px;
             }
             
-            .article-tag-badge::before {
-                font-size: 8px;
+            .social-sharing-full {
+                gap: 8px;
+                justify-content: flex-start;
             }
             
-            .tags-label {
-                margin-bottom: 5px;
+            .article-tags-inside {
+                margin-top: 25px;
+            }
+            
+            .tags-title {
+                font-size: 16px;
+            }
+            
+            .tags-list {
+                gap: 8px;
+            }
+            
+            .tag-link {
+                font-size: 12px;
+                padding: 5px 12px;
             }
         }
 
         @media (max-width: 480px) {
-            .article-taxonomy {
-                padding: 10px;
-                margin: 10px 0;
+            
+            .social-sharing-full .share-btn {
+                flex: 1;
+                min-width: auto;
+                padding: 10px 8px;
+                font-size: 12px;
+                justify-content: center;
             }
             
-            .article-category-main {
-                gap: 4px;
-                padding: 4px 8px;
+            .copy-text {
+                display: none;
             }
             
-            .article-category-main i {
+            .tags-title {
+                font-size: 15px;
+            }
+            
+            .tag-link {
                 font-size: 11px;
-            }
-            
-            .category-name {
-                font-size: 10px;
-            }
-            
-            .article-tag-badge {
-                font-size: 8px;
-                padding: 2px 5px;
-                gap: 2px;
+                padding: 5px 10px;
             }
         }
     </style>
@@ -182,81 +254,94 @@
         <div class="row">
             <!-- Bagian Kiri (67%) -->
             <div class="col-md-8 col-lg-8 left-panel">
+                    <!-- Category Badge di atas title -->
+                    <div class="article-category-top mb-3">
+                        @include('visitor.components.category-badge', [
+                            'article' => $article,
+                            'size' => 'lg',
+                            'variant' => 'top',
+                            'fallbackLabel' => 'Artikel'
+                        ])
+                    </div>
                     <h2 class="article-title">{{ $article->title }}</h2>
-                    <div class="d-flex flex-column flex-xl-row justify-content-between align-items-start align-items-xl-center mb-3 article-meta-section">
-                        <div class="article-info mb-2 mb-xl-0">
-                            <div class="article-meta-wrapper">
-                                <span class="article-meta-item">
-                                    <i class="fas fa-user-edit"></i>
-                                    <span class="meta-text">{{ $article->author }}</span>
+                    <!-- Article Info Container (Meta + Social dalam 1 container) -->
+                    <div class="article-info-container mb-4">
+                        <!-- Row 1: Meta Info -->
+                        <div class="article-meta-info">
+                            <span class="article-meta-item">
+                                <i class="fas fa-user-edit"></i>
+                                <span class="meta-text">{{ $article->author }}</span>
+                            </span>
+                            <span class="article-meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span class="meta-text">{{ $article->created_at->format('d - m - Y') }}</span>
+                            </span>
+                            <span class="article-meta-item">
+                                <i class="far fa-eye"></i>
+                                <span class="meta-text">{{ number_format($article->views) }} kali dibaca</span>
+                            </span>
+                            <span class="article-meta-item">
+                                <i class="far fa-clock"></i>
+                                <span class="meta-text">
+                                    @php
+                                        $readTime = strlen($article->description) > 0
+                                            ? max(2, ceil(str_word_count(strip_tags($article->description)) / 200))
+                                            : 2;
+                                    @endphp
+                                    {{ $readTime }} menit
                                 </span>
-                                <span class="article-meta-item">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span class="meta-text">{{ $article->created_at->format('d - m - Y') }}</span>
-                                </span>
-                                <span class="article-meta-item">
-                                    <i class="far fa-eye"></i>
-                                    <span class="meta-text">{{ number_format($article->views) }} kali dibaca</span>
-                                </span>
-                                <span class="article-meta-item">
-                                    <i class="far fa-clock"></i>
-                                    <span class="meta-text">
-                                        @php
-                                            $readTime = strlen($article->description) > 0
-                                                ? max(2, ceil(str_word_count(strip_tags($article->description)) / 200))
-                                                : 2;
-                                        @endphp
-                                        {{ $readTime }} menit
-                                    </span>
-                                </span>
-                            </div>
+                            </span>
                         </div>
-                        <div class="social-sharing">
-                            <button type="button" class="share-btn copy" id="copyButton" onclick="copyToClipboard()">
-                                <i class="fas fa-copy"></i> <span class="copy-text">Salin URL</span>
-                            </button>
-                            <a href="#" class="share-btn whatsapp" id="shareWhatsApp" onclick="shareWhatsApp(event)">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="#" class="share-btn facebook" id="shareFacebook" onclick="shareFacebook(event)">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="share-btn x-twitter" id="shareTwitter" onclick="shareTwitter(event)">
-                                <i class="fa-brands fa-x-twitter"></i>
-                            </a>
-                            <a href="#" class="share-btn telegram" id="shareTelegram" onclick="shareTelegram(event)">
-                                <i class="fab fa-telegram-plane"></i>
-                            </a>
+                        
+                        <!-- Row 2: Social Share -->
+                        <div class="article-social-info">
+                            <div class="social-sharing-full">
+                                <button type="button" class="share-btn copy" id="copyButton" onclick="copyToClipboard()">
+                                    <i class="fas fa-copy"></i> <span class="copy-text">Salin URL</span>
+                                </button>
+                                <a href="#" class="share-btn whatsapp" id="shareWhatsApp" onclick="shareWhatsApp(event)">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="share-btn facebook" id="shareFacebook" onclick="shareFacebook(event)">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="share-btn x-twitter" id="shareTwitter" onclick="shareTwitter(event)">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                                <a href="#" class="share-btn telegram" id="shareTelegram" onclick="shareTelegram(event)">
+                                    <i class="fab fa-telegram-plane"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <img src="{{ asset('images/article/thumbnails/' . $article->thumbnail) }}" class="article-thumbnail img-fluid">
 
-                    <!-- Category dan Tags Section -->
-                    <div class="article-taxonomy mt-3 mb-4">
-                        @if($article->articleCategory && is_object($article->articleCategory))
-                            <div class="article-category-main mb-2">
-                                <i class="{{ $article->articleCategory->icon }}" style="color: {{ $article->articleCategory->color }};"></i>
-                                <span class="category-name" style="color: {{ $article->articleCategory->color }}; font-weight: 600;">
-                                    {{ $article->articleCategory->name }}
-                                </span>
-                            </div>
-                        @endif
-                        
-                        @if($article->tags && $article->tags->count() > 0)
-                            <div class="article-tags-main">
-                                <span class="tags-label">Tags:</span>
-                                @foreach($article->tags as $tag)
-                                    <span class="article-tag-badge">#{{ $tag->name }}</span>
-                                @endforeach
-                            </div>
-                        @endif
-                    </div>
 
                     <!-- Daftar Isi akan ditambahkan di sini oleh JavaScript -->
                     <div id="toc-placeholder"></div>
 
                     <div class="article-content">
                         {!! $article->description !!}
+                        
+                        <!-- Tags Section di dalam article content -->
+                        @if($article->tags && $article->tags->count() > 0)
+                            <div class="article-tags-inside">
+                                <hr class="tags-divider">
+                                <div class="tags-container">
+                                    <h4 class="tags-title">
+                                        <i class="fas fa-tags"></i>
+                                        Topik Terkait
+                                    </h4>
+                                    <div class="tags-list">
+                                        @foreach($article->tags as $tag)
+                                            <span class="tag-link">
+                                                {{ $tag->name }}
+                                            </span>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                     </div>
             </div>
             <!-- Bagian Kanan (40%) -->
@@ -295,15 +380,12 @@
                                             </small>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between">
-                                            <div class="related-article-badge">
-                                                @if($relatedArticle->articleCategory && is_object($relatedArticle->articleCategory))
-                                                    <i class="{{ $relatedArticle->articleCategory->icon }}"></i>
-                                                    <span>{{ $relatedArticle->articleCategory->name }}</span>
-                                                @else
-                                                    <i class="fas fa-folder"></i>
-                                                    <span>Umum</span>
-                                                @endif
-                                            </div>
+                                            @include('visitor.components.category-badge', [
+                                                'article' => $relatedArticle,
+                                                'size' => 'sm',
+                                                'variant' => 'inline',
+                                                'fallbackLabel' => 'Umum'
+                                            ])
                                             <div class="article-views">
                                                 <i class="far fa-eye"></i>
                                                 <span style="margin-left: 5px">{{ $relatedArticle->views ?? 0 }}</span>

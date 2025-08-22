@@ -5,7 +5,12 @@
                 <img src="{{ asset("images/article/thumbnails/$article->thumbnail") }}"
                     class="article-img" alt="{{ $article->title }}">
             </a>
-            <div class="article-category">Artikel</div>
+            @include('visitor.components.category-badge', [
+                'article' => $article,
+                'size' => 'md',
+                'variant' => 'overlay',
+                'fallbackLabel' => 'Artikel'
+            ])
         </div>
         <div class="article-content">
             <a href="/artikel/{{ $article->slug }}" class="text-decoration-none">

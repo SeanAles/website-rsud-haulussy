@@ -1,0 +1,252 @@
+/* =====================================
+   Universal Category Badge Component
+   Glass Morphism Effect with Dynamic Colors
+   ===================================== */
+
+/* Base badge styling */
+.category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    
+    /* Glass Morphism Effect */
+    background: linear-gradient(135deg, var(--category-color), rgba(var(--category-color-rgb), 0.8));
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    
+    /* Typography */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Shadow with dynamic color */
+    box-shadow: 
+        0 2px 8px rgba(var(--category-color-rgb), 0.3),
+        0 1px 4px rgba(0, 0, 0, 0.15);
+    
+    /* Transitions */
+    transition: all 0.2s ease;
+    
+    /* Prevent text selection */
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.category-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 12px rgba(var(--category-color-rgb), 0.35),
+        0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.category-badge i {
+    opacity: 0.9;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* =====================================
+   Size Variants
+   ===================================== */
+
+/* Small Badge - untuk sidebar, komponen kecil */
+.category-badge-sm {
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 14px;
+    gap: 4px;
+}
+
+.category-badge-sm i {
+    font-size: 9px;
+}
+
+/* Medium Badge - untuk article cards (default) */
+.category-badge-md {
+    font-size: 11px;
+    padding: 6px 12px;
+    border-radius: 16px;
+    gap: 5px;
+}
+
+.category-badge-md i {
+    font-size: 10px;
+}
+
+/* Large Badge - untuk headers, detail pages */
+.category-badge-lg {
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    gap: 6px;
+}
+
+.category-badge-lg i {
+    font-size: 11px;
+}
+
+/* =====================================
+   Position Variants
+   ===================================== */
+
+/* Overlay - positioned absolute (untuk gambar) */
+.category-badge-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+}
+
+/* Inline - inline element (default) */
+.category-badge-inline {
+    position: relative;
+}
+
+/* Top - untuk positioning di atas content */
+.category-badge-top {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+/* =====================================
+   Responsive Design
+   ===================================== */
+
+@media (max-width: 768px) {
+    .category-badge-overlay {
+        top: 12px;
+        right: 12px;
+    }
+    
+    .category-badge-sm {
+        font-size: 9px;
+        padding: 3px 8px;
+        border-radius: 12px;
+        gap: 3px;
+    }
+    
+    .category-badge-sm i {
+        font-size: 8px;
+    }
+    
+    .category-badge-md {
+        font-size: 10px;
+        padding: 5px 10px;
+        border-radius: 14px;
+        gap: 4px;
+    }
+    
+    .category-badge-md i {
+        font-size: 9px;
+    }
+    
+    .category-badge-lg {
+        font-size: 11px;
+        padding: 6px 14px;
+        border-radius: 18px;
+        gap: 5px;
+    }
+    
+    .category-badge-lg i {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-badge-overlay {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .category-badge-sm {
+        font-size: 8px;
+        padding: 2px 6px;
+        border-radius: 10px;
+        gap: 2px;
+    }
+    
+    .category-badge-sm i {
+        font-size: 7px;
+    }
+    
+    .category-badge-md {
+        font-size: 9px;
+        padding: 4px 8px;
+        border-radius: 12px;
+        gap: 3px;
+    }
+    
+    .category-badge-md i {
+        font-size: 8px;
+    }
+    
+    .category-badge-lg {
+        font-size: 10px;
+        padding: 5px 12px;
+        border-radius: 16px;
+        gap: 4px;
+    }
+    
+    .category-badge-lg i {
+        font-size: 9px;
+    }
+}
+
+/* =====================================
+   Special Effects for High-End Browsers
+   ===================================== */
+
+@supports (backdrop-filter: blur(6px)) {
+    .category-badge {
+        /* Enhanced glass effect for supporting browsers */
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Dark mode support (future-proofing) */
+@media (prefers-color-scheme: dark) {
+    .category-badge {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* =====================================
+   Accessibility & Print Styles
+   ===================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .category-badge {
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .category-badge {
+        background: var(--category-color) !important;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: none;
+        border: 1px solid var(--category-color);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .category-badge {
+        transition: none;
+    }
+    
+    .category-badge:hover {
+        transform: none;
+    }
+}
