@@ -635,6 +635,41 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- Category and Tags Section -->
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="category_id">Kategori Artikel <span class="text-danger">*</span></label>
+                                        <div class="input-icon-wrapper">
+                                            <select class="form-control icon-input" name="category_id" id="category_id" required>
+                                                <option value="">Pilih Kategori...</option>
+                                                @foreach($categories as $category)
+                                                    <option value="{{ $category->id }}" 
+                                                            {{ $article->category_id == $category->id ? 'selected' : '' }}>
+                                                        {{ $category->name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <i class="fas fa-tags input-icon"></i>
+                                        </div>
+                                        <small class="text-muted">Pilih kategori yang sesuai untuk artikel ini</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tags">Tags Artikel</label>
+                                        <div class="input-icon-wrapper">
+                                            <input type="text" class="form-control icon-input" name="tags" id="tags"
+                                                value="{{ $article->tags->pluck('name')->implode(', ') }}"
+                                                placeholder="Contoh: kesehatan, jantung, tips">
+                                            <i class="fas fa-hashtag input-icon"></i>
+                                        </div>
+                                        <small class="text-muted">Pisahkan tags dengan koma (contoh: kesehatan, jantung, tips)</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <!-- Thumbnail Section -->
                             <h3 class="section-heading"><i class="fas fa-image"></i> Thumbnail Artikel</h3>
                             <div class="row mb-4">
@@ -767,6 +802,8 @@
                     // Ambil nilai dari inputt
                     let title = $("#title").val();
                     let author = $("#author").val();
+                    let category_id = $("#category_id").val();
+                    let tags = $("#tags").val();
                     let description = window.editor.getData();
 
                     console.log('DATA EDITOR:', description);
@@ -780,6 +817,11 @@
 
                     if (!author || author.trim() === '') {
                         toastr.error("Pembuat artikel tidak boleh kosong");
+                        document.getElementById("editArticleButton").disabled = false;
+                        return;
+                    }
+                    if (!category_id || category_id === '') {
+                        toastr.error("Kategori artikel harus dipilih");
                         document.getElementById("editArticleButton").disabled = false;
                         return;
                     }
@@ -801,6 +843,8 @@
                     formData.append('title', title);
                     formData.append('author', author);
                     formData.append('description', description);
+                    formData.append('category_id', category_id);
+                    formData.append('tags', tags);
 
                     // Tambahkan thumbnail jika ada file yang dipilih
                     const thumbnailFile = $('#thumbnail')[0].files[0];
@@ -1395,6 +1439,122 @@
                     $('.status-text').html('<i class="fas fa-check-circle mr-2 text-success"></i> File siap diunggah');
                 }, 1500);
             }
+        });
+
+        // Tag autocomplete functionality
+        $(document).ready(function() {
+            let availableTags = [];
+            let tagTimeout;
+
+            // Load existing tags on page load
+            loadExistingTags();
+
+            function loadExistingTags() {
+                $.ajax({
+                    url: '/api/tags/search',
+                    method: 'GET',
+                    data: { q: '' },
+                    success: function(tags) {
+                        availableTags = tags.map(tag => tag.text);
+                    }
+                });
+            }
+
+            // Tag input with autocomplete
+            $('#tags').on('input', function() {
+                clearTimeout(tagTimeout);
+                const query = $(this).val().split(',').pop().trim();
+                
+                if (query.length > 1) {
+                    tagTimeout = setTimeout(function() {
+                        searchTags(query);
+                    }, 300);
+                }
+            });
+
+            function searchTags(query) {
+                $.ajax({
+                    url: '/api/tags/search',
+                    method: 'GET',
+                    data: { q: query },
+                    success: function(tags) {
+                        if (tags.length > 0) {
+                            showTagSuggestions(tags);
+                        } else {
+                            hideTagSuggestions();
+                        }
+                    }
+                });
+            }
+
+            function showTagSuggestions(tags) {
+                hideTagSuggestions(); // Remove existing suggestions
+
+                const $input = $('#tags');
+                const offset = $input.offset();
+                const $suggestions = $('<div>')
+                    .addClass('tag-suggestions')
+                    .css({
+                        position: 'absolute',
+                        top: offset.top + $input.outerHeight(),
+                        left: offset.left,
+                        width: $input.outerWidth(),
+                        background: 'white',
+                        border: '1px solid #ddd',
+                        borderRadius: '4px',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                        maxHeight: '200px',
+                        overflowY: 'auto',
+                        zIndex: 1000
+                    });
+
+                tags.forEach(function(tag) {
+                    const $suggestion = $('<div>')
+                        .addClass('tag-suggestion')
+                        .css({
+                            padding: '8px 12px',
+                            cursor: 'pointer',
+                            borderBottom: '1px solid #eee'
+                        })
+                        .html(`<strong>${tag.text}</strong> <small class="text-muted">(${tag.usage_count} artikel)</small>`)
+                        .hover(
+                            function() { $(this).css('background', '#f5f5f5'); },
+                            function() { $(this).css('background', 'white'); }
+                        )
+                        .click(function() {
+                            addTagToInput(tag.text);
+                            hideTagSuggestions();
+                        });
+
+                    $suggestions.append($suggestion);
+                });
+
+                $('body').append($suggestions);
+            }
+
+            function addTagToInput(tagName) {
+                const $input = $('#tags');
+                const currentValue = $input.val();
+                const tags = currentValue.split(',').map(t => t.trim()).filter(t => t);
+                
+                // Remove the last incomplete tag and add the selected one
+                tags.pop();
+                tags.push(tagName);
+                
+                $input.val(tags.join(', ') + ', ');
+                $input.focus();
+            }
+
+            function hideTagSuggestions() {
+                $('.tag-suggestions').remove();
+            }
+
+            // Hide suggestions when clicking outside
+            $(document).click(function(e) {
+                if (!$(e.target).closest('#tags, .tag-suggestions').length) {
+                    hideTagSuggestions();
+                }
+            });
         });
 
     </script>

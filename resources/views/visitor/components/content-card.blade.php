@@ -55,7 +55,21 @@ Usage:
                 <img src="{{ asset($imagePath) }}"
                     class="article-img" alt="{{ data_get($item, $config['titleField']) }}">
             </a>
-            <div class="article-category">{{ $config['label'] }}</div>
+            <div class="article-category">
+                @if($type === 'artikel' && isset($item->articleCategory) && $item->articleCategory && is_object($item->articleCategory))
+                    <i class="{{ $item->articleCategory->icon }}"></i>
+                    <span>{{ $item->articleCategory->name }}</span>
+                @else
+                    @if($type === 'artikel')
+                        <i class="fas fa-newspaper"></i>
+                    @elseif($type === 'berita')
+                        <i class="fas fa-bullhorn"></i>
+                    @else
+                        <i class="fas fa-images"></i>
+                    @endif
+                    <span>{{ $config['label'] }}</span>
+                @endif
+            </div>
         </div>
         <div class="article-content">
             <a href="{{ $config['url'] }}{{ $item->slug }}" class="text-decoration-none">

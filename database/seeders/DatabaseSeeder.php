@@ -12,6 +12,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Seed categories first (karena ada foreign key dependency)
+        $this->call([
+            ArticleCategorySeeder::class,
+            ArticleTagSeeder::class,
+        ]);
+        
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

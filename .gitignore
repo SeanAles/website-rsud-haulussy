@@ -5,6 +5,7 @@
 /public/storage
 /storage/*.key
 /vendor
+CLAUDE.md
 .env
 .env.backup
 .env.production
@@ -21,3 +22,4 @@ public/css/visitor/components/*.md
 
 # Learning Documentation (Local Only)
 LEARNING-*.md
+

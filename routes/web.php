@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DownloadCategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventPictureController;
@@ -266,6 +267,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/article-edit/{id}', [ArticleController::class, 'edit']);
         Route::patch('/article/{id}', [ArticleController::class, 'update']);
         Route::delete('/article/{id}', [ArticleController::class, 'destroy']);
+
+        //Category Route
+        Route::resource('/categories', CategoryController::class);
+        
+        //Tags API Route for autocomplete
+        Route::get('/tags/search', [ArticleController::class, 'searchTags'])->name('tags.search');
     });
 
     Route::middleware('admin.news')->group(function () {

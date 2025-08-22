@@ -70,7 +70,8 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('admin.article.article-add');
+        $categories = \App\Models\ArticleCategory::active()->ordered()->get();
+        return view('admin.article.article-add', compact('categories'));
     }
 
     public function store(Request $request)
@@ -116,10 +117,16 @@ class ArticleController extends Controller
             'slug' => $slug,
             'user_id' => $request->user_id,
             'category' => $request->category,
+            'category_id' => $request->category_id, // NEW: Category relationship
         ]);
 
         $file = $request->file('thumbnail');
         $file->storeAs('images/article/thumbnails/', $thumbnail);
+
+        // Handle tags
+        if ($request->filled('tags')) {
+            $this->attachTagsToArticle($article, $request->tags);
+        }
 
         if ($article) {
             return response()->json(['redirect_url' => '/article']);
@@ -136,8 +143,9 @@ class ArticleController extends Controller
 
     public function edit($id)
     {
-        $article = Post::findOrFail($id);
-        return view('admin.article.article-edit', ['article' => $article]);
+        $article = Post::with(['articleCategory', 'tags'])->findOrFail($id);
+        $categories = \App\Models\ArticleCategory::active()->ordered()->get();
+        return view('admin.article.article-edit', compact('article', 'categories'));
     }
 
     public function update(Request $request, $id)
@@ -187,6 +195,7 @@ class ArticleController extends Controller
                 'title' => $request->title,
                 'author' => $request->author,
                 'description' => $description,
+                'category_id' => $request->category_id, // NEW: Category relationship
             ];
 
             // Handle thumbnail jika ada
@@ -221,6 +230,11 @@ class ArticleController extends Controller
             $editArticle = $article->update($updateData);
 
             if ($editArticle) {
+                // Handle tags update
+                if ($request->has('tags')) {
+                    $this->attachTagsToArticle($article, $request->tags);
+                }
+                
                 return response()->json(['message' => 'Artikel berhasil diperbarui', 'redirect_url' => '/article']);
             }
 
@@ -267,7 +281,7 @@ class ArticleController extends Controller
     // Artikel (VisitorSection)
     public function indexArtikel(Request $request)
     {
-        $query = Post::where('category', '=', 'article');
+        $query = Post::with(['articleCategory', 'tags'])->where('category', '=', 'article');
 
         // Pencarian artikel berdasarkan judul dan penulis
         if ($request->has('search') && $request->search != '') {
@@ -326,12 +340,23 @@ class ArticleController extends Controller
 
     public function showArtikel($slug)
     {
-        $article = Post::with('user')->where('slug', '=', $slug)->first();
-        $articles = Post::where([['slug', '!=', $slug], ['category', '=', 'article']])->orderByDesc('created_at')->get();
-
+        // Load artikel dengan category dan tags relationships
+        $article = Post::with(['user', 'articleCategory', 'tags'])->where('slug', '=', $slug)->first();
+        
         if (!$article) {
             return abort(404);
         }
+
+        // Load artikel lainnya dengan category dan tags, prioritaskan artikel dengan category yang sama
+        $articles = Post::with(['articleCategory', 'tags'])
+            ->where([['slug', '!=', $slug], ['category', '=', 'article']])
+            ->when($article->category_id, function($query) use ($article) {
+                // Artikel dengan kategori yang sama diprioritaskan
+                return $query->orderByRaw('category_id = ? DESC', [$article->category_id]);
+            })
+            ->orderByDesc('created_at')
+            ->limit(8) // Batasi jumlah artikel lainnya
+            ->get();
 
         // Mekanisme anti-spam untuk view counter
         $sessionKey = 'article_' . $article->id . '_viewed';
@@ -347,5 +372,72 @@ class ArticleController extends Controller
         }
 
         return view('visitor.informasi.baca-artikel', ['articles' => $articles, 'article' => $article]);
+    }
+
+    /**
+     * Helper method to attach tags to article
+     */
+    private function attachTagsToArticle($article, $tagsString)
+    {
+        if (empty($tagsString)) {
+            // If tags empty, remove all tags
+            $article->tags()->detach();
+            return;
+        }
+
+        // Parse tags from comma-separated string
+        $tagNames = array_map('trim', explode(',', $tagsString));
+        $tagIds = [];
+
+        foreach ($tagNames as $tagName) {
+            if (empty($tagName)) continue;
+
+            // Generate slug for tag
+            $tagSlug = \Illuminate\Support\Str::slug($tagName);
+            
+            // Find or create tag
+            $tag = \App\Models\ArticleTag::firstOrCreate(
+                ['slug' => $tagSlug],
+                ['name' => $tagName]
+            );
+            
+            $tagIds[] = $tag->id;
+        }
+
+        // Sync tags (this will remove old tags and add new ones)
+        $article->tags()->sync($tagIds);
+
+        // Update usage count for all tags
+        foreach ($tagIds as $tagId) {
+            $tag = \App\Models\ArticleTag::find($tagId);
+            if ($tag) {
+                $tag->refreshUsageCount();
+            }
+        }
+    }
+
+    /**
+     * API endpoint for tag search (autocomplete)
+     */
+    public function searchTags(Request $request)
+    {
+        $search = $request->get('q', '');
+        
+        if (empty($search)) {
+            return response()->json([]);
+        }
+
+        $tags = \App\Models\ArticleTag::search($search)
+                    ->take(10)
+                    ->get(['id', 'name', 'slug', 'usage_count'])
+                    ->map(function($tag) {
+                        return [
+                            'id' => $tag->id,
+                            'text' => $tag->name,
+                            'usage_count' => $tag->usage_count,
+                        ];
+                    });
+
+        return response()->json($tags);
     }
 }

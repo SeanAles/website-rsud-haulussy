@@ -242,35 +242,45 @@
     color: #e74c3c;
 }
 
-.article-category {
+/* Khusus untuk badge di related articles sidebar */
+.related-article-badge {
     display: inline-flex;
     align-items: center;
-    font-size: 0.68rem;
-    color: #3498db;
+    font-size: 10px;
+    color: white;
     font-weight: 600;
-    border: 1px solid rgba(52, 152, 219, 0.3);
-    padding: 1px 8px;
+    border: none;
+    padding: 4px 8px;
     border-radius: 12px;
-    background-color: rgba(52, 152, 219, 0.06);
+    background: linear-gradient(135deg, #1B71A1, #2980b9);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
     max-width: fit-content;
-    white-space: nowrap; /* Untuk kategori yang panjang */
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     transition: all 0.2s ease;
+    gap: 4px;
+    line-height: 1.3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    box-shadow: 
+        0 2px 6px rgba(27, 113, 161, 0.3),
+        0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    min-height: 20px;
 }
 
-.related-article-card:hover .article-category {
-    background-color: rgba(52, 152, 219, 0.1);
-    border-color: rgba(52, 152, 219, 0.4);
+.related-article-card:hover .related-article-badge {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 2px 4px rgba(27, 113, 161, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-.article-category i {
-    margin-right: 10px;
-    font-size: 0.7rem;
-    width: 14px;
-    text-align: center;
+.related-article-badge i {
+    font-size: 9px;
+    opacity: 0.9;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
 }
 
 .article-views {

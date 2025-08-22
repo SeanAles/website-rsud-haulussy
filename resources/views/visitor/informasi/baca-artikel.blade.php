@@ -10,6 +10,170 @@
     <link rel="stylesheet" href="{{ asset('css/visitor/components/related-articles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/visitor/components/article-layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/visitor/components/article-animations.css') }}">
+    <style>
+        /* Styling untuk Category dan Tags di artikel utama */
+        .article-taxonomy {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 0;
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            box-shadow: 
+                0 4px 16px rgba(0, 0, 0, 0.04),
+                0 1px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .article-category-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            border: 1px solid rgba(226, 232, 240, 0.4);
+        }
+
+        .article-category-main i {
+            font-size: 14px;
+        }
+
+        .category-name {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .article-tags-main {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tags-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            font-weight: 500;
+            margin-right: 5px;
+        }
+
+        .article-tag-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            transition: all 0.2s ease;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .article-tag-badge:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .article-tag-badge::before {
+            content: '#';
+            font-size: 9px;
+            opacity: 0.7;
+        }
+
+        /* Styling untuk category di artikel lainnya (sidebar) */
+        .article-category {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .article-category i {
+            font-size: 0.9em;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .article-taxonomy {
+                padding: 12px;
+                margin: 12px 0;
+                border-radius: 10px;
+            }
+            
+            .article-category-main {
+                gap: 5px;
+                margin-bottom: 10px;
+                padding: 5px 10px;
+            }
+            
+            .article-category-main i {
+                font-size: 12px;
+            }
+            
+            .category-name {
+                font-size: 11px;
+            }
+            
+            .article-tags-main {
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+            
+            .article-tag-badge {
+                font-size: 9px;
+                padding: 2px 6px;
+                border-radius: 10px;
+            }
+            
+            .article-tag-badge::before {
+                font-size: 8px;
+            }
+            
+            .tags-label {
+                margin-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-taxonomy {
+                padding: 10px;
+                margin: 10px 0;
+            }
+            
+            .article-category-main {
+                gap: 4px;
+                padding: 4px 8px;
+            }
+            
+            .article-category-main i {
+                font-size: 11px;
+            }
+            
+            .category-name {
+                font-size: 10px;
+            }
+            
+            .article-tag-badge {
+                font-size: 8px;
+                padding: 2px 5px;
+                gap: 2px;
+            }
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -67,6 +231,27 @@
                     </div>
                     <img src="{{ asset('images/article/thumbnails/' . $article->thumbnail) }}" class="article-thumbnail img-fluid">
 
+                    <!-- Category dan Tags Section -->
+                    <div class="article-taxonomy mt-3 mb-4">
+                        @if($article->articleCategory && is_object($article->articleCategory))
+                            <div class="article-category-main mb-2">
+                                <i class="{{ $article->articleCategory->icon }}" style="color: {{ $article->articleCategory->color }};"></i>
+                                <span class="category-name" style="color: {{ $article->articleCategory->color }}; font-weight: 600;">
+                                    {{ $article->articleCategory->name }}
+                                </span>
+                            </div>
+                        @endif
+                        
+                        @if($article->tags && $article->tags->count() > 0)
+                            <div class="article-tags-main">
+                                <span class="tags-label">Tags:</span>
+                                @foreach($article->tags as $tag)
+                                    <span class="article-tag-badge">#{{ $tag->name }}</span>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+
                     <!-- Daftar Isi akan ditambahkan di sini oleh JavaScript -->
                     <div id="toc-placeholder"></div>
 
@@ -110,9 +295,14 @@
                                             </small>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between">
-                                            <div class="article-category">
-                                                <i class="fas fa-stethoscope"></i>
-                                                Kesehatan
+                                            <div class="related-article-badge">
+                                                @if($relatedArticle->articleCategory && is_object($relatedArticle->articleCategory))
+                                                    <i class="{{ $relatedArticle->articleCategory->icon }}"></i>
+                                                    <span>{{ $relatedArticle->articleCategory->name }}</span>
+                                                @else
+                                                    <i class="fas fa-folder"></i>
+                                                    <span>Umum</span>
+                                                @endif
                                             </div>
                                             <div class="article-views">
                                                 <i class="far fa-eye"></i>

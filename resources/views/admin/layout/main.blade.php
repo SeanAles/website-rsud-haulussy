@@ -686,6 +686,14 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
+                                        <a href="/categories" class="nav-link {{ request()->is('categories*') ? 'active' : '' }}">
+                                            <i class="nav-icon fas fa-tags"></i>
+                                            <p>
+                                                Kategori Artikel
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a href="/news" class="nav-link {{ request()->is('news*') ? 'active' : '' }}">
                                             <i class="nav-icon material-icons-round">feed</i>
                                             <p>
@@ -701,6 +709,14 @@
                                     <i class="nav-icon material-icons-round">description</i>
                                     <p>
                                         Artikel
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/categories" class="nav-link {{ request()->is('categories*') ? 'active' : '' }}">
+                                    <i class="nav-icon fas fa-tags"></i>
+                                    <p>
+                                        Kategori Artikel
                                     </p>
                                 </a>
                             </li>
