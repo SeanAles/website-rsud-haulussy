@@ -480,7 +480,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- Category and Tags Section -->
                             <div class="row mb-4">
                                 <div class="col-md-6">
@@ -689,10 +689,10 @@
             } = window.CKEDITOR_PREMIUM_FEATURES;
 
             const LICENSE_KEY =
-                'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NTYwNzk5OTksImp0aSI6IjgwYTJjZTNhLTA0NzctNDRmZC05MDhhLWNhYzU3NWM4MGNhNCIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiLCJzaCJdLCJ3aGl0ZUxhYmVsIjp0cnVlLCJsaWNlbnNlVHlwZSI6InRyaWFsIiwiZmVhdHVyZXMiOlsiKiJdLCJ2YyI6IjFmOGI1ZGFlIn0.iMl_jecVEl5HWXuEJ-HTjLMIc6c_hLn_Q10oZPSvjSJ8Fouj_oypg8mw3zy51RESwVFjztIExOR0OjJplMN1Bg';
+                'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NTcxMTY3OTksImp0aSI6Ijg5Njc2NjA0LWYyNWUtNDg1My1iYmI0LWQ5NDk2NDQ5MWU1YSIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiLCJzaCJdLCJ3aGl0ZUxhYmVsIjp0cnVlLCJsaWNlbnNlVHlwZSI6InRyaWFsIiwiZmVhdHVyZXMiOlsiKiJdLCJ2YyI6ImFjMzFmNDU1In0.Ie6kqjT4YvNJm_ASFZ5lEDVHplaTJyQnRnf7YPBRjVR650l8mJMVyNoqYFbPjwP9S2tmuKemS5kn46zr12Vrfg';
 
             const CLOUD_SERVICES_TOKEN_URL =
-                'https://0gxuc9yax0tm.cke-cs.com/token/dev/2e1acbd5194563d6575a37c0d6ed7a0d2529b4113652c5b3df32b133a4f5?limit=10';
+                'https://tjap4jmax53y.cke-cs.com/token/dev/b2647328d63078a63ce7072816244a460b81bdd89de054ec3bb8a0c0fce3?limit=10';
 
             const editorConfig = {
                 toolbar: {
@@ -1206,7 +1206,7 @@
             $('#tags').on('input', function() {
                 clearTimeout(tagTimeout);
                 const query = $(this).val().split(',').pop().trim();
-                
+
                 if (query.length > 1) {
                     tagTimeout = setTimeout(function() {
                         searchTags(query);
@@ -1278,11 +1278,11 @@
                 const $input = $('#tags');
                 const currentValue = $input.val();
                 const tags = currentValue.split(',').map(t => t.trim()).filter(t => t);
-                
+
                 // Remove the last incomplete tag and add the selected one
                 tags.pop();
                 tags.push(tagName);
-                
+
                 $input.val(tags.join(', ') + ', ');
                 $input.focus();
             }

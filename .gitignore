@@ -5,7 +5,6 @@
 /public/storage
 /storage/*.key
 /vendor
-CLAUDE.md
 .env
 .env.backup
 .env.production
@@ -20,6 +19,6 @@ yarn-error.log
 /.vscode
 public/css/visitor/components/*.md
 
-# Learning Documentation (Local Only)
-LEARNING-*.md
+# Development Documentation (Local Only)
+/*.md
 
