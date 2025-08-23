@@ -110,62 +110,81 @@
             margin: 20px 0;
         }
 
+        /* Reset tag link default styling */
+        .tag-link {
+            text-decoration: none !important;
+            color: inherit !important;
+            border-bottom: none !important;
+            font-weight: normal !important;
+        }
+
+        .tag-link:hover {
+            text-decoration: none !important;
+            color: inherit !important;
+            border-bottom: none !important;
+        }
+
+        .tag-link:focus {
+            text-decoration: none !important;
+            border-bottom: none !important;
+        }
+
+        .tag-link:visited {
+            text-decoration: none !important;
+            border-bottom: none !important;
+        }
+
+        /* Clean & Elegant Tag Badge Styling */
         .tags-title {
-            margin-bottom: 16px;
             font-size: 18px;
             font-weight: 600;
-            color: #495057;
+            color: #2d3748;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
         .tags-title i {
-            color: #667eea;
+            color: #718096;
             font-size: 16px;
         }
 
         .tags-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
+            margin: 0;
         }
 
         .tag-link {
+            display: inline-flex;
+            align-items: center;
             padding: 6px 14px;
-            background: rgba(102, 126, 234, 0.1);
-            color: #667eea;
-            text-decoration: none;
+            background-color: #f7fafc;
+            color: #4a5568;
             border-radius: 6px;
             font-size: 13px;
             font-weight: 500;
             transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            cursor: pointer;
-            border: 1px solid rgba(102, 126, 234, 0.2);
             position: relative;
-            overflow: hidden;
         }
 
         .tag-link::before {
             content: '#';
             margin-right: 4px;
-            font-weight: 600;
-            opacity: 0.7;
+            color: #a0aec0;
+            font-size: 11px;
         }
 
         .tag-link:hover {
-            background: #667eea;
-            color: white;
-            text-decoration: none;
-            border-color: #667eea;
+            background-color: #edf2f7;
+            color: #2d3748;
             transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
         }
 
         .tag-link:hover::before {
-            opacity: 0.9;
+            color: #718096;
         }
 
         /* Styling untuk category di artikel lainnya (sidebar) */
@@ -207,19 +226,16 @@
             .article-tags-inside {
                 margin-top: 25px;
             }
-            
+
             .tags-title {
                 font-size: 16px;
             }
-            
-            .tags-list {
-                gap: 8px;
-            }
-            
+
             .tag-link {
                 font-size: 12px;
                 padding: 5px 12px;
             }
+            
         }
 
         @media (max-width: 480px) {
@@ -235,15 +251,12 @@
             .copy-text {
                 display: none;
             }
-            
-            .tags-title {
-                font-size: 15px;
-            }
-            
+
             .tag-link {
                 font-size: 11px;
-                padding: 5px 10px;
+                padding: 4px 10px;
             }
+            
         }
     </style>
 @endsection
@@ -334,9 +347,11 @@
                                     </h4>
                                     <div class="tags-list">
                                         @foreach($article->tags as $tag)
-                                            <span class="tag-link">
+                                            <a href="{{ route('tags.show', $tag->slug) }}" 
+                                               class="tag-link"
+                                               title="Lihat artikel tentang {{ $tag->name }}">
                                                 {{ $tag->name }}
-                                            </span>
+                                            </a>
                                         @endforeach
                                     </div>
                                 </div>

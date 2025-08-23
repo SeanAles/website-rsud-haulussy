@@ -18,6 +18,7 @@ use App\Http\Controllers\PromkesController;
 use App\Http\Controllers\RequestOnlineInformationController;
 use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\IklanController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\Visitor\BerandaController;
 use App\Models\Bed;
 use App\Models\Event;
@@ -111,6 +112,9 @@ Route::get('/dokter-umum', function () {
 // Informasi Artikel Route
 Route::get('/artikel', [ArticleController::class, 'indexArtikel'])->name('artikel');
 Route::get('/artikel/{slug}', [ArticleController::class, 'showArtikel']);
+
+// Tag Routes untuk Content Discovery
+Route::get('/tag/{tag:slug}', [TagController::class, 'show'])->name('tags.show');
 // Informasi Berita Route
 Route::get('/berita', [NewsController::class, 'index']);
 Route::get('/berita/{slug}', [NewsController::class, 'show']);
