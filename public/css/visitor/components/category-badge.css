@@ -57,10 +57,20 @@
     padding: 4px 10px;
     border-radius: 14px;
     gap: 4px;
+    max-width: 100px; /* Batasi lebar maksimum */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow content */
 }
 
 .category-badge-sm i {
     font-size: 9px;
+    flex-shrink: 0; /* Icon tetap ukuran asli */
+}
+
+.category-badge-sm span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0; /* Allow shrinking below content size */
 }
 
 /* Medium Badge - untuk article cards (default) */
@@ -111,6 +121,31 @@
 }
 
 /* =====================================
+   Special Cases - Related Articles Sidebar
+   ===================================== */
+
+/* Badge khusus untuk related articles sidebar - lebih compact */
+.related-article-card .category-badge-sm,
+.other-articles .category-badge-sm {
+    max-width: 80px; /* Lebih kecil untuk sidebar */
+    font-size: 9px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    gap: 3px;
+}
+
+.related-article-card .category-badge-sm i,
+.other-articles .category-badge-sm i {
+    font-size: 8px;
+}
+
+.related-article-card .category-badge-sm span,
+.other-articles .category-badge-sm span {
+    font-size: 9px;
+    line-height: 1.2;
+}
+
+/* =====================================
    Responsive Design
    ===================================== */
 
@@ -125,10 +160,19 @@
         padding: 3px 8px;
         border-radius: 12px;
         gap: 3px;
+        max-width: 90px; /* Sedikit lebih besar di tablet */
     }
     
     .category-badge-sm i {
         font-size: 8px;
+    }
+    
+    /* Related articles di tablet */
+    .related-article-card .category-badge-sm,
+    .other-articles .category-badge-sm {
+        max-width: 70px; /* Lebih kecil lagi di tablet */
+        font-size: 8px;
+        padding: 2px 6px;
     }
     
     .category-badge-md {
@@ -165,9 +209,23 @@
         padding: 2px 6px;
         border-radius: 10px;
         gap: 2px;
+        max-width: 75px; /* Smaller on mobile */
     }
     
     .category-badge-sm i {
+        font-size: 7px;
+    }
+    
+    /* Related articles di mobile */
+    .related-article-card .category-badge-sm,
+    .other-articles .category-badge-sm {
+        max-width: 60px; /* Sangat compact di mobile */
+        font-size: 7px;
+        padding: 2px 5px;
+    }
+    
+    .related-article-card .category-badge-sm i,
+    .other-articles .category-badge-sm i {
         font-size: 7px;
     }
     

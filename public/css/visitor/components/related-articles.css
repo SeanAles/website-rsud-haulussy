@@ -283,6 +283,13 @@
     filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
 }
 
+/* Layout untuk badge dan views container */
+.related-article-card .d-flex.align-items-center.justify-content-between {
+    margin-top: 8px;
+    gap: 8px; /* Space between badge and views */
+    min-height: 24px; /* Ensure consistent height */
+}
+
 .article-views {
     display: inline-flex;
     align-items: center;
@@ -291,6 +298,8 @@
     font-weight: 500;
     padding: 1px 0;
     transition: color 0.2s ease;
+    flex-shrink: 0; /* Prevent shrinking */
+    white-space: nowrap; /* Keep views text in single line */
 }
 
 .article-views i {
@@ -331,4 +340,61 @@
     border-radius: 50%;
     margin-left: 5px;
     animation: pulse 1.2s infinite;
+}
+
+/* =====================================
+   Responsive Design untuk Category Badge
+   ===================================== */
+
+@media (max-width: 768px) {
+    /* Tablet: Adjust spacing dalam related articles */
+    .related-article-card .d-flex.align-items-center.justify-content-between {
+        margin-top: 6px;
+        gap: 6px;
+        min-height: 20px;
+    }
+    
+    .article-views {
+        font-size: 0.7rem;
+    }
+    
+    .article-views i {
+        margin-right: 8px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile: More compact layout */
+    .related-article-card .d-flex.align-items-center.justify-content-between {
+        margin-top: 4px;
+        gap: 4px;
+        min-height: 18px;
+        flex-wrap: nowrap; /* Keep in single line */
+    }
+    
+    .article-views {
+        font-size: 0.65rem;
+        min-width: 45px; /* Ensure views area doesn't get too small */
+    }
+    
+    .article-views i {
+        margin-right: 6px;
+        font-size: 0.65rem;
+    }
+    
+    /* Jika masih tidak cukup ruang, stack vertically */
+    @media (max-width: 360px) {
+        .related-article-card .d-flex.align-items-center.justify-content-between {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            margin-top: 6px;
+        }
+        
+        .article-views {
+            margin-left: 0;
+            align-self: flex-end;
+        }
+    }
 }

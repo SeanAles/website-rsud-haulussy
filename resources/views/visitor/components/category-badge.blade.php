@@ -1,12 +1,19 @@
 {{-- 
-Universal Category Badge Component with Glass Morphism Effect
+Universal Category Badge Component with Glass Morphism Effect & Auto Text Truncation
 Usage:
 @include('visitor.components.category-badge', [
     'article' => $article,
     'size' => 'sm|md|lg',           // Optional, default: 'md'
     'variant' => 'overlay|inline|top', // Optional, default: 'inline'
-    'fallbackLabel' => 'Artikel'    // Optional, default: 'Artikel'
+    'fallbackLabel' => 'Artikel',   // Optional, default: 'Artikel'
+    'maxLength' => 10               // Optional, override auto truncation (sm=8, md=12, lg=no limit)
 ])
+
+Auto Truncation Rules:
+- sm size: Max 8 characters with ellipsis and hover tooltip
+- md size: Max 12 characters with ellipsis and hover tooltip  
+- lg size: No truncation by default
+- Sidebar/Related Articles: Special compact styling with 80px max-width
 --}}
 
 @php
@@ -14,6 +21,7 @@ Usage:
     $size = $size ?? 'md';
     $variant = $variant ?? 'inline';
     $fallbackLabel = $fallbackLabel ?? 'Artikel';
+    $maxLength = $maxLength ?? null; // Optional parameter untuk truncate
     
     // Size classes
     $sizeClasses = [
@@ -37,12 +45,28 @@ Usage:
     $categoryIcon = $hasCategory ? $article->articleCategory->icon : 'fas fa-newspaper';
     $categoryColor = $hasCategory ? $article->articleCategory->color : '#1B71A1';
     
+    // Auto truncate untuk size sm jika tidak ada maxLength yang di-set
+    if ($size === 'sm' && $maxLength === null) {
+        $maxLength = 8; // Default max 8 karakter untuk sm
+    } elseif ($size === 'md' && $maxLength === null) {
+        $maxLength = 12; // Default max 12 karakter untuk md
+    }
+    
+    // Truncate category name jika perlu
+    $displayName = $categoryName;
+    $isTruncated = false;
+    if ($maxLength && mb_strlen($categoryName) > $maxLength) {
+        $displayName = mb_substr($categoryName, 0, $maxLength - 1) . '…';
+        $isTruncated = true;
+    }
+    
     // Convert hex to RGB for CSS variables
     $colorRgb = $hasCategory ? implode(', ', sscanf($article->articleCategory->color, '#%02x%02x%02x')) : '27, 113, 161';
 @endphp
 
 <span class="{{ $badgeClass }}" 
-      style="--category-color: {{ $categoryColor }}; --category-color-rgb: {{ $colorRgb }};">
+      style="--category-color: {{ $categoryColor }}; --category-color-rgb: {{ $colorRgb }};"
+      @if($isTruncated) title="{{ $categoryName }}" @endif>
     <i class="{{ $categoryIcon }}"></i>
-    <span>{{ $categoryName }}</span>
+    <span>{{ $displayName }}</span>
 </span>
