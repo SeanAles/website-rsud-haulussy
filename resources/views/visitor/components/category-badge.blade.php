@@ -44,6 +44,7 @@ Auto Truncation Rules:
     $categoryName = $hasCategory ? $article->articleCategory->name : $fallbackLabel;
     $categoryIcon = $hasCategory ? $article->articleCategory->icon : 'fas fa-newspaper';
     $categoryColor = $hasCategory ? $article->articleCategory->color : '#1B71A1';
+    $categoryUrl = $hasCategory ? route('categories.show', $article->articleCategory->slug) : null;
     
     // Auto truncate untuk size sm jika tidak ada maxLength yang di-set
     if ($size === 'sm' && $maxLength === null) {
@@ -64,9 +65,19 @@ Auto Truncation Rules:
     $colorRgb = $hasCategory ? implode(', ', sscanf($article->articleCategory->color, '#%02x%02x%02x')) : '27, 113, 161';
 @endphp
 
+@if($categoryUrl)
+<a href="{{ $categoryUrl }}" 
+   class="{{ $badgeClass }} category-badge-link" 
+   style="--category-color: {{ $categoryColor }}; --category-color-rgb: {{ $colorRgb }};"
+   @if($isTruncated) title="{{ $categoryName }}" @else title="Lihat semua artikel dalam kategori {{ $categoryName }}" @endif>
+    <i class="{{ $categoryIcon }}"></i>
+    <span>{{ $displayName }}</span>
+</a>
+@else
 <span class="{{ $badgeClass }}" 
       style="--category-color: {{ $categoryColor }}; --category-color-rgb: {{ $colorRgb }};"
       @if($isTruncated) title="{{ $categoryName }}" @endif>
     <i class="{{ $categoryIcon }}"></i>
     <span>{{ $displayName }}</span>
 </span>
+@endif

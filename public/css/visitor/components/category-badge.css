@@ -8,6 +8,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    text-decoration: none !important;
     
     /* Glass Morphism Effect */
     background: linear-gradient(135deg, var(--category-color), rgba(var(--category-color-rgb), 0.8));
@@ -35,11 +36,29 @@
     -webkit-user-select: none;
 }
 
+/* Hover effects untuk badge */
 .category-badge:hover {
     transform: translateY(-1px);
     box-shadow: 
         0 4px 12px rgba(var(--category-color-rgb), 0.35),
         0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Link-specific styling */
+.category-badge-link {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-badge-link:hover {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+/* Ensure consistency between link and span versions */
+a.category-badge,
+span.category-badge {
+    color: white;
 }
 
 .category-badge i {

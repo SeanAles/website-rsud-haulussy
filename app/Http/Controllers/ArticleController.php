@@ -347,16 +347,8 @@ class ArticleController extends Controller
             return abort(404);
         }
 
-        // Load artikel lainnya dengan category dan tags, prioritaskan artikel dengan category yang sama
-        $articles = Post::with(['articleCategory', 'tags'])
-            ->where([['slug', '!=', $slug], ['category', '=', 'article']])
-            ->when($article->category_id, function($query) use ($article) {
-                // Artikel dengan kategori yang sama diprioritaskan
-                return $query->orderByRaw('category_id = ? DESC', [$article->category_id]);
-            })
-            ->orderByDesc('created_at')
-            ->limit(8) // Batasi jumlah artikel lainnya
-            ->get();
+        // Smart Related Articles System dengan 3 jenis
+        $relatedArticles = $this->getSmartRelatedArticles($article, $slug);
 
         // Mekanisme anti-spam untuk view counter
         $sessionKey = 'article_' . $article->id . '_viewed';
@@ -371,7 +363,101 @@ class ArticleController extends Controller
             session()->save();
         }
 
-        return view('visitor.informasi.baca-artikel', ['articles' => $articles, 'article' => $article]);
+        return view('visitor.informasi.baca-artikel', [
+            'article' => $article,
+            'artikelTerkait' => $relatedArticles['terkait'],
+            'artikelPopuler' => $relatedArticles['populer'], 
+            'artikelTerbaru' => $relatedArticles['terbaru']
+        ]);
+    }
+
+    /**
+     * Get smart related articles dengan 3 jenis
+     *
+     * @param Post $currentArticle
+     * @param string $currentSlug
+     * @return array
+     */
+    private function getSmartRelatedArticles($currentArticle, $currentSlug)
+    {
+        $baseQuery = Post::with(['articleCategory', 'tags'])
+            ->where([['slug', '!=', $currentSlug], ['category', '=', 'article']]);
+
+        // 1. ARTIKEL TERKAIT (4 items) - Same category + shared tags
+        $artikelTerkait = $this->getRelatedByCategoryAndTags($baseQuery, $currentArticle, 4);
+
+        // 2. ARTIKEL POPULER (2 items) - Most viewed in last 30 days  
+        $artikelPopuler = $this->getPopularArticles($baseQuery, $currentSlug, 2);
+
+        // 3. ARTIKEL TERBARU (2 items) - Latest articles, excluding above
+        $excludeIds = array_merge(
+            $artikelTerkait->pluck('id')->toArray(),
+            $artikelPopuler->pluck('id')->toArray(),
+            [$currentArticle->id]
+        );
+        $artikelTerbaru = $this->getLatestArticles($baseQuery, $excludeIds, 2);
+
+        return [
+            'terkait' => $artikelTerkait,
+            'populer' => $artikelPopuler,
+            'terbaru' => $artikelTerbaru
+        ];
+    }
+
+    /**
+     * Get articles by same category and shared tags
+     */
+    private function getRelatedByCategoryAndTags($baseQuery, $currentArticle, $limit)
+    {
+        $query = clone $baseQuery;
+        
+        // Priority 1: Same category
+        if ($currentArticle->category_id) {
+            $query->orderByRaw('category_id = ? DESC', [$currentArticle->category_id]);
+        }
+
+        // Priority 2: Shared tags (if article has tags)
+        if ($currentArticle->tags && $currentArticle->tags->count() > 0) {
+            $tagIds = $currentArticle->tags->pluck('id')->toArray();
+            $query->orderByRaw(
+                '(SELECT COUNT(*) FROM article_tag WHERE post_id = posts.id AND tag_id IN (' . implode(',', $tagIds) . ')) DESC'
+            );
+        }
+
+        // Priority 3: Latest
+        $query->orderByDesc('created_at');
+
+        return $query->limit($limit)->get();
+    }
+
+    /**
+     * Get popular articles based on views (last 30 days)
+     */
+    private function getPopularArticles($baseQuery, $currentSlug, $limit)
+    {
+        $query = clone $baseQuery;
+        
+        return $query->where('created_at', '>=', now()->subDays(30))
+                    ->orderByDesc('views')
+                    ->orderByDesc('created_at') // Secondary sort for same view count
+                    ->limit($limit)
+                    ->get();
+    }
+
+    /**
+     * Get latest articles excluding specific IDs
+     */
+    private function getLatestArticles($baseQuery, $excludeIds, $limit)
+    {
+        $query = clone $baseQuery;
+        
+        if (!empty($excludeIds)) {
+            $query->whereNotIn('id', $excludeIds);
+        }
+
+        return $query->orderByDesc('created_at')
+                    ->limit($limit)
+                    ->get();
     }
 
     /**

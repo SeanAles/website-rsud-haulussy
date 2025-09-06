@@ -115,6 +115,9 @@ Route::get('/artikel/{slug}', [ArticleController::class, 'showArtikel']);
 
 // Tag Routes untuk Content Discovery
 Route::get('/tag/{tag:slug}', [TagController::class, 'show'])->name('tags.show');
+
+// Category Routes untuk Article Browsing
+Route::get('/kategori/{category:slug}', [CategoryController::class, 'showPublic'])->name('categories.show');
 // Informasi Berita Route
 Route::get('/berita', [NewsController::class, 'index']);
 Route::get('/berita/{slug}', [NewsController::class, 'show']);
