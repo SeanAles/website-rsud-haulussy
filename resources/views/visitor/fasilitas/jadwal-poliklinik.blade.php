@@ -196,7 +196,7 @@
                 {{-- end Klinik Mata --}}
                 {{-- start Klinik Rehabilitasi Medik (Fisioterapi) --}}
                 <tr>
-                    <th scope="row">18</th>
+                    <th scope="row">11</th>
                     <td>Klinik Rehabilitasi Medik (Fisioterapi)</td>
                     <td>dr. Mauren Palijama, Sp.KFR</td>
                     <td>Senin, Rabu, Jumat</td>
@@ -212,7 +212,7 @@
                 {{-- end Klinik Rehabilitasi Medik (Fisioterapi) --}}
                 {{-- start Klinik Hemodialisis --}}
                 <tr>
-                    <th scope="row">11</th>
+                    <th scope="row">12</th>
                     <td>Klinik Hemodialisis</td>
                     <td>dr. Siti Hadjar, Sp.PD</td>
                     <td>Selasa dan Kamis</td>
@@ -221,7 +221,7 @@
                 {{-- end Klinik Hemodialisis --}}
                 {{-- start Klinik Endoskopi --}}
                 <tr>
-                    <th scope="row">12</th>
+                    <th scope="row">13</th>
                     <td>Klinik Endoskopi</td>
                     <td>dr. Denny Jolanda, Sp.PD, FINASIM</td>
                     <td>Senin-Jumat</td>
@@ -237,7 +237,7 @@
                 {{-- end Klinik Endoskopi --}}
                 {{-- start Klinik MCU --}}
                 <tr>
-                    <th scope="row">13</th>
+                    <th scope="row">14</th>
                     <td>Klinik MCU</td>
                     <td>dr. Wenny Fonda Liklikwatil</td>
                     <td>Senin - Jumat</td>
@@ -248,7 +248,7 @@
             {{-- start lantai 2 --}}
                 {{-- start Klinik Kulit Kelamin --}}
                 <tr>
-                    <th scope="row">14</th>
+                    <th scope="row">15</th>
                     <td>Klinik Kulit Kelamin</td>
                     <td>dr. Hanny Tanasal, Sp.KK</td>
                     <td>Senin-Jumat</td>
@@ -264,7 +264,7 @@
                 {{-- end Klinik Kulit Kelamin --}}
                 {{-- start Klinik Anak --}}
                 <tr>
-                    <th scope="row">15</th>
+                    <th scope="row">16</th>
                     <td>Klinik Anak</td>
                     <td>dr. Robby Kalew, Sp.A</td>
                     <td>Selasa</td>
@@ -294,7 +294,7 @@
                 {{-- end Klinik Anak --}}
                 {{-- start Klinik Bedah Digestif --}}
                 <tr>
-                    <th scope="row">16</th>
+                    <th scope="row">17</th>
                     <td>Klinik Bedah Digestif</td>
                     <td>dr. Helfi Nikijuluw, Sp.B-KBD</td>
                     <td>Selasa, Rabu, Jumat</td>
@@ -303,7 +303,7 @@
                 {{-- end Klinik Bedah Digestif --}}
                 {{-- start Klinik THT --}}
                 <tr>
-                    <th scope="row">17</th>
+                    <th scope="row">18</th>
                     <td>Klinik THT</td>
                     <td>dr. Julu Manalu, Sp.THT-KL</td>
                     <td>Senin, Rabu, Jumat</td>
