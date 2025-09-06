@@ -98,7 +98,7 @@
                 {{-- end Klinik Bedah Vaskular --}}
                 {{-- start Klinik Syaraf --}}
                 <tr>
-                    <th scope="row">5</th>
+                    <th scope="row">4</th>
                     <td>Klinik Syaraf</td>
                     <td>dr. Enseline Nikijuluw, Sp.N</td>
                     <td>Selasa dan Rabu</td>
@@ -114,7 +114,7 @@
                 {{-- end Klinik Syaraf --}}
                 {{-- start Klinik Jiwa --}}
                 <tr>
-                    <th scope="row">6</th>
+                    <th scope="row">5</th>
                     <td>Klinik Jiwa/Psikiatri</td>
                     <td>dr. Adelin Saulinggi, Sp.KJ (K)</td>
                     <td>Jumat</td>
@@ -123,7 +123,7 @@
                 {{-- end Klinik Jiwa --}}
                 {{-- start Klinik Gigi dan Mulut --}}
                 <tr>
-                    <th scope="row">5</th>
+                    <th scope="row">6</th>
                     <td>Klinik Gigi dan Mulut</td>
                     <td>drg. Suzanna Leuhery, Sp.KG</td>
                     <td>Selasa, Rabu, Jumat</td>
@@ -139,7 +139,7 @@
                 {{-- end Klinik Gigi dan Mulut --}}
                 {{-- start Klinik Asma, DOTS, MDR --}}
                 <tr>
-                    <th scope="row">12</th>
+                    <th scope="row">7</th>
                     <td>Klinik Asma, DOTS, MDR</td>
                     <td>dr. Marisa Afifudin, Sp.P</td>
                     <td>Selasa dan Jumat</td>
@@ -148,7 +148,7 @@
                 {{-- end Klinik Asma, DOTS, MDR --}}
                 {{-- start Klinik Jantung --}}
                 <tr>
-                    <th scope="row">11</th>
+                    <th scope="row">8</th>
                     <td>Klinik Jantung</td>
                     <td>dr. Gerry Soemara, Sp.JP</td>
                     <td>Selasa, Rabu, Kamis</td>
@@ -157,7 +157,7 @@
                 {{-- end Klinik Jantung --}}
                 {{-- start Klinik Kandungan --}}
                 <tr>
-                    <th scope="row">8</th>
+                    <th scope="row">9</th>
                     <td>Klinik Kandungan</td>
                     <td>dr. Jeane Pattiasina, Sp.OG</td>
                     <td>Senin</td>
@@ -187,16 +187,32 @@
                 {{-- end Klinik Kandungan --}}
                 {{-- start Klinik Mata --}}
                 <tr>
-                    <th scope="row">9</th>
+                    <th scope="row">10</th>
                     <td>Klinik Mata</td>
                     <td>dr. Elna Anakotta, Sp.M, SH</td>
                     <td>Senin dan Rabu</td>
                     <td>09.00 - selesai</td>
                 </tr>
                 {{-- end Klinik Mata --}}
+                {{-- start Klinik Rehabilitasi Medik (Fisioterapi) --}}
+                <tr>
+                    <th scope="row">18</th>
+                    <td>Klinik Rehabilitasi Medik (Fisioterapi)</td>
+                    <td>dr. Mauren Palijama, Sp.KFR</td>
+                    <td>Senin, Rabu, Jumat</td>
+                    <td>09.00 - selesai</td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td>dr. Wiwin Lestari Selawa, Sp.KFR</td>
+                    <td>Selasa dan Kamis</td>
+                    <td>09:00 - selesai</td>
+                </tr>
+                {{-- end Klinik Rehabilitasi Medik (Fisioterapi) --}}
                 {{-- start Klinik Hemodialisis --}}
                 <tr>
-                    <th scope="row">15</th>
+                    <th scope="row">11</th>
                     <td>Klinik Hemodialisis</td>
                     <td>dr. Siti Hadjar, Sp.PD</td>
                     <td>Selasa dan Kamis</td>
@@ -205,7 +221,7 @@
                 {{-- end Klinik Hemodialisis --}}
                 {{-- start Klinik Endoskopi --}}
                 <tr>
-                    <th scope="row">16</th>
+                    <th scope="row">12</th>
                     <td>Klinik Endoskopi</td>
                     <td>dr. Denny Jolanda, Sp.PD, FINASIM</td>
                     <td>Senin-Jumat</td>
@@ -221,7 +237,7 @@
                 {{-- end Klinik Endoskopi --}}
                 {{-- start Klinik MCU --}}
                 <tr>
-                    <th scope="row">18</th>
+                    <th scope="row">13</th>
                     <td>Klinik MCU</td>
                     <td>dr. Wenny Fonda Liklikwatil</td>
                     <td>Senin - Jumat</td>
@@ -248,7 +264,7 @@
                 {{-- end Klinik Kulit Kelamin --}}
                 {{-- start Klinik Anak --}}
                 <tr>
-                    <th scope="row">7</th>
+                    <th scope="row">15</th>
                     <td>Klinik Anak</td>
                     <td>dr. Robby Kalew, Sp.A</td>
                     <td>Selasa</td>
@@ -278,7 +294,7 @@
                 {{-- end Klinik Anak --}}
                 {{-- start Klinik Bedah Digestif --}}
                 <tr>
-                    <th scope="row">4</th>
+                    <th scope="row">16</th>
                     <td>Klinik Bedah Digestif</td>
                     <td>dr. Helfi Nikijuluw, Sp.B-KBD</td>
                     <td>Selasa, Rabu, Jumat</td>
@@ -287,32 +303,16 @@
                 {{-- end Klinik Bedah Digestif --}}
                 {{-- start Klinik THT --}}
                 <tr>
-                    <th scope="row">13</th>
+                    <th scope="row">17</th>
                     <td>Klinik THT</td>
                     <td>dr. Julu Manalu, Sp.THT-KL</td>
                     <td>Senin, Rabu, Jumat</td>
                     <td>09.00 - selesai</td>
                 </tr>
                 {{-- end Klinik THT --}}
-                {{-- start Klinik Rehabilitasi Medik (Fisioterapi) --}}
-                <tr>
-                    <th scope="row">10</th>
-                    <td>Klinik Rehabilitasi Medik (Fisioterapi)</td>
-                    <td>dr. Mauren Palijama, Sp.KFR</td>
-                    <td>Senin, Rabu, Jumat</td>
-                    <td>09.00 - selesai</td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td>dr. Wiwin Lestari Selawa, Sp.KFR</td>
-                    <td>Selasa dan Kamis</td>
-                    <td>09:00 - selesai</td>
-                </tr>
-                {{-- end Klinik Rehabilitasi Medik (Fisioterapi) --}}
                 {{-- start Klinik VCT/CST --}}
                 <tr>
-                    <th scope="row">17</th>
+                    <th scope="row">19</th>
                     <td>Klinik VCT/CST</td>
                     <td>dr. Denny Jolanda, Sp.PD, FINASIM</td>
                     <td>Selasa dan Kamis</td>
