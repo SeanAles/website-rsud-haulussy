@@ -44,7 +44,7 @@ Auto Truncation Rules:
     $categoryName = $hasCategory ? $article->articleCategory->name : $fallbackLabel;
     $categoryIcon = $hasCategory ? $article->articleCategory->icon : 'fas fa-newspaper';
     $categoryColor = $hasCategory ? $article->articleCategory->color : '#1B71A1';
-    $categoryUrl = $hasCategory ? route('categories.show', $article->articleCategory->slug) : null;
+    $categoryUrl = $hasCategory ? route('visitor.categories.show', $article->articleCategory->slug) : null;
     
     // Auto truncate untuk size sm jika tidak ada maxLength yang di-set
     if ($size === 'sm' && $maxLength === null) {

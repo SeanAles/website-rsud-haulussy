@@ -187,18 +187,7 @@
             color: #718096;
         }
 
-        /* Styling untuk category di artikel lainnya (sidebar) */
-        .article-category {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .article-category i {
-            font-size: 0.9em;
-        }
+        /* Clean & optimized inline styles - no conflicts with external CSS */
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -362,56 +351,54 @@
             <!-- Bagian Kanan (40%) -->
                 <div class="col-md-4 col-lg-4 right-panel other-articles">
                     <div class="articles-wrapper">
-                        <h3 class="articles-title">Artikel Lainnya</h3>
-                        @if(count($articles) > 0)
+                        {{-- ARTIKEL TERKAIT - FOKUS PERBAIKAN --}}
+                        @if($artikelTerkait && $artikelTerkait->count() > 0)
+                            <h3 class="articles-title">
+                                <i class="fas fa-link mr-2"></i>Artikel Terkait
+                            </h3>
                             <div class="articles-container">
-                        @foreach ($articles as $relatedArticle)
-                            <a href="/artikel/{{ $relatedArticle->slug }}" class="related-article-card">
-                                <div class="related-article-thumbnail-wrapper">
-                                    <img src="{{ asset('images/article/thumbnails/' . $relatedArticle->thumbnail) }}"
-                                         alt="Thumbnail {{ $relatedArticle->title }}"
-                                         class="related-article-thumbnail">
-                                    <div class="related-article-thumbnail-overlay">Artikel</div>
-                                </div>
-                                <div class="related-article-content">
-                                    <div>
-                                        <p class="related-article-title mb-1">{{ $relatedArticle->title }}</p>
-                                        <div class="related-article-meta">
-                                            <small class="related-article-date">
-                                                <i class="far fa-calendar-alt"></i>
-                                                <span style="margin-left: 5px">{{ $relatedArticle->created_at->format('d M Y') }}</span>
-                                            </small>
-                                            <small class="read-time">
-                                                <i class="far fa-clock"></i>
-                                                <span style="margin-left: 5px">
-                                                @php
-                                                    // Menghitung waktu baca berdasarkan konten
-                                                    $readTime = strlen($relatedArticle->description) > 0
-                                                        ? max(2, ceil(str_word_count(strip_tags($relatedArticle->description)) / 200))
-                                                        : 2;
-                                                @endphp
-                                                {{ $readTime }} menit
-                                                </span>
-                                            </small>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            @include('visitor.components.category-badge', [
-                                                'article' => $relatedArticle,
-                                                'size' => 'sm',
-                                                'variant' => 'inline',
-                                                'fallbackLabel' => 'Umum'
-                                            ])
-                                            <div class="article-views">
-                                                <i class="far fa-eye"></i>
-                                                <span style="margin-left: 5px">{{ $relatedArticle->views ?? 0 }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                @endforeach
+                                @foreach ($artikelTerkait as $relatedArticle)
+                                    @include('visitor.components._sidebar-article-card', [
+                                        'article' => $relatedArticle,
+                                        'type' => 'Terkait'
+                                    ])
+                                @endforeach
                             </div>
-                        @else
+                        @endif
+
+                        {{-- SEMENTARA DISEMBUNYIKAN SAMPAI ARTIKEL TERKAIT PERFECT --}}
+                        @if(false && $artikelPopuler && $artikelPopuler->count() > 0)
+                            <h3 class="articles-title">
+                                <i class="fas fa-fire mr-2"></i>Artikel Populer
+                            </h3>
+                            <div class="articles-container">
+                                @foreach ($artikelPopuler as $popularArticle)
+                                    @include('visitor.components._sidebar-article-card', [
+                                        'article' => $popularArticle,
+                                        'type' => 'Populer'
+                                    ])
+                                @endforeach
+                            </div>
+                        @endif
+
+                        {{-- SEMENTARA DISEMBUNYIKAN SAMPAI ARTIKEL TERKAIT PERFECT --}}
+                        @if(false && $artikelTerbaru && $artikelTerbaru->count() > 0)
+                            <h3 class="articles-title">
+                                <i class="fas fa-clock mr-2"></i>Artikel Terbaru
+                            </h3>
+                            <div class="articles-container">
+                                @foreach ($artikelTerbaru as $latestArticle)
+                                    @include('visitor.components._sidebar-article-card', [
+                                        'article' => $latestArticle,
+                                        'type' => 'Terbaru'
+                                    ])
+                                @endforeach
+                            </div>
+                        @endif
+
+                        {{-- FALLBACK: Jika tidak ada artikel sama sekali --}}
+                        @if((!$artikelTerkait || $artikelTerkait->count() == 0) && (!$artikelPopuler || $artikelPopuler->count() == 0) && (!$artikelTerbaru || $artikelTerbaru->count() == 0))
+                            <h3 class="articles-title">Artikel Lainnya</h3>
                             <p class="no-other-articles">Belum ada artikel lainnya.</p>
                         @endif
                     </div>

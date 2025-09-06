@@ -1,400 +1,471 @@
-/* Related Articles Styling (Right Panel) */
+/* ===============================================
+   SIDEBAR ARTIKEL TERKAIT - CLEAN & SMART SOLUTION
+   Fixed height + smart content distribution
+   =============================================== */
 
+/* Container utama sidebar */
 .other-articles {
-    padding-left: 30px;
-    padding-top: 10px;
-    position: relative;
+    padding-left: 25px;
+    padding-top: 15px;
 }
 
+/* Wrapper untuk artikel terkait - Clean Design (No Over Enhancement) */
 .articles-wrapper {
-    background-color: #f9fafc;
-    background-image: linear-gradient(135deg, #f9fafc 0%, #f1f7fa 100%);
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
-    padding: 25px 20px;
-    border: 1px solid rgba(230, 230, 230, 0.8);
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.06),
+        0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    padding: 26px 22px;
     margin-bottom: 30px;
     position: relative;
-    overflow: hidden;
 }
 
-.articles-wrapper:before {
+/* Left accent border - Simple */
+.articles-wrapper::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, #3498db, #2980b9);
-    border-top-left-radius: 16px;
-    border-bottom-left-radius: 16px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
 }
 
-.articles-wrapper:after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 120px;
-    height: 120px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23f2f2f2" d="M168 80c-13.3 0-24 10.7-24 24V408c0 13.3 10.7 24 24 24H344c13.3 0 24-10.7 24-24V104c0-13.3-10.7-24-24-24H168zM72 96c-13.3 0-24 10.7-24 24V392c0 13.3 10.7 24 24 24s24-10.7 24-24V120c0-13.3-10.7-24-24-24zm400 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V392c0 13.3 10.7 24 24 24s24-10.7 24-24V120z"/></svg>');
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0.06;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.articles-wrapper:after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 70px;
-    height: 70px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="%23e6e6e6" d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>');
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: 0;
-}
-
+/* Title section - NO GRADIENT TEXT! */
 .articles-title {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    position: relative;
+    color: #1e293b; /* SOLID COLOR - NO GRADIENT */
+    margin-bottom: 22px;
     padding-bottom: 10px;
-}
-
-.articles-title:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 80px;
-    height: 3px;
-    background-color: #3498db;
-    border-radius: 2px;
-}
-
-.articles-container {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+    border-bottom: 3px solid #3b82f6;
+    font-family: 'Open Sans', sans-serif;
     position: relative;
-    z-index: 2;
-    margin-top: 5px;
-}
-
-.related-article-card {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    text-decoration: none !important;
-    position: relative;
-    border: 1px solid rgba(230, 230, 230, 0.7);
-    width: 100%;
-    max-width: none;
-    height: 100px; /* Tetapkan tinggi tetap untuk kartu */
     z-index: 1;
 }
 
-.related-article-card:hover {
-    box-shadow: 0 8px 16px rgba(52, 152, 219, 0.10);
-    transform: translateY(-3px);
-    border-color: rgba(52, 152, 219, 0.2);
+.articles-title i {
+    color: #3b82f6;
+    margin-right: 10px;
+    filter: drop-shadow(0 1px 2px rgba(59, 130, 246, 0.3));
 }
 
-.related-article-card:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-    pointer-events: none;
-}
-
-.related-article-card:hover:after {
-    transform: translateX(100%);
-}
-
-.related-article-thumbnail-wrapper {
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
-    width: 100px;
-    height: 100%;
-    background-color: #f5f5f5;
+/* Container untuk list artikel */
+.articles-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
 }
 
-.related-article-thumbnail {
+/* ===============================================
+   KARTU ARTIKEL - FIXED HEIGHT + SMART LAYOUT
+   =============================================== */
+
+.sidebar-article-card {
+    display: flex;
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 102px; /* Sedikit lebih besar dari 95px - pas dan tidak over */
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.05),
+        0 1px 3px rgba(0, 0, 0, 0.03);
+    position: relative;
+}
+
+.sidebar-article-card:hover {
+    background: #ffffff;
+    border-color: #3b82f6;
+    box-shadow: 
+        0 6px 18px rgba(59, 130, 246, 0.12),
+        0 2px 8px rgba(59, 130, 246, 0.08);
+    transform: translateY(-1px);
+}
+
+/* ===============================================
+   THUMBNAIL SECTION
+   =============================================== */
+
+.sidebar-thumbnail {
+    position: relative;
+    width: 102px; /* Match card height */
+    min-width: 102px;
+    height: 102px; /* Match card height */
+    flex-shrink: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+}
+
+.sidebar-thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 }
 
-.related-article-card:hover .related-article-thumbnail {
+.sidebar-article-card:hover .sidebar-thumbnail img {
     transform: scale(1.05);
 }
 
-.related-article-thumbnail-overlay {
+.sidebar-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    padding: 4px 0;
-    background: linear-gradient(to bottom, rgba(41, 128, 185, 0.4) 0%, rgba(41, 128, 185, 0.9) 70%);
+    right: 0;
+    background: linear-gradient(to top, rgba(59, 130, 246, 0.9) 0%, rgba(59, 130, 246, 0.7) 50%, transparent 100%);
     color: white;
-    font-size: 10px;
+    font-size: 9px;
+    font-weight: 700;
     text-align: center;
-    font-weight: 600;
-    letter-spacing: 0.7px;
+    padding: 3px 0;
     text-transform: uppercase;
-    backdrop-filter: blur(2px);
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.related-article-content {
-    padding: 12px 16px;
+/* ===============================================
+   CONTENT SECTION - SMART DISTRIBUTION (KUNCI!)
+   =============================================== */
+
+.sidebar-content {
+    padding: 11px 14px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
+    flex: 1;
     min-width: 0;
-    overflow: hidden; /* Untuk memastikan konten yang terlalu panjang tidak meluap */
+    height: 102px;
     position: relative;
+    justify-content: flex-start;
+    gap: 5px; /* Slightly smaller gap untuk title-meta */
 }
 
-.related-article-title {
-    font-weight: 700;
-    color: #2c3e50 !important;
-    margin-bottom: 6px;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 0.3s ease;
-    letter-spacing: 0.2px;
-    white-space: nowrap; /* Tambahkan white-space nowrap untuk satu baris */
-    position: relative;
-    padding-right: 16px; /* Ruang untuk badge */
-    font-family: 'Open Sans', sans-serif;
-}
-
-.related-article-card:hover .related-article-title {
-    color: #3498db !important;
-}
-
-.related-article-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 8px;
-    gap: 12px;
-}
-
-.related-article-date {
-    font-size: 0.75rem;
-    color: #95a5a6 !important;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-}
-
-.related-article-date i {
-    margin-right: 12px; /* Jarak yang lebih jelas antara ikon dan teks */
-    font-size: 0.75rem;
-    width: 14px;
-    text-align: center;
-    color: #3498db;
-}
-
-.read-time {
-    font-size: 0.75rem;
-    color: #95a5a6 !important;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-}
-
-.read-time i {
-    margin-right: 12px; /* Jarak yang lebih jelas antara ikon dan teks */
-    font-size: 0.75rem;
-    width: 14px;
-    text-align: center;
-    color: #e74c3c;
-}
-
-/* Khusus untuk badge di related articles sidebar */
-.related-article-badge {
-    display: inline-flex;
-    align-items: center;
-    font-size: 10px;
-    color: white;
-    font-weight: 600;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #1B71A1, #2980b9);
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    max-width: fit-content;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: all 0.2s ease;
-    gap: 4px;
-    line-height: 1.3;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    box-shadow: 
-        0 2px 6px rgba(27, 113, 161, 0.3),
-        0 1px 3px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    min-height: 20px;
-}
-
-.related-article-card:hover .related-article-badge {
-    transform: translateY(-1px);
-    box-shadow: 
-        0 2px 4px rgba(27, 113, 161, 0.3),
-        0 1px 2px rgba(0, 0, 0, 0.15);
-}
-
-.related-article-badge i {
-    font-size: 9px;
-    opacity: 0.9;
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
-}
-
-/* Layout untuk badge dan views container */
-.related-article-card .d-flex.align-items-center.justify-content-between {
-    margin-top: 8px;
-    gap: 8px; /* Space between badge and views */
-    min-height: 24px; /* Ensure consistent height */
-}
-
-.article-views {
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.75rem;
-    color: #7f8c8d;
-    font-weight: 500;
-    padding: 1px 0;
-    transition: color 0.2s ease;
+/* SMART LAYOUT: 3 sections dengan proporsi tetap */
+.sidebar-content > * {
     flex-shrink: 0; /* Prevent shrinking */
-    white-space: nowrap; /* Keep views text in single line */
 }
 
-.article-views i {
-    margin-right: 12px;
-    font-size: 0.75rem;
-    color: #7f8c8d;
-    opacity: 0.8;
+/* Title Section - SINGLE LINE dengan ellipsis */
+.sidebar-title {
+    margin: 0;
+    font-size: 0.93rem; /* Optimal size untuk single line */
+    line-height: 1.3;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    height: 1.3em; /* Fixed height untuk single line */
+    overflow: hidden;
+    flex-shrink: 0; /* Prevent shrinking */
 }
 
-.related-article-card:hover .article-views {
-    color: #3498db;
+.sidebar-title a {
+    color: #2c3e50 !important;
+    text-decoration: none;
+    white-space: nowrap; /* SINGLE LINE - no wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Show ... untuk long titles */
+    display: block;
+    transition: color 0.3s ease;
+    letter-spacing: 0.1px;
+    line-height: 1.3;
 }
 
-.related-article-card:hover .article-views i {
-    color: #3498db;
+.sidebar-title a:hover {
+    color: #3498db !important; /* SAME AS ORIGINAL HOVER */
+    text-decoration: none;
 }
 
-.no-other-articles {
-    color: #7f8c8d;
-    font-style: italic;
-    margin-top: 20px;
-    padding: 15px 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px dashed #e0e0e0;
+/* Meta Section - ENHANCED dengan font dan icon lebih besar */
+.sidebar-meta {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    font-size: 0.74rem;
+    color: #718096;
+    height: auto;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-bottom: 1px; /* Ultra close margin ke footer */
 }
 
-.label-artikel {
-    display: none;
+.sidebar-date,
+.sidebar-read-time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #9ca3af; /* Abu-abu terang untuk separasi dari title */
 }
 
-.new-article-indicator {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: #e74c3c;
-    border-radius: 50%;
-    margin-left: 5px;
-    animation: pulse 1.2s infinite;
+.sidebar-date i {
+    color: #3b82f6;
+    font-size: 0.72rem; /* Bigger icon untuk better visibility */
 }
 
-/* =====================================
-   Responsive Design untuk Category Badge
-   ===================================== */
+.sidebar-read-time i {
+    color: #ef4444;
+    font-size: 0.72rem; /* Bigger icon untuk better visibility */
+}
+
+/* Footer Section - ULTRA CLOSE to meta */
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-top: 1px; /* Ultra close - hampir menempel! */
+    min-height: 18px;
+    height: auto;
+    padding-top: 0;
+    flex-shrink: 0;
+}
+
+.sidebar-badge {
+    flex: 1;
+    min-width: 0;
+    max-width: 85%; /* Ultra panjang untuk kategori text seperti 'Teknologi Kesehatan' */
+}
+
+.sidebar-views {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 0.68rem;
+    color: #64748b;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-weight: 500;
+    min-width: 25px; /* Ultra kecil untuk maksimal badge space */
+}
+
+.sidebar-views i {
+    font-size: 0.65rem;
+    color: #94a3b8;
+}
+
+.sidebar-article-card:hover .sidebar-views {
+    color: #3b82f6;
+}
+
+.sidebar-article-card:hover .sidebar-views i {
+    color: #3b82f6;
+}
+
+/* ===============================================
+   CATEGORY BADGE OPTIMIZATION
+   =============================================== */
+
+.sidebar-badge .category-badge-sm {
+    font-size: 8px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    max-width: 110px; /* Ultra panjang untuk 'Teknologi...' */
+    min-height: 18px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;
+}
+
+.sidebar-badge .category-badge-sm i {
+    font-size: 7px;
+    margin-right: 2px; /* Reduced margin */
+}
+
+.sidebar-badge .category-badge-sm span {
+    font-size: 8px;
+    line-height: 1.1; /* Tighter line height */
+}
+
+/* ===============================================
+   RESPONSIVE DESIGN - MAINTAIN FIXED HEIGHTS
+   =============================================== */
 
 @media (max-width: 768px) {
-    /* Tablet: Adjust spacing dalam related articles */
-    .related-article-card .d-flex.align-items-center.justify-content-between {
-        margin-top: 6px;
-        gap: 6px;
-        min-height: 20px;
+    .other-articles {
+        padding-left: 15px;
     }
     
-    .article-views {
-        font-size: 0.7rem;
+    .articles-wrapper {
+        padding: 22px 18px;
+        margin-bottom: 26px;
+        border-radius: 12px;
     }
     
-    .article-views i {
-        margin-right: 8px;
+    .articles-title {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+    }
+    
+    .sidebar-article-card {
+        height: 96px; /* Sedikit lebih besar untuk tablet */
+        border-radius: 8px;
+    }
+    
+    .sidebar-thumbnail {
+        width: 96px;
+        min-width: 96px;
+        height: 96px;
+    }
+    
+    .sidebar-content {
+        padding: 9px 12px;
+        height: 96px;
+        justify-content: flex-start;
+        gap: 4px; /* Tighter gap untuk tablet */
+    }
+    
+    .sidebar-title {
+        font-size: 0.85rem;
+        height: 1.25em; /* Single line untuk tablet */
+        margin: 0;
+        flex-shrink: 0;
+    }
+    
+    .sidebar-title a {
+        line-height: 1.25;
+        white-space: nowrap; /* Single line dengan ellipsis */
+    }
+    
+    .sidebar-meta {
         font-size: 0.7rem;
+        gap: 8px;
+        height: auto;
+        margin: 0;
+        margin-bottom: 1px; /* Ultra close to footer */
+    }
+    
+    .sidebar-date,
+    .sidebar-read-time {
+        font-weight: 600;
+        color: #9ca3af; /* Abu-abu terang untuk tablet */
+    }
+    
+    .sidebar-date i,
+    .sidebar-read-time i {
+        font-size: 0.68rem; /* Bigger icons untuk tablet */
+    }
+    
+    .sidebar-footer {
+        min-height: 17px;
+        gap: 5px;
+        margin-top: 1px; /* Ultra close - hampir menempel */
+        padding-top: 0;
+    }
+    
+    .sidebar-views {
+        font-size: 0.63rem;
+        min-width: 22px; /* Ultra kecil untuk maksimal badge space */
+    }
+    
+    .sidebar-badge .category-badge-sm {
+        font-size: 7px;
+        padding: 2px 6px;
+        max-width: 98px; /* Ultra panjang untuk tablet */
     }
 }
 
 @media (max-width: 480px) {
-    /* Mobile: More compact layout */
-    .related-article-card .d-flex.align-items-center.justify-content-between {
-        margin-top: 4px;
+    .other-articles {
+        padding-left: 10px;
+    }
+    
+    .articles-wrapper {
+        padding: 18px 14px;
+        border-radius: 10px;
+    }
+    
+    .articles-title {
+        font-size: 1.2rem;
+    }
+    
+    .sidebar-article-card {
+        height: 90px; /* Sedikit lebih besar untuk mobile */
+        border-radius: 6px;
+    }
+    
+    .sidebar-thumbnail {
+        width: 90px;
+        min-width: 90px;
+        height: 90px;
+    }
+    
+    .sidebar-content {
+        padding: 8px 10px;
+        height: 90px;
+        justify-content: flex-start;
+        gap: 3px; /* Very tight gap untuk mobile */
+    }
+    
+    .sidebar-title {
+        font-size: 0.78rem;
+        height: 1.2em; /* Single line untuk mobile */
+        margin: 0;
+        flex-shrink: 0;
+    }
+    
+    .sidebar-title a {
+        line-height: 1.2;
+        white-space: nowrap; /* Single line dengan ellipsis */
+    }
+    
+    .sidebar-meta {
+        font-size: 0.62rem;
+        height: auto;
+        margin: 0;
+        gap: 6px;
+        margin-bottom: 0px; /* Ultra close - no gap */
+    }
+    
+    .sidebar-date,
+    .sidebar-read-time {
+        font-weight: 600;
+        color: #9ca3af; /* Abu-abu terang untuk mobile */
+    }
+    
+    .sidebar-date i,
+    .sidebar-read-time i {
+        font-size: 0.6rem; /* Bigger icons untuk mobile */
+    }
+    
+    .sidebar-footer {
+        min-height: 15px;
         gap: 4px;
-        min-height: 18px;
-        flex-wrap: nowrap; /* Keep in single line */
+        margin-top: 1px; /* Ultra close - hampir menempel */
+        padding-top: 0;
     }
     
-    .article-views {
-        font-size: 0.65rem;
-        min-width: 45px; /* Ensure views area doesn't get too small */
+    .sidebar-badge .category-badge-sm {
+        font-size: 6px;
+        padding: 2px 5px;
+        max-width: 78px; /* Ultra panjang untuk mobile */
+        border-radius: 8px;
     }
     
-    .article-views i {
-        margin-right: 6px;
-        font-size: 0.65rem;
+    .sidebar-views {
+        font-size: 0.58rem;
+        min-width: 18px; /* Ultra kecil untuk maksimal badge space */
     }
-    
-    /* Jika masih tidak cukup ruang, stack vertically */
-    @media (max-width: 360px) {
-        .related-article-card .d-flex.align-items-center.justify-content-between {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 4px;
-            margin-top: 6px;
-        }
-        
-        .article-views {
-            margin-left: 0;
-            align-self: flex-end;
-        }
-    }
+}
+
+/* ===============================================
+   FALLBACK & EMPTY STATE
+   =============================================== */
+
+.no-other-articles {
+    text-align: center;
+    color: #64748b;
+    font-style: italic;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 10px;
+    border: 1px dashed #cbd5e0;
 }

@@ -197,7 +197,7 @@
                 searchInputId: 'searchInput',
                 clearButtonId: 'clearSearch',
                 containerId: 'articlesContainer',
-                searchEndpoint: '{{ route('categories.show', $category->slug) }}',
+                searchEndpoint: '{{ route('visitor.categories.show', $category->slug) }}',
                 contentType: 'artikel'
             });
         });

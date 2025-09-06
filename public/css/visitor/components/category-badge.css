@@ -143,10 +143,10 @@ span.category-badge {
    Special Cases - Related Articles Sidebar
    ===================================== */
 
-/* Badge khusus untuk related articles sidebar - lebih compact */
+/* Badge khusus untuk related articles sidebar - diperpanjang */
 .related-article-card .category-badge-sm,
 .other-articles .category-badge-sm {
-    max-width: 80px; /* Lebih kecil untuk sidebar */
+    max-width: 120px; /* Ultra panjang untuk menampilkan 'Teknologi...' */
     font-size: 9px;
     padding: 3px 8px;
     border-radius: 12px;
@@ -189,7 +189,7 @@ span.category-badge {
     /* Related articles di tablet */
     .related-article-card .category-badge-sm,
     .other-articles .category-badge-sm {
-        max-width: 70px; /* Lebih kecil lagi di tablet */
+        max-width: 105px; /* Ultra panjang untuk tablet */
         font-size: 8px;
         padding: 2px 6px;
     }
@@ -238,7 +238,7 @@ span.category-badge {
     /* Related articles di mobile */
     .related-article-card .category-badge-sm,
     .other-articles .category-badge-sm {
-        max-width: 60px; /* Sangat compact di mobile */
+        max-width: 85px; /* Ultra panjang untuk mobile */
         font-size: 7px;
         padding: 2px 5px;
     }
