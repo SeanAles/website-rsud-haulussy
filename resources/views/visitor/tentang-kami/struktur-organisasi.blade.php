@@ -7,7 +7,7 @@
         <h1>Struktur Organisasi</h1>
     </div>
     <div class="container">
-        <img src="{{ asset('visitor/assets/img/diagram/diagram struktur organisasi septermber 2025.png') }}" alt=""
+        <img src="{{ asset('visitor/assets/img/diagram/Diagram Struktur Organisasi September 2025.png') }}" alt=""
             width="100%" height="100%">
         <p class="text-danger">
             <b>*Diperbarui September 2025</b>
