@@ -10,7 +10,7 @@
         <img src="{{ asset('visitor/assets/img/diagram/Diagram Struktur Organisasi September 2025.png') }}" alt=""
             width="100%" height="100%">
         <p class="text-danger">
-            <b>*Diperbarui September 2025</b>
+            <b>*Diperbarui 24 September 2025</b>
         </p>
     </div>
 @endsection
