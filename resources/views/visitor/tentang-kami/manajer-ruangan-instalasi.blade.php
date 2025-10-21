@@ -235,7 +235,7 @@
                             class="card-img-top" alt="Instalasi Rekam Medik">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Rekam Medik</h5>
-                            <p class="card-text">Marchel Lekahena</p>
+                            <p class="card-text">Marchel G. Lekahena, A.Md.RMIK.</p>
                         </div>
                     </div>
                 </div>
@@ -246,7 +246,7 @@
                             class="card-img-top" alt="Instalasi Gawat Darurat">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Gawat Darurat</h5>
-                            <p class="card-text">-</p>
+                            <p class="card-text">dr. Jilientasia G. Lilihata, Sp.An</p>
                         </div>
                     </div>
                 </div>
@@ -257,7 +257,7 @@
                             class="card-img-top" alt="Instalasi Rawat Jalan">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Rawat Jalan</h5>
-                            <p class="card-text">Ns. Hernita Frisnawati Purba, S.Kep., M.Kep.</p>
+                            <p class="card-text">dr. Sheila D. C. Manuputty</p>
                         </div>
                     </div>
                 </div>
@@ -268,18 +268,18 @@
                             class="card-img-top" alt="Instalasi Rawat Inap">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Rawat Inap</h5>
-                            <p class="card-text">dr. Susan Timisela, Sp.PD</p>
+                            <p class="card-text">dr. Alvionita Patandean</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Bedah Sentral Fix.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
                             class="card-img-top" alt="Instalasi Bedah Sentral">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Bedah Sentral</h5>
-                            <p class="card-text">dr. Jacky Tuamelly, Sp.B (K) Trauma, FICS, FINACS, FIHFAA</p>
+                            <p class="card-text">-</p>
                         </div>
                     </div>
                 </div>
@@ -290,7 +290,7 @@
                             class="card-img-top" alt="Instalasi Laboratorium">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Laboratorium</h5>
-                            <p class="card-text">dr. Ingrid A. Hutagalung, M.Kes., Sp.PK</p>
+                            <p class="card-text">dr. Ingrid A. Hutagalung, M.Kes., Sp.PK.</p>
                         </div>
                     </div>
                 </div>
@@ -312,7 +312,7 @@
                             class="card-img-top" alt="Instalasi Gizi">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Gizi</h5>
-                            <p class="card-text">Paulina Palapessy, Amd.Gz.</p>
+                            <p class="card-text">Agustina A. Augustyn, Amd.Gz.</p>
                         </div>
                     </div>
                 </div>
@@ -356,7 +356,7 @@
                             class="card-img-top" alt="Instalasi Rehabilitasi Medik">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Rehabilitasi Medik</h5>
-                            <p class="card-text">dr. Maureen J. Paliyama, Sp.KFR</p>
+                            <p class="card-text">dr. Maureen J. Paliyama, Sp.KFR.</p>
                         </div>
                     </div>
                 </div>
@@ -378,7 +378,7 @@
                             class="card-img-top" alt="Instalasi Promkes">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Promosi Kesehatan RS</h5>
-                            <p class="card-text">Violend H. Wattimury, SKM, M.Kes</p>
+                            <p class="card-text">Violend H. Wattimury, SKM, M.Kes.</p>
                         </div>
                     </div>
                 </div>
@@ -400,7 +400,7 @@
                             class="card-img-top mt-3" alt="Instalasi Sanitasi">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Sanitasi</h5>
-                            <p class="card-text">Williem Noya, S.K.M</p>
+                            <p class="card-text">Williem Noya, S.K.M.</p>
                         </div>
                     </div>
                 </div>
@@ -411,13 +411,13 @@
                                 class="card-img-top" alt="Instalasi SIMRS">
                             <div class="card-body">
                                 <h5 class="card-title">Instalasi SIMRS</h5>
-                                <p class="card-text">dr. Semuel A. Wagiu, Sp.N</p>
+                                <p class="card-text">dr. Semuel A. Wagiu, Sp.N.</p>
                             </div>
                         </div>
                     </div>
             </div>
             <p class="text-danger text-right">
-                <b>*Diperbarui 1 April 2025</b>
+                <b>*Diperbarui 21 Oktober 2025</b>
             </p>
         </div>
     </div>

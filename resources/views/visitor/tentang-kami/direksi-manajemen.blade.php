@@ -74,10 +74,10 @@
                     <div class="card custom-card">
                         <h3 class="card-title text-center pt-3">Wakil Direktur <span><br> Pelayanan & Keperawatan</span>
                         </h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
+                        <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Enseline Nikijuluw, Sp.N.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">dr. Novy Riyanti, Sp.OG</h5>
+                            <h5 class="card-text text-secondary text-center">dr. Enseline Nikijuluw, Sp.N.</h5>
                         </div>
                     </div>
                 </div>
@@ -107,10 +107,10 @@
                 <div class="col-10 col-sm-10 col-md-6 col-lg-4">
                     <div class="card custom-card">
                         <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Pelayanan </h3>
-                        <img src="{{ asset('visitor/assets/img/dokter/spesialis/dr. Enseline Nikijuluw, Sp.N.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                             class="card-img-top" alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">dr. Enselin Nikijuluw, Sp. N</h5>
+                            <h5 class="card-text text-secondary text-center">Hadijah Latuconsina, S.Kep Ns, M.Kep.</h5>
                         </div>
                     </div>
                 </div>
@@ -139,10 +139,10 @@
                     <div class="card custom-card">
                         <h3 style="height: 120px" class="card-title text-center pt-3">Kepala Bidang <br> Penunjang
                             Diagnostik dan Logistik </h3>
-                        <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}" class="card-img-top"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}" class="card-img-top"
                             alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Hendrik Birahy, S.K.M</h5>
+                            <h5 class="card-text text-secondary text-center">dr. Iznih R. M. Sahib</h5>
                         </div>
                     </div>
                 </div>
@@ -253,7 +253,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_laki_background.png') }}"
                             class="card-img-top" alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Johanes N. Urlialy, S.K.M</h5>
+                            <h5 class="card-text text-secondary text-center">Hengky Birahy, S.K.M.</h5>
                         </div>
                     </div>
                 </div>
@@ -264,7 +264,7 @@
                         <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                             class="card-img-top" alt="IGD">
                         <div class="card-body">
-                            <h5 class="card-text text-secondary text-center">Melsa Palijama, S.E., M.Si.</h5>
+                            <h5 class="card-text text-secondary text-center">Julia S. Rehatta, S.K.M.</h5>
                         </div>
                     </div>
                 </div>
