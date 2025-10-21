@@ -301,6 +301,9 @@
                         </div>
                     </div>
                 </div>
+                <p class="text-danger text-right">
+                    <b>*Diperbarui 21 Oktober 2025</b>
+                </p>
             </div>
         </div>
 

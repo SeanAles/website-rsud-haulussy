@@ -308,7 +308,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card custom-card">
-                        <img src="{{ asset('visitor/assets/img/manajer-ruangan-instalasi/instalasi/Instalasi Gizi Fix.png') }}"
+                        <img src="{{ asset('visitor/assets/img/avatar/avatar_cewe_background.png') }}"
                             class="card-img-top" alt="Instalasi Gizi">
                         <div class="card-body">
                             <h5 class="card-title">Instalasi Gizi</h5>
