@@ -207,6 +207,13 @@ class DownloadController extends Controller
         return view('visitor.informasi.unduh', ['downloadCategories' => $downloadCategories,]);
     }
 
+    public function showPNPKCategories(){
+        // Ambil hanya kategori PNPK (ID 1-7)
+        $pnpkCategories = DownloadCategory::whereBetween('id', [1, 7])->get();
+
+        return view('visitor.informasi.pnpk-categories', ['downloadCategories' => $pnpkCategories]);
+    }
+
     public function showDownload($id, Request $request){
         $query = Download::with(['downloadCategory'])
             ->where('download_category_id', '=', $id);

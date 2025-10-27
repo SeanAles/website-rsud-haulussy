@@ -126,6 +126,7 @@ Route::get('/galeri', [EventController::class, 'indexGaleri']);
 Route::get('/galeri/{slug}', [EventController::class, 'showGaleri']);
 // Informasi Download Route
 Route::get('/unduh', [DownloadController::class, 'indexDownload']);
+Route::get('/unduh/pnpk', [DownloadController::class, 'showPNPKCategories']);
 Route::get('/unduh/{id}', [DownloadController::class, 'showDownload']);
 
 Route::get('/sertifikat-zoominar', function () {
