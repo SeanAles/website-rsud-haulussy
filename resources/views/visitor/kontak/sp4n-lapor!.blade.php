@@ -999,6 +999,36 @@
         margin-bottom: 15px;
     }
 
+    /* Custom padding untuk SP4N Lapor! - Override global section padding untuk semua ukuran layar */
+    section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    /* Tablet */
+    @media (min-width: 768px) {
+        section {
+            padding-top: 3.5rem !important;
+            padding-bottom: 3.5rem !important;
+        }
+    }
+
+    /* Desktop */
+    @media (min-width: 992px) {
+        section {
+            padding-top: 4.5rem !important;
+            padding-bottom: 4.5rem !important;
+        }
+    }
+
+    /* Large Desktop */
+    @media (min-width: 1200px) {
+        section {
+            padding-top: 5rem !important;
+            padding-bottom: 5rem !important;
+        }
+    }
+
     .card-spacing {
         margin-bottom: 12px;
     }
