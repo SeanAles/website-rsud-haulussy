@@ -48,8 +48,8 @@
             font-size: 15px;
             font-weight: 600;
             margin: 0;
-            line-height: 1.2;
-            height: 2.4em; /* Fixed height untuk 2 lines */
+            line-height: 1.3;
+            min-height: 2.6em; /* Minimum height for 2 lines */
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -59,11 +59,12 @@
             hyphens: auto;
             position: relative;
             cursor: pointer;
+            text-align: center;
         }
 
-        /* Tooltip styling */
-        .folder-title:hover::after {
-            content: attr(data-full-text);
+        /* Tooltip styling - hanya muncul saat text terpotong */
+
+        .folder-title .tooltip {
             position: absolute;
             bottom: 100%;
             left: 50%;
@@ -74,7 +75,6 @@
             border-radius: 6px;
             font-size: 14px;
             font-weight: 400;
-            white-space: nowrap;
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
@@ -84,25 +84,20 @@
             white-space: normal;
             text-align: center;
             line-height: 1.4;
+            pointer-events: none;
         }
 
-        .folder-title:hover::before {
+        .folder-title .tooltip::before {
             content: '';
             position: absolute;
-            bottom: 100%;
+            bottom: -6px;
             left: 50%;
             transform: translateX(-50%);
             border: 6px solid transparent;
             border-top-color: #333;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-            margin-bottom: 2px;
         }
 
-        .folder-title:hover::after,
-        .folder-title:hover::before {
+        .folder-title.has-tooltip:hover .tooltip {
             opacity: 1;
             visibility: visible;
         }
@@ -133,16 +128,17 @@
 
             .folder-title {
                 font-size: 14px;
-                -webkit-line-clamp: 3;
-                height: 3.6em;
+                -webkit-line-clamp: 2;
+                min-height: 2.8em;
+                line-height: 1.4;
             }
         }
 
         /* Mobile - 1 card per row */
         @media (max-width: 767px) {
             .folder-container {
-                flex: 0 0 100%;
-                max-width: 100%;
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
             }
 
             .folder-card {
@@ -154,11 +150,11 @@
 
             .folder-title {
                 font-size: 16px;
-                -webkit-line-clamp: none;
-                height: auto;
-                max-height: none;
+                -webkit-line-clamp: 3;
+                min-height: 4.2em;
                 line-height: 1.4;
-                padding-bottom: 0.5rem;
+                text-align: center;
+                margin-bottom: 0.5rem;
             }
 
             .folder-icon-container {
@@ -174,6 +170,9 @@
         @media (max-width: 480px) {
             .folder-title {
                 font-size: 15px;
+                -webkit-line-clamp: 3;
+                min-height: 4.2em;
+                line-height: 1.4;
             }
 
             .folder-icon-container svg {
@@ -215,3 +214,31 @@
         </div>
     </div>
 @endsection
+
+@push('script')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Fungsi untuk mengecek apakah text terpotong
+    function isTextTruncated(element) {
+        return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+    }
+
+    // Setup tooltip untuk semua folder titles
+    const folderTitles = document.querySelectorAll('.folder-title');
+
+    folderTitles.forEach(function(title) {
+        const fullText = title.getAttribute('data-full-text');
+
+        // Cek apakah text terpotong
+        if (isTextTruncated(title) && fullText && fullText.trim() !== title.textContent.trim()) {
+            // Tambahkan tooltip hanya jika text terpotong
+            const tooltip = document.createElement('span');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = fullText;
+            title.appendChild(tooltip);
+            title.classList.add('has-tooltip');
+        }
+    });
+});
+</script>
+@endpush

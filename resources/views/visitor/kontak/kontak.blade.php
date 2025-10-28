@@ -11,11 +11,6 @@
         <h1>Kontak</h1>
     </div>
 
-    <div class="bg-holder bg-size"
-        style="background-image:url(/visitor/assets/img/gallery/about-bg.png);background-position:top center;background-size:contain;">
-    </div>
-    <!--/.bg-holder-->
-
     <div class="container">
         <div class="row align-items-center">
             <div class="text-center">

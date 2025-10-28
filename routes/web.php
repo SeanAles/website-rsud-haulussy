@@ -137,6 +137,11 @@ Route::get('/sertifikat-zoominar', function () {
 Route::get('/kontak', function () {
     return view('visitor.kontak.kontak');
 });
+
+Route::get('/sp4n-lapor!', function () {
+    return view('visitor.kontak.sp4n-lapor!');
+});
+
 Route::get('/survei-kepuasaan-masyarakat', function () {
     return view('visitor.kontak.survei-kepuasan-masyarakat');
 });
@@ -278,7 +283,7 @@ Route::middleware(['auth'])->group(function () {
 
         //Category Route
         Route::resource('/categories', CategoryController::class);
-        
+
         //Tags API Route for autocomplete
         Route::get('/tags/search', [ArticleController::class, 'searchTags'])->name('tags.search');
     });

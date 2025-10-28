@@ -89,7 +89,7 @@
 
             <div class="d-flex justify-content-center">
                 <img class="img-responsive"
-                    src="{{ asset('visitor/assets/img/visi-misi/Vispg') }}"
+                    src="{{ asset('visitor/assets/img/visi-misi/Visi dan Misi.jpg') }}"
                     alt="Maklumat dan Janji Pelayanan">
             </div>
 
@@ -105,7 +105,7 @@
         </div>
 
 
-       
+
 
         <div class="motto-container">
             <h1 class="text-center mb-2">Motto</h1>

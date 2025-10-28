@@ -156,6 +156,50 @@
     50% { opacity: 0; }
     }
 
+    /* SP4N Lapor! Simple Highlight - Clean & Safe */
+    .sp4n-highlight {
+        background: linear-gradient(90deg, #f0f9ff 0%, #e0f2fe 100%);
+        color: #1e40af;
+        font-weight: 600;
+        border-left: 4px solid #3b82f6;
+        position: relative;
+        margin: 2px 4px 2px 0;
+        border-radius: 4px;
+        box-shadow: 0 2px 6px rgba(59, 130, 246, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .sp4n-highlight::before {
+        content: "📢";
+        margin-right: 8px;
+        font-size: 14px;
+        display: inline-block;
+        animation: icon-pulse 2s ease-in-out infinite;
+    }
+
+    .sp4n-highlight:hover {
+        background: linear-gradient(90deg, #dbeafe 0%, #bfdbfe 100%);
+        color: #1e3a8a;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        transform: translateX(4px);
+        border-left-color: #2563eb;
+    }
+
+    .sp4n-highlight:hover::before {
+        animation: icon-shake 0.5s ease-in-out;
+    }
+
+    @keyframes icon-pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+
+    @keyframes icon-shake {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-5deg); }
+        75% { transform: rotate(5deg); }
+    }
+
 
 </style>
 
@@ -251,6 +295,7 @@
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/kontak">Kontak</a>
+                            <a class="dropdown-item sp4n-highlight" href="/sp4n-lapor!">SP4N Lapor!</a>
                             <a class="dropdown-item" href="/survei-kepuasaan-masyarakat">Survei Kepuasan Masyarakat</a>
                             <a class="dropdown-item" href="/unit-layanan-pengaduan">Unit Layanan Pengaduan</a>
                             <a class="dropdown-item" href="/kritik-saran">Kritik & Saran</a>
@@ -521,7 +566,8 @@
             console.log("Executed after 1 second");
         }, 1000);
     </script>
-    @yield('script')
+
+        @yield('script')
 
     <!-- Script JavaScript untuk menampilkan modal saat halaman dimuat -->
      {{-- <script>
