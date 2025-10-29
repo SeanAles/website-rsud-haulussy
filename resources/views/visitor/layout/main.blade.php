@@ -200,6 +200,39 @@
         75% { transform: rotate(5deg); }
     }
 
+    /* SIPPN CariYanlik Highlight - Complementary Design */
+    .sippn-highlight {
+        background: linear-gradient(90deg, #fef2f2 0%, #fee2e2 100%);
+        color: #991b1b;
+        font-weight: 600;
+        border-left: 4px solid #dc2626;
+        position: relative;
+        margin: 2px 4px 2px 0;
+        border-radius: 4px;
+        box-shadow: 0 2px 6px rgba(220, 38, 38, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .sippn-highlight::before {
+        content: "🔍";
+        margin-right: 8px;
+        font-size: 14px;
+        display: inline-block;
+        animation: icon-pulse 2s ease-in-out infinite;
+    }
+
+    .sippn-highlight:hover {
+        background: linear-gradient(90deg, #fee2e2 0%, #fecaca 100%);
+        color: #7f1d1d;
+        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+        transform: translateX(4px);
+        border-left-color: #b91c1c;
+    }
+
+    .sippn-highlight:hover::before {
+        animation: icon-shake 0.5s ease-in-out;
+    }
+
 
 </style>
 
@@ -296,6 +329,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/kontak">Kontak</a>
                             <a class="dropdown-item sp4n-highlight" href="/sp4n-lapor!">SP4N Lapor!</a>
+                            <a class="dropdown-item sippn-highlight" href="/sippn">SIPPN - CariYanlik</a>
                             <a class="dropdown-item" href="/survei-kepuasaan-masyarakat">Survei Kepuasan Masyarakat</a>
                             <a class="dropdown-item" href="/unit-layanan-pengaduan">Unit Layanan Pengaduan</a>
                             <a class="dropdown-item" href="/kritik-saran">Kritik & Saran</a>

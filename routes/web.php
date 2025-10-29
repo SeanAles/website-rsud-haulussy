@@ -142,6 +142,10 @@ Route::get('/sp4n-lapor!', function () {
     return view('visitor.kontak.sp4n-lapor!');
 });
 
+Route::get('/sippn', function () {
+    return view('visitor.kontak.sippn');
+});
+
 Route::get('/survei-kepuasaan-masyarakat', function () {
     return view('visitor.kontak.survei-kepuasan-masyarakat');
 });
