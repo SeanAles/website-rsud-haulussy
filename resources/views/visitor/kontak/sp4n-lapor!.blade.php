@@ -1548,9 +1548,12 @@
                             <div class="contact-icon-wrapper">
                                 <i class="fas fa-phone contact-icon"></i>
                             </div>
+                            <div>
+
+                            </div>
                             <div class="contact-info">
-                                <h4>Call Center</h4>
-                                <p>170 (Layanan Pengaduan Nasional)</p>
+                                <h4>SMS</h4>
+                                <p>1708 (Layanan Pengaduan Nasional)</p>
                             </div>
                         </div>
                         <div class="contact-card">
