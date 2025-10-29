@@ -173,7 +173,7 @@
         box-shadow: 0 4px 16px rgba(0,0,0,0.12);
     }
 
-    
+
     /* CTA Section - Profesional dengan warna RSUD */
     .cta-section {
         background: linear-gradient(135deg, #2E86AB 0%, #1B4F72 100%);
@@ -186,7 +186,7 @@
         overflow: hidden;
     }
 
-    
+
     .cta-content {
         max-width: 1200px;
         margin: 0 auto;
@@ -1398,7 +1398,7 @@
             </div>
         </section>
 
-        
+
         <!-- Jenis Pengaduan Section -->
         <section class="section-spacing">
             <div class="row">
@@ -1568,7 +1568,7 @@
                             </div>
                             <div class="contact-info">
                                 <h4>Unit Layanan Pengaduan RSUD</h4>
-                                <p>(0911) 342000</p>
+                                <p>0822 3109 8642</p>
                             </div>
                         </div>
                     </div>
