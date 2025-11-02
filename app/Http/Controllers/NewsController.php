@@ -149,7 +149,17 @@ class NewsController extends Controller
                 ->where('id', '!=', $new->id)
                 ->latest()
                 ->take(3)
-                ->get();
+                ->get()
+                ->map(function ($newsItem) {
+                    // Mock articleCategory for each news item to match Artikel structure
+                    $newsItem->articleCategory = (object)[
+                        'name' => 'Berita',
+                        'icon' => 'fas fa-newspaper',
+                        'color' => '#dc3545',
+                        'slug' => 'berita'
+                    ];
+                    return $newsItem;
+                });
 
             return view('visitor.informasi.baca-berita', compact('new', 'news'));
         }

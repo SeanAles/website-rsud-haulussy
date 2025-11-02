@@ -735,6 +735,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
     .pengaduan-item:hover {
@@ -799,6 +800,14 @@
             padding: 20px 15px;
             min-height: 180px;
             margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 300px;
         }
 
         .pengaduan-icon {
@@ -806,15 +815,189 @@
             height: 50px;
             font-size: 20px;
             margin-bottom: 12px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .pengaduan-item h4 {
             font-size: 16px;
             margin-bottom: 8px;
+            text-align: center;
+            width: 100%;
         }
 
         .pengaduan-item p {
             font-size: 13px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Ensure row is centered on tablets and below */
+        .row.justify-content-center {
+            justify-content: center !important;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .pengaduan-item {
+            padding: 18px 12px;
+            min-height: 160px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            max-width: 280px !important;
+            float: none !important;
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            transform: none !important;
+        }
+
+        .pengaduan-icon {
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pengaduan-item h4 {
+            font-size: 15px;
+            margin-bottom: 6px;
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .pengaduan-item p {
+            font-size: 12px;
+            text-align: center;
+            width: 100%;
+            line-height: 1.4;
+            display: block;
+        }
+
+        /* Ensure row centers content on mobile */
+        .row.justify-content-center {
+            justify-content: center !important;
+            text-align: center !important;
+        }
+
+        /* Override any conflicting column styles */
+        .col-lg-3.col-md-6.col-12 {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+    }
+
+    /* Jenis Pengaduan Mobile Centering - Proven Working Pattern */
+    @media (max-width: 767px) {
+        .pengaduan-item {
+            padding: 20px 15px;
+            min-height: 180px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 300px;
+        }
+
+        .pengaduan-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            margin-bottom: 12px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pengaduan-item h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .pengaduan-item p {
+            font-size: 13px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Ensure row centers content on tablets and below */
+        .row {
+            justify-content: center !important;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .pengaduan-item {
+            padding: 18px 12px;
+            min-height: 160px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            max-width: 280px !important;
+            float: none !important;
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            transform: none !important;
+        }
+
+        .pengaduan-icon {
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pengaduan-item h4 {
+            font-size: 15px;
+            margin-bottom: 6px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .pengaduan-item p {
+            font-size: 12px;
+            text-align: center;
+            width: 100%;
+            line-height: 1.4;
+        }
+
+        /* Ensure row centers content on mobile */
+        .row {
+            justify-content: center !important;
+            text-align: center !important;
+        }
+
+        /* Override any conflicting column styles */
+        .col-lg-3.col-md-6.col-12 {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
         }
     }
 
@@ -1407,9 +1590,9 @@
                     <p class="lead text-center mb-4">Berbagai aspek pelayanan rumah sakit yang dapat dievaluasi</p>
                 </div>
 
-                <!-- Grid Layout - Konsisten untuk semua device -->
+                <!-- Simple Grid Layout - Like Other Working Sections -->
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="pengaduan-item">
                             <div class="pengaduan-icon">
                                 <i class="fas fa-user-md"></i>
@@ -1418,7 +1601,7 @@
                             <p>Kualitas layanan dokter, perawat, dan tenaga kesehatan lainnya</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="pengaduan-item">
                             <div class="pengaduan-icon">
                                 <i class="fas fa-clock"></i>
@@ -1427,7 +1610,7 @@
                             <p>Lama antrian, konsultasi, dan proses pelayanan</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="pengaduan-item">
                             <div class="pengaduan-icon">
                                 <i class="fas fa-pills"></i>
@@ -1436,7 +1619,7 @@
                             <p>Ketersediaan dan kualitas obat, serta alat kesehatan</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="pengaduan-item">
                             <div class="pengaduan-icon">
                                 <i class="fas fa-broom"></i>
@@ -1445,7 +1628,7 @@
                             <p>Sanitasi lingkungan, kebersihan ruangan, dan fasilitas</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="pengaduan-item">
                             <div class="pengaduan-icon">
                                 <i class="fas fa-handshake"></i>
@@ -1454,7 +1637,7 @@
                             <p>Tingkah laku, komunikasi, dan etika tenaga medis</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="pengaduan-item">
                             <div class="pengaduan-icon">
                                 <i class="fas fa-file-medical"></i>
@@ -1463,7 +1646,7 @@
                             <p>Proses pendaftaran, pembayaran, dan kelengkapan dokumen</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="pengaduan-item">
                             <div class="pengaduan-icon">
                                 <i class="fas fa-wheelchair"></i>
@@ -1472,7 +1655,7 @@
                             <p>Kemudahan akses untuk penyandang disabilitas dan lansia</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="pengaduan-item">
                             <div class="pengaduan-icon">
                                 <i class="fas fa-comments"></i>

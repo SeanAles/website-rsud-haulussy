@@ -80,49 +80,12 @@
                         <h3 class="articles-title">Berita Lainnya</h3>
                         @if(count($news) > 0)
                             <div class="articles-container">
-                        @foreach ($news as $relatedNews)
-                            <a href="/berita/{{ $relatedNews->slug }}" class="related-article-card">
-                                <div class="related-article-thumbnail-wrapper">
-                                    <img src="{{ asset('images/news/thumbnails/' . $relatedNews->thumbnail) }}"
-                                         alt="Thumbnail {{ $relatedNews->title }}"
-                                         class="related-article-thumbnail">
-                                    <div class="related-article-thumbnail-overlay">Berita</div>
-                                </div>
-                                <div class="related-article-content">
-                                    <div>
-                                        <p class="related-article-title mb-1">{{ $relatedNews->title }}</p>
-                                        <div class="related-article-meta">
-                                            <small class="related-article-date">
-                                                <i class="far fa-calendar-alt"></i>
-                                                <span style="margin-left: 5px">{{ $relatedNews->created_at->format('d M Y') }}</span>
-                                            </small>
-                                            <small class="read-time">
-                                                <i class="far fa-clock"></i>
-                                                <span style="margin-left: 5px">
-                                                @php
-                                                    // Menghitung waktu baca berdasarkan konten
-                                                    $readTime = strlen($relatedNews->description) > 0
-                                                        ? max(2, ceil(str_word_count(strip_tags($relatedNews->description)) / 200))
-                                                        : 2;
-                                                @endphp
-                                                {{ $readTime }} menit
-                                                </span>
-                                            </small>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="article-category">
-                                                <i class="fas fa-newspaper"></i>
-                                                Berita
-                                            </div>
-                                            <div class="article-views">
-                                                <i class="far fa-eye"></i>
-                                                <span style="margin-left: 5px">{{ $relatedNews->views ?? 0 }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                @endforeach
+                                @foreach ($news as $relatedNews)
+                                    @include('visitor.components._sidebar-article-card', [
+                                        'article' => $relatedNews,
+                                        'type' => 'Berita'
+                                    ])
+                                @endforeach
                             </div>
                         @else
                             <p class="no-other-articles">Belum ada berita lainnya.</p>

@@ -185,6 +185,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
     .sektor-item:hover {
@@ -249,6 +250,14 @@
             padding: 20px 15px;
             min-height: 180px;
             margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 300px;
         }
 
         .sektor-icon {
@@ -256,15 +265,88 @@
             height: 50px;
             font-size: 20px;
             margin-bottom: 12px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .sektor-item h4 {
             font-size: 16px;
             margin-bottom: 8px;
+            text-align: center;
+            width: 100%;
         }
 
         .sektor-item p {
             font-size: 13px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Ensure row centers content on tablets and below */
+        .row {
+            justify-content: center !important;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .sektor-item {
+            padding: 18px 12px;
+            min-height: 160px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            max-width: 280px !important;
+            float: none !important;
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            transform: none !important;
+        }
+
+        .sektor-icon {
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sektor-item h4 {
+            font-size: 15px;
+            margin-bottom: 6px;
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .sektor-item p {
+            font-size: 12px;
+            text-align: center;
+            width: 100%;
+            line-height: 1.4;
+            display: block;
+        }
+
+        /* Ensure row centers content on mobile */
+        .row {
+            justify-content: center !important;
+            text-align: center !important;
+        }
+
+        /* Override any conflicting column styles */
+        .col-lg-3.col-md-6.col-12 {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
         }
     }
 
@@ -1125,7 +1207,7 @@
 
                 <!-- Grid Layout - Konsisten untuk semua device -->
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="sektor-item">
                             <div class="sektor-icon">
                                 <i class="fas fa-heartbeat"></i>
@@ -1134,7 +1216,7 @@
                             <p>Informasi rumah sakit, puskesmas, layanan kesehatan, dan program kesehatan masyarakat</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="sektor-item">
                             <div class="sektor-icon">
                                 <i class="fas fa-graduation-cap"></i>
@@ -1143,7 +1225,7 @@
                             <p>Data sekolah, universitas, beasiswa, dan program pendidikan nasional</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="sektor-item">
                             <div class="sektor-icon">
                                 <i class="fas fa-file-alt"></i>
@@ -1152,7 +1234,7 @@
                             <p>Pelayanan kependudukan, perizinan, sertifikasi, dan administrasi sipil</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
                         <div class="sektor-item">
                             <div class="sektor-icon">
                                 <i class="fas fa-coins"></i>
