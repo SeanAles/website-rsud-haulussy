@@ -29,10 +29,22 @@ class NewsController extends Controller
 
             $news = $query->latest()->paginate(6);
 
-            // Mempertahankan parameter pencarian pada pagination
+            // Mempertahankan parameter pencarian pada pagination (harus sebelum map)
             if ($request->has('search')) {
                 $news->appends(['search' => $request->search]);
             }
+
+            // Mock articleCategory untuk semua berita agar badge konsisten
+            $news->getCollection()->transform(function ($newsItem) {
+                // Mock articleCategory for each news item to match Artikel structure
+                $newsItem->articleCategory = (object)[
+                    'name' => 'Berita',
+                    'icon' => 'fas fa-newspaper',
+                    'color' => '#dc3545',
+                    'slug' => 'berita'
+                ];
+                return $newsItem;
+            });
 
             // Jika request AJAX, mengembalikan hanya HTML yang diperlukan
             if ($request->ajax() || $request->has('ajax')) {

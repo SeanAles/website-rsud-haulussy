@@ -7,6 +7,8 @@
         'type' => 'Berita|Artikel',     // Content type
         'overlayText' => 'Custom'       // Optional: override overlay text
     ])
+
+    Note: Now uses unified category-badge component without inline CSS overrides
 --}}
 
 @php
@@ -25,7 +27,7 @@
     $overlayText = $overlayText ?? ($isBerita ? 'Berita' : 'Terkait');
 
     // Category handling
-    // All types now use category-badge component (Berita uses mock data)
+    // All types use unified category-badge component (Berita uses mock data from controller)
 @endphp
 
 <div class="sidebar-article-card">
@@ -56,43 +58,12 @@
 
         <div class="sidebar-footer">
             <div class="sidebar-badge">
-                @if($isBerita)
-                    {{-- Berita: Use category-badge component with direct CSS override to match Artikel exactly --}}
-                    <div class="berita-badge-wrapper" style="display: inline-block;">
-                        @include('visitor.components.category-badge', [
-                            'article' => $article, // Article already has articleCategory from controller
-                            'size' => 'sm',
-                            'variant' => 'inline',
-                            'fallbackLabel' => 'Berita'
-                        ])
-                    </div>
-                    <style>
-                    .berita-badge-wrapper .category-badge-sm {
-                        font-size: 10px !important;
-                        padding: 4px 10px !important;
-                        border-radius: 14px !important;
-                        gap: 4px !important;
-                        max-width: none !important;
-                    }
-                    .berita-badge-wrapper .category-badge-sm i {
-                        font-size: 9px !important;
-                        flex-shrink: 0 !important;
-                    }
-                    .berita-badge-wrapper .category-badge-sm span {
-                        font-size: 10px !important;
-                        line-height: 1.2 !important;
-                        min-width: 0 !important;
-                    }
-                    </style>
-                @else
-                    {{-- Artikel: Use existing category-badge component --}}
-                    @include('visitor.components.category-badge', [
-                        'article' => $article,
-                        'size' => 'sm',
-                        'variant' => 'inline',
-                        'fallbackLabel' => 'Umum'
-                    ])
-                @endif
+                @include('visitor.components.category-badge', [
+                    'article' => $article,
+                    'size' => 'sm',
+                    'variant' => 'inline',
+                    'fallbackLabel' => $isBerita ? 'Berita' : 'Umum'
+                ])
             </div>
             <div class="sidebar-views">
                 <i class="far fa-eye"></i>

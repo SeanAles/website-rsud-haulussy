@@ -43,7 +43,7 @@ Auto Truncation Rules:
     $hasCategory = isset($article->articleCategory) && $article->articleCategory && is_object($article->articleCategory);
     $categoryName = $hasCategory ? $article->articleCategory->name : $fallbackLabel;
     $categoryIcon = $hasCategory ? $article->articleCategory->icon : 'fas fa-newspaper';
-    $categoryColor = $hasCategory ? $article->articleCategory->color : '#1B71A1';
+    $categoryColor = $hasCategory ? $article->articleCategory->color : '#dc3545';
     $categoryUrl = $hasCategory ? route('visitor.categories.show', $article->articleCategory->slug) : null;
     
     // Auto truncate untuk size sm jika tidak ada maxLength yang di-set
@@ -62,7 +62,7 @@ Auto Truncation Rules:
     }
     
     // Convert hex to RGB for CSS variables
-    $colorRgb = $hasCategory ? implode(', ', sscanf($article->articleCategory->color, '#%02x%02x%02x')) : '27, 113, 161';
+    $colorRgb = $hasCategory ? implode(', ', sscanf($article->articleCategory->color, '#%02x%02x%02x')) : '220, 53, 69';
 @endphp
 
 @if($categoryUrl)

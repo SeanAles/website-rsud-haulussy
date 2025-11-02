@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/visitor/components/search-and-filters.css') }}">
     <link rel="stylesheet" href="{{ asset('css/visitor/components/article-components.css') }}">
     <link rel="stylesheet" href="{{ asset('css/visitor/components/animations-responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitor/components/category-badge.css') }}">
 @endsection
 
 @section('content')

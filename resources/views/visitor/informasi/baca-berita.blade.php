@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/visitor/components/related-articles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/visitor/components/article-layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/visitor/components/article-animations.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitor/components/category-badge.css') }}">
 @endsection
 
 @section('content')
