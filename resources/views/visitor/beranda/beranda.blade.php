@@ -811,6 +811,139 @@
         </div>
     </section>
 
+    <!-- ============================================-->
+    <!-- Mitra Kami Section begin ============================-->
+    <section class="mitra-kami-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">Mitra Kami</h2>
+                <p class="section-subtitle">Bekerja sama dengan lembaga terkemuka untuk memberikan layanan kesehatan terbaik bagi masyarakat</p>
+            </div>
+
+            <!-- Step-by-Step Carousel -->
+            <div class="mitra-kami-carousel">
+                <div class="partners-scroll">
+                    <!-- BPJS Kesehatan -->
+                    <div class="partner-item">
+                        <a target="_blank" href="https://bpjs-kesehatan.go.id/" rel="noopener noreferrer">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/BPJS Kesehatan.png') }}"
+                                alt="BPJS Kesehatan" loading="lazy">
+                        </a>
+                    </div>
+
+                    <!-- BPJS Ketenagakerjaan -->
+                    <div class="partner-item">
+                        <a target="_blank" href="https://www.bpjsketenagakerjaan.go.id/" rel="noopener noreferrer">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/BPJS Ketenagakerjaan.png') }}"
+                                alt="BPJS Ketenagakerjaan" loading="lazy">
+                        </a>
+                    </div>
+
+                    <!-- Taspen -->
+                    <div class="partner-item">
+                        <a target="_blank" href="https://www.taspen.co.id/" rel="noopener noreferrer">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/Taspen.png') }}"
+                                alt="Taspen" loading="lazy">
+                        </a>
+                    </div>
+
+                    <!-- Jasa Raharja -->
+                    <div class="partner-item">
+                        <a target="_blank" href="https://www.jasaraharja.co.id/" rel="noopener noreferrer">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/Jasa Raharja.png') }}"
+                                alt="Jasa Raharja" loading="lazy">
+                        </a>
+                    </div>
+
+                    <!-- Duplicate items for seamless loop -->
+                    <!-- BPJS Kesehatan (duplicate) -->
+                    <div class="partner-item">
+                        <a target="_blank" href="https://bpjs-kesehatan.go.id/" rel="noopener noreferrer">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/BPJS Kesehatan.png') }}"
+                                alt="BPJS Kesehatan" loading="lazy">
+                        </a>
+                    </div>
+
+                    <!-- BPJS Ketenagakerjaan (duplicate) -->
+                    <div class="partner-item">
+                        <a target="_blank" href="https://www.bpjsketenagakerjaan.go.id/" rel="noopener noreferrer">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/BPJS Ketenagakerjaan.png') }}"
+                                alt="BPJS Ketenagakerjaan" loading="lazy">
+                        </a>
+                    </div>
+
+                    <!-- Taspen (duplicate) -->
+                    <div class="partner-item">
+                        <a target="_blank" href="https://www.taspen.co.id/" rel="noopener noreferrer">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/Taspen.png') }}"
+                                alt="Taspen" loading="lazy">
+                        </a>
+                    </div>
+
+                    <!-- Jasa Raharja (duplicate) -->
+                    <div class="partner-item">
+                        <a target="_blank" href="https://www.jasaraharja.co.id/" rel="noopener noreferrer">
+                            <img src="{{ asset('visitor/assets/img/kerjasama/Jasa Raharja.png') }}"
+                                alt="Jasa Raharja" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Mitra Kami Section close ============================-->
+    <!-- ============================================-->
+
+    <!-- ============================================-->
+    <!-- Fasilitas Keuangan Section begin ============================-->
+    <section class="fasilitas-keuangan-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">Fasilitas Keuangan</h2>
+                <p class="section-subtitle">Mendukung berbagai metode pembayaran untuk kenyamanan pasien</p>
+            </div>
+
+            <!-- Single Row Horizontal Layout -->
+            <div class="fasilitas-keuangan-row">
+                <!-- BANK BTN -->
+                <div class="bank-item">
+                    <a target="_blank" href="https://www.btn.co.id/" rel="noopener noreferrer">
+                        <img src="{{ asset('visitor/assets/img/kerjasama/BTN.png') }}"
+                            alt="BANK BTN" loading="lazy">
+                    </a>
+                </div>
+
+                <!-- BANK Maluku Malut -->
+                <div class="bank-item">
+                    <a target="_blank" href="https://bankmalukumalut.co.id/" rel="noopener noreferrer">
+                        <img src="{{ asset('visitor/assets/img/kerjasama/BPD MALUKU.png') }}"
+                            alt="BANK Maluku Malut" loading="lazy">
+                    </a>
+                </div>
+
+                <!-- BANK BRI -->
+                <div class="bank-item">
+                    <a target="_blank" href="https://www.bri.co.id/" rel="noopener noreferrer">
+                        <img src="{{ asset('visitor/assets/img/kerjasama/BRI.png') }}"
+                            alt="BANK BRI" loading="lazy">
+                    </a>
+                </div>
+
+                <!-- BANK BNI -->
+                <div class="bank-item">
+                    <a target="_blank" href="https://www.bni.co.id/" rel="noopener noreferrer">
+                        <img src="{{ asset('visitor/assets/img/kerjasama/BNI.png') }}"
+                            alt="BANK BNI" loading="lazy">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fasilitas Keuangan Section close ============================-->
+    <!-- ============================================-->
+
     <section class="py-5">
         <h1 class="text-center mt-8 mb-6">Kritik & Saran</h1>
 

@@ -47,6 +47,10 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="{{ asset('visitor/assets/css/theme.css') }}" rel="stylesheet" />
+
+    <!-- Trusted Partners Carousel CSS -->
+    <link href="{{ asset('css/visitor/components/trusted-partners.css') }}" rel="stylesheet" />
+
     @yield('link')
 </head>
 <!-- Google tag (gtag.js) -->
@@ -375,6 +379,7 @@
             </div>
         </section>
 
+  
         <section id="content" class="py-5">
             @yield('content')
         </section>
@@ -476,65 +481,7 @@
                 </div>
             </div>
 
-            <div class="container mb-4">
-                <div class="row align-items-center">
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
-                        <a target="_blank" href="https://bpjs-kesehatan.go.id/">
-                            <img src="{{ asset('visitor/assets/img/kerjasama/BPJS Kesehatan.png') }}"
-                                alt="BPJS Kesehatan" width="100%">
-                        </a>
-                    </div>
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
-                        <a target="_blank" href="https://www.bpjsketenagakerjaan.go.id/">
-                            <img src="{{ asset('visitor/assets/img/kerjasama/BPJS Ketenagakerjaan.png') }}"
-                                alt="BPJS Ketenagakerjaan" width="100%">
-                        </a>
-                    </div>
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
-                        <a target="_blank" href="https://www.inhealth.co.id/">
-                            <img src="{{ asset('visitor/assets/img/kerjasama/Mandiri Inhealth.png') }}"
-                                alt="Mandiri Inhealth.png" width="80%">
-                        </a>
-                    </div>
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-3 mb-1 order-0 order-sm-0 mt-4">
-                        <a target="_blank" href="https://www.taspen.co.id/">
-                            <img src="{{ asset('visitor/assets/img/kerjasama/Taspen.png') }}" alt="Taspen.png"
-                                width="80%">
-                        </a>
-                    </div>
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
-                        <a target="_blank" href="https://www.jasaraharja.co.id/">
-                            <img src="{{ asset('visitor/assets/img/kerjasama/Jasa Raharja.png') }}"
-                                alt="Jasa Raharja.png" width="210px">
-                        </a>
-                    </div>
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
-                        <a target="_blank" href="https://bankmalukumalut.co.id/">
-                            <img src="{{ asset('visitor/assets/img/kerjasama/BPD MALUKU.png') }}"
-                                alt="logo BPDM.png" width="100%">
-                        </a>
-                    </div>
-                    <!-- <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
-                        <a target="_blank" href="https://www.bni.co.id/">
-                            <img src="{{ asset('visitor/assets/img/kerjasama/BNI.png') }}"
-                                alt="logo bni.png" width="100%">
-                        </a>
-                    </div> -->
-                    <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
-                        <a target="_blank" href="https://www.btn.co.id/">
-                            <img src="{{ asset('visitor/assets/img/kerjasama/BTN.png') }}"
-                                alt="logo BTN.png" width="70%">
-                        </a>
-                    </div>
-                    <!-- <div class="col-10 col-sm-10 col-md-6 col-lg-2 col-xl-2 mb-1 order-0 order-sm-0 mt-4">
-                        <a target="_blank" href="https://www.bri.co.id/">
-                            <img src="{{ asset('visitor/assets/img/kerjasama/BRI.png') }}"
-                                alt="logo bri.png" width="67%">
-                        </a>
-                    </div> -->
-                </div>
-            </div>
-
+  
             <!-- ============================================-->
             <!-- <section> begin ============================-->
             <section class="bg-primary py-0">
@@ -580,6 +527,9 @@
     <script src="{{ asset('visitor/vendors/fontawesome/all.min.js') }}"></script>
     <script src="{{ asset('visitor/assets/js/theme.js') }}"></script>
     <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+
+    <!-- Pure CSS Infinite Scrolling - No JavaScript Required -->
+    <!-- KeenSlider and JS dependencies removed for better performance -->
 
     <!-- Sertakan Bootstrap JS, Popper.js, dan jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -1,0 +1,602 @@
+/* ===============================================
+   SMOOTH HORIZONTAL SCROLLING CAROUSELS - Seamless Loop
+   =============================================== */
+
+/* Main Section Containers */
+.mitra-kami-section,
+.fasilitas-keuangan-section {
+    padding: 40px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+    clear: both;
+}
+
+.mitra-kami-section {
+    margin-top: 20px;
+}
+
+.fasilitas-keuangan-section {
+    margin-top: 10px;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #007bff;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Carousel Containers */
+.mitra-kami-carousel,
+.fasilitas-keuangan-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 25px 0;
+    border: 1px solid #e9ecef;
+}
+
+/* Seamless Scrolling Container */
+.partners-scroll {
+    display: flex;
+    animation: seamlessScroll var(--animation-duration, 20s) linear infinite;
+    width: max-content;
+}
+
+/* Individual Partner Items */
+.partner-item {
+    flex: 0 0 auto;
+    width: var(--item-width, 220px);
+    height: 100px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--item-gap, 20px);
+}
+
+.partner-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    padding: 15px;
+}
+
+/* Hover Effects - Pause animation on hover */
+.mitra-kami-carousel:hover .partners-scroll,
+.fasilitas-keuangan-carousel:hover .partners-scroll {
+    animation-play-state: paused;
+}
+
+.partner-item a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #007bff;
+}
+
+/* Partner Images */
+.partner-item img {
+    max-width: 100%;
+    max-height: 70px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.partner-item a:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Seamless Animation Keyframes */
+@keyframes seamlessScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Mitra Kami Animation - Slower */
+.mitra-kami-carousel .partners-scroll {
+    --animation-duration: 18s;
+}
+
+/* Fasilitas Keuangan Animation - Faster */
+.fasilitas-keuangan-carousel .partners-scroll {
+    --animation-duration: 15s;
+}
+
+/* Responsive Breakpoints */
+
+/* Desktop */
+@media (max-width: 1200px) {
+    .partner-item {
+        --item-width: 200px;
+        --item-gap: 18px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .partner-item {
+        --item-width: 180px;
+        --item-gap: 15px;
+        padding: 12px 15px;
+    }
+
+    .partner-item a {
+        padding: 12px;
+    }
+
+    .partner-item img {
+        max-height: 60px;
+    }
+
+    .mitra-kami-carousel,
+    .fasilitas-keuangan-carousel {
+        padding: 20px 0;
+    }
+
+    .mitra-kami-carousel .partners-scroll {
+        --animation-duration: 16s;
+    }
+
+    .fasilitas-keuangan-carousel .partners-scroll {
+        --animation-duration: 13s;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .mitra-kami-section,
+    .fasilitas-keuangan-section {
+        padding: 30px 0;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .partner-item {
+        --item-width: 160px;
+        --item-gap: 12px;
+        height: 90px;
+        padding: 10px 12px;
+    }
+
+    .partner-item a {
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    .partner-item img {
+        max-height: 55px;
+    }
+
+    .mitra-kami-carousel,
+    .fasilitas-keuangan-carousel {
+        padding: 15px 0;
+        border-radius: 6px;
+    }
+
+    .mitra-kami-carousel .partners-scroll {
+        --animation-duration: 14s;
+    }
+
+    .fasilitas-keuangan-carousel .partners-scroll {
+        --animation-duration: 11s;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+    .mitra-kami-section,
+    .fasilitas-keuangan-section {
+        padding: 25px 0;
+    }
+
+    .section-header {
+        margin-bottom: 25px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .partner-item {
+        --item-width: 140px;
+        --item-gap: 10px;
+        height: 80px;
+        padding: 8px 10px;
+    }
+
+    .partner-item a {
+        padding: 8px;
+        border-radius: 6px;
+    }
+
+    .partner-item img {
+        max-height: 50px;
+    }
+
+    .mitra-kami-carousel,
+    .fasilitas-keuangan-carousel {
+        padding: 12px 0;
+    }
+
+    .mitra-kami-carousel .partners-scroll {
+        --animation-duration: 12s;
+    }
+
+    .fasilitas-keuangan-carousel .partners-scroll {
+        --animation-duration: 9s;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 400px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .partner-item {
+        --item-width: 120px;
+        --item-gap: 8px;
+        height: 70px;
+        padding: 6px 8px;
+    }
+
+    .partner-item a {
+        padding: 6px;
+    }
+
+    .partner-item img {
+        max-height: 45px;
+    }
+
+    .mitra-kami-section,
+    .fasilitas-keuangan-section {
+        padding: 20px 0;
+    }
+
+    .mitra-kami-carousel .partners-scroll {
+        --animation-duration: 10s;
+    }
+
+    .fasilitas-keuangan-carousel .partners-scroll {
+        --animation-duration: 8s;
+    }
+}
+
+/* Animation and Transitions */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mitra-kami-section,
+.fasilitas-keuangan-section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Fallback for no animation support */
+@media (prefers-reduced-motion: reduce) {
+    .partners-scroll {
+        animation: none;
+    }
+
+    .mitra-kami-carousel,
+    .fasilitas-keuangan-carousel {
+        overflow-x: auto;
+    }
+
+    .partners-scroll {
+        display: flex;
+        width: max-content;
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .partner-item {
+        margin-right: 15px;
+    }
+}
+
+/* Loading Animation */
+.mitra-kami-carousel.loading,
+.fasilitas-keuangan-carousel.loading {
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mitra-kami-carousel.loading::before,
+.fasilitas-keuangan-carousel.loading::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Focus States for Accessibility */
+.partner-item a:focus {
+    outline: 3px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Performance optimizations */
+.mitra-kami-carousel,
+.fasilitas-keuangan-carousel {
+    will-change: transform;
+    contain: layout style paint;
+}
+
+.partner-item img {
+    will-change: transform, filter;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Scrollbar styling for fallback */
+.mitra-kami-carousel::-webkit-scrollbar,
+.fasilitas-keuangan-carousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.mitra-kami-carousel::-webkit-scrollbar-track,
+.fasilitas-keuangan-carousel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.mitra-kami-carousel::-webkit-scrollbar-thumb,
+.fasilitas-keuangan-carousel::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.mitra-kami-carousel::-webkit-scrollbar-thumb:hover,
+.fasilitas-keuangan-carousel::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* ===============================================
+   FASILITAS KEUANGAN - SINGLE ROW (Minimalist)
+   =============================================== */
+
+/* Fasilitas Keuangan Section Override */
+.fasilitas-keuangan-section {
+    background: #ffffff;
+    margin-bottom: -20px; /* Kurangi jarak dengan section berikutnya */
+    padding-bottom: 20px; /* Tambah sedikit padding internal */
+}
+
+/* Single Row Container */
+.fasilitas-keuangan-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    padding: 20px 24px; /* Kurangi padding dari 40px menjadi 20px */
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Bank Items - Simple and Clean */
+.bank-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bank-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects - Minimal */
+.bank-item:hover a {
+    background: #f8f9fa;
+}
+
+.bank-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Bank Logo - Colorful and Simple */
+.bank-item img {
+    max-width: 120px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: none; /* No grayscale, show original colors */
+    opacity: 0.8;
+}
+
+.bank-item:hover img {
+    opacity: 1;
+}
+
+/* Active/Tap States - Minimal */
+.bank-item:active a {
+    background: #e9ecef;
+    transform: scale(0.98);
+}
+
+/* Mobile Responsive Breakpoints */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .fasilitas-keuangan-row {
+        gap: 32px;
+        padding: 16px 16px; /* Kurangi padding dari 32px menjadi 16px */
+    }
+
+    .bank-item img {
+        max-width: 100px;
+        max-height: 50px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .fasilitas-keuangan-row {
+        gap: 24px;
+        padding: 12px 12px; /* Kurangi padding dari 24px menjadi 12px */
+        flex-wrap: wrap;
+    }
+
+    .bank-item a {
+        padding: 12px;
+    }
+
+    .bank-item img {
+        max-width: 80px;
+        max-height: 40px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+    .fasilitas-keuangan-row {
+        gap: 20px;
+        padding: 10px 8px; /* Kurangi padding dari 20px menjadi 10px */
+        flex-wrap: wrap;
+    }
+
+    .bank-item a {
+        padding: 10px;
+    }
+
+    .bank-item img {
+        max-width: 70px;
+        max-height: 35px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 400px) {
+    .fasilitas-keuangan-row {
+        gap: 16px;
+        padding: 8px; /* Kurangi padding dari 16px menjadi 8px */
+        flex-wrap: wrap;
+    }
+
+    .bank-item a {
+        padding: 8px;
+    }
+
+    .bank-item img {
+        max-width: 60px;
+        max-height: 30px;
+    }
+}
+
+/* Focus States for Accessibility - Simple */
+.bank-item:focus-within {
+    outline: 2px solid #e9ecef;
+    outline-offset: 2px;
+}
+
+.bank-item a:focus {
+    outline: none;
+}
+
+/* Performance Optimizations - Minimal */
+.fasilitas-keuangan-row {
+    contain: layout style;
+}
+
+.bank-item img {
+    backface-visibility: hidden;
+}
