@@ -136,19 +136,57 @@
     transform: scale(1.05);
 }
 
-/* Seamless Animation Keyframes */
-@keyframes seamlessScroll {
+/* Step-by-Step Animation Keyframes for Mitra Kami */
+@keyframes stepByStepScrollMitra {
+    /* BPJS Kesehatan (0-20%) */
     0% {
         transform: translateX(0);
     }
+    10% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-240px);
+    }
+
+    /* BPJS Ketenagakerjaan (20-40%) */
+    30% {
+        transform: translateX(-240px);
+    }
+    40% {
+        transform: translateX(-480px);
+    }
+
+    /* Taspen (40-60%) */
+    50% {
+        transform: translateX(-480px);
+    }
+    60% {
+        transform: translateX(-720px);
+    }
+
+    /* Jasa Raharja (60-80%) */
+    70% {
+        transform: translateX(-720px);
+    }
+    80% {
+        transform: translateX(-960px);
+    }
+
+    /* Pause di akhir (80-90%) */
+    90% {
+        transform: translateX(-960px);
+    }
+
+    /* Reset smooth ke awal (90-100%) */
     100% {
-        transform: translateX(-50%);
+        transform: translateX(0);
     }
 }
 
-/* Mitra Kami Animation - Slower */
+/* Mitra Kami Animation - Step-by-Step */
 .mitra-kami-carousel .partners-scroll {
-    --animation-duration: 18s;
+    animation: stepByStepScrollMitra 20s ease-in-out infinite;
 }
 
 /* Fasilitas Keuangan Animation - Faster */
@@ -242,7 +280,7 @@
     }
 
     .mitra-kami-carousel .partners-scroll {
-        --animation-duration: 14s;
+        animation: stepByStepScrollMitra 14s ease-in-out infinite;
     }
 
     .fasilitas-keuangan-carousel .partners-scroll {
@@ -292,7 +330,7 @@
     }
 
     .mitra-kami-carousel .partners-scroll {
-        --animation-duration: 12s;
+        animation: stepByStepScrollMitra 12s ease-in-out infinite;
     }
 
     .fasilitas-keuangan-carousel .partners-scroll {
@@ -327,7 +365,7 @@
     }
 
     .mitra-kami-carousel .partners-scroll {
-        --animation-duration: 10s;
+        animation: stepByStepScrollMitra 10s ease-in-out infinite;
     }
 
     .fasilitas-keuangan-carousel .partners-scroll {
