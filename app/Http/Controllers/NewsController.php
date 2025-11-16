@@ -335,5 +335,71 @@ class NewsController extends Controller
         return response()->json(['message' => 'Gagal Menghapus Data'], 401);
     }
 
+    /**
+     * API endpoint for news autocomplete search
+     */
+    public function autocompleteSearch(Request $request)
+    {
+        try {
+            $search = trim($request->get('search', ''));
+
+            // Validation: minimum 2 characters
+            if (strlen($search) < 2) {
+                return response()->json([]);
+            }
+
+            // Build query with error handling
+            $query = Post::where('category', '=', 'news');
+
+            // Search in title and author fields
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'LIKE', "%{$search}%")
+                  ->orWhere('author', 'LIKE', "%{$search}%");
+            });
+
+            // Smart sorting: relevance first, then popularity, then newest
+            $news = $query->selectRaw('*,
+                CASE
+                    WHEN title LIKE ? THEN 1
+                    WHEN author LIKE ? THEN 2
+                    ELSE 3
+                END as relevance_score',
+                ["%{$search}%", "%{$search}%"]
+            )
+            ->orderBy('relevance_score')
+            ->orderByDesc('views')
+            ->orderByDesc('created_at')
+            ->limit(5)
+            ->get(['id', 'title', 'slug', 'thumbnail', 'author', 'views', 'created_at']);
+
+            // Transform and return results
+            $results = $news->map(function ($item) {
+                return [
+                    'id' => $item->id,
+                    'title' => $item->title,
+                    'slug' => $item->slug,
+                    'thumbnail' => $item->thumbnail,
+                    'author' => $item->author,
+                    'views' => (int)($item->views ?? 0),
+                    'created_at' => $item->created_at->format('d M Y'),
+                    'url' => "/berita/{$item->slug}",
+                    'relevance_score' => (int)($item->relevance_score ?? 3)
+                ];
+            });
+
+            return response()->json($results);
+
+        } catch (\Illuminate\Database\QueryException $e) {
+            // Database query errors
+            \Log::error('News autocomplete database error: ' . $e->getMessage());
+            return response()->json(['error' => 'Database query failed'], 500);
+
+        } catch (\Exception $e) {
+            // General errors
+            \Log::error('News autocomplete error: ' . $e->getMessage());
+            return response()->json(['error' => 'Search failed'], 500);
+        }
+    }
+
 
 }

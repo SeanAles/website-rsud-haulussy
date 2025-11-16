@@ -111,6 +111,7 @@ Route::get('/dokter-umum', function () {
 // Informasi Route
 // Informasi Artikel Route
 Route::get('/artikel', [ArticleController::class, 'indexArtikel'])->name('artikel');
+Route::get('/artikel/autocomplete', [ArticleController::class, 'autocompleteSearch'])->name('artikel.autocomplete');
 Route::get('/artikel/{slug}', [ArticleController::class, 'showArtikel']);
 
 // Tag Routes untuk Content Discovery
@@ -120,6 +121,7 @@ Route::get('/tag/{tag:slug}', [TagController::class, 'show'])->name('tags.show')
 Route::get('/kategori/{category:slug}', [CategoryController::class, 'showPublic'])->name('visitor.categories.show');
 // Informasi Berita Route
 Route::get('/berita', [NewsController::class, 'index']);
+Route::get('/berita/autocomplete', [NewsController::class, 'autocompleteSearch'])->name('berita.autocomplete');
 Route::get('/berita/{slug}', [NewsController::class, 'show']);
 // Informasi Galeri Kegiatan Route
 Route::get('/galeri', [EventController::class, 'indexGaleri']);

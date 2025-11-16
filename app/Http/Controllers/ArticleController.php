@@ -508,7 +508,7 @@ class ArticleController extends Controller
     public function searchTags(Request $request)
     {
         $search = $request->get('q', '');
-        
+
         if (empty($search)) {
             return response()->json([]);
         }
@@ -525,5 +525,71 @@ class ArticleController extends Controller
                     });
 
         return response()->json($tags);
+    }
+
+    /**
+     * API endpoint for article autocomplete search
+     */
+    public function autocompleteSearch(Request $request)
+    {
+        try {
+            $search = trim($request->get('search', ''));
+
+            // Validation: minimum 2 characters
+            if (strlen($search) < 2) {
+                return response()->json([]);
+            }
+
+            // Build query with error handling
+            $query = Post::where('category', '=', 'article');
+
+            // Search in title and author fields
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'LIKE', "%{$search}%")
+                  ->orWhere('author', 'LIKE', "%{$search}%");
+            });
+
+            // Smart sorting: relevance first, then popularity, then newest
+            $articles = $query->selectRaw('*,
+                CASE
+                    WHEN title LIKE ? THEN 1
+                    WHEN author LIKE ? THEN 2
+                    ELSE 3
+                END as relevance_score',
+                ["%{$search}%", "%{$search}%"]
+            )
+            ->orderBy('relevance_score')
+            ->orderByDesc('views')
+            ->orderByDesc('created_at')
+            ->limit(5)
+            ->get(['id', 'title', 'slug', 'thumbnail', 'author', 'views', 'created_at']);
+
+            // Transform and return results
+            $results = $articles->map(function ($article) {
+                return [
+                    'id' => $article->id,
+                    'title' => $article->title,
+                    'slug' => $article->slug,
+                    'thumbnail' => $article->thumbnail,
+                    'author' => $article->author,
+                    'views' => (int)($article->views ?? 0),
+                    'created_at' => $article->created_at->format('d M Y'),
+                    'url' => "/artikel/{$article->slug}",
+                    'relevance_score' => (int)($article->relevance_score ?? 3)
+                ];
+            });
+
+            return response()->json($results);
+
+        } catch (\Illuminate\Database\QueryException $e) {
+            // Database query errors
+            \Log::error('Article autocomplete database error: ' . $e->getMessage());
+            return response()->json(['error' => 'Database query failed'], 500);
+
+        } catch (\Exception $e) {
+            // General errors
+            \Log::error('Article autocomplete error: ' . $e->getMessage());
+            return response()->json(['error' => 'Search failed'], 500);
+        }
     }
 }

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/visitor/components/article-layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/visitor/components/article-animations.css') }}">
     <link rel="stylesheet" href="{{ asset('css/visitor/components/category-badge.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitor/components/sidebar-search.css') }}">
 @endsection
 
 @section('content')
@@ -78,6 +79,16 @@
             <!-- Bagian Kanan (40%) -->
                 <div class="col-md-4 col-lg-4 right-panel other-articles">
                     <div class="articles-wrapper">
+                        {{-- SIDEBAR SEARCH --}}
+                        @include('visitor.components._sidebar-search', [
+                            'contentType' => 'berita',
+                            'searchInputId' => 'sidebarBeritaSearchInput',
+                            'clearButtonId' => 'sidebarBeritaClearSearch',
+                            'statusId' => 'sidebarBeritaSearchStatus',
+                            'searchEndpoint' => '/berita/autocomplete',
+                            'showHint' => true
+                        ])
+
                         <h3 class="articles-title">Berita Lainnya</h3>
                         @if(count($news) > 0)
                             <div class="articles-container">
@@ -99,9 +110,105 @@
 @endsection
 
 @section('script')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('js/visitor/components/autocomplete-search-handler.js') }}"></script>
     <script>
-        // Perbaikan tampilan konten artikel saat halaman dimuat
+        // Enhanced initialization with proper error handling and debugging
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Initializing news page components...');
+
+            // Wait for jQuery to be ready
+            function initializeWhenReady() {
+                // Check if jQuery is loaded
+                if (typeof $ === 'undefined') {
+                    console.error('❌ jQuery not loaded - retrying in 100ms...');
+                    setTimeout(initializeWhenReady, 100);
+                    return;
+                }
+
+                console.log('✅ jQuery is ready');
+
+                // Verify required DOM elements exist
+                const searchInput = document.getElementById('sidebarBeritaSearchInput');
+                const dropdown = document.getElementById('sidebarBeritaSearchInputDropdown');
+                const clearButton = document.getElementById('sidebarBeritaClearSearch');
+                const statusElement = document.getElementById('sidebarBeritaSearchStatus');
+
+                if (!searchInput) {
+                    console.error('❌ Search input not found: #sidebarBeritaSearchInput');
+                    console.log('Available search inputs:', document.querySelectorAll('[id*="search"]'));
+                    return;
+                }
+
+                if (!dropdown) {
+                    console.error('❌ Search dropdown not found: #sidebarBeritaSearchInputDropdown');
+                    console.log('Available dropdowns:', document.querySelectorAll('[id*="Dropdown"]'));
+                    return;
+                }
+
+                console.log('✅ All required DOM elements found');
+
+                try {
+                    // Initialize Autocomplete Search Handler with enhanced configuration
+                    const autocompleteSearch = new AutocompleteSearchHandler({
+                        searchInputId: 'sidebarBeritaSearchInput',
+                        dropdownId: 'sidebarBeritaSearchInputDropdown',
+                        clearButtonId: 'sidebarBeritaClearSearch',
+                        statusId: 'sidebarBeritaSearchStatus',
+                        searchEndpoint: '/berita/autocomplete',
+                        listEndpoint: '/berita',
+                        contentType: 'berita',
+                        minSearchLength: 2,
+                        debounceDelay: 200,
+                        showStatusMessages: true
+                    });
+
+                    console.log('✅ AutocompleteSearchHandler initialized successfully for news');
+
+                    // Add global error handler for debugging
+                    window.addEventListener('error', function(e) {
+                        console.error('🚨 JavaScript Error:', {
+                            message: e.message,
+                            filename: e.filename,
+                            lineno: e.lineno,
+                            colno: e.colno
+                        });
+                    });
+
+                } catch (error) {
+                    console.error('❌ Failed to initialize AutocompleteSearchHandler:', error);
+                    console.error('Error details:', {
+                        name: error.name,
+                        message: error.message,
+                        stack: error.stack
+                    });
+
+                    // Fallback: Initialize basic search functionality
+                    initializeFallbackSearch();
+                }
+            }
+
+            // Start initialization
+            initializeWhenReady();
+
+            // Fallback search function if autocomplete fails
+            function initializeFallbackSearch() {
+                console.log('🔄 Initializing fallback search functionality...');
+                const searchInput = document.getElementById('sidebarBeritaSearchInput');
+                if (searchInput) {
+                    searchInput.addEventListener('keypress', function(e) {
+                        if (e.key === 'Enter' && this.value.trim().length >= 2) {
+                            window.location.href = '/berita?search=' + encodeURIComponent(this.value.trim());
+                        }
+                    });
+                    console.log('✅ Fallback search initialized');
+                }
+            }
+        });
+
+        // News content enhancements (existing code)
+        document.addEventListener('DOMContentLoaded', function() {
+
             // Tambahkan ID ke semua heading untuk navigasi
             addIdsToHeadings();
 
