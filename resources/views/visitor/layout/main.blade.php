@@ -438,6 +438,12 @@
                                     href="https://www.dto.kemkes.go.id/">DTO (Digital Transformation Office)</a></li>
                             <li class="lh-lg"><a class="footer-link" target="_blank"
                                     href="https://kemendagri.go.id/">Kementerian Dalam Negeri</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://menpan.go.id/">Kementerian PAN-RB</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://lapor.go.id/">SP4N LAPOR!</a></li>
+                            <li class="lh-lg"><a class="footer-link" target="_blank"
+                                    href="https://ombudsman.go.id/">Ombudsman</a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-sm-12 col-lg-3 mb-3 order-3 order-sm-3">
