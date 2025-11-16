@@ -379,7 +379,7 @@
             </div>
         </section>
 
-  
+
         <section id="content" class="py-5">
             @yield('content')
         </section>
@@ -420,7 +420,7 @@
                                     href="https://rstambon.co.id">RS Tk.II Prof. dr. J. A. Latumeten</a>
                             </li>
                             <li class="lh-lg"><a class="footer-link" target="_blank"
-                                href="https://rshative.org/">RS Hative</a>
+                                href="https://rsottokuyk.org/">RS Otto Kuyk</a>
                         </li>
                         </ul>
                     </div>
@@ -487,7 +487,7 @@
                 </div>
             </div>
 
-  
+
             <!-- ============================================-->
             <!-- <section> begin ============================-->
             <section class="bg-primary py-0">
