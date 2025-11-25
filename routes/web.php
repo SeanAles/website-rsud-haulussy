@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BedController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DownloadCategoryController;
@@ -186,22 +187,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware('admin')->group(function () {
         // Dashboard
-        Route::get('/dashboard', function () {
-            $article = Post::where('category', '=', 'article')->get();
-            $articleCount = $article->count();
-            $news = Post::where('category', '=', 'news')->get();
-            $newsCount = $news->count();
-            $bed = Bed::all();
-            $bedCount = $bed->count();
-            $events = Event::all();
-            $eventCount = $events->count();
-            return view('admin.dashboard.dashboard', [
-                'articleCount' => $articleCount,
-                'newsCount' => $newsCount,
-                'bedCount' => $bedCount,
-                'eventCount' => $eventCount
-            ]);
-        })->middleware('prevent.back.history')->name('admin.dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('prevent.back.history')->name('admin.dashboard');
 
         // Download Route
         // File Route

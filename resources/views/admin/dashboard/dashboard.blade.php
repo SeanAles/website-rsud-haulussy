@@ -441,9 +441,56 @@
                 </div>
             </div>
         </div>
+
+        <!-- Quick Analytics Preview -->
+        <div class="quick-analytics-section">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">
+                                <i class="material-icons-round" style="font-size: 18px; vertical-align: middle;">trending_up</i>
+                                Quick Article Insights
+                                <small class="text-muted ml-2">
+                                    <a href="/article" class="text-decoration-none">View Detailed Analytics →</a>
+                                </small>
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3 col-6 mb-3">
+                                    <div class="text-center">
+                                        <h4 class="text-primary font-weight-bold mb-1">{{ number_format($totalViews ?? 0) }}</h4>
+                                        <small class="text-muted">Total Views</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <div class="text-center">
+                                        <h4 class="text-success font-weight-bold mb-1">{{ number_format($avgViews ?? 0, 1) }}</h4>
+                                        <small class="text-muted">Avg Views</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <div class="text-center">
+                                        <h4 class="text-info font-weight-bold mb-1">{{ $articleCount }}</h4>
+                                        <small class="text-muted">Total Articles</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <div class="text-center">
+                                        <h4 class="text-warning font-weight-bold mb-1">{{ $recentTrending->count() ?? 0 }}</h4>
+                                        <small class="text-muted">Trending (30d)</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 
 @section('script')
-    {{-- Scripts can be added here if needed in the future --}}
+    {{-- Basic dashboard scripts can be added here if needed in the future --}}
 @endsection

@@ -137,8 +137,13 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        $article = Post::with('user')->findOrFail($id);
-        return view('admin.article.article-detail', ['article' => $article]);
+        $article = Post::with(['user', 'articleCategory', 'tags'])->findOrFail($id);
+        $analytics = $this->getArticleAnalytics($id);
+
+        return view('admin.article.article-detail', [
+            'article' => $article,
+            'analytics' => $analytics
+        ]);
     }
 
     public function edit($id)
@@ -591,5 +596,258 @@ class ArticleController extends Controller
             \Log::error('Article autocomplete error: ' . $e->getMessage());
             return response()->json(['error' => 'Search failed'], 500);
         }
+    }
+
+    /**
+     * Get comprehensive analytics data for a specific article
+     */
+    private function getArticleAnalytics($articleId)
+    {
+        $article = Post::findOrFail($articleId);
+
+        return [
+            'currentArticle' => [
+                'id' => $article->id,
+                'title' => $article->title,
+                'views' => $article->views,
+                'created_at' => $article->created_at,
+                'category' => $article->articleCategory->name ?? 'Uncategorized',
+                'reading_time' => $this->estimateReadingTime($article->description),
+                'content_length' => strlen(strip_tags($article->description)),
+                'word_count' => str_word_count(strip_tags($article->description))
+            ],
+            'performance' => [
+                'category_average' => $this->getCategoryAverageViews($article->category_id),
+                'overall_average' => $this->getOverallAverageViews(),
+                'vs_category' => $this->calculatePerformanceVsCategory($article->views, $article->category_id),
+                'vs_overall' => $this->calculatePerformanceVsOverall($article->views),
+                'rank_in_category' => $this->getArticleRankInCategory($articleId, $article->category_id),
+                'rank_overall' => $this->getArticleRankOverall($articleId)
+            ],
+            'trends' => [
+                'publication_age' => $article->created_at->diffForHumans(),
+                'views_per_day' => $this->calculateViewsPerDay($article->views, $article->created_at),
+                'performance_grade' => $this->getPerformanceGrade($article->views, $article->created_at)
+            ],
+            'comparison' => [
+                'top_performing' => $this->getTopPerformingArticles(5),
+                'recent_trending' => $this->getRecentTrending(5),
+                'category_distribution' => $this->getCategoryViewDistribution()
+            ]
+        ];
+    }
+
+    /**
+     * Estimate reading time in minutes
+     */
+    private function estimateReadingTime($content)
+    {
+        $wordCount = str_word_count(strip_tags($content));
+        $wordsPerMinute = 200; // Average reading speed
+        $minutes = max(1, ceil($wordCount / $wordsPerMinute));
+
+        return $minutes . ' min read';
+    }
+
+    /**
+     * Get average views for articles in the same category
+     */
+    private function getCategoryAverageViews($categoryId)
+    {
+        if (!$categoryId) return 0;
+
+        return Post::where('category', 'article')
+            ->where('category_id', $categoryId)
+            ->avg('views') ?? 0;
+    }
+
+    /**
+     * Get overall average views for all articles
+     */
+    private function getOverallAverageViews()
+    {
+        return Post::where('category', 'article')
+            ->avg('views') ?? 0;
+    }
+
+    /**
+     * Calculate performance vs category average
+     */
+    private function calculatePerformanceVsCategory($articleViews, $categoryId)
+    {
+        $categoryAvg = $this->getCategoryAverageViews($categoryId);
+        if ($categoryAvg == 0) return 0;
+
+        return round((($articleViews - $categoryAvg) / $categoryAvg) * 100, 1);
+    }
+
+    /**
+     * Calculate performance vs overall average
+     */
+    private function calculatePerformanceVsOverall($articleViews)
+    {
+        $overallAvg = $this->getOverallAverageViews();
+        if ($overallAvg == 0) return 0;
+
+        return round((($articleViews - $overallAvg) / $overallAvg) * 100, 1);
+    }
+
+    /**
+     * Get article rank within its category
+     */
+    private function getArticleRankInCategory($articleId, $categoryId)
+    {
+        if (!$categoryId) {
+            return [
+                'rank' => 1,
+                'total' => 1,
+                'percentile' => 100
+            ];
+        }
+
+        $rank = Post::where('category', 'article')
+            ->where('category_id', $categoryId)
+            ->where('views', '>', function($query) use ($articleId) {
+                $query->select('views')
+                    ->from('posts')
+                    ->where('id', $articleId);
+            })
+            ->count() + 1;
+
+        $total = Post::where('category', 'article')
+            ->where('category_id', $categoryId)
+            ->count();
+
+        return [
+            'rank' => $rank,
+            'total' => $total,
+            'percentile' => round((($total - $rank + 1) / $total) * 100, 1)
+        ];
+    }
+
+    /**
+     * Get article rank overall
+     */
+    private function getArticleRankOverall($articleId)
+    {
+        $rank = Post::where('category', 'article')
+            ->where('views', '>', function($query) use ($articleId) {
+                $query->select('views')
+                    ->from('posts')
+                    ->where('id', $articleId);
+            })
+            ->count() + 1;
+
+        $total = Post::where('category', 'article')->count();
+
+        return [
+            'rank' => $rank,
+            'total' => $total,
+            'percentile' => round((($total - $rank + 1) / $total) * 100, 1)
+        ];
+    }
+
+    /**
+     * Calculate average views per day
+     */
+    private function calculateViewsPerDay($totalViews, $createdAt)
+    {
+        $daysSincePublished = $createdAt->diffInDays(now());
+        if ($daysSincePublished < 1) $daysSincePublished = 1;
+
+        return round($totalViews / $daysSincePublished, 1);
+    }
+
+    /**
+     * Get performance grade based on views and publication age
+     */
+    private function getPerformanceGrade($views, $createdAt)
+    {
+        $daysSincePublished = $createdAt->diffInDays(now());
+        $viewsPerDay = $this->calculateViewsPerDay($views, $createdAt);
+
+        if ($viewsPerDay >= 10) return 'A+';
+        if ($viewsPerDay >= 5) return 'A';
+        if ($viewsPerDay >= 3) return 'B';
+        if ($viewsPerDay >= 1) return 'C';
+        if ($viewsPerDay >= 0.5) return 'D';
+        return 'F';
+    }
+
+    /**
+     * Get top performing articles
+     */
+    private function getTopPerformingArticles($limit = 5)
+    {
+        return Post::where('category', 'article')
+            ->where('views', '>', 0)
+            ->orderBy('views', 'desc')
+            ->limit($limit)
+            ->get(['id', 'title', 'slug', 'views', 'created_at'])
+            ->map(function ($article) {
+                return [
+                    'id' => $article->id,
+                    'title' => $article->title,
+                    'slug' => $article->slug,
+                    'views' => $article->views,
+                    'formatted_views' => number_format($article->views),
+                    'created_at' => $article->created_at->format('d M Y')
+                ];
+            });
+    }
+
+    /**
+     * Get recent trending articles (last 30 days)
+     */
+    private function getRecentTrending($limit = 5)
+    {
+        return Post::where('category', 'article')
+            ->where('created_at', '>=', now()->subDays(30))
+            ->where('views', '>', 0)
+            ->orderBy('views', 'desc')
+            ->limit($limit)
+            ->get(['id', 'title', 'slug', 'views', 'created_at'])
+            ->map(function ($article) {
+                return [
+                    'id' => $article->id,
+                    'title' => $article->title,
+                    'slug' => $article->slug,
+                    'views' => $article->views,
+                    'formatted_views' => number_format($article->views),
+                    'created_at' => $article->created_at->format('d M Y'),
+                    'days_ago' => $article->created_at->diffForHumans()
+                ];
+            });
+    }
+
+    /**
+     * Get category view distribution
+     */
+    private function getCategoryViewDistribution()
+    {
+        return \DB::table('posts as p')
+            ->select(
+                'ac.name as category_name',
+                'ac.color as category_color',
+                \DB::raw('COUNT(p.id) as article_count'),
+                \DB::raw('SUM(p.views) as total_views'),
+                \DB::raw('ROUND(AVG(p.views), 1) as avg_views')
+            )
+            ->leftJoin('article_categories as ac', 'p.category_id', '=', 'ac.id')
+            ->where('p.category', 'article')
+            ->whereNotNull('p.category_id')
+            ->groupBy('ac.id', 'ac.name', 'ac.color')
+            ->orderBy('total_views', 'desc')
+            ->get()
+            ->map(function ($stat) {
+                return [
+                    'name' => $stat->category_name,
+                    'color' => $stat->category_color ?: '#6c757d',
+                    'article_count' => $stat->article_count,
+                    'total_views' => $stat->total_views,
+                    'avg_views' => round($stat->avg_views, 1),
+                    'formatted_total_views' => number_format($stat->total_views)
+                ];
+            });
     }
 }
