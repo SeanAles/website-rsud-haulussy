@@ -6,6 +6,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class AuthController extends Controller
 {
@@ -16,11 +20,37 @@ class AuthController extends Controller
 
     public function auth(Request $request)
     {
+        // Rate limiting: 3 attempts per minute per email
+        $throttleKey = Str::lower($request->input('email')).'|login';
+
+        if (RateLimiter::tooManyAttempts($throttleKey, 3)) {
+            $seconds = RateLimiter::availableIn($throttleKey);
+            return response()->json([
+                'message' => 'Terlalu banyak percobaan login. Silakan coba lagi dalam '.$seconds.' detik.'
+            ], 429);
+        }
+
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            RateLimiter::clear($throttleKey);
             $request->session()->regenerate();
-            $user = User::where('email', 'like', $request->email)->first();
+
+            // Query yang lebih aman (ganti 'like' dengan 'where')
+            $user = User::where('email', $request->email)->first();
+
+            // Log successful login
+            Log::info('User login successful', [
+                'email' => $request->email,
+                'ip' => $request->ip(),
+                'user_agent' => $request->userAgent(),
+                'timestamp' => Carbon::now()->toDateTimeString()
+            ]);
+
+            // Update last activity for session timeout
+            $request->session()->put('last_activity', time());
+            $request->session()->put('login_ip', $request->ip());
+
             if ($user->role_id === 1 || $user->role_id === 2) {
                 return response()->json(['redirect_url' => '/dashboard']);
             }
@@ -40,6 +70,17 @@ class AuthController extends Controller
                 return response()->json(['redirect_url' => '/event']);
             }
         }
+
+        // Increment failed attempts
+        RateLimiter::hit($throttleKey, 60); // 60 seconds timeout
+
+        // Log failed login attempt
+        Log::warning('User login failed', [
+            'email' => $request->email,
+            'ip' => $request->ip(),
+            'attempts' => RateLimiter::attempts($throttleKey),
+            'timestamp' => Carbon::now()->toDateTimeString()
+        ]);
 
         return response()->json(['message' => 'Email atau password salah'], 401);
     }
